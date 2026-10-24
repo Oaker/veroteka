@@ -304,6 +304,20 @@ def md_inline(text):
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
     return text
 
+def md_plain(text):
+    """Markdown -> чистый однострочный текст для анонсов и поиска."""
+    text = re.sub(r"```.*?```", " ", text, flags=re.S)
+    text = re.sub(r"`([^`]+)`", r"\1", text)
+    text = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"^#{1,6}\s+", "", text, flags=re.M)
+    text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
+    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"\1", text)
+    text = re.sub(r"^\s*[-*]\s+", "", text, flags=re.M)
+    text = re.sub(r"^\s*>\s?", "", text, flags=re.M)
+    text = re.sub(r"^\s*---+\s*$", " ", text, flags=re.M)
+    return re.sub(r"\s+", " ", text).strip()
+
 def md_to_html(md_text):
     out, i = [], 0
     lines = md_text.splitlines()
@@ -454,6 +468,89 @@ def main():
     articles = collect_articles()
     ru = [a for a in articles if a["lang"] == "ru"]
 
+    # структура каталога: узлы-папки = иерархия разделов
+    node_articles = {}
+    all_dirs = set()
+    for a in ru:
+        d = a["rel_url"].rsplit("/", 1)[0] if "/" in a["rel_url"] else "."
+        node_articles.setdefault(d, []).append(a)
+        parts = d.split("/") if d != "." else []
+        for i in range(1, len(parts) + 1):
+            all_dirs.add("/".join(parts[:i]))
+        if d == ".":
+            all_dirs.add(".")
+    content_root = CONTENT / "ru"
+    for p in content_root.rglob("*"):
+        if p.is_dir():
+            rel = p.relative_to(content_root).as_posix()
+            if not rel.startswith("."):
+                all_dirs.add(rel)
+    children = {}
+    for d in all_dirs:
+        if d == ".":
+            continue
+        parent = d.rsplit("/", 1)[0] if "/" in d else "."
+        children.setdefault(parent, []).append(d)
+    for k in list(children):
+        children[k].sort()
+    subtree_count = {}
+    def accum(d):
+        n = len(node_articles.get(d, []))
+        for s in children.get(d, []):
+            n += accum(s)
+        subtree_count[d] = n
+        return n
+    for s in children.get(".", []):
+        accum(s)
+    existing = set((a["lang"], a["rel_url"]) for a in articles)
+
+    def crumb_label(part):
+        return LABELS.get(part, part.replace("_", " ").capitalize())
+
+    def up_prefix(rel_url):
+        return "../" * (rel_url.count("/") + 1)
+
+    def crumbs_html(a):
+        parts = a["rel_url"].split("/")
+        rel = up_prefix(a["rel_url"])
+        out = ['<nav class="crumbs"><a href="%sindex.html">Главная</a>' % rel]
+        for i, p in enumerate(parts[:-1]):
+            prefix = "/".join(parts[:i + 1])
+            hub = prefix + "/" + p
+            label = crumb_label(p)
+            if (a["lang"], hub) in existing:
+                out.append('<span class="sep">&rsaquo;</span><a href="%s%s/%s.html">%s</a>' % (rel, a["lang"], hub, html.escape(label)))
+            else:
+                out.append('<span class="sep">&rsaquo;</span><span>%s</span>' % html.escape(label))
+        out.append('<span class="sep">&rsaquo;</span><b>%s</b>' % html.escape(a["title"]))
+        out.append("</nav>")
+        return "".join(out)
+
+    def folder_link(s, prefix=""):
+        hub = s + "/" + s.split("/")[-1]
+        label = crumb_label(s.split("/")[-1])
+        n = subtree_count.get(s, 0)
+        if ("ru", hub) in existing:
+            return '<li><a href="%sru/%s.html">%s</a> <span class="count">(%d)</span></li>' % (prefix, hub, html.escape(label), n)
+        return '<li class="planned">%s <span class="count">(%d)</span></li>' % (html.escape(label), n)
+
+    def section_nav_html(a):
+        d = a["rel_url"].rsplit("/", 1)[0] if "/" in a["rel_url"] else "."
+        if d == ".":
+            return ""
+        sibs = [x for x in node_articles.get(d, []) if x["rel_url"] != a["rel_url"]]
+        subs = children.get(d, [])
+        if not sibs and not subs:
+            return ""
+        rel = up_prefix(a["rel_url"])
+        out = ['<div class="secnav"><div class="who">В этом разделе</div><ul>']
+        for s in sorted(subs):
+            out.append(folder_link(s, rel))
+        for x in sorted(sibs, key=lambda t: t["title"]):
+            out.append('<li><a href="%s%s/%s.html">%s</a></li>' % (rel, x["lang"], x["rel_url"], html.escape(x["title"])))
+        out.append("</ul></div>")
+        return "\n".join(out)
+
     (SITE / "assets" / "style.css").write_text(DEFAULT_CSS, encoding="utf-8")
     (SITE / "assets" / "app.js").write_text(DEFAULT_JS, encoding="utf-8")
 
@@ -463,8 +560,8 @@ def main():
         out_file.parent.mkdir(parents=True, exist_ok=True)
         depth = a["rel_url"].count("/") + 1
         rel = "../" * depth
-        out_file.write_text(render_page(a["title"], article_html(a), a["lang"], rel), encoding="utf-8")
-        excerpt = re.sub(r"\s+", " ", a["body"][:300])
+        out_file.write_text(render_page(a["title"], crumbs_html(a) + article_html(a) + section_nav_html(a), a["lang"], rel), encoding="utf-8")
+        excerpt = md_plain(a["body"])[:300]
         index_entries.append({
             "title": a["title"], "url": "%s/%s.html" % (a["lang"], a["rel_url"]),
             "lang": a["lang"],
@@ -479,60 +576,34 @@ def main():
                 if t:
                     tags.setdefault(t, []).append(a)
 
-    # index.html
-    cards = []
-    for a in ru:
-        cards.append(
-            '<article class="card"><h3><a href="ru/%s.html">%s</a></h3><p>%s...</p></article>'
-            % (a["rel_url"], html.escape(a["title"]), html.escape(re.sub(r"\s+", " ", a["body"][:220])))
-        )
-    home = render_page("Главная",
-        "<h1>Веротека</h1>\n<p>Энциклопедия религий, конфессий, сект и эзотерических учений. Нейтральные статьи + позиция редактора (Doctor Che).</p>\n"
-        + "\n".join(cards))
+    # index.html — иерархическая главная: разделы 1-го уровня с навигацией
+    TOP_SECTIONS = ["01_basics", "02_world", "03_ancient", "04_national", "05_nrd", "06_esoteric", "07_mysticism", "08_skeptic", "09_ref"]
+    home_parts = [
+        "<h1>Веротека</h1>",
+        "<p>Энциклопедия религий, конфессий, сект и эзотерических учений. Нейтральные статьи + позиция редактора (Doctor Che).</p>",
+    ]
+    for sec in TOP_SECTIONS:
+        if sec not in all_dirs:
+            continue
+        home_parts.append('<h2 class="sech">%s <span class="count">(%d)</span></h2>' % (html.escape(crumb_label(sec)), subtree_count.get(sec, 0)))
+        home_parts.append('<ul class="home-list">')
+        for x in sorted(node_articles.get(sec, []), key=lambda t: t["title"]):
+            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
+        for s in sorted(children.get(sec, [])):
+            home_parts.append(folder_link(s))
+        home_parts.append("</ul>")
+    root_arts = node_articles.get(".", [])
+    if root_arts:
+        home_parts.append('<h2 class="sech">Прочее</h2><ul class="home-list">')
+        for x in sorted(root_arts, key=lambda t: t["title"]):
+            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
+        home_parts.append("</ul>")
+    home = render_page("Главная", "\n".join(home_parts))
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
     # tree.html — полное раскрытое дерево (структура папок = иерархия)
     tree_html = ["<h1>Дерево разделов</h1>",
                  "<p class=muted>Полная иерархия. Числа — количество статей. Пустые узлы показывают планируемые разделы.</p>"]
-
-    # собираем все узлы (папки) и статьи
-    node_articles = {}   # dir -> [articles]
-    all_dirs = set()
-    for a in ru:
-        d = a["rel_url"].rsplit("/", 1)[0] if "/" in a["rel_url"] else "."
-        node_articles.setdefault(d, []).append(a)
-        # регистрируем все родительские папки
-        parts = d.split("/") if d != "." else []
-        for i in range(1, len(parts) + 1):
-            all_dirs.add("/".join(parts[:i]))
-        if d == ".":
-            all_dirs.add(".")
-    # добавляем пустые папки из content/ru (планируемые разделы)
-    content_root = CONTENT / "ru"
-    for p in content_root.rglob("*"):
-        if p.is_dir() and ".gitkeep" not in [f.name for f in p.iterdir()] or p.is_dir():
-            rel = p.relative_to(content_root).as_posix()
-            if not rel.startswith("."):
-                all_dirs.add(rel)
-    children = {}
-    for d in all_dirs:
-        if d == ".":
-            continue
-        parent = d.rsplit("/", 1)[0] if "/" in d else "."
-        children.setdefault(parent, []).append(d)
-    for k in children:
-        children[k].sort()
-
-    # счётчик статей по всему поддереву
-    subtree_count = {}
-    def accum(d):
-        n = len(node_articles.get(d, []))
-        for s in children.get(d, []):
-            n += accum(s)
-        subtree_count[d] = n
-        return n
-    for s in children.get(".", []):
-        accum(s)
 
     def dir_label(name):
         return LABELS.get(name, name.replace("_", " "))
@@ -652,6 +723,15 @@ code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
 .chips { margin:.2rem 0 .8rem; }
 .planned { color:var(--muted); list-style:none; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
 .editor-box { border:1px solid var(--border); border-left:4px solid #b8860b; background:var(--card); border-radius:8px; padding:.8rem 1rem; margin:1.5rem 0; }
+.crumbs { font-size:.85rem; color:var(--muted); margin:0 0 1rem; }
+.crumbs a { color:var(--muted); }
+.crumbs .sep { margin:0 .4rem; }
+.secnav { border:1px solid var(--border); background:var(--card); border-radius:8px; padding:.8rem 1rem; margin-top:2rem; }
+.secnav .who { font-weight:600; margin-bottom:.3rem; }
+.secnav ul { margin:.2rem 0; padding-left:1.2rem; }
+ul.home-list { list-style:none; padding-left:0; }
+ul.home-list li { padding:.18rem 0; }
+h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.25rem; }
 .editor-box .who { font-weight:600; margin-bottom:.3rem; }
 #searchresults { max-width:760px; margin:0 auto; padding:.5rem 1.2rem; }
 #searchresults .hit { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:.6rem 1rem; margin:.4rem 0; }
