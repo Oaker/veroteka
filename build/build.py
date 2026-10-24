@@ -355,7 +355,7 @@ def build_linkmap(articles):
         "Далай-лама": "09_ref/persons/dalai_lama",
         "Ибн Араби": "02_world/abrahamic/islam/sufism/sufism",
         "Каширский вестник": "02_world/dharmic/hinduism/shaivism/advaita_juggling/kashira_vestnik",
-        "Линия Каширы": "02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/line_kashira",
+        "Линия Каширы": "02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/line_kashira/line_kashira",
         "Шиваизм": "02_world/dharmic/hinduism/shaivism/shaivism",
         "Адвайта-веданта": "02_world/dharmic/hinduism/darshanas/vedanta/vedanta",
         "Веданта": "02_world/dharmic/hinduism/darshanas/vedanta/vedanta",
@@ -384,9 +384,11 @@ def build_linkmap(articles):
     return out
 
 _autolink_n = [0]
+_autolink_rel = [""]
 
 def autolink(text, current_rel=None):
     """Первое вхождение каждого названия -> плейсхолдер-ссылка."""
+    _autolink_rel[0] = ("../" * (current_rel.count("/") + 1)) if current_rel else ""
     for title, url in LINKMAP:
         if current_rel and url == current_rel:
             continue
@@ -404,10 +406,10 @@ def autolink(text, current_rel=None):
 
 LINK_PH = {}
 
-def restore_links(html_text):
+def restore_links(html_text, rel=""):
     def rep(m):
         url, label = LINK_PH.get(int(m.group(1)), ("#", "?"))
-        return '<a href="ru/%s.html">%s</a>' % (url, html.escape(label))
+        return '<a href="%sru/%s.html">%s</a>' % (rel, url, html.escape(label))
     return re.sub('\x00(\\d+)\x00', rep, html_text)
 
 # ---------------------------------------------------------------- markdown --
@@ -417,7 +419,7 @@ def md_inline(text):
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
-    text = restore_links(text)
+    text = restore_links(text, _autolink_rel[0])
     return text
 
 def md_plain(text):
