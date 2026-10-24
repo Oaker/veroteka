@@ -237,6 +237,13 @@ LABELS = {
     "science_of_religious_experience": "Наука о религиозном опыте",
     "pseudohistory": "Псевдоистория",
     "masonic_conspiracy": "Масонский заговор",
+    "conspiracy": "Конспирология",
+    "illuminati": "Иллюминаты",
+    "satanic_panic": "Сатанинская паника",
+    "flat_earth": "Плоская Земля",
+    "hidden_symbols": "Скрытые символы",
+    "tartaria": "Тартария",
+    "debunking": "Как разоблачать",
     # --- 09 Справочный ---
     "glossary": "Глоссарий",
     "persons": "Персоналии",
