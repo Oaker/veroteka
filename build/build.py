@@ -241,6 +241,7 @@ LABELS = {
     "aghora": "Агхора",
     "siddhars_tamil": "Тамильские сиддхары",
     "kashirsky_shaivism": "Каширский шиваизм (Россия, НРД)",
+    "advaita_juggling": "Адвайта-джаглинг (недуальное жонглирование)",
     "vaishnavism": "Вишнуизм",
     "sri_vaishnavism": "Шри-вайшнавизм",
     "gaudiya": "Гаудия-вайшнавизм",
