@@ -584,12 +584,21 @@ def article_html(a):
     if tags:
         chips = "".join('<span class="chip">%s</span>' % html.escape(t.strip()) for t in tags.split(",") if t.strip())
         parts.append('<div class="chips">%s</div>' % chips)
-    parts.append(md_to_html(autolink(a["body"], a["rel_url"])))
+    body_md = a["body"]
+    marker = "## См. также"
+    if marker in body_md:
+        main_md, see_md = body_md.split(marker, 1)
+        see_md = marker + see_md
+    else:
+        main_md, see_md = body_md, ""
+    parts.append(md_to_html(main_md))
+    if see_md:
+        parts.append(md_to_html(autolink(see_md, a["rel_url"])))
     editor = meta.get("editor")
     if editor:
         parts.append(
             '<div class="editor-box"><div class="who">Позиция редактора — Doctor Che</div>%s</div>'
-            % md_to_html(autolink(editor, a["rel_url"]))
+            % md_to_html(editor)
         )
     return "\n".join(parts)
 
