@@ -528,11 +528,24 @@ def main():
         return "".join(out)
 
     def folder_link(s, prefix=""):
-        hub = s + "/" + s.split("/")[-1]
         label = crumb_label(s.split("/")[-1])
         n = subtree_count.get(s, 0)
+        hub = s + "/" + s.split("/")[-1]
         if ("ru", hub) in existing:
             return '<li><a href="%sru/%s.html">%s</a> <span class="count">(%d)</span></li>' % (prefix, hub, html.escape(label), n)
+        # иначе ищем первую статью в ПОДДЕРЕВЕ узла как вход
+        def first_in(sub):
+            arts = sorted(node_articles.get(sub, []), key=lambda t: t["title"])
+            if arts:
+                return arts[0]
+            for ch in children.get(sub, []):
+                r = first_in(ch)
+                if r:
+                    return r
+            return None
+        first = first_in(s)
+        if first:
+            return '<li><a href="%sru/%s.html">%s</a> <span class="count">(%d)</span></li>' % (prefix, first["rel_url"], html.escape(label), n)
         return '<li class="planned">%s <span class="count">(%d)</span></li>' % (html.escape(label), n)
 
     def section_nav_html(a):
