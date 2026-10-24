@@ -323,6 +323,93 @@ LABELS = {
     "shvetambara": "Шветамбара",
 }
 
+# ------------------------------------------------------------- autolinking --
+LINKMAP = []          # [(title, rel_url)]  заполняется в main()
+PLACEHOLDER = "\x00"
+
+def build_linkmap(articles):
+    m = []
+    for a in articles:
+        if a["lang"] != "ru":
+            continue
+        m.append((a["title"], a["rel_url"]))
+    ALIASES = {
+        "Будда": "09_ref/persons/buddha",
+        "Иисус": "02_world/abrahamic/christianity/christianity",
+        "Мухаммад": "09_ref/persons/muhammad",
+        "Конфуций": "09_ref/persons/confucius",
+        "Лао-цзы": "09_ref/persons/laozi",
+        "Шанкара": "09_ref/persons/shankara",
+        "Абхинавагупта": "09_ref/persons/abhinavagupta",
+        "Чжуан-цзы": "09_ref/persons/zhuangzi",
+        "Насреддин": "09_ref/persons/nasreddin",
+        "Коан": "09_ref/persons/koan",
+        "Руми": "09_ref/persons/rumi",
+        "Миларепа": "09_ref/persons/milarepa",
+        "Нагарджуна": "09_ref/persons/nagarjuna",
+        "Рамануджа": "09_ref/persons/ramanuja",
+        "Нанак": "09_ref/persons/nanak",
+        "Махавира": "09_ref/persons/mahavira",
+        "Заратуштра": "09_ref/persons/zarathushtra",
+        "Тереза Авильская": "09_ref/persons/teresa",
+        "Далай-лама": "09_ref/persons/dalai_lama",
+        "Ибн Араби": "02_world/abrahamic/islam/sufism/sufism",
+        "Каширский вестник": "02_world/dharmic/hinduism/shaivism/advaita_juggling/kashira_vestnik",
+        "Линия Каширы": "02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/line_kashira",
+        "Шиваизм": "02_world/dharmic/hinduism/shaivism/shaivism",
+        "Адвайта-веданта": "02_world/dharmic/hinduism/darshanas/vedanta/vedanta",
+        "Веданта": "02_world/dharmic/hinduism/darshanas/vedanta/vedanta",
+        "Ария (ārya)": "09_ref/glossary/arya",
+        "Трика": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/trika/trika",
+        "Спанда": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/spanda/spanda",
+        "Пратьябхиджня": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/pratyabhijna/pratyabhijna",
+        "Каббала": "06_esoteric/kabbalah/kabbalah",
+        "Дзогчен": "07_mysticism/buddhist/dzogchen/dzogchen",
+        "Махамудра": "07_mysticism/buddhist/mahamudra/mahamudra",
+        "Исихазм": "07_mysticism/christian/hesychasm/hesychasm",
+        "Тереза": "09_ref/persons/teresa",
+        "Мадхьямака": "02_world/dharmic/buddhism/mahayana/mahayana",
+    }
+    for alias, url in ALIASES.items():
+        m.append((alias, url))
+    # длинные сначала, без дублей url+title
+    seen = set()
+    out = []
+    for title, url in sorted(m, key=lambda x: -len(x[0])):
+        key = (title.lower(), url)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append((title, url))
+    return out
+
+_autolink_n = [0]
+
+def autolink(text, current_rel=None):
+    """Первое вхождение каждого названия -> плейсхолдер-ссылка."""
+    for title, url in LINKMAP:
+        if current_rel and url == current_rel:
+            continue
+        if len(title) < 3:
+            continue
+        pat = re.compile(re.escape(title), re.IGNORECASE)
+        m = pat.search(text)
+        if not m:
+            continue
+        _autolink_n[0] += 1
+        ph = "%s%d%s" % (PLACEHOLDER, _autolink_n[0], PLACEHOLDER)
+        text = text[:m.start()] + ph + text[m.end():]
+        LINK_PH[_autolink_n[0]] = (url, m.group(0))
+    return text
+
+LINK_PH = {}
+
+def restore_links(html_text):
+    def rep(m):
+        url, label = LINK_PH.get(int(m.group(1)), ("#", "?"))
+        return '<a href="ru/%s.html">%s</a>' % (url, html.escape(label))
+    return re.sub('\x00(\\d+)\x00', rep, html_text)
+
 # ---------------------------------------------------------------- markdown --
 def md_inline(text):
     text = html.escape(text, quote=False)
@@ -330,6 +417,7 @@ def md_inline(text):
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
+    text = restore_links(text)
     return text
 
 def md_plain(text):
@@ -493,12 +581,12 @@ def article_html(a):
     if tags:
         chips = "".join('<span class="chip">%s</span>' % html.escape(t.strip()) for t in tags.split(",") if t.strip())
         parts.append('<div class="chips">%s</div>' % chips)
-    parts.append(md_to_html(a["body"]))
+    parts.append(md_to_html(autolink(a["body"], a["rel_url"])))
     editor = meta.get("editor")
     if editor:
         parts.append(
             '<div class="editor-box"><div class="who">Позиция редактора — Doctor Che</div>%s</div>'
-            % md_to_html(editor)
+            % md_to_html(autolink(editor, a["rel_url"]))
         )
     return "\n".join(parts)
 
@@ -509,6 +597,8 @@ def main():
     (SITE / "assets").mkdir()
 
     articles = collect_articles()
+    global LINKMAP
+    LINKMAP = build_linkmap(articles)
     ru = [a for a in articles if a["lang"] == "ru"]
 
     # структура каталога: узлы-папки = иерархия разделов
