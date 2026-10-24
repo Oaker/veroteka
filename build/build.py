@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 SITE = ROOT / "site"
 
+import sys
+sys.path.insert(0, str(ROOT / "build"))
+from plain_texts import PLAIN
+
 LABELS = {
     ".": "Прочее",
     "01_basics": "Основы религиоведения",
@@ -444,6 +448,21 @@ def article_html(a):
     if axis:
         al = AXIS_LABELS.get(axis.strip().lower(), axis)
         parts.append('<div class="axis">ось: %s</div>' % html.escape(al))
+    plain = PLAIN.get("ru/" + a["rel_url"])
+    if not plain:
+        # автогенерация: первое предложение определения (до первой точки, из первых 400 знаков тела)
+        body_flat = re.sub(r"\s+", " ", a["body"]).strip()
+        m = re.match(r"^\*\*[^*]+\*\*\s*[—–-]\s*(.+?)(?:\.|$)", body_flat)
+        if m and len(m.group(1)) > 20:
+            plain = m.group(1).rstrip(". ") + "."
+        else:
+            m2 = re.match(r"^(.{80,240}?[.!?])(\s|$)", body_flat)
+            plain = m2.group(1) if m2 else body_flat[:160] + "..."
+    if plain:
+        parts.append(
+            '<details class="plain-box"><summary>Для профанов (просто о главном)</summary><div>%s</div></details>'
+            % html.escape(plain)
+        )
     level = meta.get("level")
     if level:
         parts.append('<div class="badge">уровень: %s</div>' % html.escape(level))
@@ -735,7 +754,10 @@ code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
 .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; margin:1rem 0; }
 .badge { display:inline-block; font-size:.8rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.1rem .6rem; margin-bottom:.5rem; }
 .chips { margin:.2rem 0 .8rem; }
-.planned { color:var(--muted); list-style:none; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
+.planned { color:var(--muted); list-style:none; }
+.plain-box { border:1px dashed var(--border); border-radius:8px; padding:.5rem .8rem; margin:.8rem 0; background:var(--card); }
+.plain-box summary { cursor:pointer; color:var(--muted); font-size:.92rem; }
+.plain-box div { margin-top:.4rem; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
 .editor-box { border:1px solid var(--border); border-left:4px solid #b8860b; background:var(--card); border-radius:8px; padding:.8rem 1rem; margin:1.5rem 0; }
 .crumbs { font-size:.85rem; color:var(--muted); margin:0 0 1rem; }
 .crumbs a { color:var(--muted); }
