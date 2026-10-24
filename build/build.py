@@ -559,6 +559,9 @@ def article_html(a):
     if axis:
         al = AXIS_LABELS.get(axis.strip().lower(), axis)
         parts.append('<div class="axis">ось: %s</div>' % html.escape(al))
+    img = meta.get("image")
+    if img:
+        parts.append('<figure class="article-img"><img src="%s" alt="" loading="lazy"></figure>' % html.escape(img))
     plain = PLAIN.get("ru/" + a["rel_url"])
     if not plain:
         # автогенерация: первое предложение определения (до первой точки, из первых 400 знаков тела)
@@ -698,6 +701,9 @@ def main():
         return "\n".join(out)
 
     (SITE / "assets" / "style.css").write_text(DEFAULT_CSS, encoding="utf-8")
+    img_src = ROOT / "assets" / "img"
+    if img_src.exists():
+        shutil.copytree(img_src, SITE / "assets" / "img", dirs_exist_ok=True)
     (SITE / "assets" / "app.js").write_text(DEFAULT_JS, encoding="utf-8")
 
     index_entries, az, tags = [], {}, {}
@@ -868,6 +874,8 @@ code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
 .badge { display:inline-block; font-size:.8rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.1rem .6rem; margin-bottom:.5rem; }
 .chips { margin:.2rem 0 .8rem; }
 .planned { color:var(--muted); list-style:none; }
+.article-img { margin:.6rem 0 1rem; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); }
+.article-img img { width:100%; display:block; }
 .plain-box { border:1px dashed var(--border); border-radius:8px; padding:.5rem .8rem; margin:.8rem 0; background:var(--card); }
 .plain-box summary { cursor:pointer; color:var(--muted); font-size:.92rem; }
 .plain-box div { margin-top:.4rem; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
