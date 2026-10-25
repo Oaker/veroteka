@@ -1,4 +1,5 @@
 ---
+image: img/conspiracy.jpg
 title: Конспирология
 tags: скептический отдел, конспирология
 level: подробно

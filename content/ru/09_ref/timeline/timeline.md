@@ -1,4 +1,5 @@
 ---
+image: img/timeline.jpg
 title: Хронология религий
 tags: справочный, хронология
 level: подробно
