@@ -975,6 +975,9 @@ toggle && toggle.addEventListener('click', () => {
 const box = document.getElementById('searchbox');
 const res = document.getElementById('searchresults');
 let INDEX = null;
+// на мобиле: фокус в поиск мягко скроллит к верху
+box && box.addEventListener('focus', () => { window.scrollTo({top:0, behavior:'smooth'}); });
+
 box && box.addEventListener('input', async (e) => {
   const q = e.target.value.trim().toLowerCase();
   if (q.length < 2) { res.innerHTML = ''; return; }
