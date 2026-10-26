@@ -752,29 +752,71 @@ def main():
                 if t:
                     tags.setdefault(t, []).append(a)
 
-    # index.html — иерархическая главная: разделы 1-го уровня с навигацией
-    TOP_SECTIONS = ["01_basics", "02_world", "03_ancient", "04_national", "05_nrd", "06_esoteric", "07_mysticism", "08_skeptic", "09_ref"]
-    home_parts = [
-        "<h1>Веротека</h1>",
-        "<p>Энциклопедия религий, конфессий, сект и эзотерических учений. Нейтральные статьи + позиция редактора (Doctor Che).</p>",
-    ]
+    # index.html — аккордеонная главная (v2)
+    TOP_SECTIONS = ["01_basics","02_world","03_ancient","04_national","05_nrd","06_esoteric","07_mysticism","08_skeptic","09_ref"]
+    p = []
+    p.append('<section class="hero-min">')
+    p.append('<h1>Веротека</h1>')
+    p.append('<p>Энциклопедия религий, конфессий, сект и эзотерических учений: %d статей, нейтральный текст и отдельный слой «позиция редактора».</p>' % len(ru))
+    p.append('<div class="quick">'
+             '<a href="search-index.json" onclick="document.getElementById(\'searchbox\').focus();return false;">🔎 Поиск</a>'
+             '<a href="tree.html">🌳 Дерево разделов</a>'
+             '<a href="axis.html">🧭 Ось взгляда</a>'
+             '<a href="ru/09_ref/timeline/timeline.html">📜 Хронология</a>'
+             '<a href="ru/09_ref/about/about.html">О проекте</a>'
+             '<a href="ru/09_ref/about/author.html">Об авторе</a>'
+             '</div>')
+    p.append('</section>')
+
+    def node_link(s):
+        """Ссылка на узел: свой хаб, иначе первая статья в поддереве."""
+        hub = s + "/" + s.split("/")[-1]
+        if ("ru", hub) in existing:
+            return "ru/" + hub + ".html"
+        def first_in(sub):
+            arts = sorted(node_articles.get(sub, []), key=lambda t: t["title"])
+            if arts:
+                return arts[0]
+            for ch in children.get(sub, []):
+                r = first_in(ch)
+                if r:
+                    return r
+            return None
+        f = first_in(s)
+        return ("ru/" + f["rel_url"] + ".html") if f else None
+
+    # порядок разделов + открытый по умолчанию
+    OPEN_SEC = "02_world"
     for sec in TOP_SECTIONS:
         if sec not in all_dirs:
             continue
-        home_parts.append('<h2 class="sech">%s <span class="count">(%d)</span></h2>' % (html.escape(crumb_label(sec)), subtree_count.get(sec, 0)))
-        home_parts.append('<ul class="home-list">')
-        for x in sorted(node_articles.get(sec, []), key=lambda t: t["title"]):
-            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
+        n = subtree_count.get(sec, 0)
+        label = crumb_label(sec)
+        is_open = " open" if sec == OPEN_SEC else ""
+        p.append('<details class="acc"%s><summary><span class="chev">›</span>'
+                 '<span class="ttl">%s</span><span class="n">%d</span></summary>'
+                 '<div class="acc-body"><ul>' % (is_open, html.escape(label), n))
+        # прямые статьи раздела
+        for a in sorted(node_articles.get(sec, []), key=lambda t: t["title"]):
+            p.append('<li><a href="ru/%s.html">%s<span class="cnt">статья</span></a></li>' % (a["rel_url"], html.escape(a["title"])))
+        # подразделы второго уровня
         for s in sorted(children.get(sec, [])):
-            home_parts.append(folder_link(s))
-        home_parts.append("</ul>")
-    root_arts = node_articles.get(".", [])
-    if root_arts:
-        home_parts.append('<h2 class="sech">Прочее</h2><ul class="home-list">')
-        for x in sorted(root_arts, key=lambda t: t["title"]):
-            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
-        home_parts.append("</ul>")
-    home = render_page("Главная", "\n".join(home_parts))
+            link = node_link(s)
+            sn = subtree_count.get(s, 0)
+            sub_label = crumb_label(s.split("/")[-1])
+            if link:
+                p.append('<li><a href="%s">%s<span class="cnt">%d</span></a></li>' % (link, html.escape(sub_label), sn))
+        hub = sec + "/" + sec
+        if ("ru", hub) in existing:
+            p.append('<li><a href="ru/%s.html"><b>Весь раздел →</b><span class="cnt"></span></a></li>' % hub)
+        p.append('</ul></div></details>')
+
+    p.append('<nav class="landing-foot">')
+    for lbl, href in [("Дерево разделов","tree.html"),("Алфавитный указатель","az.html"),("Теги","tags.html"),("Ось взгляда","axis.html"),("О проекте","ru/09_ref/about/about.html"),("Об авторе","ru/09_ref/about/author.html")]:
+        p.append('<a href="%s">%s</a>' % (href, lbl))
+    p.append('</nav>')
+
+    home = render_page("Главная", "\n".join(p))
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
     # tree.html — полное раскрытое дерево (структура папок = иерархия)

@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><title>Вариант 2 — статья без сайдбара</title><style>
+:root { --bg:#fafaf9; --fg:#18181b; --muted:#71717a; --accent:#4f46e5; --accent-soft:#eef2ff; --card:#fff; --border:#e4e4e7; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; }
+.topbar { display:flex; align-items:center; gap:1rem; padding:.65rem 1.2rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:10; }
+.brand { font-weight:800; font-size:1.15rem; letter-spacing:-.02em; }
+.brand span { color:var(--accent); }
+.topnav { display:flex; gap:.2rem; }
+.topnav a { padding:.35rem .7rem; border-radius:9px; color:var(--muted); text-decoration:none; font-size:.92rem; }
+.topnav a:hover { color:var(--fg); background:var(--accent-soft); }
+.search { flex:1; max-width:400px; margin-left:auto; padding:.5rem .9rem; border:1px solid var(--border); border-radius:11px; background:var(--card); font-size:.92rem; color:var(--muted); }
+.wrap { max-width:760px; margin:0 auto; padding:0 1.2rem 4rem; }
+.hero-min { padding:2.4rem 0 1.4rem; }
+.hero-min h1 { font-size:clamp(1.9rem,4vw,2.7rem); margin:0 0 .5rem; letter-spacing:-.03em; }
+.hero-min p { color:var(--muted); max-width:560px; margin:0 0 1rem; }
+.quick { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.8rem; }
+.quick a { font-size:.86rem; padding:.4rem .8rem; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:var(--fg); background:var(--card); }
+.quick a:hover { border-color:var(--accent); color:var(--accent); }
+.acc { border:1px solid var(--border); border-radius:16px; background:var(--card); overflow:hidden; margin:0 0 .7rem; }
+.acc > summary { display:flex; align-items:center; gap:.8rem; padding:.95rem 1.15rem; cursor:pointer; font-weight:700; font-size:1.04rem; list-style:none; }
+.acc > summary::-webkit-details-marker { display:none; }
+.acc > summary .n { margin-left:auto; font-size:.8rem; font-weight:500; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:.12rem .6rem; }
+.acc > summary .chev { color:var(--muted); transition:transform .18s; }
+.acc[open] > summary .chev { transform:rotate(90deg); }
+.acc[open] > summary { border-bottom:1px solid var(--border); }
+.acc-body { padding:.55rem 1.15rem 1rem; }
+.acc-body ul { list-style:none; margin:0; padding:0; display:grid; gap:.15rem; }
+.acc-body li a { display:flex; justify-content:space-between; gap:1rem; padding:.4rem .55rem; border-radius:9px; text-decoration:none; color:var(--fg); }
+.acc-body li a:hover { background:var(--accent-soft); color:var(--accent); }
+.article h1 { font-size:2rem; letter-spacing:-.02em; margin:.4rem 0 .6rem; }
+.axis { display:inline-block; font-size:.76rem; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:.05rem .6rem; margin-bottom:.8rem; }
+.imgph { height:170px; border-radius:16px; border:1px solid var(--border); background:linear-gradient(135deg,#eef2ff,#f5f3ff); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:.9rem; margin-bottom:1rem; }
+.plain { border:1px dashed var(--border); border-radius:12px; padding:.6rem .9rem; background:var(--accent-soft); margin:0 0 1.1rem; font-size:.94rem; }
+.editor { border-left:3px solid #d4a017; background:var(--card); border-radius:0 12px 12px 0; padding:.9rem 1.1rem; margin:1.4rem 0; }
+.editor b { color:#b8860b; display:block; margin-bottom:.3rem; }
+</style></head><body>
+<div class="topbar"><div class="brand">Веро<span>тека</span></div><nav class="topnav"><a href="#">Дерево</a><a href="#">А–Я</a><a href="#">Теги</a><a href="#">Ось</a></nav><div class="search">Поиск по 400 статьям…</div></div>
+<div class="wrap article">
+<span class="axis">ось: адвайта</span>
+<h1>Каширский шиваизм</h1>
+<div class="imgph">[ иллюстрация статьи ]</div>
+<div class="plain"><b>Для профанов:</b> это русское учение о том, что всё на свете — одно целое. Появилось в городе Кашире. Голова учения — Сергей Чернов, он же Doctor Che. Проверяется просто: уронишь — посмейся.</div>
+<p><b>Каширский шиваизм</b> — новое религиозное движение в шиваитской традиции, возникшее в России; название происходит от города Каширы. Самостоятельная линия в шиваизме: доктринально опирается на аппарат недуального тантрического шиваизма.</p>
+<h2>Истоки и самопонимание</h2>
+<p>Движение позиционирует себя как продолжение шиваитской традиции — одной из древнейших живых религиозных традиций человечества. Историческая глубина прослеживается от прототипов Шивы на печатях Индской цивилизации до расцвета недуального тантрического шиваизма в Кашмире IX–XII веков.</p>
+<div class="editor"><b>Позиция редактора — Doctor Che</b>Недвойственность снимает сам вопрос «чей шиваизм — индийский или русский». Сознание не имеет гражданства.</div>
+<h2>См. также</h2>
+<p>Адвайта-джаглинг · Линия Каширы · Трика · Спанда</p>
+</div></body></html>
