@@ -533,7 +533,7 @@ PAGE_TMPL = """<!DOCTYPE html>
   <button id="themeToggle" title="Тёмная/светлая тема">&#127769;</button>
 </header>
 <div id="searchresults"></div>
-<main>
+<main class="{maincls}">
 {content}
 </main>
 <footer>
@@ -543,8 +543,8 @@ PAGE_TMPL = """<!DOCTYPE html>
 </body>
 </html>"""
 
-def render_page(title, content_html, lang="ru", rel=""):
-    return PAGE_TMPL.format(title=html.escape(title), content=content_html, lang=lang, rel=rel)
+def render_page(title, content_html, lang="ru", rel="", maincls=""):
+    return PAGE_TMPL.format(title=html.escape(title), content=content_html, lang=lang, rel=rel, maincls=maincls)
 
 # ---------------------------------------------------------------- сборка ----
 def collect_articles():
@@ -752,70 +752,68 @@ def main():
                 if t:
                     tags.setdefault(t, []).append(a)
 
-    # index.html — витрина: плашки по семействам традиций
+    # index.html — витрина (landing)
     CARDS = [
-        ("02_world/abrahamic/abrahamic", "Авраамические", "✡️", "Иудаизм · Христианство · Ислам · Бахаи", "Один Бог, завет, пророки. Самое многочисленное семейство мира."),
-        ("02_world/dharmic/dharmic", "Дхармические", "☸️", "Индуизм · Буддизм · Сикхизм · Джайнизм", "Карма, сансара, освобождение. Родились в Индии."),
-        ("02_world/iranian/iranian", "Иранские", "🔥", "Зороастризм · Езидизм · Ярсан · Мандеизм", "Свет и тьма, выбор, последний суд. Отсюда рай и ад."),
-        ("04_national/04_national", "Региональные", "🏔", "Китай · Япония · Корея · Африка · Сибирь", "Живые традиции народов: синто, даосизм, культы предков."),
-        ("03_ancient/03_ancient", "Древние", "🏛", "Египет · Греция · Рим · Месопотамия · Скандинавия", "Ушедшие религии, которые мы знаем по раскопкам и текстам."),
-        ("05_nrd/05_nrd", "Новые движения", "⚡", "НРД · секты · пародийные религии", "XX–XXI век: от саентологии до джедаизма. С досье о механиках контроля."),
-        ("06_esoteric/06_esoteric", "Эзотерика", "🔮", "Герметизм · алхимия · каббала · магия", "Скрытое знание: ордена, символы, практики посвящения."),
-        ("07_mysticism/07_mysticism", "Мистицизм", "🕯", "Исихазм · суфизм · дзен · каббала", "Прямой опыт встречи с предельным — в каждой традиции."),
-        ("08_skeptic/08_skeptic", "Скептический отдел", "🧭", "Атеизм · критика · конспирология", "Гигиена мышления: проверка утверждений, разбор манипуляций."),
+        ("02_world/abrahamic/abrahamic", "Авраамические", "✡️", ["Иудаизм","Христианство","Ислам","Бахаи"], "Один Бог, завет и пророки — самое многочисленное семейство мира."),
+        ("02_world/dharmic/dharmic", "Дхармические", "☸️", ["Индуизм","Буддизм","Сикхизм","Джайнизм"], "Карма, сансара и освобождение — семейство, рождённое в Индии."),
+        ("02_world/iranian/iranian", "Иранские", "🔥", ["Зороастризм","Езидизм","Ярсан","Мандеизм"], "Свет против тьмы и свободный выбор; отсюда рай, ад и суд."),
+        ("04_national/04_national", "Региональные", "🏔", ["Китай","Япония","Африка","Сибирь"], "Живые традиции народов: синто, даосизм, культы предков."),
+        ("03_ancient/03_ancient", "Древние", "🏛", ["Египет","Греция","Рим","Скандинавия"], "Ушедшие религии, известные по раскопкам и текстам."),
+        ("05_nrd/05_nrd", "Новые движения", "⚡", ["НРД","Секты","Пародийные"], "XX–XXI век — с досье о вербовке, контроле и выходе."),
+        ("06_esoteric/06_esoteric", "Эзотерика", "🔮", ["Герметизм","Алхимия","Каббала","Магия"], "Скрытое знание: ордена, символы, практики посвящения."),
+        ("07_mysticism/07_mysticism", "Мистицизм", "🕯", ["Исихазм","Суфизм","Дзен","Каббала"], "Прямой опыт предельного — внутри каждой традиции."),
+        ("08_skeptic/08_skeptic", "Скептический", "🧭", ["Атеизм","Критика","Конспирология"], "Гигиена мышления: проверка утверждений и разбор манипуляций."),
     ]
-    home_parts = []
-    home_parts.append('<section class="hero">')
-    home_parts.append('<h1 class="hero-title">Веротека</h1>')
-    home_parts.append('<p class="hero-sub">Энциклопедия религий, конфессий, сект и эзотерических учений</p>')
-    home_parts.append('<p class="hero-stats"><span>%d статей</span><span>9 разделов</span><span>ось: двайта · адвайта · пустотные</span></p>' % len(ru))
-    home_parts.append('<div class="hero-actions">'
-                      '<a class="btn-primary" href="tree.html">Подробная энциклопедия →</a>'
-                      '<a class="btn-ghost" href="ru/09_ref/about/about.html">О проекте</a>'
-                      '<a class="btn-ghost" href="ru/09_ref/about/author.html">Об авторе</a>'
-                      '</div>')
-    home_parts.append('</section>')
+    p = []
+    p.append('<section class="hero">')
+    p.append('<div class="hero-badge">Открытая энциклопедия · CC BY 4.0 · без политики</div>')
+    p.append('<h1 class="hero-title">Все религии мира —<br><em>в одной карте</em></h1>')
+    p.append('<p class="hero-sub">%d статей: от мировых религий до пародийных культов. Нейтрально, понятно, с лёгкой иронией.</p>' % len(ru))
+    p.append('<div class="hero-actions">'
+             '<a class="btn btn-primary" href="tree.html">Открыть подробную энциклопедию</a>'
+             '<a class="btn btn-ghost" href="ru/09_ref/about/about.html">О проекте</a>'
+             '</div>')
+    p.append('<div class="hero-stats">'
+             '<span><b>%d</b> статей</span><span><b>9</b> разделов</span><span>ось: <b>двайта · адвайта · пустотные</b></span>'
+             '</div>' % len(ru))
+    p.append('</section>')
 
-    home_parts.append('<section class="cards">')
+    p.append('<section class="families">')
+    p.append('<div class="sec-head"><h2>Семейства традиций</h2><a class="sec-link" href="tree.html">Полное дерево →</a></div>')
+    p.append('<div class="fam-grid">')
     for rel, title, icon, items, desc in CARDS:
-        hub = "ru/" + rel + ".html"
-        n = subtree_count.get(rel, 0)
-        home_parts.append(
-            '<a class="card-big" href="%s">'
-            '<div class="card-icon">%s</div>'
-            '<h3>%s</h3>'
-            '<div class="card-items">%s</div>'
-            '<p>%s</p>'
-            '<span class="card-count">%d статей</span>'
-            '</a>' % (hub, icon, html.escape(title), html.escape(items), html.escape(desc), n)
-        )
-    home_parts.append('</section>')
+        chips = "".join("<span>%s</span>" % html.escape(x) for x in items)
+        cnt = subtree_count.get(rel, 0)
+        p.append('<a class="fam" href="ru/%s.html">'
+                 '<span class="fam-icon">%s</span>'
+                 '<span class="fam-title">%s</span>'
+                 '<span class="fam-chips">%s</span>'
+                 '<span class="fam-desc">%s</span>'
+                 '<span class="fam-foot">%d статей <i>→</i></span>'
+                 '</a>' % (rel, icon, html.escape(title), chips, html.escape(desc), cnt))
+    p.append('</div></section>')
 
-    # Избранное
+    p.append('<section class="featured">')
+    p.append('<div class="sec-head"><h2>Начните отсюда</h2></div>')
+    p.append('<div class="feat-grid">')
     FEATURED = [
-        ("02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism", "Каширский шиваизм", "Линия Каширы: недуальный шиваизм в России"),
-        ("02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling", "Адвайта-джаглинг", "Недуальное жонглирование: философия в руках"),
-        ("02_world/dharmic/hinduism/shaivism/nondual_kashmir/nondual_kashmir", "Кашмирский шиваизм", "Трика, спанда, пратьябхиджня — вершина недуальной мысли"),
-        ("02_world/dharmic/buddhism/mahayana/chan_zen/chan_zen", "Семья чань/дзен", "Чань, дзен, сон, тхиен — одна семья"),
-        ("01_basics/typology/axis_typology", "Ось взгляда", "Двайта · адвайта · пустотные — сквозная классификация"),
-        ("08_skeptic/conspiracy/conspiracy", "Конспирология", "Как устроены теории заговора и как их разбирать"),
+        ("02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism", "Каширский шиваизм", "Недуальная линия Каширы"),
+        ("02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling", "Адвайта-джаглинг", "Философия, которую можно уронить"),
+        ("01_basics/typology/axis_typology", "Ось взгляда", "Двайта · адвайта · пустотные"),
+        ("07_mysticism/07_mysticism", "Мистицизм", "Прямой опыт в традициях"),
+        ("08_skeptic/conspiracy/conspiracy", "Конспирология", "Разбор теорий заговора"),
+        ("09_ref/timeline/timeline", "Хронология", "4000 лет на одной странице"),
     ]
-    home_parts.append('<section class="featured"><h2>Избранное</h2><div class="feat-grid">')
     for rel, title, desc in FEATURED:
-        home_parts.append('<a class="feat" href="ru/%s.html"><strong>%s</strong><span>%s</span></a>' % (rel, html.escape(title), html.escape(desc)))
-    home_parts.append('</div></section>')
+        p.append('<a class="feat" href="ru/%s.html"><strong>%s</strong><span>%s</span><i>→</i></a>' % (rel, html.escape(title), html.escape(desc)))
+    p.append('</div></section>')
 
-    # Нижняя навигация по служебным разделам
-    home_parts.append('<section class="bottom-nav">')
-    home_parts.append('<a href="tree.html">Дерево разделов</a>')
-    home_parts.append('<a href="az.html">Алфавитный указатель</a>')
-    home_parts.append('<a href="tags.html">Теги</a>')
-    home_parts.append('<a href="axis.html">Ось взгляда</a>')
-    home_parts.append('<a href="ru/01_basics/01_basics.html">Основы религиоведения</a>')
-    home_parts.append('<a href="ru/09_ref/09_ref.html">Справочный отдел</a>')
-    home_parts.append('</section>')
+    p.append('<nav class="landing-foot">')
+    for label, href in [("Дерево разделов","tree.html"),("Алфавитный указатель","az.html"),("Теги","tags.html"),("Ось взгляда","axis.html"),("Об авторе","ru/09_ref/about/author.html"),("О проекте","ru/09_ref/about/about.html")]:
+        p.append('<a href="%s">%s</a>' % (href, label))
+    p.append('</nav>')
 
-    home = render_page("Главная", "\n".join(home_parts))
+    home = render_page("Главная", "\n".join(p), maincls="landing")
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
     # tree.html — полное раскрытое дерево (структура папок = иерархия)
@@ -921,72 +919,90 @@ def main():
         len(articles), len(ru), sum(1 for _ in SITE.rglob("*") if _.is_file())))
 
 DEFAULT_CSS = """
-:root { --bg:#fafafa; --fg:#222; --muted:#666; --accent:#0a66c2; --card:#fff; --border:#ddd; }
-[data-theme="dark"] { --bg:#181a1b; --fg:#e8e6e3; --muted:#999; --accent:#4da3ff; --card:#222; --border:#444; }
+:root { --bg:#fafaf9; --fg:#18181b; --muted:#71717a; --accent:#4f46e5; --accent-2:#8b5cf6; --accent-soft:#eef2ff; --card:#ffffff; --border:#e4e4e7; --shadow:0 1px 2px rgba(0,0,0,.04), 0 10px 30px -12px rgba(0,0,0,.14); }
+[data-theme="dark"] { --bg:#131316; --fg:#ececf1; --muted:#a1a1aa; --accent:#a5b4fc; --accent-2:#c4b5fd; --accent-soft:#1f1f38; --card:#1b1c20; --border:#2a2b31; --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -12px rgba(0,0,0,.6); }
 * { box-sizing:border-box; }
-body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; }
-.topbar { display:flex; align-items:center; gap:1rem; padding:.7rem 1.2rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); flex-wrap:wrap; }
-.brand { font-weight:700; font-size:1.2rem; color:var(--fg); text-decoration:none; }
-.topnav a { margin-right:.8rem; color:var(--accent); text-decoration:none; }
-#searchbox { flex:1; min-width:140px; padding:.4rem .7rem; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--fg); }
-main { max-width:760px; margin:0 auto; padding:1.5rem 1.2rem 4rem; }
-h1,h2,h3 { line-height:1.25; }
+body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; -webkit-font-smoothing:antialiased; }
+.topbar { display:flex; align-items:center; gap:1rem; padding:.65rem 1.1rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:50; flex-wrap:wrap; }
+.brand { font-weight:800; font-size:1.15rem; letter-spacing:-.02em; color:var(--fg); text-decoration:none; }
+.brand span { color:var(--accent); }
+.topnav { display:flex; gap:.2rem; }
+.topnav a { padding:.35rem .7rem; border-radius:9px; color:var(--muted); text-decoration:none; font-size:.92rem; }
+.topnav a:hover { color:var(--fg); background:var(--accent-soft); }
+#searchbox { flex:1; min-width:160px; max-width:420px; padding:.5rem .9rem; border:1px solid var(--border); border-radius:11px; background:var(--card); color:var(--fg); font-size:.92rem; outline:none; transition:border-color .15s, box-shadow .15s; }
+#searchbox:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
+#themeToggle { border:1px solid var(--border); background:var(--card); border-radius:10px; width:38px; height:38px; cursor:pointer; font-size:1rem; }
+main { max-width:760px; margin:0 auto; padding:1.6rem 1.2rem 4rem; }
+main.landing { max-width:1100px; }
+h1,h2,h3 { line-height:1.22; letter-spacing:-.015em; }
 a { color:var(--accent); }
-blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.4rem 1rem; background:var(--card); }
-pre { overflow:auto; padding:1rem; background:var(--card); border:1px solid var(--border); border-radius:8px; }
-code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
-/* --- landing --- */
-.hero { text-align:center; padding:2.2rem 0 1.4rem; }
-.hero-title { font-size:3rem; letter-spacing:-.02em; margin:0 0 .3rem; }
-.hero-sub { color:var(--muted); font-size:1.05rem; margin:0 0 1rem; }
-.hero-stats { display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin:0 0 1.4rem; }
-.hero-stats span { font-size:.82rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.18rem .7rem; background:var(--card); }
-.hero-actions { display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
-.btn-primary { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:.6rem 1.3rem; border-radius:10px; font-weight:600; }
-.btn-primary:hover { filter:brightness(1.08); }
-.btn-ghost { display:inline-block; border:1px solid var(--border); color:var(--fg); text-decoration:none; padding:.6rem 1.1rem; border-radius:10px; background:var(--card); }
-.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
-.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:1.6rem 0; }
-.card-big { display:block; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.15rem 1.25rem; text-decoration:none; color:var(--fg); transition:border-color .15s, transform .15s, box-shadow .15s; }
-.card-big:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.06); }
-.card-icon { font-size:1.6rem; line-height:1; margin-bottom:.5rem; }
-.card-big h3 { margin:0 0 .35rem; font-size:1.12rem; }
-.card-items { font-size:.8rem; color:var(--accent); margin-bottom:.5rem; }
-.card-big p { font-size:.9rem; color:var(--muted); margin:0 0 .7rem; }
-.card-count { font-size:.75rem; color:var(--muted); border-top:1px solid var(--border); padding-top:.5rem; display:block; }
-.featured { margin:2.4rem 0 .8rem; }
-.featured h2 { font-size:1.1rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
-.feat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:.7rem; }
-.feat { display:block; padding:.75rem .9rem; border:1px solid var(--border); border-radius:10px; background:var(--card); text-decoration:none; color:var(--fg); }
-.feat:hover { border-color:var(--accent); }
-.feat strong { display:block; font-size:.95rem; margin-bottom:.2rem; }
-.feat span { font-size:.8rem; color:var(--muted); }
-.bottom-nav { display:flex; flex-wrap:wrap; gap:.5rem 1.1rem; justify-content:center; margin:2.2rem 0 0; padding-top:1.2rem; border-top:1px solid var(--border); }
-.bottom-nav a { font-size:.88rem; }
-@media (max-width:600px){ .hero-title{ font-size:2.2rem; } }
-.card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; margin:1rem 0; }
-.badge { display:inline-block; font-size:.8rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.1rem .6rem; margin-bottom:.5rem; }
+blockquote { border-left:3px solid var(--accent); margin:1.1rem 0; padding:.55rem 1.1rem; background:var(--card); border-radius:0 10px 10px 0; }
+pre { overflow:auto; padding:1rem; background:var(--card); border:1px solid var(--border); border-radius:12px; }
+code { background:var(--card); padding:.1rem .35rem; border-radius:6px; font-size:.92em; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.2rem; margin:1rem 0; }
+.badge { display:inline-block; font-size:.78rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.12rem .6rem; margin-bottom:.5rem; }
 .chips { margin:.2rem 0 .8rem; }
+.chip { display:inline-block; font-size:.76rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.08rem .55rem; margin:0 .3rem .3rem 0; color:var(--muted); }
 .planned { color:var(--muted); list-style:none; }
-.article-img { margin:.6rem 0 1rem; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); }
+.count { color:var(--muted); font-size:.85rem; font-weight:400; }
+summary { cursor:pointer; }
+.axis { display:inline-block; font-size:.76rem; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:.05rem .6rem; margin:0 .4rem .6rem 0; }
+.article-img { margin:.8rem 0 1.2rem; border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
 .article-img img { width:100%; display:block; }
-.plain-box { border:1px dashed var(--border); border-radius:8px; padding:.5rem .8rem; margin:.8rem 0; background:var(--card); }
-.plain-box summary { cursor:pointer; color:var(--muted); font-size:.92rem; }
-.plain-box div { margin-top:.4rem; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
-.editor-box { border:1px solid var(--border); border-left:4px solid #b8860b; background:var(--card); border-radius:8px; padding:.8rem 1rem; margin:1.5rem 0; }
-.crumbs { font-size:.85rem; color:var(--muted); margin:0 0 1rem; }
-.crumbs a { color:var(--muted); }
-.crumbs .sep { margin:0 .4rem; }
-.secnav { border:1px solid var(--border); background:var(--card); border-radius:8px; padding:.8rem 1rem; margin-top:2rem; }
-.secnav .who { font-weight:600; margin-bottom:.3rem; }
-.secnav ul { margin:.2rem 0; padding-left:1.2rem; }
-ul.home-list { list-style:none; padding-left:0; }
-ul.home-list li { padding:.18rem 0; }
-h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.25rem; }
-.editor-box .who { font-weight:600; margin-bottom:.3rem; }
+.plain-box { border:1px dashed var(--border); border-radius:12px; padding:.6rem .9rem; margin:1rem 0; background:var(--accent-soft); }
+.plain-box summary { color:var(--muted); font-size:.88rem; font-weight:600; }
+.plain-box div { margin-top:.45rem; font-size:.95rem; }
+.editor-box { border:1px solid var(--border); border-left:3px solid #d4a017; background:var(--card); border-radius:12px; padding:.9rem 1.1rem; margin:1.6rem 0; }
+.editor-box .who { font-weight:700; margin-bottom:.35rem; color:#b8860b; }
 #searchresults { max-width:760px; margin:0 auto; padding:.5rem 1.2rem; }
-#searchresults .hit { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:.6rem 1rem; margin:.4rem 0; }
-footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.5rem; margin-top:2rem; }
+#searchresults .hit { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.6rem 1rem; margin:.4rem 0; }
+footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.6rem; margin-top:2.5rem; font-size:.88rem; }
+
+/* ---------- landing ---------- */
+main.landing section { padding:0 1.4rem; }
+.hero { text-align:center; padding:3.4rem 1.4rem 2.6rem; background:radial-gradient(900px 380px at 50% -80px, var(--accent-soft), transparent 72%); }
+.hero-badge { display:inline-block; font-size:.76rem; color:var(--muted); border:1px solid var(--border); background:var(--card); border-radius:999px; padding:.28rem .85rem; margin-bottom:1.15rem; }
+.hero-title { font-size:clamp(2.3rem,5.5vw,3.7rem); line-height:1.06; margin:0 0 .85rem; letter-spacing:-.035em; font-weight:800; }
+.hero-title em { font-style:normal; background:linear-gradient(92deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero-sub { color:var(--muted); font-size:1.06rem; max-width:600px; margin:0 auto 1.7rem; }
+.hero-actions { display:flex; gap:.7rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.3rem; }
+.btn { display:inline-block; text-decoration:none; padding:.68rem 1.35rem; border-radius:12px; font-weight:600; font-size:.95rem; transition:.15s; }
+.btn-primary { background:linear-gradient(92deg,var(--accent),var(--accent-2)); color:#fff; box-shadow:0 8px 20px -8px var(--accent); }
+.btn-primary:hover { transform:translateY(-1px); box-shadow:0 12px 26px -8px var(--accent); }
+.btn-ghost { border:1px solid var(--border); color:var(--fg); background:var(--card); }
+.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+.hero-stats { display:flex; gap:1.6rem; justify-content:center; flex-wrap:wrap; color:var(--muted); font-size:.86rem; }
+.hero-stats b { color:var(--fg); font-size:1.02rem; }
+.sec-head { display:flex; align-items:baseline; justify-content:space-between; margin:0 0 1.05rem; }
+.sec-head h2 { font-size:1.28rem; margin:0; }
+.sec-link { font-size:.85rem; color:var(--accent); text-decoration:none; }
+.families { margin:1.6rem 0 0; }
+.fam-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:940px){ .fam-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:620px){ .fam-grid{ grid-template-columns:1fr;} }
+.fam { display:flex; flex-direction:column; gap:.55rem; padding:1.15rem; background:var(--card); border:1px solid var(--border); border-radius:16px; text-decoration:none; color:var(--fg); transition:border-color .18s, transform .18s, box-shadow .18s; box-shadow:var(--shadow); }
+.fam:hover { border-color:var(--accent); transform:translateY(-3px); }
+.fam-icon { width:46px; height:46px; border-radius:13px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; font-size:1.35rem; }
+.fam-title { font-size:1.08rem; font-weight:700; }
+.fam-chips { display:flex; flex-wrap:wrap; gap:.28rem; }
+.fam-chips span { font-size:.71rem; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:.13rem .55rem; }
+.fam-desc { font-size:.87rem; color:var(--muted); line-height:1.5; flex:1; }
+.fam-foot { margin-top:.2rem; font-size:.78rem; color:var(--accent); display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:.6rem; }
+.fam-foot i { font-style:normal; transition:transform .18s; }
+.fam:hover .fam-foot i { transform:translateX(4px); }
+.featured { margin:2.7rem 0 0; }
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+@media (max-width:940px){ .feat-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:620px){ .feat-grid{ grid-template-columns:1fr;} }
+.feat { display:flex; flex-direction:column; gap:.22rem; padding:.95rem 1.05rem; border:1px solid var(--border); border-radius:14px; background:var(--card); text-decoration:none; color:var(--fg); transition:.15s; }
+.feat:hover { border-color:var(--accent); }
+.feat strong { font-size:.96rem; }
+.feat span { font-size:.8rem; color:var(--muted); }
+.feat i { font-style:normal; color:var(--accent); font-size:.82rem; margin-top:.35rem; }
+.landing-foot { display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; justify-content:center; margin-top:2.8rem; padding-top:1.5rem; border-top:1px solid var(--border); }
+.landing-foot a { color:var(--muted); font-size:.87rem; text-decoration:none; }
+.landing-foot a:hover { color:var(--accent); }
+@media (max-width:620px){ .hero{ padding-top:2.4rem; } .hero-actions .btn{ width:100%; text-align:center; } }
 """
 
 DEFAULT_JS = """
