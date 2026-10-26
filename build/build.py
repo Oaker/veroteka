@@ -575,7 +575,8 @@ def article_html(a):
         parts.append('<div class="axis">ось: %s</div>' % html.escape(al))
     img = meta.get("image")
     if img:
-        parts.append('<figure class="article-img"><img src="%s" alt="" loading="lazy"></figure>' % html.escape(img))
+        rel_prefix = ("../" * (a["rel_url"].count("/") + 1)) if a["rel_url"] else ""
+        parts.append('<figure class="article-img"><img src="%sassets/img/%s" alt="" loading="lazy"></figure>' % (rel_prefix, html.escape(img.rsplit("/", 1)[-1])))
     plain = PLAIN.get("ru/" + a["rel_url"])
     if not plain:
         # автогенерация: первое предложение определения (до первой точки, из первых 400 знаков тела)
