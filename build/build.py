@@ -840,13 +840,14 @@ def main():
             out.append('<li class="planned">%s</li>' % html.escape(label))
             return out
         count = subtree_count.get(d, 0)
-        head = "%s <span class=count>(%d)</span>" % (html.escape(label), count)
+        head = '<span class="t-lbl">%s</span> <span class="count">%d</span>' % (html.escape(label), count)
         if depth == 0:
-            out.append("<h2>%s</h2>" % head)
+            out.append("<h2>%s</h2><ul class=\"top-ul\">" % head)
             for a in sorted(direct, key=lambda x: x["title"]):
                 out.append('<li class=art><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
             for s in subs:
                 out.extend(render_node(s, depth + 1))
+            out.append("</ul>")
         else:
             open_attr = " open" if depth <= 1 else ""
             out.append("<details%s><summary>%s</summary>" % (open_attr, head))
