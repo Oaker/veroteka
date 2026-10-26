@@ -752,28 +752,69 @@ def main():
                 if t:
                     tags.setdefault(t, []).append(a)
 
-    # index.html — иерархическая главная: разделы 1-го уровня с навигацией
-    TOP_SECTIONS = ["01_basics", "02_world", "03_ancient", "04_national", "05_nrd", "06_esoteric", "07_mysticism", "08_skeptic", "09_ref"]
-    home_parts = [
-        "<h1>Веротека</h1>",
-        "<p>Энциклопедия религий, конфессий, сект и эзотерических учений. Нейтральные статьи + позиция редактора (Doctor Che).</p>",
+    # index.html — витрина: плашки по семействам традиций
+    CARDS = [
+        ("02_world/abrahamic/abrahamic", "Авраамические", "✡️", "Иудаизм · Христианство · Ислам · Бахаи", "Один Бог, завет, пророки. Самое многочисленное семейство мира."),
+        ("02_world/dharmic/dharmic", "Дхармические", "☸️", "Индуизм · Буддизм · Сикхизм · Джайнизм", "Карма, сансара, освобождение. Родились в Индии."),
+        ("02_world/iranian/iranian", "Иранские", "🔥", "Зороастризм · Езидизм · Ярсан · Мандеизм", "Свет и тьма, выбор, последний суд. Отсюда рай и ад."),
+        ("04_national/04_national", "Региональные", "🏔", "Китай · Япония · Корея · Африка · Сибирь", "Живые традиции народов: синто, даосизм, культы предков."),
+        ("03_ancient/03_ancient", "Древние", "🏛", "Египет · Греция · Рим · Месопотамия · Скандинавия", "Ушедшие религии, которые мы знаем по раскопкам и текстам."),
+        ("05_nrd/05_nrd", "Новые движения", "⚡", "НРД · секты · пародийные религии", "XX–XXI век: от саентологии до джедаизма. С досье о механиках контроля."),
+        ("06_esoteric/06_esoteric", "Эзотерика", "🔮", "Герметизм · алхимия · каббала · магия", "Скрытое знание: ордена, символы, практики посвящения."),
+        ("07_mysticism/07_mysticism", "Мистицизм", "🕯", "Исихазм · суфизм · дзен · каббала", "Прямой опыт встречи с предельным — в каждой традиции."),
+        ("08_skeptic/08_skeptic", "Скептический отдел", "🧭", "Атеизм · критика · конспирология", "Гигиена мышления: проверка утверждений, разбор манипуляций."),
     ]
-    for sec in TOP_SECTIONS:
-        if sec not in all_dirs:
-            continue
-        home_parts.append('<h2 class="sech">%s <span class="count">(%d)</span></h2>' % (html.escape(crumb_label(sec)), subtree_count.get(sec, 0)))
-        home_parts.append('<ul class="home-list">')
-        for x in sorted(node_articles.get(sec, []), key=lambda t: t["title"]):
-            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
-        for s in sorted(children.get(sec, [])):
-            home_parts.append(folder_link(s))
-        home_parts.append("</ul>")
-    root_arts = node_articles.get(".", [])
-    if root_arts:
-        home_parts.append('<h2 class="sech">Прочее</h2><ul class="home-list">')
-        for x in sorted(root_arts, key=lambda t: t["title"]):
-            home_parts.append('<li class="art"><a href="ru/%s.html">%s</a></li>' % (x["rel_url"], html.escape(x["title"])))
-        home_parts.append("</ul>")
+    home_parts = []
+    home_parts.append('<section class="hero">')
+    home_parts.append('<h1 class="hero-title">Веротека</h1>')
+    home_parts.append('<p class="hero-sub">Энциклопедия религий, конфессий, сект и эзотерических учений</p>')
+    home_parts.append('<p class="hero-stats"><span>%d статей</span><span>9 разделов</span><span>ось: двайта · адвайта · пустотные</span></p>' % len(ru))
+    home_parts.append('<div class="hero-actions">'
+                      '<a class="btn-primary" href="tree.html">Подробная энциклопедия →</a>'
+                      '<a class="btn-ghost" href="ru/09_ref/about/about.html">О проекте</a>'
+                      '<a class="btn-ghost" href="ru/09_ref/about/author.html">Об авторе</a>'
+                      '</div>')
+    home_parts.append('</section>')
+
+    home_parts.append('<section class="cards">')
+    for rel, title, icon, items, desc in CARDS:
+        hub = "ru/" + rel + ".html"
+        n = subtree_count.get(rel, 0)
+        home_parts.append(
+            '<a class="card-big" href="%s">'
+            '<div class="card-icon">%s</div>'
+            '<h3>%s</h3>'
+            '<div class="card-items">%s</div>'
+            '<p>%s</p>'
+            '<span class="card-count">%d статей</span>'
+            '</a>' % (hub, icon, html.escape(title), html.escape(items), html.escape(desc), n)
+        )
+    home_parts.append('</section>')
+
+    # Избранное
+    FEATURED = [
+        ("02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism", "Каширский шиваизм", "Линия Каширы: недуальный шиваизм в России"),
+        ("02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling", "Адвайта-джаглинг", "Недуальное жонглирование: философия в руках"),
+        ("02_world/dharmic/hinduism/shaivism/nondual_kashmir/nondual_kashmir", "Кашмирский шиваизм", "Трика, спанда, пратьябхиджня — вершина недуальной мысли"),
+        ("02_world/dharmic/buddhism/mahayana/chan_zen/chan_zen", "Семья чань/дзен", "Чань, дзен, сон, тхиен — одна семья"),
+        ("01_basics/typology/axis_typology", "Ось взгляда", "Двайта · адвайта · пустотные — сквозная классификация"),
+        ("08_skeptic/conspiracy/conspiracy", "Конспирология", "Как устроены теории заговора и как их разбирать"),
+    ]
+    home_parts.append('<section class="featured"><h2>Избранное</h2><div class="feat-grid">')
+    for rel, title, desc in FEATURED:
+        home_parts.append('<a class="feat" href="ru/%s.html"><strong>%s</strong><span>%s</span></a>' % (rel, html.escape(title), html.escape(desc)))
+    home_parts.append('</div></section>')
+
+    # Нижняя навигация по служебным разделам
+    home_parts.append('<section class="bottom-nav">')
+    home_parts.append('<a href="tree.html">Дерево разделов</a>')
+    home_parts.append('<a href="az.html">Алфавитный указатель</a>')
+    home_parts.append('<a href="tags.html">Теги</a>')
+    home_parts.append('<a href="axis.html">Ось взгляда</a>')
+    home_parts.append('<a href="ru/01_basics/01_basics.html">Основы религиоведения</a>')
+    home_parts.append('<a href="ru/09_ref/09_ref.html">Справочный отдел</a>')
+    home_parts.append('</section>')
+
     home = render_page("Главная", "\n".join(home_parts))
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
@@ -894,6 +935,35 @@ a { color:var(--accent); }
 blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.4rem 1rem; background:var(--card); }
 pre { overflow:auto; padding:1rem; background:var(--card); border:1px solid var(--border); border-radius:8px; }
 code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
+/* --- landing --- */
+.hero { text-align:center; padding:2.2rem 0 1.4rem; }
+.hero-title { font-size:3rem; letter-spacing:-.02em; margin:0 0 .3rem; }
+.hero-sub { color:var(--muted); font-size:1.05rem; margin:0 0 1rem; }
+.hero-stats { display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin:0 0 1.4rem; }
+.hero-stats span { font-size:.82rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.18rem .7rem; background:var(--card); }
+.hero-actions { display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
+.btn-primary { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:.6rem 1.3rem; border-radius:10px; font-weight:600; }
+.btn-primary:hover { filter:brightness(1.08); }
+.btn-ghost { display:inline-block; border:1px solid var(--border); color:var(--fg); text-decoration:none; padding:.6rem 1.1rem; border-radius:10px; background:var(--card); }
+.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:1.6rem 0; }
+.card-big { display:block; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.15rem 1.25rem; text-decoration:none; color:var(--fg); transition:border-color .15s, transform .15s, box-shadow .15s; }
+.card-big:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.card-icon { font-size:1.6rem; line-height:1; margin-bottom:.5rem; }
+.card-big h3 { margin:0 0 .35rem; font-size:1.12rem; }
+.card-items { font-size:.8rem; color:var(--accent); margin-bottom:.5rem; }
+.card-big p { font-size:.9rem; color:var(--muted); margin:0 0 .7rem; }
+.card-count { font-size:.75rem; color:var(--muted); border-top:1px solid var(--border); padding-top:.5rem; display:block; }
+.featured { margin:2.4rem 0 .8rem; }
+.featured h2 { font-size:1.1rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.feat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:.7rem; }
+.feat { display:block; padding:.75rem .9rem; border:1px solid var(--border); border-radius:10px; background:var(--card); text-decoration:none; color:var(--fg); }
+.feat:hover { border-color:var(--accent); }
+.feat strong { display:block; font-size:.95rem; margin-bottom:.2rem; }
+.feat span { font-size:.8rem; color:var(--muted); }
+.bottom-nav { display:flex; flex-wrap:wrap; gap:.5rem 1.1rem; justify-content:center; margin:2.2rem 0 0; padding-top:1.2rem; border-top:1px solid var(--border); }
+.bottom-nav a { font-size:.88rem; }
+@media (max-width:600px){ .hero-title{ font-size:2.2rem; } }
 .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; margin:1rem 0; }
 .badge { display:inline-block; font-size:.8rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.1rem .6rem; margin-bottom:.5rem; }
 .chips { margin:.2rem 0 .8rem; }
