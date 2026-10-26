@@ -1,4 +1,5 @@
 ---
+year: I–III вв.
 title: Гностицизм
 tags: эзотерика
 level: обзор

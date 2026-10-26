@@ -573,6 +573,9 @@ def article_html(a):
     if axis:
         al = AXIS_LABELS.get(axis.strip().lower(), axis)
         parts.append('<div class="axis">ось: %s</div>' % html.escape(al))
+    yr = meta.get("year")
+    if yr:
+        parts.append('<span class="badge year-badge">год: %s</span>' % html.escape(yr))
     img = meta.get("image")
     if img:
         rel_prefix = ("../" * (a["rel_url"].count("/") + 1)) if a["rel_url"] else ""

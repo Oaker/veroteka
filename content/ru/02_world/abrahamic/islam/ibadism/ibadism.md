@@ -1,4 +1,5 @@
 ---
+year: VII–VIII вв. (Ибн Ибад)
 title: Ибадизм
 tags: ислам
 level: обзор

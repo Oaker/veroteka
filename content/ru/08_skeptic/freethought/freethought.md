@@ -1,4 +1,5 @@
 ---
+year: XVII–XVIII вв.
 title: Свободомыслие
 tags: скептический отдел
 level: обзор

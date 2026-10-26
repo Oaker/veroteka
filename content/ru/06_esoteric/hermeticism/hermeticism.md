@@ -1,4 +1,5 @@
 ---
+year: II–III вв. (Corpus Hermeticum)
 title: Герметизм
 tags: эзотерика
 level: обзор

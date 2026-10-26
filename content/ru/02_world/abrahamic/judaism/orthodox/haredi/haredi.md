@@ -1,4 +1,5 @@
 ---
+year: XVIII–XIX вв.
 title: Харедим
 tags: иудаизм
 level: обзор
