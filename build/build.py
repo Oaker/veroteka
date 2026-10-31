@@ -528,6 +528,7 @@ PAGE_TMPL = """<!DOCTYPE html>
     <a href="{rel}az.html">А-Я</a>
     <a href="{rel}tags.html">Теги</a>
     <a href="{rel}axis.html">Ось</a>
+    <a href="{rel}ru/09_ref/about/about.html">О проекте</a>
   </nav>
   <input id="searchbox" type="search" placeholder="Поиск..." autocomplete="off">
   <button id="themeToggle" title="Тёмная/светлая тема">&#127769;</button>
