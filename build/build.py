@@ -832,7 +832,8 @@ def main():
                 if link:
                     p.append('<li class="lv%d"><a href="%s">%s<span class="cnt">%d</span></a></li>' % (depth, link, html.escape(sub_label), sn))
                 return
-            p.append('<li class="lv%d sub-node"><details class="sub-acc"><summary><span class="chev2">›</span><span class="ttl2">%s</span><span class="cnt">%d</span></summary><ul>' % (depth, html.escape(sub_label), sn))
+            open_attr = " open" if depth == 2 else ""
+            p.append('<li class="lv%d sub-node"><details class="sub-acc"%s><summary><span class="chev2">›</span><span class="ttl2">%s</span><span class="cnt">%d</span></summary><ul>' % (depth, open_attr, html.escape(sub_label), sn))
             for a in direct:
                 p.append('<li class="lv3"><a href="ru/%s.html">%s<span class="cnt">статья</span></a></li>' % (a["rel_url"], html.escape(a["title"])))
             for k in kids:
