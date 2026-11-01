@@ -557,7 +557,6 @@ PAGE_TMPL = """<!DOCTYPE html>
 <header class="topbar">
   <a class="brand" href="{rel}index.html">Веротека</a>
   <nav class="topnav">
-    <a href="{rel}tree.html">Дерево</a>
     <a href="{rel}az.html">А-Я</a>
     <a href="{rel}tags.html">Теги</a>
     <a href="{rel}axis.html">Ось</a>
@@ -797,7 +796,7 @@ def main():
     p.append('<p>Энциклопедия религий, конфессий, сект и эзотерических учений: %d статей, нейтральный текст и отдельный слой «позиция редактора».</p>' % len(ru))
     p.append('<div class="quick">'
              '<a href="search-index.json" onclick="document.getElementById(\'searchbox\').focus();return false;">🔎 Поиск</a>'
-             '<a href="tree.html">🌳 Дерево разделов</a>'
+             ''
              '<a href="axis.html">🧭 Ось взгляда</a>'
              '<a href="ru/09_ref/timeline/timeline.html">📜 Хронология</a>'
              '<a href="ru/09_ref/about/about.html">О проекте</a>'
@@ -865,75 +864,23 @@ def main():
         p.append('</ul></div></details>')
 
     p.append('<nav class="landing-foot">')
-    for lbl, href in [("Дерево разделов","tree.html"),("Алфавитный указатель","az.html"),("Теги","tags.html"),("Ось взгляда","axis.html"),("О проекте","ru/09_ref/about/about.html"),("Об авторе","ru/09_ref/about/author.html")]:
+    for lbl, href in [("Алфавитный указатель","az.html"),("Теги","tags.html"),("Ось взгляда","axis.html"),("О проекте","ru/09_ref/about/about.html"),("Об авторе","ru/09_ref/about/author.html")]:
         p.append('<a href="%s">%s</a>' % (href, lbl))
-    p.append('</nav>')
+        p.append('</nav>')
 
     home = render_page("Главная", "\n".join(p))
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
-    # tree.html — полное раскрытое дерево (структура папок = иерархия)
-    tree_html = ["<p class=\"muted\">Полная иерархия «Веротеки»: клик по узлу раскрывает ветви. Числа — количество статей в поддереве; серые пункты — планируемые разделы.</p>"]
-
-    def dir_label(name):
-        return LABELS.get(name, name.replace("_", " "))
-
-    def render_node(d, depth):
-        out = []
-        arts = node_articles.get(d, [])
-        # статьи этого узла (лежащие прямо в нём)
-        direct = [a for a in arts if (a["rel_url"].rsplit("/", 1)[0] if "/" in a["rel_url"] else ".") == d]
-        subs = children.get(d, [])
-        label = dir_label(d.split("/")[-1])
-        if not subs and not direct:
-            out.append('<li class="planned">%s</li>' % html.escape(label))
-            return out
-        count = subtree_count.get(d, 0)
-        head = '<span class="t-lbl">%s</span> <span class="count">%d</span>' % (html.escape(label), count)
-        if depth == 0:
-            out.append("<h2>%s</h2><ul class=\"top-ul\">" % head)
-            for a in sorted(direct, key=lambda x: x["title"]):
-                out.append('<li class=art><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
-            for s in subs:
-                out.extend(render_node(s, depth + 1))
-            out.append("</ul>")
-        else:
-            open_attr = " open" if depth <= 1 else ""
-            out.append("<details%s><summary>%s</summary>" % (open_attr, head))
-            if direct:
-                out.append("<ul>")
-                for a in sorted(direct, key=lambda x: x["title"]):
-                    out.append('<li class=art><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
-                out.append("</ul>")
-            for s in subs:
-                out.extend(render_node(s, depth + 1))
-            out.append("</details>")
-        return out
-
-    top_sections = ["01_basics","02_world","03_ancient","04_national","05_nrd","06_esoteric","07_mysticism","08_skeptic","09_ref"]
-    for sec in top_sections:
-        if sec in all_dirs:
-            tree_html.extend(render_node(sec, 0))
-    # статьи в корне (вне разделов)
-    root_arts = node_articles.get(".", [])
-    if root_arts:
-        tree_html.append("<h2>Прочее</h2><ul>")
-        for a in sorted(root_arts, key=lambda x: x["title"]):
-            tree_html.append('<li class=art><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
-        tree_html.append("</ul>")
-    tree_head = ('<div class="page-head"><h1>Дерево разделов</h1>'
-                 '<p>Полная иерархия всех традиций: от мировых религий до пародийных культов. Клик по узлу раскрывает ветви; числа — статьи в поддереве.</p></div>'
-                 '<div class="page-quick">'
-                 '<a href="az.html">Алфавитный указатель</a>'
-                 '<a href="tags.html">Теги</a>'
-                 '<a href="axis.html">Ось взгляда</a>'
-                 '<a href="ru/09_ref/timeline/timeline.html">Хронология</a>'
-                 '<a href="index.html">На главную</a>'
-                 '</div>')
-    (SITE / "tree.html").write_text(render_page("Дерево разделов", tree_head + '<div id="treewrap">' + "\n".join(tree_html) + '</div>', maincls="wide"), encoding="utf-8")
-
     # az.html
     az_html = []
+    az_head = ('<div class="page-head"><h1>Алфавитный указатель</h1>'
+               '<p>Все статьи «Веротеки» по алфавиту.</p></div>'
+               '<div class="page-quick">'
+               '<a href="tags.html">Теги</a>'
+               '<a href="axis.html">Ось взгляда</a>'
+               '<a href="ru/09_ref/about/about.html">О проекте</a>'
+               '<a href="index.html">На главную</a>'
+               '</div>')
     for letter in sorted(az):
         az_html.append("<h2>%s <span class=\"n\">(%d)</span></h2><ul>" % (html.escape(letter), len(az[letter])))
         for a in sorted(az[letter], key=lambda x: x["title"].lower()):
@@ -941,18 +888,18 @@ def main():
         az_html.append("</ul>")
     if not az:
         az_html.append("<p>Статьи пока не написаны.</p>")
-    az_head = ('<div class="page-head"><h1>Алфавитный указатель</h1>'
-               '<p>Все статьи «Веротеки» по алфавиту. В скобках — раздел, чтобы не путать одноимённые термины.</p></div>'
-               '<div class="page-quick">'
-               '<a href="tree.html">Дерево разделов</a>'
-               '<a href="tags.html">Теги</a>'
-               '<a href="axis.html">Ось взгляда</a>'
-               '<a href="index.html">На главную</a>'
-               '</div>')
     (SITE / "az.html").write_text(render_page("Алфавитный указатель", az_head + '<div class="az-cols">' + "\n".join(az_html) + '</div>', maincls="wide"), encoding="utf-8")
 
     # tags.html
     tags_html = []
+    tags_head = ('<div class="page-head"><h1>Теги</h1>'
+                 '<p>Сквозная навигация по темам: тип практики, семья традиций, статус.</p></div>'
+                 '<div class="page-quick">'
+                 '<a href="az.html">Алфавитный указатель</a>'
+                 '<a href="axis.html">Ось взгляда</a>'
+                 '<a href="ru/09_ref/about/about.html">О проекте</a>'
+                 '<a href="index.html">На главную</a>'
+                 '</div>')
     for t in sorted(tags):
         tags_html.append("<h2>%s</h2><ul>" % html.escape(t))
         for a in tags[t]:
@@ -960,49 +907,41 @@ def main():
         tags_html.append("</ul>")
     if not tags:
         tags_html.append("<p>Теги пока не проставлены.</p>")
-    tags_head = ('<div class="page-head"><h1>Теги</h1>'
-                 '<p>Сквозная навигация по темам: тип практики, семья традиций, статус. Работает поверх дерева — по принципу «схожесть важнее родства».</p></div>'
-                 '<div class="page-quick">'
-                 '<a href="tree.html">Дерево разделов</a>'
-                 '<a href="az.html">Алфавитный указатель</a>'
-                 '<a href="axis.html">Ось взгляда</a>'
-                 '<a href="index.html">На главную</a>'
-                 '</div>')
     (SITE / "tags.html").write_text(render_page("Теги", tags_head + '<div class="tag-sec">' + "\n".join(tags_html) + '</div>', maincls="wide"), encoding="utf-8")
 
-    # axis.html - navigacija po doktrinal'nym poljusam
+    # axis.html
     axis_groups = {"dvaita": [], "advaita": [], "sunyata": []}
     for a in ru:
         ax = (a["meta"].get("axis") or "").strip().lower()
         if ax in axis_groups:
             axis_groups[ax].append(a)
-    ax_html = ["<h1>\u041e\u0441\u044c \u0432\u0437\u0433\u043b\u044f\u0434\u0430: \u0434\u0432\u0430\u0439\u0442\u0430 \u00b7 \u0430\u0434\u0432\u0430\u0439\u0442\u0430 \u00b7 \u043f\u0443\u0441\u0442\u043e\u0442\u0430</h1>",
-               "<p>\u0421\u043a\u0432\u043e\u0437\u043d\u0430\u044f \u043a\u043b\u0430\u0441\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u0412\u0435\u0440\u043e\u0442\u0435\u043a\u0438.</p>"]
+    ax_html = []
     for key, title, desc in (
-        ("dvaita", "\u0414\u0432\u0430\u0439\u0442\u0430 - \u0434\u0443\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c", "\u0422\u0432\u043e\u0440\u0435\u0446 \u0438 \u0442\u0432\u043e\u0440\u0435\u043d\u0438\u0435 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b."),
-        ("advaita", "\u0410\u0434\u0432\u0430\u0439\u0442\u0430 - \u043d\u0435\u0434\u0432\u043e\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c", "\u0415\u0434\u0438\u043d\u043e\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451."),
-        ("sunyata", "\u041f\u0443\u0441\u0442\u043e\u0442\u0430 - \u0448\u0443\u043d\u044c\u044f\u0442\u0430", "\u041d\u0438 \u0415\u0434\u0438\u043d\u043e\u0435, \u043d\u0438 \u043c\u043d\u043e\u0433\u043e\u0433\u043e."),
+        ("dvaita", "Двайта — дуальность", "Творец и творение различны: теизм авраамических традиций, шайва-сиддханта, зороастризм."),
+        ("advaita", "Адвайта — недвойственность", "Единое есть всё: адвайта-веданта, кашмирский шиваизм, недуальные линии, Каширский шиваизм."),
+        ("sunyata", "Пустотные", "Ни двайта, ни адвайта: шуньята, апофатика, традиции без метафизики Единого."),
     ):
         ax_html.append('<div class="pole"><h2>%s</h2><p>%s</p><ul>' % (html.escape(title), html.escape(desc)))
         if axis_groups[key]:
             for a in sorted(axis_groups[key], key=lambda x: x["title"]):
                 ax_html.append('<li><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
         else:
-            ax_html.append('<li class=planned>\u0441\u0442\u0430\u0442\u044c\u0438 \u0441\u043a\u043e\u0440\u043e</li>')
+            ax_html.append('<li class="planned">статьи скоро</li>')
         ax_html.append("</ul></div>")
     axis_head = ('<div class="page-head"><h1>Ось взгляда</h1>'
-                 '<p>Сквозная классификация «Веротеки»: не «кто старее», а как традиция отвечает на вопрос о Едином и мире. Три полюса — три архитектуры ответа.</p></div>'
+                 '<p>Сквозная классификация «Веротеки»: не «кто старее», а как традиция отвечает на вопрос о Едином и мире.</p></div>'
                  '<div class="page-quick">'
-                 '<a href="tree.html">Дерево разделов</a>'
                  '<a href="az.html">Алфавитный указатель</a>'
                  '<a href="ru/01_basics/typology/axis_typology.html">Методология оси</a>'
+                 '<a href="ru/09_ref/about/about.html">О проекте</a>'
                  '<a href="index.html">На главную</a>'
                  '</div>')
-    (SITE / "axis.html").write_text(render_page("Ось взгляда", axis_head + '<div class="axis-grid">' + "\n".join(ax_html[2:]) + '</div>', maincls="wide"), encoding="utf-8")
+    (SITE / "axis.html").write_text(render_page("Ось взгляда", axis_head + '<div class="axis-grid">' + "\n".join(ax_html) + '</div>', maincls="wide"), encoding="utf-8")
 
     # поисковый индекс
     (SITE / "search-index.json").write_text(
         json.dumps(index_entries, ensure_ascii=False, indent=1), encoding="utf-8")
+
 
     print("OK: articles=%d (ru=%d), site files=%d" % (
         len(articles), len(ru), sum(1 for _ in SITE.rglob("*") if _.is_file())))
