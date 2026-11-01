@@ -649,7 +649,7 @@ def article_html(a):
     editor = meta.get("editor")
     if editor:
         parts.append(
-            '<div class="editor-box"><div class="who">Позиция редактора — Doctor Che</div>%s</div>'
+            '<div class="editor-box"><div class="who">От редакции</div>%s</div>'
             % md_to_html(editor)
         )
     return "\n".join(parts)
