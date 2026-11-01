@@ -996,6 +996,10 @@ code { background:var(--card); padding:.1rem .3rem; border-radius:4px; }
 .planned { color:var(--muted); list-style:none; }
 .article-img { margin:.6rem 0 1rem; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); }
 .article-img img { width:100%; display:block; }
+.books { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.7rem 1rem; margin:1.2rem 0; font-size:.93rem; }
+.books ul { margin:.3rem 0 0; padding-left:1.2rem; }
+.books li { margin-bottom:.15rem; }
+.books h2 { font-size:1rem; margin:0 0 .4rem; }
 .plain-box { border:1px dashed var(--border); border-radius:8px; padding:.5rem .8rem; margin:.8rem 0; background:var(--card); }
 .plain-box summary { cursor:pointer; color:var(--muted); font-size:.92rem; }
 .plain-box div { margin-top:.4rem; }\n.count { color:var(--muted); font-size:.85rem; font-weight:normal; }\nsummary { cursor:pointer; }\n.chip { display:inline-block; font-size:.78rem; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.05rem .55rem; margin-right:.3rem; color:var(--muted); }
