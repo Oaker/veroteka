@@ -567,7 +567,7 @@ PAGE_TMPL = """<!DOCTYPE html>
   <button id="themeToggle" title="Тёмная/светлая тема">&#127769;</button>
 </header>
 <div id="searchresults"></div>
-<main>
+<main class="{maincls}">
 {content}
 </main>
 <footer>
@@ -577,8 +577,8 @@ PAGE_TMPL = """<!DOCTYPE html>
 </body>
 </html>"""
 
-def render_page(title, content_html, lang="ru", rel=""):
-    return PAGE_TMPL.format(title=html.escape(title), content=content_html, lang=lang, rel=rel)
+def render_page(title, content_html, lang="ru", rel="", maincls=""):
+    return PAGE_TMPL.format(title=html.escape(title), content=content_html, lang=lang, rel=rel, maincls=maincls)
 
 # ---------------------------------------------------------------- сборка ----
 def collect_articles():
@@ -873,8 +873,7 @@ def main():
     (SITE / "index.html").write_text(home, encoding="utf-8")
 
     # tree.html — полное раскрытое дерево (структура папок = иерархия)
-    tree_html = ["<h1>Дерево разделов</h1>",
-                 "<p class=muted>Полная иерархия. Числа — количество статей. Пустые узлы показывают планируемые разделы.</p>"]
+    tree_html = ["<p class=\"muted\">Полная иерархия «Веротеки»: клик по узлу раскрывает ветви. Числа — количество статей в поддереве; серые пункты — планируемые разделы.</p>"]
 
     def dir_label(name):
         return LABELS.get(name, name.replace("_", " "))
@@ -922,21 +921,38 @@ def main():
         for a in sorted(root_arts, key=lambda x: x["title"]):
             tree_html.append('<li class=art><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
         tree_html.append("</ul>")
-    (SITE / "tree.html").write_text(render_page("Дерево", "\n".join(tree_html)), encoding="utf-8")
+    tree_head = ('<div class="page-head"><h1>Дерево разделов</h1>'
+                 '<p>Полная иерархия всех традиций: от мировых религий до пародийных культов. Клик по узлу раскрывает ветви; числа — статьи в поддереве.</p></div>'
+                 '<div class="page-quick">'
+                 '<a href="az.html">Алфавитный указатель</a>'
+                 '<a href="tags.html">Теги</a>'
+                 '<a href="axis.html">Ось взгляда</a>'
+                 '<a href="ru/09_ref/timeline/timeline.html">Хронология</a>'
+                 '<a href="index.html">На главную</a>'
+                 '</div>')
+    (SITE / "tree.html").write_text(render_page("Дерево разделов", tree_head + '<div id="treewrap">' + "\n".join(tree_html) + '</div>', maincls="wide"), encoding="utf-8")
 
     # az.html
-    az_html = ["<h1>Алфавитный указатель</h1>"]
+    az_html = []
     for letter in sorted(az):
-        az_html.append("<h2>%s</h2><ul>" % html.escape(letter))
+        az_html.append("<h2>%s <span class=\"n\">(%d)</span></h2><ul>" % (html.escape(letter), len(az[letter])))
         for a in sorted(az[letter], key=lambda x: x["title"].lower()):
             az_html.append('<li><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
         az_html.append("</ul>")
     if not az:
         az_html.append("<p>Статьи пока не написаны.</p>")
-    (SITE / "az.html").write_text(render_page("А-Я", "\n".join(az_html)), encoding="utf-8")
+    az_head = ('<div class="page-head"><h1>Алфавитный указатель</h1>'
+               '<p>Все статьи «Веротеки» по алфавиту. В скобках — раздел, чтобы не путать одноимённые термины.</p></div>'
+               '<div class="page-quick">'
+               '<a href="tree.html">Дерево разделов</a>'
+               '<a href="tags.html">Теги</a>'
+               '<a href="axis.html">Ось взгляда</a>'
+               '<a href="index.html">На главную</a>'
+               '</div>')
+    (SITE / "az.html").write_text(render_page("Алфавитный указатель", az_head + '<div class="az-cols">' + "\n".join(az_html) + '</div>', maincls="wide"), encoding="utf-8")
 
     # tags.html
-    tags_html = ["<h1>Теги</h1>"]
+    tags_html = []
     for t in sorted(tags):
         tags_html.append("<h2>%s</h2><ul>" % html.escape(t))
         for a in tags[t]:
@@ -944,7 +960,15 @@ def main():
         tags_html.append("</ul>")
     if not tags:
         tags_html.append("<p>Теги пока не проставлены.</p>")
-    (SITE / "tags.html").write_text(render_page("Теги", "\n".join(tags_html)), encoding="utf-8")
+    tags_head = ('<div class="page-head"><h1>Теги</h1>'
+                 '<p>Сквозная навигация по темам: тип практики, семья традиций, статус. Работает поверх дерева — по принципу «схожесть важнее родства».</p></div>'
+                 '<div class="page-quick">'
+                 '<a href="tree.html">Дерево разделов</a>'
+                 '<a href="az.html">Алфавитный указатель</a>'
+                 '<a href="axis.html">Ось взгляда</a>'
+                 '<a href="index.html">На главную</a>'
+                 '</div>')
+    (SITE / "tags.html").write_text(render_page("Теги", tags_head + '<div class="tag-sec">' + "\n".join(tags_html) + '</div>', maincls="wide"), encoding="utf-8")
 
     # axis.html - navigacija po doktrinal'nym poljusam
     axis_groups = {"dvaita": [], "advaita": [], "sunyata": []}
@@ -959,14 +983,22 @@ def main():
         ("advaita", "\u0410\u0434\u0432\u0430\u0439\u0442\u0430 - \u043d\u0435\u0434\u0432\u043e\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c", "\u0415\u0434\u0438\u043d\u043e\u0435 \u0435\u0441\u0442\u044c \u0432\u0441\u0451."),
         ("sunyata", "\u041f\u0443\u0441\u0442\u043e\u0442\u0430 - \u0448\u0443\u043d\u044c\u044f\u0442\u0430", "\u041d\u0438 \u0415\u0434\u0438\u043d\u043e\u0435, \u043d\u0438 \u043c\u043d\u043e\u0433\u043e\u0433\u043e."),
     ):
-        ax_html.append("<h2>%s</h2><p class=muted>%s</p><ul>" % (html.escape(title), html.escape(desc)))
+        ax_html.append('<div class="pole"><h2>%s</h2><p>%s</p><ul>' % (html.escape(title), html.escape(desc)))
         if axis_groups[key]:
             for a in sorted(axis_groups[key], key=lambda x: x["title"]):
                 ax_html.append('<li><a href="ru/%s.html">%s</a></li>' % (a["rel_url"], html.escape(a["title"])))
         else:
             ax_html.append('<li class=planned>\u0441\u0442\u0430\u0442\u044c\u0438 \u0441\u043a\u043e\u0440\u043e</li>')
-        ax_html.append("</ul>")
-    (SITE / "axis.html").write_text(render_page("Axis", "\n".join(ax_html)), encoding="utf-8")
+        ax_html.append("</ul></div>")
+    axis_head = ('<div class="page-head"><h1>Ось взгляда</h1>'
+                 '<p>Сквозная классификация «Веротеки»: не «кто старее», а как традиция отвечает на вопрос о Едином и мире. Три полюса — три архитектуры ответа.</p></div>'
+                 '<div class="page-quick">'
+                 '<a href="tree.html">Дерево разделов</a>'
+                 '<a href="az.html">Алфавитный указатель</a>'
+                 '<a href="ru/01_basics/typology/axis_typology.html">Методология оси</a>'
+                 '<a href="index.html">На главную</a>'
+                 '</div>')
+    (SITE / "axis.html").write_text(render_page("Ось взгляда", axis_head + '<div class="axis-grid">' + "\n".join(ax_html[2:]) + '</div>', maincls="wide"), encoding="utf-8")
 
     # поисковый индекс
     (SITE / "search-index.json").write_text(
@@ -1112,6 +1144,45 @@ h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bott
 }
 @media (max-width:380px) {
   .quick a { flex:1 1 100%; }
+}
+
+
+/* ---------- service pages ---------- */
+.page-head h1 { font-size:clamp(1.75rem,3.5vw,2.25rem); margin:0 0 .45rem; letter-spacing:-.02em; }
+.page-head p { color:var(--muted); margin:0 0 1rem; }
+.page-quick { display:flex; gap:.5rem; flex-wrap:wrap; margin:0 0 1.5rem; }
+.page-quick a { font-size:.86rem; padding:.42rem .85rem; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:var(--fg); background:var(--card); }
+.page-quick a:hover { border-color:var(--accent); color:var(--accent); }
+main.wide { max-width:1000px; }
+
+/* А-Я: колонки */
+.az-cols { columns:2; column-gap:2.4rem; }
+@media (min-width:960px){ .az-cols { columns:3; } }
+.az-cols h2 { font-size:1.02rem; margin:1rem 0 .3rem; break-after:avoid; color:var(--accent); }
+.az-cols ul { list-style:none; margin:0; padding:0; }
+.az-cols li a { text-decoration:none; color:var(--fg); }
+.az-cols li a:hover { color:var(--accent); }
+
+/* Теги: чипы + списки */
+.tag-sec h2 { display:inline-block; font-size:.9rem; font-weight:650; color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); border-radius:999px; padding:.22rem .75rem; margin:.7rem .2rem .3rem 0; }
+.tag-sec ul { list-style:none; margin:.15rem 0 1.1rem; padding:0; display:flex; flex-wrap:wrap; gap:.1rem 1rem; }
+.tag-sec ul li a { font-size:.92rem; color:var(--fg); text-decoration:none; }
+.tag-sec ul li a:hover { color:var(--accent); }
+
+/* Ось: карточки полюсов */
+.axis-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:14px; margin-top:1rem; }
+.axis-grid .pole { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); }
+.axis-grid .pole h2 { font-size:1.06rem; margin:0 0 .35rem; }
+.axis-grid .pole > p { color:var(--muted); font-size:.9rem; margin:.15rem 0 .8rem; }
+.axis-grid ul { list-style:none; margin:0; padding:0; }
+.axis-grid li a { color:var(--fg); text-decoration:none; display:block; padding:.26rem 0; font-size:.94rem; }
+.axis-grid li a:hover { color:var(--accent); }
+.axis-grid .planned { color:var(--muted); font-size:.9rem; }
+.axis-grid .n { color:var(--muted); font-size:.78rem; }
+
+@media (max-width:640px){
+  .az-cols { columns:1; }
+  .page-head h1 { font-size:1.6rem; }
 }
 
 footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.5rem; margin-top:2rem; }
