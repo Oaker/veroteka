@@ -821,13 +821,28 @@ def main():
         # прямые статьи раздела
         for a in sorted(node_articles.get(sec, []), key=lambda t: t["title"]):
             p.append('<li><a href="ru/%s.html">%s<span class="cnt">статья</span></a></li>' % (a["rel_url"], html.escape(a["title"])))
-        # подразделы второго уровня
-        for s in sorted(children.get(sec, [])):
-            link = node_link(s)
+        # подразделы второго уровня — рекурсивно до 3-го уровня
+        def render_sub(s, depth=2):
             sn = subtree_count.get(s, 0)
             sub_label = crumb_label(s.split("/")[-1])
+            link = node_link(s)
+            kids = sorted(children.get(s, []))
+            direct = sorted(node_articles.get(s, []), key=lambda t: t["title"])
+            if depth > 3 or (not kids and not direct):
+                if link:
+                    p.append('<li class="lv%d"><a href="%s">%s<span class="cnt">%d</span></a></li>' % (depth, link, html.escape(sub_label), sn))
+                return
+            p.append('<li class="lv%d sub-node"><details class="sub-acc"><summary><span class="chev2">›</span><span class="ttl2">%s</span><span class="cnt">%d</span></summary><ul>' % (depth, html.escape(sub_label), sn))
+            for a in direct:
+                p.append('<li class="lv3"><a href="ru/%s.html">%s<span class="cnt">статья</span></a></li>' % (a["rel_url"], html.escape(a["title"])))
+            for k in kids:
+                render_sub(k, depth + 1)
             if link:
-                p.append('<li><a href="%s">%s<span class="cnt">%d</span></a></li>' % (link, html.escape(sub_label), sn))
+                p.append('<li class="lv3"><a href="%s"><b>Весь раздел →</b></a></li>' % link)
+            p.append('</ul></details></li>')
+
+        for s in sorted(children.get(sec, [])):
+            render_sub(s, 2)
         hub = sec + "/" + sec
         if ("ru", hub) in existing:
             p.append('<li><a href="ru/%s.html"><b>Весь раздел →</b><span class="cnt"></span></a></li>' % hub)
@@ -1007,6 +1022,22 @@ h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bott
 .acc-body li a .cnt { color:var(--muted); font-size:.78rem; flex:0 0 auto; }
 .acc-body li a b { font-weight:650; }
 .acc-body li + li { margin-top:.05rem; }
+
+
+/* nested accordion (3rd level on home) */
+.acc-body .sub-acc { border:0; margin:0; background:transparent; }
+.acc-body .sub-acc > summary { display:flex; align-items:center; gap:.45rem; padding:.42rem .6rem; border-radius:9px; list-style:none; font-weight:600; font-size:.94rem; cursor:pointer; }
+.acc-body .sub-acc > summary::-webkit-details-marker { display:none; }
+.acc-body .sub-acc > summary::marker { content:""; }
+.acc-body .sub-acc:hover > summary { background:var(--accent-soft); }
+.acc-body .sub-acc[open] > summary { color:var(--accent); }
+.chev2 { color:var(--muted); font-size:.85rem; transition:transform .18s; flex:0 0 auto; }
+.sub-acc[open] > summary .chev2 { transform:rotate(90deg); }
+.ttl2 { flex:1; min-width:0; }
+.acc-body .sub-acc ul { padding-left:.9rem; }
+.acc-body li.lv3 a { padding:.34rem .6rem; font-size:.9rem; color:var(--muted); }
+.acc-body li.lv3 a:hover { color:var(--accent); background:var(--accent-soft); }
+.sub-node { list-style:none; }
 
 /* ---------- landing footer ---------- */
 .landing-foot { display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; justify-content:center; margin:2.4rem 0 0; padding-top:1.3rem; border-top:1px solid var(--border); }
