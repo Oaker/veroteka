@@ -83,7 +83,7 @@ var QUESTIONS = [
   ]},
  {id:'humor', text:'Парадоксы и смех в духовной жизни — это…',
   opts:[
-   {t:'Часть пути: истина играет и улыбается', e:{t:{'кашмирский шиваизм':1.8,'Каширский шиваизм':1.6,'недуальный тантрический шиваизм':1.4,'дзен':1.2},a:{advaita:0.5}}},
+   {t:'Часть пути: истина играет и улыбается', e:{t:{'кашмирский шиваизм':2.2,'Каширский шиваизм':2.0,'недуальный тантрический шиваизм':1.8,'дзен':1.2},a:{advaita:0.5}}},
    {t:'Дело серьёзное, спасение требует строгости', e:{t:{'монотеизм':0.8,'право':0.8},a:{dvaita:0.6}}},
    {t:'Знак, что ум зашёл в тупик; нужен прямой взгляд', e:{t:{'дзен':1.4},a:{sunyata:0.7}}},
    {t:'Мне важнее красота обряда и храма', e:{t:{'региональные':1.0,'возрождённые':0.8}}}
@@ -122,6 +122,13 @@ var QUESTIONS = [
    {t:'Ислам: единобожие и предание', e:{t:{'ислам':2.6,'суннизм':1.0}}},
    {t:'Иудаизм и его традиция', e:{t:{'иудаизм':2.8}}},
    {t:'Радикальные и рыцарские ордена (тамплиеры, ассасины…)', e:{t:{'спорный статус':2.0,'тарикаты':1.5}}}
+  ]},
+ {id:'body_practice', text:'Тело в духовной практике — это…',
+  opts:[
+   {t:'Инструмент пробуждения: движение и игра ведут к недвойственности', e:{t:{'Каширский шиваизм':2.4,'недуальность':2.0,'практика':1.6,'йога':0.8},a:{advaita:0.6}}},
+   {t:'Аскеза: плоть усмиряется ради духа', e:{a:{dvaita:0.9},t:{'монотеизм':0.8}}},
+   {t:'Храм духа: ритуал, осанка, поклон', e:{a:{dvaita:0.7},t:{'христианство':0.8}}},
+   {t:'Тело — не тема: важен только ум', e:{t:{'философия':1.2},a:{sunyata:0.5}}}
   ]}
 ];
 """.strip()
@@ -139,7 +146,7 @@ function clonePts(p){return{axis:{dvaita:p.axis.dvaita,advaita:p.axis.advaita,su
 function qIndex(QS){var m={};for(var i=0;i<QS.length;i++)m[QS[i].id]=QS[i];return m;}
 var SCALE=2.2;function scaleEff(e){if(!e)return null;var o={a:{},f:{},t:{},e:{}};var k;for(k in e.a||{})o.a[k]=e.a[k]*SCALE;for(k in e.f||{})o.f[k]=e.f[k]*SCALE;for(k in e.t||{})o.t[k]=e.t[k]*SCALE;for(k in e.e||{})o.e[k]=e.e[k]*SCALE;return o;}
 function pointsFor(state,QS){var pts=zeroPts();var idx=qIndex(QS);for(var i=0;i<state.answers.length;i++){var a=state.answers[i];var q=idx[a.q];if(!q||!q.opts[a.o])continue;addEffect(pts,scaleEff(q.opts[a.o].e));}return pts;}
-function scoreItem(item,pts,jit){var s=0.6;var pa=pts.axis||{};if(item.axis){var own=pa[item.axis]||0;var other=Math.max(pa.dvaita||0,pa.advaita||0,pa.sunyata||0);s+=1.45*own-0.85*Math.max(0,other-own);}else{var avg=((pa.dvaita||0)+(pa.advaita||0)+(pa.sunyata||0))/3;s+=0.5*avg;}s+=1.05*(pts.family[item.family]||0);var tsum=0;var tags=item.tags||[];for(var i=0;i<tags.length;i++)tsum+=(pts.tag[tags[i]]||0);s+=1.6*Math.log(1+tsum);var eras=item.eras||[];for(var j=0;j<eras.length;j++){s+=0.5*(pts.era[eras[j]]||0)*(j===0?1:0.6);}return s+(jit||0);}
+function scoreItem(item,pts,jit){var s=0.6;var pa=pts.axis||{};if(item.axis){var own=pa[item.axis]||0;var other=Math.max(pa.dvaita||0,pa.advaita||0,pa.sunyata||0);s+=1.45*own-0.85*Math.max(0,other-own);}else{var avg=((pa.dvaita||0)+(pa.advaita||0)+(pa.sunyata||0))/3;s+=0.5*avg;}s+=1.05*(pts.family[item.family]||0);var tsum=0;var tags=item.tags||[];for(var i=0;i<tags.length;i++)tsum+=(pts.tag[tags[i]]||0);s+=1.6*Math.log(1+tsum);var eras=item.eras||[];for(var j=0;j<eras.length;j++){s+=0.5*(pts.era[eras[j]]||0)*(j===0?1:0.6);}var KLINE={'Каширский шиваизм':1,'недуальность':1,'недуальный тантрический шиваизм':1};for(var ki=0;ki<tags.length;ki++){if(KLINE[tags[ki]]){s+=1.1;break;}}return s+(jit||0);}
 function scores(state,data,QS){var pts=pointsFor(state,QS);var jit=jitters(state,data.items.length);var out=new Array(data.items.length);for(var i=0;i<data.items.length;i++)out[i]=scoreItem(data.items[i],pts,jit[i]);return out;}
 function sortedOrder(sc){var order=[];for(var i=0;i<sc.length;i++)order.push(i);order.sort(function(a,b){return sc[b]-sc[a];});return order;}
 function marginOf(sc){var order=sortedOrder(sc);var s1=sc[order[0]],s2=sc[order[1]];return(s1-s2)/(Math.abs(s1)+Math.abs(s2)+1e-9);}
