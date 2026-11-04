@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+BUILD = ROOT / "build"
 CONTENT = ROOT / "content"
 SITE = ROOT / "site"
 
@@ -943,6 +944,16 @@ def main():
         json.dumps(index_entries, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+    # quiz «Какая религия вам ближе»
+    try:
+        sys.path.insert(0, str(BUILD))
+        import importlib.util as _ilu
+        _qspec = _ilu.spec_from_file_location("quizgen", BUILD / "quiz_gen_module.py")
+        _qmod = _ilu.module_from_spec(_qspec)
+        _qspec.loader.exec_module(_qmod)
+        _qmod.build_quiz(SITE)
+    except Exception as _qe:
+        print("quiz skip:", _qe)
     print("OK: articles=%d (ru=%d), site files=%d" % (
         len(articles), len(ru), sum(1 for _ in SITE.rglob("*") if _.is_file())))
 

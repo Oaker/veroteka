@@ -1,0 +1,3729 @@
+{
+ "project": "Веротека",
+ "site": "https://oaker.github.io/veroteka/",
+ "note": "Банк итогов для теста «Какая религия вам ближе». Поле link — абсолютная ссылка на статью; axis — доктринальная ось (dvaita/advaita/sunyata); family — семейство; description — объяснение «для профанов».",
+ "count": 262,
+ "items": [
+  {
+   "title": "Авраамические религии",
+   "rel": "02_world/abrahamic/abrahamic",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/abrahamic.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "II тыс. до н.э. (Авраам) → VII в. н.э. (ислам)",
+   "tags": [
+    "авраамические",
+    "монотеизм"
+   ],
+   "description": "Четыре религии-родственника: иудаизм, христианство, ислам и бахаи. У них один прадед — Авраам — и один Бог. Спорят о том, кто его правильный наследник."
+  },
+  {
+   "title": "Адвентизм",
+   "rel": "02_world/abrahamic/christianity/protestantism/adventism/adventism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/adventism/adventism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1844 («великое разочарование»)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "протестантское движение ожидания Второго пришествия (adventus); крупнейшая ветвь — Церковь адвентистов седьмого дня (суббота как день покоя)."
+  },
+  {
+   "title": "Амиши",
+   "rel": "02_world/abrahamic/christianity/protestantism/anabaptists/amish/amish",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/amish/amish.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1693",
+   "tags": [
+    "протестантизм",
+    "анабаптизм"
+   ],
+   "description": "**Амиши** (Амман, 1693, Швейцария) — консервативная ветвь меннонитов: жизнь «вне мира», простота, отказ от современных технологий. ## Ordung «Порядок» каждой общины решает: что доп"
+  },
+  {
+   "title": "Анабаптизм",
+   "rel": "02_world/abrahamic/christianity/protestantism/anabaptists/anabaptists",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/anabaptists.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1525 (Цюрих)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "радикальная реформация: крещение только взрослых по вере, отказ от присяги и оружия, полная отделённость церкви от государства."
+  },
+  {
+   "title": "Англиканство",
+   "rel": "02_world/abrahamic/christianity/protestantism/anglicanism/anglicanism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anglicanism/anglicanism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1534",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "церковь «среднего пути» (via media) между католичеством и протестантизмом; государственная религия Англии с 1534 года."
+  },
+  {
+   "title": "Армянская церковь",
+   "rel": "02_world/abrahamic/christianity/oriental_orthodox/armenian/armenian",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/armenian/armenian.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "301 (гос. религия)",
+   "tags": [
+    "христианство",
+    "древневосточные"
+   ],
+   "description": "национальная церковь Армении и первая государственная христианская церковь в мире (301 год, царь Трдат III)."
+  },
+  {
+   "title": "Ахмадие",
+   "rel": "02_world/abrahamic/islam/related_movements/ahmadiyya/ahmadiyya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/ahmadiyya/ahmadiyya.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1889 (Мирза Гулам Ахмад)",
+   "tags": [
+    "ислам",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "исламское движение (1889, Индия; Мирза Гулам Ахмад), 10–20 млн; провозгласило своего основателя мессией-махди и новым пророком."
+  },
+  {
+   "title": "Баптизм",
+   "rel": "02_world/abrahamic/christianity/protestantism/baptists/baptists",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/baptists/baptists.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1609 (Амстердам)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "крупнейшее евангельское направление протестантизма: крещение только в сознательном возрасте и только по вере самого человека."
+  },
+  {
+   "title": "Бахаи",
+   "rel": "02_world/abrahamic/bahai/bahai",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/bahai/bahai.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1844 (Баб) / 1863 (Бахаулла)",
+   "tags": [
+    "авраамические",
+    "монотеизм",
+    "НРД-исторический"
+   ],
+   "description": "Молодая религия из Ирана (XIX век): все пророки — один источник, все люди — одна семья. Мирная, без священников, за науку и против предрассудков."
+  },
+  {
+   "title": "Бегуны (странники)",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/beguny/beguny",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/beguny/beguny.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1770-е",
+   "tags": [
+    "старообрядчество",
+    "беспоповцы",
+    "радикальное согласие"
+   ],
+   "description": "**Бегуны** (странники) — радикальное беспоповское согласие (Ефимов, 1770-е): Антихрист уже лично воцарился (в лице государства), все документы — печать зверя. ## Радикальность - От"
+  },
+  {
+   "title": "Белокриницкая иерархия",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/belokrinitskaya/belokrinitskaya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/belokrinitskaya/belokrinitskaya.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1846",
+   "tags": [
+    "старообрядчество",
+    "поповцы"
+   ],
+   "description": "восстановленное старообрядческое епископство (1846): митрополит Амвросий перешёл из Константинопольского патриархата и возглавил старообрядцев."
+  },
+  {
+   "title": "Беспоповцы",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/bespopovtsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/bespopovtsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1690-е",
+   "tags": [
+    "старообрядчество",
+    "согласия"
+   ],
+   "description": "старообрядческие согласия, решившие, что после раскола «истинное священство иссякло»: мир вернулся во времена Антихристa, таинства (кроме крещения и исповеди) невозможны."
+  },
+  {
+   "title": "Восточнокатолические церкви",
+   "rel": "02_world/abrahamic/christianity/catholicism/eastern_catholic/eastern_catholic",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/catholicism/eastern_catholic/eastern_catholic.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1596 (Брестская уния)",
+   "tags": [
+    "христианство",
+    "католицизм"
+   ],
+   "description": "«церкви своего права»: восточная литургия и обряд, но в единстве с Римом (униатство)."
+  },
+  {
+   "title": "Гулат (крайние шииты)",
+   "rel": "02_world/abrahamic/islam/shia/ghulat/ghulat",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/ghulat/ghulat.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VII–VIII вв.",
+   "tags": [
+    "ислам",
+    "шиизм",
+    "спорный статус"
+   ],
+   "description": "**Гулат** ⚠️ — «крайние» течения в раннем шиизме, приписывавшие имамам божественные качества и отступившие от ортодоксии. Служат историческим предком ряда движений (алавиты, ахл-и "
+  },
+  {
+   "title": "Движение святости",
+   "rel": "02_world/abrahamic/christianity/protestantism/holiness/holiness",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/holiness/holiness.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1830-е",
+   "tags": [
+    "протестантизм",
+    "США"
+   ],
+   "description": "**Движение святости** (Holiness movement, США, 1830-е →) — протестантское возрождение: «второе благословение» — полное освящение после обращения. ## Суть 1. Обращение (прощение гре"
+  },
+  {
+   "title": "Двунадесятники",
+   "rel": "02_world/abrahamic/islam/shia/twelver/twelver",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/twelver/twelver.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IX в. (сокрытие 12-го имама, 874)",
+   "tags": [
+    "ислам",
+    "шиизм"
+   ],
+   "description": "крупнейшая ветвь шиизма (Иран, Ирак, Азербайджан, Ливан, Бахрейн; ~85% шиитов): 12 имамов от Али до сокрытого Махди."
+  },
+  {
+   "title": "Древневосточные церкви",
+   "rel": "02_world/abrahamic/christianity/oriental_orthodox/oriental_orthodox",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/oriental_orthodox.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "451 (Халкидон, раскол)",
+   "tags": [
+    "христианство"
+   ],
+   "description": "семья христиан, не принявших халкидонский догмат 451 года (пять вселенских соборов вместо семи)."
+  },
+  {
+   "title": "Друзы",
+   "rel": "02_world/abrahamic/islam/related_movements/druze/druze",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/druze/druze.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1017 (Египет, аль-Хаким)",
+   "tags": [
+    "ислам",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "закрытая этноконфессиональная традиция (Ливан, Сирия, Израиль; ~1 млн) — исламская по происхождению, но с собственным учением: мистическое учение о Боге, тайне души и джихаде как личной борьбе."
+  },
+  {
+   "title": "Единоверие",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/edinoverie/edinoverie",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/edinoverie/edinoverie.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1800",
+   "tags": [
+    "старообрядчество",
+    "православие"
+   ],
+   "description": "**Единоверие** (1800, указ Павла I) — форма примирения: старообрядцы, входящие в РПЦ с сохранением старого обряда и старых книг. ## Суть Обряд — полностью дониконовский; юрисдикция"
+  },
+  {
+   "title": "Епископальная церковь США",
+   "rel": "02_world/abrahamic/christianity/protestantism/episcopalians_us/episcopalians_us",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/episcopalians_us/episcopalians_us.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1789",
+   "tags": [
+    "протестантизм",
+    "США",
+    "англиканство"
+   ],
+   "description": "**Епископальная церковь** (1789) — американское англиканство: литургия и епископат по-английски, но после революции — без монарха. ## Особенности - Первая церковь в мире, где молит"
+  },
+  {
+   "title": "Зайдизм",
+   "rel": "02_world/abrahamic/islam/shia/zaydism/zaydism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/zaydism/zaydism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII в. (Зайд, 740)",
+   "tags": [
+    "ислам",
+    "шиизм"
+   ],
+   "description": "шиитская ветвь (Йемен), самая близкая к суннизму: имам должен быть из потомков Али, но не обязательно непогрешим."
+  },
+  {
+   "title": "Ибадизм",
+   "rel": "02_world/abrahamic/islam/ibadism/ibadism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/ibadism/ibadism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VII–VIII вв. (Ибн Ибад)",
+   "tags": [
+    "ислам"
+   ],
+   "description": "третья ветвь ислама (после суннизма и шиизма; ~2–3 млн), Оман и Северная Африка; старше обоих главных направлений."
+  },
+  {
+   "title": "Ислам",
+   "rel": "02_world/abrahamic/islam/islam",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/islam.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "610 (первое откровение) / 622 (хиджра)",
+   "tags": [
+    "авраамические",
+    "монотеизм"
+   ],
+   "description": "Вторая по размеру религия. Просто: один Бог (Аллах), пять молитв в день, помогай бедным, постись в Рамадан, раз в жизни съезди в Мекку. Иисус тут — уважаемый пророк."
+  },
+  {
+   "title": "Исмаилизм",
+   "rel": "02_world/abrahamic/islam/shia/ismailism/ismailism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/ismailism/ismailism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VIII в. (раскол по Исмаилу, ~765)",
+   "tags": [
+    "ислам",
+    "шиизм"
+   ],
+   "description": "ветвь шиизма (около 15 млн), признающая имамом Исмаила (VII век) и продолжающуюся живую линию имамов Ага-Хана."
+  },
+  {
+   "title": "Иудаизм",
+   "rel": "02_world/abrahamic/judaism/judaism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/judaism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1800 до н.э. (Авраам) / ~1250 до н.э. (Исход) / 586 до н.э. (Вавилон)",
+   "tags": [
+    "авраамические",
+    "монотеизм"
+   ],
+   "description": "Религия еврейского народа, самая старая в этой семье. Суть: договор с Богом и 613 правил — что есть, что надевать, как отдыхать. Не «поверь», а «живи правильно»."
+  },
+  {
+   "title": "Кадирия",
+   "rel": "02_world/abrahamic/islam/sufism/qadiri/qadiri",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/qadiri/qadiri.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII в. (аль-Джилани, †1166)",
+   "tags": [
+    "ислам",
+    "суфизм",
+    "тарикаты"
+   ],
+   "description": "старейший из живых суфийских тарикатов (XII в."
+  },
+  {
+   "title": "Караизм",
+   "rel": "02_world/abrahamic/judaism/karaism/karaism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/karaism/karaism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII в. (Анан бен Давид, ~770)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "не-раввинистическая ветвь иудаизма (VIII в."
+  },
+  {
+   "title": "Католицизм",
+   "rel": "02_world/abrahamic/christianity/catholicism/catholicism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/catholicism/catholicism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1054 (окончательное отделение от Византии)",
+   "tags": [
+    "авраамические",
+    "христианство"
+   ],
+   "description": "Католики — самая большая часть христиан, у них Папа Римский как главный. Всё чётко: иерархия, правила, семь таинств."
+  },
+  {
+   "title": "Квакеры",
+   "rel": "02_world/abrahamic/christianity/protestantism/quakers/quakers",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/quakers/quakers.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1652 (Фокс)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "**Квакеры** («Общество Друзей», 1652, Джордж Фокс) — протестантская семья без священников, символов и таинств: только молчание и внутренний свет. ## Суть В каждому есть «внутренний"
+  },
+  {
+   "title": "Консервативный иудаизм",
+   "rel": "02_world/abrahamic/judaism/conservative/conservative",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/conservative/conservative.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1886 (JTS)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "течение (XIX в."
+  },
+  {
+   "title": "Коптская церковь",
+   "rel": "02_world/abrahamic/christianity/oriental_orthodox/coptic/coptic",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/coptic/coptic.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~42 (Марк, Александрия)",
+   "tags": [
+    "христианство",
+    "древневосточные"
+   ],
+   "description": "крупнейшая христианская община Ближнего Востока (около 10 млн, Египет): апостольская традиция от евангелиста Марка."
+  },
+  {
+   "title": "Лютеранство",
+   "rel": "02_world/abrahamic/christianity/protestantism/lutheranism/lutheranism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/lutheranism/lutheranism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1517–1530",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "старейшая протестантская конфессия: учение Мартина Лютера (1517), отвергнувшего продажу индульгенций."
+  },
+  {
+   "title": "Мазхабы",
+   "rel": "02_world/abrahamic/islam/sunni/madhabs/madhabs",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/madhabs.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII–IX вв.",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "право"
+   ],
+   "description": "четыре правовые школы суннитского ислама, различающиеся методом права, а не верой: ханифиты, маликиты, шафииты, ханбалиты."
+  },
+  {
+   "title": "Маликиты",
+   "rel": "02_world/abrahamic/islam/sunni/madhabs/maliki/maliki",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/maliki/maliki.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII в. (Малик, «Муватта»)",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "право"
+   ],
+   "description": "школа (Малик ибн Анас, VIII в."
+  },
+  {
+   "title": "Мевлевия",
+   "rel": "02_world/abrahamic/islam/sufism/mevlevi/mevlevi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/mevlevi/mevlevi.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XIII в. (после Руми, †1273)",
+   "tags": [
+    "ислам",
+    "суфизм",
+    "тарикаты"
+   ],
+   "description": "тарикат «крутящихся дервишей» (XIII в."
+  },
+  {
+   "title": "Меннониты",
+   "rel": "02_world/abrahamic/christianity/protestantism/anabaptists/mennonites/mennonites",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/mennonites/mennonites.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1536",
+   "tags": [
+    "протестантизм",
+    "анабаптизм"
+   ],
+   "description": "крупнейшая анабаптистская традиция (Менно Симонс, 1536, Нидерланды): пацифизм, простота, общинная взаимопомощь."
+  },
+  {
+   "title": "Методизм",
+   "rel": "02_world/abrahamic/christianity/protestantism/methodism/methodism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/methodism/methodism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1738 (Уэсли)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "движение Джона Уэсли (XVIII в."
+  },
+  {
+   "title": "Модерн-ортодоксия",
+   "rel": "02_world/abrahamic/judaism/orthodox/modern_orthodox/modern_orthodox",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/modern_orthodox/modern_orthodox.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIX в. (Германия, Хирш)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "течение (XIX–XX вв."
+  },
+  {
+   "title": "Моравские братья",
+   "rel": "02_world/abrahamic/christianity/protestantism/moravians/moravians",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/moravians/moravians.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1722",
+   "tags": [
+    "протестантизм",
+    "история"
+   ],
+   "description": "**Моравские братья** (Чешские братья → обновлённая община Herrnhut, 1722, Цинцендорф) — старейшая протестантская миссионерская традиция. ## Суть Лютеранское «движение сердца»: кров"
+  },
+  {
+   "title": "Мормонизм",
+   "rel": "02_world/abrahamic/christianity/para_christianity/mormonism/mormonism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/mormonism/mormonism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1830",
+   "tags": [
+    "христианство",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "**Мормонизм** (Церковь Иисуса Христа Святых последних дней) — восстановительское движение 1830 года, основанное Джозефом Смитом в США (~17 млн последователей). ## Суть Книга Мормон"
+  },
+  {
+   "title": "Накшбандия",
+   "rel": "02_world/abrahamic/islam/sufism/naqshbandi/naqshbandi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/naqshbandi/naqshbandi.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIV в. (Бахаддин Накшбанд, †1389)",
+   "tags": [
+    "ислам",
+    "суфизм",
+    "тарикаты"
+   ],
+   "description": "суфийский тарикат (XIV в."
+  },
+  {
+   "title": "Ортодоксальный иудаизм",
+   "rel": "02_world/abrahamic/judaism/orthodox/orthodox",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/orthodox.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIX в. (термин) / XVIII в. (хасидизм)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "течение, строго соблюдающее Галаху (еврейский закон) как данную Богом норму на все времена."
+  },
+  {
+   "title": "Пара-христианские движения",
+   "rel": "02_world/abrahamic/christianity/para_christianity/para_christianity",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/para_christianity.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIX в.",
+   "tags": [
+    "христианство",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "**Пара-христианские движения** ⚠️ — общности, выросшие из христианства и использующие его язык, но отвергающие ключевые догматы (Троицу или финальность Христа). Статус — предмет сп"
+  },
+  {
+   "title": "Поморцы (Поморское согласие)",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/pomortsy/pomortsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/pomortsy/pomortsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1694",
+   "tags": [
+    "старообрядчество",
+    "беспоповцы"
+   ],
+   "description": "крупнейшее беспоповское согласие (1694, Выговская пустынь, Поморье): старый обряд + общинная жизнь без священников."
+  },
+  {
+   "title": "Поповцы",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/popovtsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/popovtsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1666",
+   "tags": [
+    "старообрядчество",
+    "согласия"
+   ],
+   "description": "старообрядческие согласия, сохранившие священство: после раскола принимали беглых священников из РПЦ, а с 1846 года восстановили полную иерархию."
+  },
+  {
+   "title": "Православие",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/eastern_orthodox",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/eastern_orthodox.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1054 (схизма с Римом)",
+   "tags": [
+    "авраамические",
+    "христианство"
+   ],
+   "description": "Православие — христианство с иконами и без единого босса: у каждого народа своя церковь, все равны. Знакомо по куполам и Пасхе."
+  },
+  {
+   "title": "Пресвитериане (США)",
+   "rel": "02_world/abrahamic/christianity/protestantism/presbyterians_us/presbyterians_us",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/presbyterians_us/presbyterians_us.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1706",
+   "tags": [
+    "протестантизм",
+    "США",
+    "реформатство"
+   ],
+   "description": "американская ветвь реформатства (1706, Филадельфия): пресвитерианское устройство + Вестминстерское исповедание."
+  },
+  {
+   "title": "Протестантизм",
+   "rel": "02_world/abrahamic/christianity/protestantism/protestantism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/protestantism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1517 (Лютер, 95 тезисов)",
+   "tags": [
+    "авраамические",
+    "христианство"
+   ],
+   "description": "Протестанты 500 лет назад сказали: «Библия — главный, попы не обязательны». Теперь их сотни видов: от строгих лютеран до поющих пятидесятников."
+  },
+  {
+   "title": "Пятидесятничество",
+   "rel": "02_world/abrahamic/christianity/protestantism/pentecostalism/pentecostalism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/pentecostalism/pentecostalism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1906 (Азуса-стрит)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "самое быстрорастущее христианское движение в истории: опыт крещения Святым Духом с говорением на языках (глоссолалия)."
+  },
+  {
+   "title": "Реконструктивизм",
+   "rel": "02_world/abrahamic/judaism/reconstructionism/reconstructionism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/reconstructionism/reconstructionism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1934 (Каплан)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "течение (XX в."
+  },
+  {
+   "title": "Реформатство",
+   "rel": "02_world/abrahamic/christianity/protestantism/reformed/reformed",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/reformed/reformed.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1536 (Кальвин, Женева)",
+   "tags": [
+    "христианство",
+    "протестантизм"
+   ],
+   "description": "**Реформатство** (кальвинизм) — протестантская семья учения Жана Кальвина: абсолютный суверенитет Бога и предопределение. ## Суть Бог ещё до рождения избрал спасённых — не по заслу"
+  },
+  {
+   "title": "Реформистский иудаизм",
+   "rel": "02_world/abrahamic/judaism/reform/reform",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/reform/reform.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1810 (Германия)",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "течение (XIX в."
+  },
+  {
+   "title": "Салафизм",
+   "rel": "02_world/abrahamic/islam/sunni/salafism/salafism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/salafism/salafism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XVIII в. (Ваххаб) / XX в. (реформы)",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "реформа"
+   ],
+   "description": "современное реформаторское учение ислама: возвращение к практике «салафов» (первых трёх поколений) и буквальное понимание Корана."
+  },
+  {
+   "title": "Самаритяне",
+   "rel": "02_world/abrahamic/judaism/samaritans/samaritans",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/samaritans/samaritans.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII–VII вв. до н.э. (раскол с иудеями)",
+   "tags": [
+    "иудаизм",
+    "родственные общины"
+   ],
+   "description": "малая община (около 800 человек; Израиль, Наблус/Холон), чтущая только Тору (Пятикнижие) и гору Гаризим как святое место."
+  },
+  {
+   "title": "Свидетели Иеговы",
+   "rel": "02_world/abrahamic/christianity/para_christianity/jehovahs_witnesses/jehovahs_witnesses",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/jehovahs_witnesses/jehovahs_witnesses.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1870 (Рассел)",
+   "tags": [
+    "христианство",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "религиозное движение (1870-е, Чарльз Рассел), ~8,7 млн возвещателей."
+  },
+  {
+   "title": "Связанные движения ислама",
+   "rel": "02_world/abrahamic/islam/related_movements/related_movements",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/related_movements.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XI–XIX вв.",
+   "tags": [
+    "ислам",
+    "спорный статус"
+   ],
+   "description": "**Связанные движения** ⚠️ — общины, выросшие из исламской среды, статус которых спорен: ахмадие и друзы (отдельные статьи). Здесь — рамка спора. ## Почему «связанные», а не «ветви»"
+  },
+  {
+   "title": "Сирийские церкви",
+   "rel": "02_world/abrahamic/christianity/oriental_orthodox/syriac/syriac",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/syriac/syriac.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "I–III вв.",
+   "tags": [
+    "христианство",
+    "древневосточные"
+   ],
+   "description": "семья древних традиций арамейского языка — языка Иисуса."
+  },
+  {
+   "title": "Спасовцы (нетовщики)",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/spasovtsy/spasovtsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/spasovtsy/spasovtsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XVII–XVIII вв.",
+   "tags": [
+    "старообрядчество",
+    "беспоповцы"
+   ],
+   "description": "**Спасовцы** (нетовщики) — согласие беспоповцев, дошедшее до предела апофатики: «спасаться нечем и некем» — таинств нет, обрядов почти нет. ## Суть Все обряды — «человеческое», а н"
+  },
+  {
+   "title": "Старообрядчество",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/old_believers",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/old_believers.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1666 (после собора)",
+   "tags": [
+    "христианство",
+    "православие"
+   ],
+   "description": "православная традиция, отвергшая реформы патриарха Никона (1650-е) и оставшаяся при старом обряде: двоеперстие, дониконовские книги, старый календарь."
+  },
+  {
+   "title": "Суннизм",
+   "rel": "02_world/abrahamic/islam/sunni/sunni",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/sunni.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IX в. (оформление)",
+   "tags": [
+    "авраамические",
+    "ислам"
+   ],
+   "description": "Сунниты — 9 из 10 мусульман. Священников нет: есть учёные, разбирающие правила. Четыре школы права спорят мягко, как четыре юриста в одной конторе."
+  },
+  {
+   "title": "Суфизм",
+   "rel": "02_world/abrahamic/islam/sufism/sufism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/sufism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII–X вв. (оформление тарикатов XIII–XIV)",
+   "tags": [
+    "авраамические",
+    "ислам",
+    "мистицизм"
+   ],
+   "description": "Суфии — мусульманские мистики: не про Бога читать, а с Богом встретиться. Метод — повторение имени Бога, иногда с танцем. Стихи Руми читает весь мир."
+  },
+  {
+   "title": "Унитарианство",
+   "rel": "02_world/abrahamic/christianity/protestantism/unitarianism/unitarianism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/unitarianism/unitarianism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "",
+   "year": "",
+   "tags": [
+    "протестантизм",
+    "США"
+   ],
+   "description": "христианское течение, отвергающее Троицу: Бог — един; Иисус — учитель и спаситель, но не Бог."
+  },
+  {
+   "title": "Федосеевцы",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/fedoseevtsy/fedoseevtsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/fedoseevtsy/fedoseevtsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1710",
+   "tags": [
+    "старообрядчество",
+    "беспоповцы"
+   ],
+   "description": "второе по размеру беспоповское согласие (Феодосий Васильев, 1710): старый обряд + строгая аскеза и позднее — безбрачие."
+  },
+  {
+   "title": "Филипповцы",
+   "rel": "02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/filippovtsy/filippovtsy",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/filippovtsy/filippovtsy.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1737",
+   "tags": [
+    "старообрядчество",
+    "беспоповцы",
+    "радикальное согласие"
+   ],
+   "description": "радикальное беспоповское согласие (Филипп, 1737): мир окончательно во зле, спасение — через «огненное крещение» (самосожжение) в моменты гонений."
+  },
+  {
+   "title": "Ханафиты",
+   "rel": "02_world/abrahamic/islam/sunni/madhabs/hanafi/hanafi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/hanafi/hanafi.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII в. (Абу Ханифа, †767)",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "право"
+   ],
+   "description": "крупнейшая правовая школа суннизма (Абу Ханифа, VIII в."
+  },
+  {
+   "title": "Ханбалиты",
+   "rel": "02_world/abrahamic/islam/sunni/madhabs/hanbali/hanbali",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/hanbali/hanbali.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IX в. (Ибн Ханбаль, †855)",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "право"
+   ],
+   "description": "школа (Ахмад ибн Ханбаль, IX в."
+  },
+  {
+   "title": "Харедим",
+   "rel": "02_world/abrahamic/judaism/orthodox/haredi/haredi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/haredi/haredi.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XVIII–XIX вв.",
+   "tags": [
+    "иудаизм"
+   ],
+   "description": "**Харедим** («трепещущие перед Богом») — ультраортодоксальная часть иудаизма: общины, живущие по строгой Галахе в самоизоляции от светской культуры. ## Суть Чёрная одежда (у ашкена"
+  },
+  {
+   "title": "Хасидизм",
+   "rel": "02_world/abrahamic/judaism/orthodox/hasidism/hasidism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/hasidism/hasidism.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~1740",
+   "tags": [
+    "иудаизм",
+    "мистицизм"
+   ],
+   "description": "мистическое движение в иудаизме (XVIII в."
+  },
+  {
+   "title": "Христианская наука",
+   "rel": "02_world/abrahamic/christianity/protestantism/christian_science/christian_science",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/christian_science/christian_science.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1879",
+   "tags": [
+    "протестантизм",
+    "США",
+    "спорный статус"
+   ],
+   "description": "**Христианская наука** (Церковь Христа, Ученого; Мэри Бейкер-Эдди, 1879) — американское движение: болезнь — иллюзия ума, исцеление — через осознание реальности Бога. ## Суть «Наука"
+  },
+  {
+   "title": "Христианство",
+   "rel": "02_world/abrahamic/christianity/christianity",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/christianity.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "~30 (Пятидесятница)",
+   "tags": [
+    "мировые религии",
+    "авраамические",
+    "монотеизм"
+   ],
+   "description": "Самая большая религия мира. Суть: Бог стал человеком (Иисус), умер за всех и воскрес. Веруй, люби людей — остальное приложится."
+  },
+  {
+   "title": "Церкви Христа (кампбеллиты)",
+   "rel": "02_world/abrahamic/christianity/protestantism/campbellites/campbellites",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/campbellites/campbellites.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1830-е",
+   "tags": [
+    "протестантизм",
+    "США"
+   ],
+   "description": "**Церкви Христа / Ученики Христа** (Движение восстановления, Томас и Александр Кэмпбеллы, 1830-е) — попытка «восстановить» первохристианскую церковь: только Библия, без деноминаций"
+  },
+  {
+   "title": "Чиштия",
+   "rel": "02_world/abrahamic/islam/sufism/chishti/chishti",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/chishti/chishti.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII–XIII вв. (Муинуддин Чишти в Индии)",
+   "tags": [
+    "ислам",
+    "суфизм",
+    "тарикаты"
+   ],
+   "description": "суфийский тарикат (Индия; Муинуддин Чишти, XII–XIII вв."
+  },
+  {
+   "title": "Шафииты",
+   "rel": "02_world/abrahamic/islam/sunni/madhabs/shafii/shafii",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/shafii/shafii.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IX в. (аш-Шафии, †820)",
+   "tags": [
+    "ислам",
+    "суннизм",
+    "право"
+   ],
+   "description": "школа (Мухаммад аш-Шафии, VIII–IX вв."
+  },
+  {
+   "title": "Шиизм",
+   "rel": "02_world/abrahamic/islam/shia/shia",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/shia.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "656 (убийство Усмана, партия Али)",
+   "tags": [
+    "авраамические",
+    "ислам"
+   ],
+   "description": "Шииты — вторая часть мусульман. Спор не про Бога, а про наследство: кто должен был возглавить общину после пророка. Отсюда особое почтение к имамам."
+  },
+  {
+   "title": "Эфиопская церковь",
+   "rel": "02_world/abrahamic/christianity/oriental_orthodox/ethiopian/ethiopian",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/ethiopian/ethiopian.html",
+   "family": "Авраамические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IV в. (~330)",
+   "tags": [
+    "христианство",
+    "древневосточные"
+   ],
+   "description": "**Эфиопская православная церковь** (Тевахедо) — христианство с IV века, одна из древнейших и наименее известных миру традиций. ## Суть Собственный канон Библии (81 книга, включая К"
+  },
+  {
+   "title": "Андские религии",
+   "rel": "03_ancient/american/andes/andes",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/american/andes/andes.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "1500 до н.э. (Чавин) / XV в. (инки)",
+   "tags": [
+    "древние",
+    "Америки"
+   ],
+   "description": "инки и предшественники: Инти (солнце), Пачамама (мать-земля), империя как теократия."
+  },
+  {
+   "title": "Балтийская религия",
+   "rel": "03_ancient/european/baltic/baltic",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/baltic/baltic.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "до XI в. (первые хроники)",
+   "tags": [
+    "древние",
+    "Европа"
+   ],
+   "description": "древняя традиция пруссов, литовцев, латышей: последняя языческая Европа (Литва крестилась только в 1387)."
+  },
+  {
+   "title": "Греко-римский мир",
+   "rel": "03_ancient/graeco_roman/graeco_roman",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/graeco_roman.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "VIII в. до н.э. – V в. н.э.",
+   "tags": [
+    "древние"
+   ],
+   "description": "религии Средиземноморья: греческий пантеон, римский культ, эллинистический синкретизм."
+  },
+  {
+   "title": "Греческая религия",
+   "rel": "03_ancient/graeco_roman/greek/greek",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/greek/greek.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "VIII в. до н.э. (Гомер, Гесиод)",
+   "tags": [
+    "древние",
+    "греко-римский мир"
+   ],
+   "description": "Греческие боги — как большая семья с полномочиями: ревнуют, мстят, влюбляются. Греки не боялись их — договаривались и иногда подшучивали."
+  },
+  {
+   "title": "Древнеегипетская религия",
+   "rel": "03_ancient/near_east/egyptian/egyptian",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/near_east/egyptian/egyptian.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "XXXI в. до н.э. (объединение, I династия)",
+   "tags": [
+    "древние",
+    "Египет"
+   ],
+   "description": "Египтяне 3000 лет готовились к смерти серьёзнее, чем к жизни: бальзамировали, строили пирамиды и записали первое в мире «суд после смерти» — сердце взвешивают против пера правды."
+  },
+  {
+   "title": "Древние религии (ушедшие)",
+   "rel": "03_ancient/03_ancient",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/03_ancient.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "XXXI в. до н.э. – V в. н.э.",
+   "tags": [
+    "древние",
+    "исторические"
+   ],
+   "description": "Религии, которых больше нет: Египет, Греция, Рим. Знаем их из раскопок и чужих записей — как соседа, который уехал и не оставил адреса."
+  },
+  {
+   "title": "Древние религии Америк",
+   "rel": "03_ancient/american/american",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/american/american.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "1500 до н.э. – XVI в. н.э.",
+   "tags": [
+    "древние",
+    "Америки"
+   ],
+   "description": "доколумбовы традиции: Мезоамерика, Анды, Северная Америка."
+  },
+  {
+   "title": "Древний Ближний Восток",
+   "rel": "03_ancient/near_east/near_east",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/near_east/near_east.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "XXXI в. до н.э. – I в. н.э.",
+   "tags": [
+    "древние",
+    "Ближний Восток"
+   ],
+   "description": "колыбель письменных религий: Месопотамия, Египет, Ханаан."
+  },
+  {
+   "title": "Древняя Европа",
+   "rel": "03_ancient/european/european",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/european.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "до I тыс. до н.э. – XIV в. н.э.",
+   "tags": [
+    "древние",
+    "Европа"
+   ],
+   "description": "религии до христианизации: славянская, скандинавская, кельтская, балтийская."
+  },
+  {
+   "title": "Кельтская религия",
+   "rel": "03_ancient/european/celtic/celtic",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/celtic/celtic.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "V в. до н.э. (латен) / I в. н.э. (римские описания)",
+   "tags": [
+    "древние",
+    "Европа"
+   ],
+   "description": "верования древних кельтов: друиды, племенные боги, священные источники и леса."
+  },
+  {
+   "title": "Мезоамериканские религии",
+   "rel": "03_ancient/american/mesoamerica/mesoamerica",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/american/mesoamerica/mesoamerica.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "1200 до н.э. (ольмеки)",
+   "tags": [
+    "древние",
+    "Америки"
+   ],
+   "description": "ацтеки, майя, ольмеки: календарь, пирамиды, жертвоприношения и одна из самых сложных космологий древнего мира."
+  },
+  {
+   "title": "Месопотамская религия",
+   "rel": "03_ancient/near_east/mesopotamian/mesopotamian",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/near_east/mesopotamian/mesopotamian.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "XXXI в. до н.э. (письменность, Урук)",
+   "tags": [
+    "древние",
+    "Месопотамия"
+   ],
+   "description": "Первые письменные мифы: потоп, герой, ищущий бессмертие, боги с человеческими характерами. Всё, что потом Библия расскажет заново, здесь уже записано за 1000 лет до."
+  },
+  {
+   "title": "Митраизм",
+   "rel": "03_ancient/graeco_roman/mithraism/mithraism",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/mithraism/mithraism.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "I–IV вв.",
+   "tags": [
+    "древние",
+    "греко-римский мир"
+   ],
+   "description": "тайный культ Митры, бога света и договора, популярный в римской армии (I–IV вв."
+  },
+  {
+   "title": "Орфизм",
+   "rel": "03_ancient/graeco_roman/orpheus/orpheus",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/orpheus/orpheus.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "advaita",
+   "year": "VI в. до н.э.",
+   "tags": [
+    "древние",
+    "греко-римский мир"
+   ],
+   "description": "мистическое течение греческой религии (VI в."
+  },
+  {
+   "title": "Пифагорейство",
+   "rel": "03_ancient/graeco_roman/pythagoreanism/pythagoreanism",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/pythagoreanism/pythagoreanism.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "advaita",
+   "year": "VI–V вв. до н.э.",
+   "tags": [
+    "древние",
+    "греко-римская философия"
+   ],
+   "description": "философско-религиозное братство (Пифагор, VI в."
+  },
+  {
+   "title": "Религия Индской цивилизации",
+   "rel": "03_ancient/near_east/indus_valley/indus_valley",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/near_east/indus_valley/indus_valley.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "XXXIII–XVIII вв. до н.э.",
+   "tags": [
+    "древние",
+    "Индия"
+   ],
+   "description": "**Религия Индской цивилизации** (Хараппа, Мохенджо-Даро) — реконструкция по археологии: печати, «жрец-царь», священные бассейны. ## Что известно - **Прото-Шива**: печать с фигурой "
+  },
+  {
+   "title": "Римская религия",
+   "rel": "03_ancient/graeco_roman/roman/roman",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/roman/roman.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "753 до н.э. (основание Рима)",
+   "tags": [
+    "древние",
+    "греко-римский мир"
+   ],
+   "description": "Римляне относились к богам как к партнёрам по контракту: делай ритуал точно — боги обеспечат мир. Не «верую», а «исполняю». Скучно? Зато империя на 500 лет."
+  },
+  {
+   "title": "Североамериканские традиции",
+   "rel": "03_ancient/american/north_america/north_america",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/american/north_america/north_america.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "до контакта (XV–XVI вв.)",
+   "tags": [
+    "древние",
+    "Америки"
+   ],
+   "description": "религии коренных народов: Великий Дух, шаманы, священные места, обряды."
+  },
+  {
+   "title": "Скандинавская древняя религия",
+   "rel": "03_ancient/european/norse/norse",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/norse/norse.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "VIII–XI вв. (эпоха викингов) / XIII в. (Эдды)",
+   "tags": [
+    "древние",
+    "Европа",
+    "скандинавия"
+   ],
+   "description": "Викинги верили, что даже боги умрут — и от этого не легче, а честнее: судьба неизбежна, слава вечна. Умирай красиво — единственное, что в твоих руках."
+  },
+  {
+   "title": "Славянская древняя традиция",
+   "rel": "03_ancient/european/slavic_tradition/slavic_tradition",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/slavic_tradition/slavic_tradition.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "до IX в. (первые упоминания)",
+   "tags": [
+    "древние",
+    "Европа"
+   ],
+   "description": "Древние славяне оставили почти ноль записей: писали на дереве, дерево сгнило. Знаем по чужим дневникам и раскопкам: громовержец Перун, скотий бог Велес, предки и поле."
+  },
+  {
+   "title": "Ханаанская религия",
+   "rel": "03_ancient/near_east/canaanite/canaanite",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/near_east/canaanite/canaanite.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "III–II тыс. до н.э. (Угарит)",
+   "tags": [
+    "древние",
+    "Ближний Восток"
+   ],
+   "description": "религии Угарита, Финикии, Ханаана (II–I тыс."
+  },
+  {
+   "title": "Эллинизм",
+   "rel": "03_ancient/graeco_roman/hellenistic/hellenistic",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/hellenistic/hellenistic.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "sunyata",
+   "year": "323 до н.э. (смерть Александра)",
+   "tags": [
+    "древние",
+    "греко-римский мир"
+   ],
+   "description": "религиозный мир после Александра (IV–I вв."
+  },
+  {
+   "title": "Этрусская религия",
+   "rel": "03_ancient/european/etskaya/etskaya",
+   "link": "https://oaker.github.io/veroteka/ru/03_ancient/european/etskaya/etskaya.html",
+   "family": "Древние",
+   "section": "03_ancient",
+   "axis": "dvaita",
+   "year": "IX–II вв. до н.э.",
+   "tags": [
+    "древние",
+    "Европа"
+   ],
+   "description": "религия этрусков (IX–II вв."
+  },
+  {
+   "title": "Агхора",
+   "rel": "02_world/dharmic/hinduism/shaivism/aghora/aghora",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/aghora/aghora.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XVIII в. (Кинарам) / корни древнее",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "практика"
+   ],
+   "description": "**Агхора** («безобразная») — радикальная шиваитская аскеза: преодоление отвращения как прямой путь к недвойственности. ## Суть Практики: жизнь на кладбищах, кремациях (сжигание тел"
+  },
+  {
+   "title": "Адвайта-джаглинг (недуальное жонглирование)",
+   "rel": "02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XXI в.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "Каширский шиваизм",
+    "практика",
+    "недуальность"
+   ],
+   "description": "Жонглируешь шарами и учишься не мешать полёту. Пока в голове тихо — шары летят. Задумался «а хорошо ли я жонглирую» — упали. Упало — смеёшься и бросаешь снова. Вся философия — у тебя в руках, буквально."
+  },
+  {
+   "title": "Буддизм",
+   "rel": "02_world/dharmic/buddhism/buddhism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/buddhism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "V–VI вв. до н.э. (пробуждение Будды)",
+   "tags": [
+    "дхармические",
+    "буддизм"
+   ],
+   "description": "Будда объяснил: жизнь мучает, потому что мы цепляемся. Меньше цепляйся — меньше боли. Бога-творца тут нет совсем — и это не мешает быть религией."
+  },
+  {
+   "title": "Ваджраяна",
+   "rel": "02_world/dharmic/buddhism/vajrayana/vajrayana",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/vajrayana.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VII–VIII вв. (Индия, тантры)",
+   "tags": [
+    "буддизм",
+    "тибетский буддизм",
+    "тантра"
+   ],
+   "description": "Тибетский буддизм: быстрый путь с предохранителем. Эмоции — топливо для роста. Отсюда мандалы, мантры и Далай-лама."
+  },
+  {
+   "title": "Вайшешика",
+   "rel": "02_world/dharmic/hinduism/darshanas/vaisheshika/vaisheshika",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/vaisheshika/vaisheshika.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "II–I вв. до н.э. (Канада)",
+   "tags": [
+    "индуизм",
+    "философия"
+   ],
+   "description": "школа атомизма (Канада): мир состоит из неделимых атомов (ану)."
+  },
+  {
+   "title": "Валлабха (шуддха-адвайта)",
+   "rel": "02_world/dharmic/hinduism/vaishnavism/vallabha/vallabha",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/vallabha/vallabha.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XVI в. (Валлабха, 1479–1531)",
+   "tags": [
+    "индуизм",
+    "вишнуизм"
+   ],
+   "description": "**Валлабха** (XVI в., Брадж) — «чистая адвайта»: мир — игра (лила) Кришны, и всё уже есть Брахман. ## Суть Кришна — высшая реальность; мир не «иллюзия», а проявление радости; отриц"
+  },
+  {
+   "title": "Веданта",
+   "rel": "02_world/dharmic/hinduism/darshanas/vedanta/vedanta",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/vedanta/vedanta.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VIII–IX вв. (Шанкара) / корни в Упанишадах",
+   "tags": [
+    "индуизм",
+    "философия"
+   ],
+   "description": "**Веданта** («конец Вед») — самая влиятельная философская школа Индии: учение Упанишад о Брахмане и Атмане. ## Основные формулы - **Адвайта** (Шанкара, VIII–IX вв.): Брахман = Атма"
+  },
+  {
+   "title": "Випассана",
+   "rel": "02_world/dharmic/buddhism/theravada/vipassana/vipassana",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/vipassana/vipassana.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XX в. (Махаси, Гоенка)",
+   "tags": [
+    "буддизм",
+    "практика"
+   ],
+   "description": "**Випассана** («ясное видение») — медитативная практика наблюдения реальности как она есть: дыхание, ощущения, непостоянство. ## Суть Техника из тхеравады, популяризированная в XX "
+  },
+  {
+   "title": "Вира-шайва (лингаяты)",
+   "rel": "02_world/dharmic/hinduism/shaivism/vira_shaiva_lingayat/vira_shaiva_lingayat",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/vira_shaiva_lingayat/vira_shaiva_lingayat.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII в. (Басава, ~1160)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "спорный статус"
+   ],
+   "description": "**Вира-шайва (лингаяты)** ⚠️ — шиваитское движение XII века (Басава, Карнатака; ~15 млн): равенство каст, отказ от храмов, личная линга как святыня на теле. ## Суть Каждый лингаят "
+  },
+  {
+   "title": "Вишнуизм",
+   "rel": "02_world/dharmic/hinduism/vaishnavism/vaishnavism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/vaishnavism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VI–IX вв. (альвары) / XI в. (Рамануджа)",
+   "tags": [
+    "индуизм",
+    "вишнуизм"
+   ],
+   "description": "крупнейшее направление индуизма: Вишну как Верховный Бог, приходящий в мир аватарами (Кришна, Рама, Нарасимха…)."
+  },
+  {
+   "title": "Гаудия-вайшнавизм",
+   "rel": "02_world/dharmic/hinduism/vaishnavism/gaudiya/gaudiya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/gaudiya/gaudiya.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XVI в. (Чайтанья, 1486–1534)",
+   "tags": [
+    "индуизм",
+    "вишнуизм",
+    "бхакти"
+   ],
+   "description": "бенгальская традиция Чайтаньи Махапрабху (1486–1534): экстатическая преданность Кришне с пением киртана."
+  },
+  {
+   "title": "Гелуг",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/gelug/gelug",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/gelug/gelug.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "1409 (Цзонхава, Гандэн)",
+   "tags": [
+    "буддизм",
+    "тибетский буддизм"
+   ],
+   "description": "**Гелуг** («добродетельная») — школа тибетского буддизма (XIV–XV вв., Цзонхава): строгая дисциплина, монашеская учёность, Далай-лама. ## Суть Реформаторская школа: подчёркнутое соб"
+  },
+  {
+   "title": "Даршаны",
+   "rel": "02_world/dharmic/hinduism/darshanas/darshanas",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/darshanas.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "",
+   "year": "II в. до н.э. – VIII в. н.э.",
+   "tags": [
+    "индуизм",
+    "философия"
+   ],
+   "description": "шесть классических философских школ индуизма (шад-даршана): санкхья, йога, ньяя, вайшешика, миманса, веданта."
+  },
+  {
+   "title": "Джайнизм",
+   "rel": "02_world/dharmic/jainism/jainism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/jainism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VI–V вв. до н.э. (Махавира) / традиция старше",
+   "tags": [
+    "дхармические",
+    "джайнизм"
+   ],
+   "description": "Самая мирная религия: нельзя вредить ничему живому — даже комару. Монахи заметают путь перед собой, чтобы не наступить на жука."
+  },
+  {
+   "title": "Дзен Риндзай",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/zen_rinzai/zen_rinzai",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/zen_rinzai/zen_rinzai.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XIII в. (Эйсай, 1191 Япония) / IX в. (Линьцзи)",
+   "tags": [
+    "буддизм",
+    "дзен"
+   ],
+   "description": "японская ветвь дзен от китайской линии Линьцзи: коаны, внезапное пробуждение, динамичный стиль."
+  },
+  {
+   "title": "Дзен Сото",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/zen_soto/zen_soto",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/zen_soto/zen_soto.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "1227 (Догэн) / IX в. (Цаодун)",
+   "tags": [
+    "буддизм",
+    "дзен"
+   ],
+   "description": "японская ветвь дзен (от Догэна, XIII в."
+  },
+  {
+   "title": "Дзёдо-синсю",
+   "rel": "02_world/dharmic/buddhism/mahayana/pure_land/jodo_shinshu/jodo_shinshu",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/pure_land/jodo_shinshu/jodo_shinshu.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1224 (Синран)",
+   "tags": [
+    "буддизм",
+    "махаяна",
+    "чистые земли"
+   ],
+   "description": "**Дзёдо-синсю** («истинная школа Чистой земли») — японская школа Синрана (XIII в.): спасение только верой в Амиду, никаких собственных усилий. ## Суть Синран довёл логику до конца:"
+  },
+  {
+   "title": "Дигамбара",
+   "rel": "02_world/dharmic/jainism/digambara/digambara",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/digambara/digambara.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "I в. н.э. (раскол)",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "**Дигамбара** («одетые небом») — школа джайнизма: монахи практикуют полную наготу как знак отказа от собственности. ## Суть Мир — «неодетый», монах подражает ему: одежда = собствен"
+  },
+  {
+   "title": "Дхармические религии",
+   "rel": "02_world/dharmic/dharmic",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/dharmic.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "",
+   "year": "II тыс. до н.э. (ведизм) → V–VI вв. до н.э. (буддизм/джайнизм)",
+   "tags": [
+    "дхармические"
+   ],
+   "description": "Индийские религии-родственники: индуизм, буддизм, сикхизм, джайнизм. Общая идея: жизнь повторяется, поступки возвращаются (карма), цель — вырваться из круга."
+  },
+  {
+   "title": "Индуизм",
+   "rel": "02_world/dharmic/hinduism/hinduism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/hinduism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "",
+   "year": "II тыс. до н.э. (ведизм) → ~200 до н.э.–500 н.э. (пуранический индуизм)",
+   "tags": [
+    "дхармические",
+    "индуизм"
+   ],
+   "description": "Самая старая живая религия мира. Богов как будто много, но за ними один. Главное правило — карма: что посеешь, то и пожнёшь. Цель — понять, что ты не только тело."
+  },
+  {
+   "title": "Исторические школы буддизма",
+   "rel": "02_world/dharmic/buddhism/historic_schools/historic_schools",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/historic_schools/historic_schools.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "III в. до н.э. – I в. н.э. (18 школ)",
+   "tags": [
+    "буддизм",
+    "история"
+   ],
+   "description": "направления, ушедшие или растворившиеся в других: от ранних «18 школ» до исчезнувших традиций Азии."
+  },
+  {
+   "title": "Йога (даршан)",
+   "rel": "02_world/dharmic/hinduism/darshanas/yoga/yoga",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/yoga/yoga.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "II в. до н.э. – IV в. н.э. (Патанджали)",
+   "tags": [
+    "индуизм",
+    "философия"
+   ],
+   "description": "школа Патанджали («Йога-сутры», II в."
+  },
+  {
+   "title": "Кагью",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/kagyu/kagyu",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/kagyu/kagyu.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XI в. (Тилопа → Марпа, 1040)",
+   "tags": [
+    "буддизм",
+    "тибетский буддизм"
+   ],
+   "description": "**Кагью** («линия устной передачи») — школа тибетского буддизма (XI в., Марпа, Миларепа, Гампопа): практика через йогу и махамудру. ## Суть Линия «великих йогинов»: Миларепа — поэт"
+  },
+  {
+   "title": "Капалики и каламукхи",
+   "rel": "02_world/dharmic/hinduism/shaivism/kapalika_kalamukha/kapalika_kalamukha",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/kapalika_kalamukha/kapalika_kalamukha.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VII–XIV вв.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "историческая линия"
+   ],
+   "description": "исторические шиваитские аскетические линии (VII–XIV вв."
+  },
+  {
+   "title": "Каула",
+   "rel": "02_world/dharmic/hinduism/shaktism/kaula/kaula",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/kaula/kaula.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VIII–XI вв.",
+   "tags": [
+    "индуизм",
+    "шактизм",
+    "тантра"
+   ],
+   "description": "«семейная» линия шактизма: путь через все аспекты жизни, включая запретное, как путь к Богине."
+  },
+  {
+   "title": "Каширский шиваизм",
+   "rel": "02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "XXI в. (Россия, Кашира)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "недуальный тантрический шиваизм",
+    "НРД",
+    "Россия",
+    "Кашира"
+   ],
+   "description": "Это русское учение о том, что всё на свете — одно целое. Появилось в городе Кашире. Голова учения — Сергей Чернов, он же Doctor Che. Главное: увидеть, что ты и весь мир — одно, и не изображать из себя важную персону. Проверяется просто: уронишь — посмейся."
+  },
+  {
+   "title": "Крама",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/krama/krama",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/krama/krama.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "IX–XI вв.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм"
+   ],
+   "description": "**Крама** («постепенность») — школа кашмирского шиваизма с акцентом на последовательную практику: от внешних обрядов к внутреннему узнаванию. ## Суть Крама систематизирует путь как"
+  },
+  {
+   "title": "Кула",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/kula/kula",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/kula/kula.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VIII–IX вв.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм"
+   ],
+   "description": "**Кула** («семья») — одна из главных линий кашмирского тантризма: путь через семью, тело и родовую традицию, где «нечистое» мира становится вратами к Шиве. ## Суть Кула утверждает "
+  },
+  {
+   "title": "Лесная традиция",
+   "rel": "02_world/dharmic/buddhism/theravada/forest_tradition/forest_tradition",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/forest_tradition/forest_tradition.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XX в. (Аджан Ман, Ча)",
+   "tags": [
+    "буддизм",
+    "тхеравада"
+   ],
+   "description": "аскетическая линия тхеравады: практика в джунглях, минимализм, «маленькая лампа в лесу»."
+  },
+  {
+   "title": "Мадхва (двайта-веданта)",
+   "rel": "02_world/dharmic/hinduism/vaishnavism/madhva/madhva",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/madhva/madhva.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIII в. (Мадхва, 1238–1317)",
+   "tags": [
+    "индуизм",
+    "вишнуизм",
+    "философия"
+   ],
+   "description": "**Мадхва** (XIII в., Карнатака) — дуалистическая веданта: Бог и душа различаются всегда и безусловно. ## Суть Пять вечных различий: Бог/душа, Бог/материя, душа/душа, душа/материя, "
+  },
+  {
+   "title": "Махамудра",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/mahamudra/mahamudra",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/mahamudra/mahamudra.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XI в. (Тилопа → Гампопа)",
+   "tags": [
+    "мистицизм",
+    "буддизм",
+    "тибетский буддизм"
+   ],
+   "description": "**Махамудра** («великая печать») — вершина пути школы кагью: прямое узнавание природы ума как пустоты-и-ясности; «печать» — потому что это узнавание ставится на любое переживание. "
+  },
+  {
+   "title": "Махаяна",
+   "rel": "02_world/dharmic/buddhism/mahayana/mahayana",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/mahayana.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "I в. до н.э. – I в. н.э. (сутры праджняпарамиты)",
+   "tags": [
+    "буддизм"
+   ],
+   "description": "Большой буддизм: спасайся не один, а веди за собой всех. Есть будды-спасители, которым можно молиться. Так буддизм стал понятен миллионам."
+  },
+  {
+   "title": "Миманса",
+   "rel": "02_world/dharmic/hinduism/darshanas/mimamsa/mimamsa",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/mimamsa/mimamsa.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "II в. до н.э. (Джаймини)",
+   "tags": [
+    "индуизм",
+    "философия",
+    "ритуал"
+   ],
+   "description": "**Миманса** (Пурва-миманса) — школа «науки ритуала»: главное — точное исполнение ведийских обрядов, а не метафизика. ## Суть Дхарма — «что должно делать», познаётся не из мистическ"
+  },
+  {
+   "title": "Муртипуджака",
+   "rel": "02_world/dharmic/jainism/shvetambara/murtipujaka/murtipujaka",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/murtipujaka/murtipujaka.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "Средневековье",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "основная ветвь шветамбара: почитание образов (мурти) тиртханкаров в храмах."
+  },
+  {
+   "title": "Намдхари (кука)",
+   "rel": "02_world/dharmic/sikhism/namdhari/namdhari",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/namdhari/namdhari.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIX в. (Баллак Сингх)",
+   "tags": [
+    "сикхизм"
+   ],
+   "description": "**Намдхари** («носящие имя») — сикхская реформаторская община (XIX в., Баллак Сингх): строгая дисциплина, белый цвет, вегетарианство. ## Суть Прозвище «кука» («крикуны») — за громк"
+  },
+  {
+   "title": "Натхи (горакханатхи)",
+   "rel": "02_world/dharmic/hinduism/shaivism/nath_tradition/nath_tradition",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nath_tradition/nath_tradition.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "IX–XI вв. (Горакхнатх)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "йога"
+   ],
+   "description": "аскетическая йогическая линия (с IX–XI вв."
+  },
+  {
+   "title": "Недуальный тантрический шиваизм (кашмирский кластер)",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/nondual_kashmir",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/nondual_kashmir.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "IX в. (Васугупта, спанда) → XII в.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм",
+    "тантра"
+   ],
+   "description": "Древняя индийская школа: весь мир — один сон сознания, и ты в нём не зритель, а сам сон. Никакой магии — очень внимательный взгляд на того, кто смотрит."
+  },
+  {
+   "title": "Ниранкари",
+   "rel": "02_world/dharmic/sikhism/nirankari/nirankari",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/nirankari/nirankari.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIX в. (Даял Сингх)",
+   "tags": [
+    "сикхизм",
+    "реформа"
+   ],
+   "description": "**Ниранкари** («бесформенный Бог») — сикхская реформа (XIX в., Даял Сингх): отказ от идолопоклонства и обрядности. ## Суть Упрощение: нет сложных ритуалов, образов, посредников; то"
+  },
+  {
+   "title": "Ниханг",
+   "rel": "02_world/dharmic/sikhism/nihang/nihang",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/nihang/nihang.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XVII в. (Гобинд Сингх)",
+   "tags": [
+    "сикхизм"
+   ],
+   "description": "воинский орден сикхов: тюрбан с железным кольцом, сабля, боевые искусства, охрана святынь."
+  },
+  {
+   "title": "Ничирэн",
+   "rel": "02_world/dharmic/buddhism/mahayana/nichiren/nichiren",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/nichiren/nichiren.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "1253 (Ничирэн, провозглашение)",
+   "tags": [
+    "буддизм",
+    "махаяна",
+    "Япония"
+   ],
+   "description": "японская школа (XIII в."
+  },
+  {
+   "title": "Ньингма",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/nyingma/nyingma",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/nyingma/nyingma.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VIII в. (Падмасамбхава)",
+   "tags": [
+    "буддизм",
+    "тибетский буддизм"
+   ],
+   "description": "**Ньингма** («старая») — старейшая школа тибетского буддизма (VIII в., Падмасамбхава): ранние тантры, дзогчен. ## Суть Девять колесниц; главное учение — **дзогчен** («великая полно"
+  },
+  {
+   "title": "Ньяя",
+   "rel": "02_world/dharmic/hinduism/darshanas/nyaya/nyaya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/nyaya/nyaya.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "II в. н.э. (Гаутама, Ньяя-сутры)",
+   "tags": [
+    "индуизм",
+    "философия",
+    "логика"
+   ],
+   "description": "индийская школа логики и эпистемологии: как отличить истинное знание от иллюзии."
+  },
+  {
+   "title": "Пашупата",
+   "rel": "02_world/dharmic/hinduism/shaivism/pashupata/pashupata",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/pashupata/pashupata.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "II в. н.э. (Лакулиша)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "историческая линия"
+   ],
+   "description": "древнейшая историческая школа шиваизма (II в."
+  },
+  {
+   "title": "Пратьябхиджня",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/pratyabhijna/pratyabhijna",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/pratyabhijna/pratyabhijna.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "X в. (Утпаладева) / XI в. (Абхинавагупта)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм"
+   ],
+   "description": "**Пратьябхиджня** («узнавание себя») — философия Абхинавагупты (X–XI вв.): высшая цель не достижение, а узнавание того, что уже есть. ## Суть Сознание самоотражается; мир — не иллю"
+  },
+  {
+   "title": "Сакья",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/sakya/sakya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/sakya/sakya.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "1073 (мон. Сакья)",
+   "tags": [
+    "буддизм",
+    "тибетский буддизм"
+   ],
+   "description": "**Сакья** («бледная земля») — школа тибетского буддизма (XI в., Кхон Кончог Гьялпо): учёность и политика. ## Суть Линия — наследственная (не тулку): сыновья Нгак-ванга. В XIII веке"
+  },
+  {
+   "title": "Санкхья",
+   "rel": "02_world/dharmic/hinduism/darshanas/samkhya/samkhya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/samkhya/samkhya.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "~I в. до н.э. (Санкхья-карика)",
+   "tags": [
+    "индуизм",
+    "философия"
+   ],
+   "description": "древнейшая дуалистическая школа индийской философии: два извечных начала — пуруша (дух) и пракрити (природа)."
+  },
+  {
+   "title": "Семья чань/дзен",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/chan_zen",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/chan_zen.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VI в. (Бодхидхарма) / VII–IX вв. (оформление чань)",
+   "tags": [
+    "буддизм",
+    "махаяна",
+    "дзен"
+   ],
+   "description": "семья буддийских школ, идущих от Бодхидхармы (VI в."
+  },
+  {
+   "title": "Сикхизм",
+   "rel": "02_world/dharmic/sikhism/sikhism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/sikhism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "1469 (рождение Нанака) / 1699 (Хальса)",
+   "tags": [
+    "дхармические",
+    "сикхизм"
+   ],
+   "description": "Религия из Индии (XV век): один Бог, все люди равны, трудись и делись едой. Мужчины носят тюрбан и нож — знак готовности защищать слабых. В храме кормят бесплатно всех подряд."
+  },
+  {
+   "title": "Сингон",
+   "rel": "02_world/dharmic/buddhism/vajrayana/shingon/shingon",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/shingon/shingon.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "806 (Кукай, Япония)",
+   "tags": [
+    "буддизм",
+    "ваджраяна",
+    "Япония"
+   ],
+   "description": "**Сингон** («истинное слово») — японская ваджраяна (IX в., Кукай): тайные мантры, мандалы и «становление буддой в этом теле». ## Суть Кукай (Кобо Дайси) принёс тантру из Китая; уче"
+  },
+  {
+   "title": "Смартизм",
+   "rel": "02_world/dharmic/hinduism/smartism/smartism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/smartism/smartism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VIII–IX вв. (Шанкара)",
+   "tags": [
+    "индуизм",
+    "смартизм"
+   ],
+   "description": "«либеральное крыло» индуизма, оформленное Шанкарой (VIII–IX вв."
+  },
+  {
+   "title": "Сон (корейский дзен)",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/korean_seon/korean_seon",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/korean_seon/korean_seon.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VII в. (Помнанг) / IX в. (Тохён)",
+   "tags": [
+    "буддизм",
+    "дзен"
+   ],
+   "description": "корейская буддийская традиция созерцания (선), одна из сильнейших школ дзен в мире."
+  },
+  {
+   "title": "Спанда",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/spanda/spanda",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/spanda/spanda.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "IX в. (Васугупта)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм"
+   ],
+   "description": "**Спанда** («вибрация», «пульсация») — учение о том, что реальность есть вибрация сознания: мир не «произведён», а пульсирует. ## Суть Шива проявляется через спанду: творение — не "
+  },
+  {
+   "title": "Стханакваси",
+   "rel": "02_world/dharmic/jainism/shvetambara/sthanakvasi/sthanakvasi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/sthanakvasi/sthanakvasi.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XV в. (Лонка)",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "реформаторская ветвь шветамбара (XV в."
+  },
+  {
+   "title": "Тамильские сиддхары",
+   "rel": "02_world/dharmic/hinduism/shaivism/siddhars_tamil/siddhars_tamil",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/siddhars_tamil/siddhars_tamil.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VII–XVIII вв. (18 сиддхаров)",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "история"
+   ],
+   "description": "поэты-аскеты и алхимики юга Индии (с VII–VIII вв."
+  },
+  {
+   "title": "Терапантхи (дигамбара)",
+   "rel": "02_world/dharmic/jainism/digambara/terapanthi/terapanthi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/digambara/terapanthi/terapanthi.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "XVIII в. (Бхиканджи)",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "реформаторская ветвь дигамбара (XVIII в."
+  },
+  {
+   "title": "Терапантхи (шветамбара)",
+   "rel": "02_world/dharmic/jainism/shvetambara/terapanthi/terapanthi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/terapanthi/terapanthi.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "1760 (Бхикхану)",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "**Терапантхи** (шветамбара) — реформаторская ветвь (XIX–XX вв.): строгая аскеза и социальная активность. ## Суть Требование чистоты учения и практики: отказ от почитания образов (к"
+  },
+  {
+   "title": "Тибетский буддизм",
+   "rel": "02_world/dharmic/buddhism/vajrayana/tibetan/tibetan",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/tibetan.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VII в. (Сонгцэн Гампо) / VIII в. (Падмасамбхава)",
+   "tags": [
+    "буддизм",
+    "ваджраяна"
+   ],
+   "description": "ваджраяна в тибетской форме: четыре школы, ламы, реинкарнации, богатейшая ритуальная культура."
+  },
+  {
+   "title": "Трика",
+   "rel": "02_world/dharmic/hinduism/shaivism/nondual_kashmir/trika/trika",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/trika/trika.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "IX–XI вв.",
+   "tags": [
+    "индуизм",
+    "шиваизм",
+    "кашмирский шиваизм"
+   ],
+   "description": "Учение про тройку: Бог, его сила и ты. Секрет: тройка — на самом деле один. Ты уже есть то, что искал. Как искать очки, когда они на носу."
+  },
+  {
+   "title": "Тхеравада",
+   "rel": "02_world/dharmic/buddhism/theravada/theravada",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/theravada.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "III в. до н.э. (Ашока, Шри-Ланка)",
+   "tags": [
+    "буддизм"
+   ],
+   "description": "Старейший буддизм: каждый сам себе спасатель. Медитируй, наблюдай дыхание, не цепляйся. Без богов и чудес — только работа над собой."
+  },
+  {
+   "title": "Тхиен (вьетнамский дзен)",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/vietnamese_thien/vietnamese_thien",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/vietnamese_thien/vietnamese_thien.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VI в. (Винирук",
+   "tags": [
+    "буддизм",
+    "дзен"
+   ],
+   "description": "вьетнамская традиция созерцания (thiền), синтез дзен сPure Land и местными культами."
+  },
+  {
+   "title": "Тяньтай",
+   "rel": "02_world/dharmic/buddhism/mahayana/tiantai/tiantai",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/tiantai/tiantai.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "575 (Чжии, г. Тяньтай)",
+   "tags": [
+    "буддизм",
+    "махаяна"
+   ],
+   "description": "китайская школа (VI в."
+  },
+  {
+   "title": "Удаси",
+   "rel": "02_world/dharmic/sikhism/udasi/udasi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/udasi/udasi.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XVI в. (Шри Чанд)",
+   "tags": [
+    "сикхизм",
+    "аскеза"
+   ],
+   "description": "**Удаси** («отрешённые») — аскетический орден сикхов (XVI в., Шри Чанд — сын гуру Нанака): странствующие проповедники. ## Суть Отказ от мирской жизни: странствия, простота, обучени"
+  },
+  {
+   "title": "Хуаянь",
+   "rel": "02_world/dharmic/buddhism/mahayana/huayan/huayan",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/huayan/huayan.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VII в. (Душунь, Фацзан)",
+   "tags": [
+    "буддизм",
+    "махаяна"
+   ],
+   "description": "китайская школа «Аватамсака-сутры»: взаимопроникновение всех явлений, сеть Индры."
+  },
+  {
+   "title": "Чань",
+   "rel": "02_world/dharmic/buddhism/mahayana/chan_zen/chan/chan",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/chan/chan.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "VI–VIII вв.",
+   "tags": [
+    "буддизм",
+    "махаяна",
+    "дзен"
+   ],
+   "description": "китайский буддизм «созерцания» (禅, chán): синтез буддизма с даосской культурой, ставший самой китайской из буддийских традиций."
+  },
+  {
+   "title": "Чистые земли",
+   "rel": "02_world/dharmic/buddhism/mahayana/pure_land/pure_land",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/pure_land/pure_land.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "II–III вв. (Индия) / IV в. (Китай, Хуэйюань)",
+   "tags": [
+    "буддизм",
+    "махаяна"
+   ],
+   "description": "направление махаяны (Китай, Япония, Вьетнам; крупнейшее по числу верующих в Азии): спасение через веру в Будду Амиду и перерождение в его Чистой земле."
+  },
+  {
+   "title": "Шайва-сиддханта",
+   "rel": "02_world/dharmic/hinduism/shaivism/shaiva_siddhanta/shaiva_siddhanta",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/shaiva_siddhanta/shaiva_siddhanta.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VI–IX вв. (наянары) / VIII в. (агамы)",
+   "tags": [
+    "индуизм",
+    "шиваизм"
+   ],
+   "description": "дуалистическая (с элементами недуализма) шиваитская система юга Индии: Шива, души и узы — три извечные реальности."
+  },
+  {
+   "title": "Шактизм",
+   "rel": "02_world/dharmic/hinduism/shaktism/shaktism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/shaktism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "VI–VIII вв. (тантрический слой)",
+   "tags": [
+    "индуизм",
+    "шактизм"
+   ],
+   "description": "направление индуизма, где высшая реальность — Богиня (Деви, Шакти): Дурга, Кали, Лалита-Трипурасундари."
+  },
+  {
+   "title": "Шветамбара",
+   "rel": "02_world/dharmic/jainism/shvetambara/shvetambara",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/shvetambara.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "sunyata",
+   "year": "I в. н.э. (раскол) / 454 (Валабхи)",
+   "tags": [
+    "джайнизм"
+   ],
+   "description": "**Шветамбара** («одетые в белое») — школа джайнизма: монахи носят белые одежды; женщины могут освободиться. ## Суть Признают канон (агамы), включая тексты о женщинах-архатах; равно"
+  },
+  {
+   "title": "Шиваизм",
+   "rel": "02_world/dharmic/hinduism/shaivism/shaivism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/shaivism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "II в. н.э. (пашупата) / VIII–XII вв. (кашмирский расцвет)",
+   "tags": [
+    "индуизм",
+    "шиваизм"
+   ],
+   "description": "Часть индуизма, где главным богом считают Шиву. Шива — не дядя с трезубцем, а само сознание, которое смотрит твоими глазами. Тысячу лет назад в Кашмире эта идея стала целой наукой."
+  },
+  {
+   "title": "Шри-вайшнавизм",
+   "rel": "02_world/dharmic/hinduism/vaishnavism/sri_vaishnavism/sri_vaishnavism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/sri_vaishnavism/sri_vaishnavism.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XI в. (Рамануджа)",
+   "tags": [
+    "индуизм",
+    "вишнуизм"
+   ],
+   "description": "южноиндийская вишнуитская традиция (Рамануджа, XI в."
+  },
+  {
+   "title": "Шри-видья",
+   "rel": "02_world/dharmic/hinduism/shaktism/sri_vidya/sri_vidya",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/sri_vidya/sri_vidya.html",
+   "family": "Дхармические",
+   "section": "02_world",
+   "axis": "advaita",
+   "year": "X–XIV вв. (Лалита-сахасранама)",
+   "tags": [
+    "индуизм",
+    "шактизм",
+    "тантра"
+   ],
+   "description": "крупнейшая тантрическая линия шактизма: Богиня Лалита-Трипурасундари и Шри-чакра."
+  },
+  {
+   "title": "Езидизм",
+   "rel": "02_world/iranian/yazidism/yazidism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/yazidism/yazidism.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII в. (Шейх Ади)",
+   "tags": [
+    "иранские",
+    "спорный статус"
+   ],
+   "description": "**Езидизм** ⚠️ — религия курдов-езидов (Северный Ирак, Закавказье, Европа; ~800 тыс.–1 млн): монотеизм с ангелом-павлином Тауси-Мелеком и кастовой структурой (шейхи, пиры, миряне)."
+  },
+  {
+   "title": "Зороастризм",
+   "rel": "02_world/iranian/zoroastrianism/zoroastrianism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/zoroastrianism.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII–VI вв. до н.э. (Заратуштра)",
+   "tags": [
+    "иранские",
+    "зороастризм"
+   ],
+   "description": "Древняя персидская религия: мир — битва света и тьмы, и ты выбираешь сторону каждой мыслью, словом и делом. Огонь в храме — символ истины, его не гасят веками."
+  },
+  {
+   "title": "Зороастрийцы-парсы (Индия)",
+   "rel": "02_world/iranian/zoroastrianism/parsi/parsi",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/parsi/parsi.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VIII–X вв. (бегство в Индию)",
+   "tags": [
+    "зороастризм",
+    "Индия"
+   ],
+   "description": "зороастрийская община Индии (около 60 тыс."
+  },
+  {
+   "title": "Зурванизм (исторический)",
+   "rel": "02_world/iranian/zoroastrianism/zurvanism_historic/zurvanism_historic",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/zurvanism_historic/zurvanism_historic.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "IV в. до н.э. – III в. н.э.",
+   "tags": [
+    "зороастризм",
+    "история"
+   ],
+   "description": "историческое течение зороастризма: высший бог — Зурван (Время), породивший близнецов Ахурамазду и Ангра-Майнью."
+  },
+  {
+   "title": "Иранские зороастрийцы",
+   "rel": "02_world/iranian/zoroastrianism/iranian/iranian",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/iranian/iranian.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "VII в. (под исламом)",
+   "tags": [
+    "зороастризм",
+    "Иран"
+   ],
+   "description": "община в Иране (Йезд, Керман; ок."
+  },
+  {
+   "title": "Иранские религии",
+   "rel": "02_world/iranian/iranian",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/iranian.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XII–VI вв. до н.э. (Заратуштра)",
+   "tags": [
+    "иранские"
+   ],
+   "description": "Религии Ирана и соседей: зороастризм, езиды, мандеи. Отсюда весь мир взял рай, ад и конец света — это видно даже в Библии."
+  },
+  {
+   "title": "Мандеизм",
+   "rel": "02_world/iranian/mandaeism/mandaeism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/mandaeism/mandaeism.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "I–II вв. н.э.",
+   "tags": [
+    "иранские",
+    "гностицизм"
+   ],
+   "description": "древнейшая живая гностическая религия (Ирак/Иран, ~60–100 тыс."
+  },
+  {
+   "title": "Ярсан (Ахл-и Хакк)",
+   "rel": "02_world/iranian/yarsanism/yarsanism",
+   "link": "https://oaker.github.io/veroteka/ru/02_world/iranian/yarsanism/yarsanism.html",
+   "family": "Иранские",
+   "section": "02_world",
+   "axis": "dvaita",
+   "year": "XIV–XV вв. (Султан Сохак)",
+   "tags": [
+    "иранские",
+    "спорный статус"
+   ],
+   "description": "**Ярсан** (Ахл-и Хакк, «люди истины») ⚠️ — курдское и иранское мистическое течение (2–3 млн): своя кастовая структура (pirs, dalils), храмов нет, богослужение — собрания и музыку с"
+  },
+  {
+   "title": "LGAT (крупногрупповые тренинги)",
+   "rel": "05_nrd/lgat/lgat",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/lgat/lgat.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1970-е (EST) / 2000-е",
+   "tags": [
+    "НРД",
+    "психотехнологии"
+   ],
+   "description": "**LGAT** (Large Group Awareness Training) — индустрия «тренингов личностного роста» с интенсивной групповой динамикой (Ландмарк, EST и аналоги). ## Механика Зал, 2–5 дней, конфронт"
+  },
+  {
+   "title": "Анастасийцы",
+   "rel": "05_nrd/russian/anastasians/anastasians",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/russian/anastasians/anastasians.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1990-е (книги Мегре)",
+   "tags": [
+    "НРД",
+    "Россия"
+   ],
+   "description": "российское движение «Звенящие кедры России» (1990-е, книги Владимира Мегре): почитание «Анастасии» — сибирской женщины с духовным учением."
+  },
+  {
+   "title": "Белое братство",
+   "rel": "05_nrd/russian/white_brotherhood/white_brotherhood",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/russian/white_brotherhood/white_brotherhood.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1990–1996",
+   "tags": [
+    "НРД",
+    "Россия",
+    "спорный статус"
+   ],
+   "description": "**Белое братство** ⚠️ — российское движение (1990–1996, Юрий Кривоногов и Мария Цвигун, «Мария Дэви Христос»): ожидание конца света и «воскресения». ## Суть Киевская ветвь: массовы"
+  },
+  {
+   "title": "Виссарионовцы",
+   "rel": "05_nrd/russian/vissarionites/vissarionites",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/russian/vissarionites/vissarionites.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1991",
+   "tags": [
+    "НРД",
+    "Россия"
+   ],
+   "description": "российское религиозное движение (1991, Сергей Тороп, «Виссарион», «Христос»): «Церковь Последнего Завета»."
+  },
+  {
+   "title": "Восточноазиатские новые движения",
+   "rel": "05_nrd/east_asian_new/east_asian_new",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/east_asian_new/east_asian_new.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "XIX–XX вв.",
+   "tags": [
+    "НРД",
+    "Азия"
+   ],
+   "description": "религии XX века из Китая, Кореи, Японии, соединившие буддизм, даосизм и национальную идею."
+  },
+  {
+   "title": "Врата Небес",
+   "rel": "05_nrd/ufo/heavens_gate/heavens_gate",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/ufo/heavens_gate/heavens_gate.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1970-е / 1997 (трагедия)",
+   "tags": [
+    "НРД",
+    "уфология",
+    "трагедия"
+   ],
+   "description": "**Врата Небес** ⚠️ — американская уфологическая группа (1970-е, Бонни Неттлз, Маршалл Эпплуайт), трагически известная массовым самоубийством 1997 года (39 человек). ## Суть Учение:"
+  },
+  {
+   "title": "Джедаизм",
+   "rel": "05_nrd/parody/jediism/jediism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/parody/jediism/jediism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "2001 (перепись, шутка)",
+   "tags": [
+    "НРД",
+    "пародия",
+    "интернет"
+   ],
+   "description": "движение, объявляющее путь джедаев из «Звёздных войн» духовной практикой."
+  },
+  {
+   "title": "Дудизм",
+   "rel": "05_nrd/parody/dudeism/dudeism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/parody/dudeism/dudeism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "2005 (Бенджамин)",
+   "tags": [
+    "НРД",
+    "пародия",
+    "даосизм"
+   ],
+   "description": "**Дудизм** (Церковь последнего дня Дуде) — религия середины 2000-х (Оливер Бенджамин), построенная на фильме братьев Коэн «Большой Лебовски» (1998) и «Дао дэ цзин». ## Суть Герой —"
+  },
+  {
+   "title": "Кардецизм (спиритизм)",
+   "rel": "05_nrd/spiritism_kardecism/spiritism_kardecism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/spiritism_kardecism/spiritism_kardecism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1857 (Кардек, «Книга духов»)",
+   "tags": [
+    "НРД",
+    "спиритизм"
+   ],
+   "description": "спиритическое учение Аллана Кардека (Франция, 1857): духи, реинкарнация, эволюция души."
+  },
+  {
+   "title": "Кастенедианство (последователи Кастанеды)",
+   "rel": "05_nrd/castanedianism/castanedianism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/castanedianism/castanedianism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "advaita",
+   "year": "1968 (первая книга) / 1995 (Cleargreen)",
+   "tags": [
+    "НРД",
+    "Кастанеда",
+    "шаманизм спорный",
+    "недуальность"
+   ],
+   "description": "image: img/castanedianism.jpg **Кастенедианство** (разговорное «кактуасианство») — сообщества последователей Карлоса Кастанеды (1925–1998), американского антрополога и писателя, ав"
+  },
+  {
+   "title": "Копимизм",
+   "rel": "05_nrd/parody/kopimism/kopimism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/parody/kopimism/kopimism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "2010",
+   "tags": [
+    "НРД",
+    "пародия",
+    "интернет"
+   ],
+   "description": "**Копимизм** (Missionary Church of Kopimism) — религия копирования информации (Швеция, 2010; Исак Герсон); в конце 2011 года зарегистрирована государством как религиозная община. #"
+  },
+  {
+   "title": "Ландмарк (LGAT)",
+   "rel": "05_nrd/lgat/landmark/landmark",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/lgat/landmark/landmark.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1991 (после EST)",
+   "tags": [
+    "НРД",
+    "психотехнологии"
+   ],
+   "description": "**Ландмарк Форум** (и шире — LGAT, Large Group Awareness Training) — крупногрупповые тренинги личностного роста с интенсивной эмоциональной динамикой. ## Суть 2–3 дня в зале на 100"
+  },
+  {
+   "title": "НЛО-культизм",
+   "rel": "05_nrd/ufo/ufo",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/ufo/ufo.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "XX век (после 1947, Розуэлл)",
+   "tags": [
+    "НРД",
+    "уфология"
+   ],
+   "description": "религиозные движения вокруг идеи инопланетного вмешательства: от раэлитов до Врат Небес."
+  },
+  {
+   "title": "Неошаманизм",
+   "rel": "05_nrd/neo_shamanism/neo_shamanism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/neo_shamanism/neo_shamanism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "sunyata",
+   "year": "1970–1980-е (Кастанеда, Харнер)",
+   "tags": [
+    "НРД",
+    "шаманизм",
+    "практика"
+   ],
+   "description": "современные практики, стилизованные под традиционный шаманизм: семинары, бубны, «путешествия силы», «городской шаманизм» (с 1970-х, США/Европа)."
+  },
+  {
+   "title": "Новые религиозные движения",
+   "rel": "05_nrd/05_nrd",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/05_nrd.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "XIX–XXI вв.",
+   "tags": [
+    "НРД"
+   ],
+   "description": "Новые религии и группы. Здесь честно разбирают, как в них заманивают и как выйти. Полезно всем, у кого есть близкие и кто встречал обещания лёгкого счастья."
+  },
+  {
+   "title": "Пародийные религии",
+   "rel": "05_nrd/parody/parody",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/parody/parody.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "XX–XXI вв.",
+   "tags": [
+    "НРД",
+    "пародия",
+    "сатира"
+   ],
+   "description": "движения, использующие форму религии (учение, ритуал, организация, документы) осознанно-шутливо: как протест, сатиру или игру."
+  },
+  {
+   "title": "Раэлиты",
+   "rel": "05_nrd/ufo/raelism/raelism",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/ufo/raelism/raelism.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1974",
+   "tags": [
+    "НРД",
+    "уфология"
+   ],
+   "description": "**Раэлизм** ⚠️ — уфологическое движение (1974, Клод Ворилон, «Раэль»; ~100 тыс.): жизнь на Земле создана инопланетянами (элохим). ## Суть Элохим — учёные-творцы; пророки всех религ"
+  },
+  {
+   "title": "Российские НРД",
+   "rel": "05_nrd/russian/russian",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/russian/russian.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1980–2000-е",
+   "tags": [
+    "НРД",
+    "Россия"
+   ],
+   "description": "новые религиозные движения России и постсоветского пространства (1980-е–2000-е)."
+  },
+  {
+   "title": "Саентология",
+   "rel": "05_nrd/scientology/scientology",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/scientology/scientology.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1950 («Дианетика») / 1954 (церковь)",
+   "tags": [
+    "НРД",
+    "психотехнологии",
+    "спорный статус"
+   ],
+   "description": "**Саентология** ⚠️ — религиозное движение (1954, Лафайет Рон Хаббард; «Дианетика», 1950): человек — «тетан», бессмертный дух, забывший свою природу. ## Суть Аудит (одитинг) — «одит"
+  },
+  {
+   "title": "Фалуньгун",
+   "rel": "05_nrd/east_asian_new/falun_gong/falun_gong",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/east_asian_new/falun_gong/falun_gong.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1992",
+   "tags": [
+    "НРД",
+    "Китай",
+    "спорный статус"
+   ],
+   "description": "**Фалуньгун** («практика колеса закона») ⚠️ — китайская духовная практика (1992, Ли Хунчжи): упражнения, медитация, учение о «фалуни» (законе). ## Суть Смесь цигун, буддийских и да"
+  },
+  {
+   "title": "Церковь Всевышнего Слова (SubGenius)",
+   "rel": "05_nrd/parody/subgenius/subgenius",
+   "link": "https://oaker.github.io/veroteka/ru/05_nrd/parody/subgenius/subgenius.html",
+   "family": "Новые движения",
+   "section": "05_nrd",
+   "axis": "",
+   "year": "1979 (Стэнг, Драммонд)",
+   "tags": [
+    "НРД",
+    "пародия"
+   ],
+   "description": "**Церковь Всевышнего Слова** (Church of the SubGenius) — пародийная религия (1979, США; Иван Стэнг и Фило Драммонд), сатира на телепроповедников, сетевой маркетинг и культы. ## Сут"
+  },
+  {
+   "title": "Аборигенные традиции Австралии",
+   "rel": "04_national/oceania/australian/australian",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/oceania/australian/australian.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "65 000 лет непрерывно",
+   "tags": [
+    "региональные",
+    "Океания"
+   ],
+   "description": "древнейшая непрерывная культура планеты (65 тыс."
+  },
+  {
+   "title": "Африка (религиозная карта)",
+   "rel": "04_national/africa/africa",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/africa.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Африка"
+   ],
+   "description": "традиционные религии, христианство и ислам в постоянном смешении."
+  },
+  {
+   "title": "Вепсы: религия и духовная традиция",
+   "rel": "04_national/baltic_finnic/veps/veps",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/baltic_finnic/veps/veps.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "финно-угры",
+    "вепсы",
+    "Россия"
+   ],
+   "description": "Вепсы — маленький северный народ, у которого природа — хозяин, а человек — гость: в лес здороваются, воду благодарят, слово имеет вес. Учитель линии Каширы (Doctor Che) — из вепсов и считает это наследие корнем своего пути."
+  },
+  {
+   "title": "Викка",
+   "rel": "04_national/modern_traditions/wicca/wicca",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/wicca/wicca.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1951–1954 (Гарднер)",
+   "tags": [
+    "региональные",
+    "возрождённые"
+   ],
+   "description": "современная неоязыческая религия (1950-е, Джеральд Гарднер): почитание Богини и Бога, магия, сезонные ритуалы."
+  },
+  {
+   "title": "Водун",
+   "rel": "04_national/africa/vodun/vodun",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/vodun/vodun.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до контакта",
+   "tags": [
+    "региональные",
+    "Африка"
+   ],
+   "description": "религия Фона и Эве (Бенин, Того, Нигерия): верховный бог Маву-Лиза, божества-водун, культ предков."
+  },
+  {
+   "title": "Возрождённые традиции (XIX–XXI вв.)",
+   "rel": "04_national/modern_traditions/modern_traditions",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/modern_traditions.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XIX–XXI вв.",
+   "tags": [
+    "региональные",
+    "возрождённые"
+   ],
+   "description": "современные движения, восстанавливающие древние традиции Европы на основе науки, фольклора и личной практики: викка, хитренство, ромува, диевтури, родноверие."
+  },
+  {
+   "title": "Вьетнам",
+   "rel": "04_national/vietnam/vietnam",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/vietnam/vietnam.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Вьетнам"
+   ],
+   "description": "синтез: народная религия, буддизм махаяны (тхиен), конфуцианство, даосизм + локальные традиции."
+  },
+  {
+   "title": "Государственный синто",
+   "rel": "04_national/japan/shinto/state_shinto/state_shinto",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/shinto/state_shinto/state_shinto.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1868–1945",
+   "tags": [
+    "региональные",
+    "Япония",
+    "история"
+   ],
+   "description": "**Государственный синто** (кокка синто, 1868–1945) — государственная идеология Японии: император как божественный потомок Аматэрасу, синто как государственный культ. ## Суть Создан"
+  },
+  {
+   "title": "ДАО-мау (культ Матерей)",
+   "rel": "04_national/vietnam/dao_mau/dao_mau",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/vietnam/dao_mau/dao_mau.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XVI в. (оформление) / корни древнее",
+   "tags": [
+    "региональные",
+    "Вьетнам"
+   ],
+   "description": "**ДАО-мау** («путь Матерей») — вьетнамский культ богинь-матерей: трансовые ритуалы, песни, костюмы. ## Суть Четыре дворца (небо, земля, вода, горы/леса) — четыре группы богинь. Рит"
+  },
+  {
+   "title": "Даосизм",
+   "rel": "04_national/china/daoism/daoism",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/daoism/daoism.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "IV–III вв. до н.э. (Дао дэ цзин)",
+   "tags": [
+    "региональные",
+    "даосизм"
+   ],
+   "description": "Дао — «как всё устроено», словами не передать. Совет школы: не суетись. Вода мягче камня, но камень протачивает. Не дави на жизнь — и она пойдёт."
+  },
+  {
+   "title": "Диаспорные традиции",
+   "rel": "04_national/africa/diaspora/diaspora",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/diaspora.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XVI–XIX вв. (работорговля)",
+   "tags": [
+    "региональные",
+    "Африка",
+    "диаспора"
+   ],
+   "description": "африканские религии, пережившие рабство и воссозданные в Америке: сантерия, кандомбле, вуду."
+  },
+  {
+   "title": "Диевтури",
+   "rel": "04_national/modern_traditions/dievturi/dievturi",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/dievturi/dievturi.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1925 (Брастиньш)",
+   "tags": [
+    "региональные",
+    "возрождённые"
+   ],
+   "description": "**Диевтури** («богоносцы») — латвийское неоязыческое движение (1920-е; Эрнест Брастиньш): балтийская религия в национальном ключе. ## Суть Диевс (небо) как высший; пантеон балтийск"
+  },
+  {
+   "title": "Йоруба / Ифа",
+   "rel": "04_national/africa/yoruba_ifa/yoruba_ifa",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/yoruba_ifa/yoruba_ifa.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до контакта (до XV в.)",
+   "tags": [
+    "региональные",
+    "Африка"
+   ],
+   "description": "Религия народа йоруба (Западная Африка): верховный Бог и много божеств-помощников на все случаи. Гадание Ифа — древняя «справочная» на 256 стихов. Через рабство эти боги доехали до Кубы и Бразилии."
+  },
+  {
+   "title": "Кандомбле",
+   "rel": "04_national/africa/diaspora/candomble/candomble",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/candomble/candomble.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XVIII–XIX вв. (Бразилия)",
+   "tags": [
+    "региональные",
+    "Африка",
+    "диаспора"
+   ],
+   "description": "бразильская религия йоруба: ориша, барабаны атабаке, terreiro (общинная площадка)."
+  },
+  {
+   "title": "Китай (религиозная карта)",
+   "rel": "04_national/china/china",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/china.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Китай"
+   ],
+   "description": "три учения и народная религия: даосизм, конфуцианство, буддизм плюс культ предков."
+  },
+  {
+   "title": "Китайская народная религия",
+   "rel": "04_national/china/chinese_folk/chinese_folk",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/chinese_folk/chinese_folk.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "доисторический слой",
+   "tags": [
+    "региональные",
+    "Китай"
+   ],
+   "description": "то, во что реально верит большинство китайцев: боги-чиновники, предки, духи мест, фэншуй, судьба."
+  },
+  {
+   "title": "Конфуцианство",
+   "rel": "04_national/china/confucianism/confucianism",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/confucianism/confucianism.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "dvaita",
+   "year": "V в. до н.э. (Конфуций)",
+   "tags": [
+    "региональные",
+    "Китай",
+    "этика"
+   ],
+   "description": "Не про богов, а про то, как жить среди людей: уважай старших, держи слово, учись. Две тысячи лет Китай нанимал чиновников по экзаменам на эти книги."
+  },
+  {
+   "title": "Корея (религиозная карта)",
+   "rel": "04_national/korea/korea",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/korea/korea.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Корея"
+   ],
+   "description": "шаманизм, буддизм, христианство и конфуцианская этика в одном обществе."
+  },
+  {
+   "title": "Муизм (корейский шаманизм)",
+   "rel": "04_national/korea/muism/muism",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/korea/muism/muism.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до н.э. (древний слой)",
+   "tags": [
+    "региональные",
+    "Корея"
+   ],
+   "description": "корейский шаманизм: 믿음, вера в духов (му) и посредников-шаманок (муданг)."
+  },
+  {
+   "title": "Океания (религиозная карта)",
+   "rel": "04_national/oceania/oceania",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/oceania/oceania.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Океания"
+   ],
+   "description": "аборигенные традиции, полинезийские верования и христианство."
+  },
+  {
+   "title": "Полинезийские религии",
+   "rel": "04_national/oceania/polynesian/polynesian",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/oceania/polynesian/polynesian.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до контакта (XVIII в.)",
+   "tags": [
+    "региональные",
+    "Океания"
+   ],
+   "description": "традиции Гавайев, Таити, Новой Зеландии (маори), Самоа: мана, тапу, боги моря и земли."
+  },
+  {
+   "title": "Прибалтийско-финские традиции",
+   "rel": "04_national/baltic_finnic/baltic_finnic",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/baltic_finnic/baltic_finnic.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "финно-угры",
+    "Россия"
+   ],
+   "description": "Народы русского севера (вепсы, карелы, ижора) верят: у леса, воды и дома есть хозяева. Крестились рано, но старую вежливость к миру не забыли: вошёл в лес — поздоровайся. Религия как хорошие манеры перед живым миром."
+  },
+  {
+   "title": "Региональные традиции",
+   "rel": "04_national/04_national",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/04_national.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные"
+   ],
+   "description": "Веры, живущие у народов «с рождения»: японский синто, китайские боги, африканские традиции. Тут не «верю в», а «живу в»: праздник, предки, место."
+  },
+  {
+   "title": "Родноверие",
+   "rel": "04_national/modern_traditions/slavic_rodnovery/slavic_rodnovery",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/slavic_rodnovery/slavic_rodnovery.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1980-е",
+   "tags": [
+    "региональные",
+    "возрождённые",
+    "спорное"
+   ],
+   "description": "российское неоязыческое движение (1980-е →): восстановление славянской религии, культ Рода и природы."
+  },
+  {
+   "title": "Ромува",
+   "rel": "04_national/modern_traditions/romuva/romuva",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/romuva/romuva.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1911 / 1991 (возрождение)",
+   "tags": [
+    "региональные",
+    "возрождённые"
+   ],
+   "description": "литовское неоязыческое движение (XX в."
+  },
+  {
+   "title": "Рюкюские верования",
+   "rel": "04_national/japan/ryukyuan/ryukyuan",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/ryukyuan/ryukyuan.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до XII в.",
+   "tags": [
+    "региональные",
+    "Япония"
+   ],
+   "description": "**Рюкюские верования** (Окинава) — религия островов Рюкю: почитание предков, священные места (уттаки), жрицы-нуру. ## Суть Островная традиция с сильным матрицентризмом: жрицы (нуру"
+  },
+  {
+   "title": "Сантерия",
+   "rel": "04_national/africa/diaspora/santeria/santeria",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/santeria/santeria.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XVI–XVIII вв. (Куба)",
+   "tags": [
+    "региональные",
+    "Африка",
+    "диаспора"
+   ],
+   "description": "**Сантерия** («Regla de Ocha») — кубинская религия африканского происхождения: ориша йоруба под католическими именами. ## Суть Ориша (Шанго, Ошун, Йемайя, Огун) — божества; сантеро"
+  },
+  {
+   "title": "Сектантский синто",
+   "rel": "04_national/japan/shinto/sect_shinto/sect_shinto",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/shinto/sect_shinto/sect_shinto.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "XIII–XIX вв.",
+   "tags": [
+    "региональные",
+    "Япония",
+    "синтоизм"
+   ],
+   "description": "**Сектантский синто** («кёха синто») — движения XIX века внутри синто: 13 групп, основанных харизматическими лидерами (Тэнри, Конко, Куродзуми). ## Суть Признаны государством как о"
+  },
+  {
+   "title": "Сибирский шаманизм",
+   "rel": "04_national/steppe_siberia/siberian_shamanism/siberian_shamanism",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/siberian_shamanism/siberian_shamanism.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до контакта (тысячелетия)",
+   "tags": [
+    "региональные",
+    "Сибирь"
+   ],
+   "description": "древняя практика народов Сибири: шаман как техник экстаза, посредник между мирами."
+  },
+  {
+   "title": "Синтоизм",
+   "rel": "04_national/japan/shinto/shinto",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/shinto/shinto.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "до VI в. (до буддизма)",
+   "tags": [
+    "региональные",
+    "синтоизм"
+   ],
+   "description": "Японская вера: в горах, реках и людях живут духи (ками). Догм нет — чистота, праздники и уважение к месту, где живёшь. Ворота-тории — дверной проём между обычным и священным."
+  },
+  {
+   "title": "Степь и Сибирь (религиозная карта)",
+   "rel": "04_national/steppe_siberia/steppe_siberia",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/steppe_siberia.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Степь"
+   ],
+   "description": "тенгрианство, шаманизм и буддизм в тюрко-монгольском мире."
+  },
+  {
+   "title": "Тенгрианство",
+   "rel": "04_national/steppe_siberia/tengrism/tengrism",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/tengrism/tengrism.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "VI–XIII вв. (тюркские каганаты)",
+   "tags": [
+    "региональные",
+    "Степь",
+    "тюркские"
+   ],
+   "description": "религия тюркских и монгольских народов Степи: Тенгри (Небо-отец) и Умай (Мать-земля)."
+  },
+  {
+   "title": "Хитренство (германское возрождение)",
+   "rel": "04_national/modern_traditions/heathenry/heathenry",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/modern_traditions/heathenry/heathenry.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1972 (Асатру, Исландия)",
+   "tags": [
+    "региональные",
+    "возрождённые"
+   ],
+   "description": "**Хитренство** (Heathenry) — современное возрождение скандинавской и германской религии: боги асов и ванов, руны, общины. ## Суть Реконструкция по Эддам и сагам + личная практика: "
+  },
+  {
+   "title": "Храмовый синто",
+   "rel": "04_national/japan/shinto/shrine_shinto/shrine_shinto",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/shinto/shrine_shinto/shrine_shinto.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "VII в. (организация)",
+   "tags": [
+    "региональные",
+    "Япония",
+    "синтоизм"
+   ],
+   "description": "основная институциональная форма синто: сеть святилищ (дзиндзя), божественная земля и календарь праздников."
+  },
+  {
+   "title": "Цюаньчжэнь",
+   "rel": "04_national/china/daoism/quanzhen/quanzhen",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/daoism/quanzhen/quanzhen.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1167 (Ван Чунъян)",
+   "tags": [
+    "даосизм",
+    "Китай"
+   ],
+   "description": "**Цюаньчжэнь** («полная истина») — монашеская школа даосизма (XII в., Ван Чунъян): аскеза, целомудрие, внутренняя алхимия. ## Суть Полный отказ от мирского: монахи живут в монастыр"
+  },
+  {
+   "title": "Чжэнъи",
+   "rel": "04_national/china/daoism/zhengyi/zhengyi",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/china/daoism/zhengyi/zhengyi.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "II в. (Чжан Даолин)",
+   "tags": [
+    "даосизм",
+    "Китай"
+   ],
+   "description": "**Чжэнъи** («правильное единство») — мирская школа даосизма: священники живут в миру, женятся, служат общинам. ## Суть Наследственная линия (Чжан Тяньши — «Небесный наставник»), ри"
+  },
+  {
+   "title": "Чхондогё",
+   "rel": "04_national/korea/cheondogyo/cheondogyo",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/korea/cheondogyo/cheondogyo.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "1860 (Чхве Джеу)",
+   "tags": [
+    "региональные",
+    "Корея",
+    "НРД"
+   ],
+   "description": "**Чхондогё** («Учение Небесного Пути») — корейская религия XIX века (1860, Чхве Джеу): синтез конфуцианства, буддизма и даосизма с корейской идентичностью. ## Суть «Человек — небес"
+  },
+  {
+   "title": "Япония (религиозная карта)",
+   "rel": "04_national/japan/japan",
+   "link": "https://oaker.github.io/veroteka/ru/04_national/japan/japan.html",
+   "family": "Региональные",
+   "section": "04_national",
+   "axis": "sunyata",
+   "year": "",
+   "tags": [
+    "региональные",
+    "Япония"
+   ],
+   "description": "синтоизм и буддизм в разделении труда: синто на жизнь, буддизм на смерть."
+  },
+  {
+   "title": "Алхимия",
+   "rel": "06_esoteric/alchemy/alchemy",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/alchemy/alchemy.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "III в. (Египет) / VIII в. (арабская) / XII в. (Европа)",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "искусство трансмутации: превращение свинца в золото как внешний слой внутреннего делания — превращения души."
+  },
+  {
+   "title": "Антропософия",
+   "rel": "06_esoteric/anthroposophy/anthroposophy",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/anthroposophy/anthroposophy.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1912 (Штейнер)",
+   "tags": [
+    "эзотерика",
+    "НРД"
+   ],
+   "description": "«мудрость о человеке» Рудольфа Штейнера (1912): духовная наука о развитии человека и космоса."
+  },
+  {
+   "title": "Астрология",
+   "rel": "06_esoteric/astrology/astrology",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/astrology/astrology.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "II тыс. до н.э. (Вавилон)",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "учение о связи небесных тел и земной жизни; древнейшая «прикладная» система интерпретации."
+  },
+  {
+   "title": "Герметизм",
+   "rel": "06_esoteric/hermeticism/hermeticism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/hermeticism/hermeticism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "II–III вв. (Corpus Hermeticum)",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "эзотерическая традиция, приписываемая Гермесу Трисмегисту («трижды величайшему»): синтез греческой философии и египетской мистики (II–III вв."
+  },
+  {
+   "title": "Герметическая каббала",
+   "rel": "06_esoteric/kabbalah/hermetic_kabbalah/hermetic_kabbalah",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/hermetic_kabbalah/hermetic_kabbalah.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "XV в. (Пико) / 1888 (Золотая Заря)",
+   "tags": [
+    "эзотерика",
+    "оккультизм"
+   ],
+   "description": "христианско-оккультная адаптация каббалы (Ренессанс; Золотая Заря): сфирот + таро + астрология."
+  },
+  {
+   "title": "Гностицизм",
+   "rel": "06_esoteric/gnosticism/gnosticism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/gnosticism/gnosticism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "I–III вв.",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "движение поздней античности: спасение через тайное знание (гнозис), а не веру и обряд."
+  },
+  {
+   "title": "Гримуарная традиция",
+   "rel": "06_esoteric/magic/grimoire/grimoire",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/magic/grimoire/grimoire.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "XII–XVII вв.",
+   "tags": [
+    "эзотерика",
+    "магия"
+   ],
+   "description": "«учебник магии»: книги заклинаний, печатей, имён духов; от «Ключа Соломона» до «Малого Альберта»."
+  },
+  {
+   "title": "Дискордианизм",
+   "rel": "06_esoteric/discordianism/discordianism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/discordianism/discordianism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "",
+   "tags": [
+    "эзотерика",
+    "пародия",
+    "хаос-магия"
+   ],
+   "description": "религия/философия хаоса и богини Эриды (1957–1959, Малаклипс Младший; «Principia Discordia»), заявленная как пародия и ставшая родоначальником хаос-магии."
+  },
+  {
+   "title": "Золотая Заря",
+   "rel": "06_esoteric/golden_dawn/golden_dawn",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/golden_dawn/golden_dawn.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1888",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "**Герметический орден Золотой Зари** (1888, Лондон) — самый влиятельный оккультный орден нового времени: синтез каббалы, герметизма, астрологии и ритуала. ## Суть Система посвящени"
+  },
+  {
+   "title": "Иудейская каббала",
+   "rel": "06_esoteric/kabbalah/jewish_kabbalah/jewish_kabbalah",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/jewish_kabbalah/jewish_kabbalah.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "advaita",
+   "year": "XIII в. («Зоар») / XVI в. (Лурия)",
+   "tags": [
+    "эзотерика",
+    "иудаизм"
+   ],
+   "description": "эзотерическое ядро иудаизма: «Зоар», лурианская школа, сфирот."
+  },
+  {
+   "title": "Каббала",
+   "rel": "06_esoteric/kabbalah/kabbalah",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/kabbalah.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "advaita",
+   "year": "XII–XIII вв. («Бахир», «Зоар»)",
+   "tags": [
+    "эзотерика",
+    "иудаизм",
+    "мистицизм"
+   ],
+   "description": "**Каббала** («получение») — эзотерическая традиция иудаизма: учение о структуре божественного, мире и душе через десять сфирот. ## Две линии - **Иудейская каббала**: «Зоар» (XIII в"
+  },
+  {
+   "title": "Магия",
+   "rel": "06_esoteric/magic/magic",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/magic/magic.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "доисторический слой",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "практики воздействия на реальность через символы, ритуалы и волю; в религиоведении — культурный феномен, а не «шарлатанство»."
+  },
+  {
+   "title": "Мартинизм",
+   "rel": "06_esoteric/martinism/martinism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/martinism/martinism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1740-е",
+   "tags": [
+    "эзотерика",
+    "ордена"
+   ],
+   "description": "эзотерическая традиция (Мартинес де Паскуалли, 1740-е; Луи Клод де Сен-Мартен): христианский мистицизм + инициация «избранных священников»."
+  },
+  {
+   "title": "Масонство",
+   "rel": "06_esoteric/masonry/masonry",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/masonry/masonry.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "dvaita",
+   "year": "",
+   "tags": [
+    "эзотерика",
+    "ордена",
+    "история"
+   ],
+   "description": "**Масонство** (франкмасонство) — братское-инициатическое движение, оформившееся в Лондоне в 1717 году (Великая ложа); в мире — несколько миллионов членов. ## Устройство Ложа — базо"
+  },
+  {
+   "title": "Масонство в России",
+   "rel": "06_esoteric/masonry/masonry_russia/masonry_russia",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/masonry/masonry_russia/masonry_russia.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "dvaita",
+   "year": "",
+   "tags": [
+    "эзотерика",
+    "масонство",
+    "Россия"
+   ],
+   "description": "image: img/masonry_russia.jpg **Масонство в России** — история братства от XVIII века до наших дней: расцветы, запреты и реставрация. ## XVIII век: расцвет просвещения Первые ложи "
+  },
+  {
+   "title": "Народная магия",
+   "rel": "06_esoteric/magic/folk_magic/folk_magic",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/magic/folk_magic/folk_magic.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "доисторический слой",
+   "tags": [
+    "эзотерика",
+    "магия"
+   ],
+   "description": "бытовые практики защиты и влияния: заговоры, обереги, приметы, «бабки-шептухи»."
+  },
+  {
+   "title": "Новая мысль",
+   "rel": "06_esoteric/new_thought/new_thought",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/new_thought/new_thought.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1830-е (Эмерсон) / 1880-е",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "**Новая мысль** (New Thought, XIX в., США) — движение о силе мысли: «мышление создаёт реальность», исцеление сознанием, процветание. ## Суть Корни: трансцендентализм (Эмерсон), мез"
+  },
+  {
+   "title": "Нью-эйдж",
+   "rel": "06_esoteric/new_age/new_age",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/new_age/new_age.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1960–1970-е",
+   "tags": [
+    "эзотерика",
+    "НРД"
+   ],
+   "description": "«новая эра»: диффузное движение (1960-е →) о духовном самосовершенствовании вне догм: кристаллы, медитации, ченнелинг, астрология, рейки."
+  },
+  {
+   "title": "Розенкрейцерство",
+   "rel": "06_esoteric/rosicrucianism/rosicrucianism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/rosicrucianism/rosicrucianism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1614 (манифесты)",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "эзотерическое братство, заявленное в манифестах XVII века (перекрещенная роза): герметизм, алхимия и духовное обновление Европы."
+  },
+  {
+   "title": "Сатанизм ЛаВея",
+   "rel": "06_esoteric/la_vey_satanism/la_vey_satanism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/la_vey_satanism/la_vey_satanism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1966",
+   "tags": [
+    "эзотерика",
+    "НРД",
+    "спорный статус"
+   ],
+   "description": "**Сатанизм Антона ЛаВея** (Церковь Сатаны, 1966, Сан-Франциско) — атеистическая «религия» с сатаной как символом, а не существом. ## Суть - «Сатана» — символ эгоизма, свободы и пло"
+  },
+  {
+   "title": "Спиритуализм",
+   "rel": "06_esoteric/spiritualism/spiritualism",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/spiritualism/spiritualism.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1848 (Фоксы, Гайдсвилл)",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "вера в общение с духами умерших через медиумов; массовое движение XIX века (около 1850-х, США)."
+  },
+  {
+   "title": "Таро",
+   "rel": "06_esoteric/tarot/tarot",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/tarot/tarot.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "XV в. (карты) / 1781 (оккультное таро)",
+   "tags": [
+    "эзотерика",
+    "символизм"
+   ],
+   "description": "колода карт (XV в."
+  },
+  {
+   "title": "Телема",
+   "rel": "06_esoteric/thelema/thelema",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/thelema/thelema.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1904",
+   "tags": [
+    "эзотерика",
+    "НРД"
+   ],
+   "description": "**Телема** («воля») — религиозно-философская система Алистера Кроули (1904, «Книга Закона»). ## Суть - «Делай что изволишь — таков весь Закон» (Do what thou wilt shall be the whole"
+  },
+  {
+   "title": "Теософия",
+   "rel": "06_esoteric/theosophy/theosophy",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/theosophy/theosophy.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1875 (Блаватская)",
+   "tags": [
+    "эзотерика",
+    "НРД"
+   ],
+   "description": "эзотерическое движение Елены Блаватской (Теософское общество, 1875, Нью-Йорк): синтез восточных религий, западного оккультизма и «древней мудрости»."
+  },
+  {
+   "title": "Хаос-магия",
+   "rel": "06_esoteric/magic/chaos_magic/chaos_magic",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/magic/chaos_magic/chaos_magic.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "1970-е (Спейр, Кэрролл)",
+   "tags": [
+    "эзотерика",
+    "магия"
+   ],
+   "description": "современный оккультизм (1970–80-е, Остин Осман Спейр, Алистер Кроули — предтеча, «Liber Null» Пита Кэрролла): парадигма, а не догма."
+  },
+  {
+   "title": "Эзотерика и оккультизм",
+   "rel": "06_esoteric/06_esoteric",
+   "link": "https://oaker.github.io/veroteka/ru/06_esoteric/06_esoteric.html",
+   "family": "Эзотерика",
+   "section": "06_esoteric",
+   "axis": "",
+   "year": "II–IV вв. (герметизм) → XIX–XX вв.",
+   "tags": [
+    "эзотерика"
+   ],
+   "description": "«Тайные знания»: алхимия, астрология, магия, каббала. Про них больше всего врут — поэтому тут отделяют историю от сказок, спокойно и с иронией."
+  }
+ ]
+}
