@@ -276,7 +276,7 @@ def build_quiz(site_dir):
     <a href="az.html">А-Я</a>
     <a href="tags.html">Теги</a>
     <a href="axis.html">Ось</a>
-    <a href="quiz.html">Тест</a>
+    <a href="quiz.html">Познание себя</a>
     <a href="ru/09_ref/about/about.html">О проекте</a>
   </nav>
   <input id="searchbox" type="search" placeholder="Поиск..." autocomplete="off">
