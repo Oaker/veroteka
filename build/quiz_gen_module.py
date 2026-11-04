@@ -243,6 +243,8 @@ QUIZ_CSS = """
 .q-step{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;}
 .q-qtext{font-size:1.18rem;font-weight:600;margin:0 0 16px;}
 .q-opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin:8px 0;font-size:.98rem;cursor:pointer;transition:border-color .15s,background .15s,transform .06s;font-family:inherit;color:var(--fg);}
+.q-opt-t{display:block;}
+.q-opt-d{display:block;color:var(--muted);font-size:.84rem;margin-top:3px;line-height:1.4;}
 .q-opt:hover{border-color:var(--accent);background:rgba(79,70,229,.05);}
 .q-opt:active{transform:scale(.995);}
 .q-btn{display:inline-block;border:none;border-radius:12px;padding:12px 20px;font-size:1rem;cursor:pointer;font-family:inherit;text-decoration:none;}
@@ -267,7 +269,7 @@ def build_quiz(site_dir):
     import html as _html
     qjs = _html.escape(QUESTIONS_JS.replace("</", "<\\/"), quote=False).replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"')
     # безопаснее: положить QUESTIONS как JS-литерал без экранирования, но внутри <script type="application/json"> экранируем только </script>
-    qjson = json.dumps([{"id": q["id"], "text": q["text"], "opts": [{"t": o["t"], "e": o["e"]} for o in q["opts"]]} for q in json.loads(_QUESTIONS_JSON)], ensure_ascii=False).replace("</", "<\\/")
+    qjson = json.dumps([{"id": q["id"], "text": q["text"], "opts": [{"t": o["t"], "d": o.get("d"), "e": o["e"]} for o in q["opts"]]} for q in json.loads(_QUESTIONS_JSON)], ensure_ascii=False).replace("</", "<\\/")
     datajs = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     page = f"""<!DOCTYPE html>
 <html lang="ru">
@@ -335,3 +337,8 @@ def _questions_from_js():
     return json.loads(src)
 
 _QUESTIONS_JSON = json.dumps(_questions_from_js(), ensure_ascii=False)
+
+# --- гибрид: +12 вопросов AutoCoder (his_*) ---
+_HIS_QUESTIONS = json.loads(open(r'X:\Projects\encyclopedia\build\tmp\his_questions_converted.json', encoding='utf-8').read())
+_ALL_Q = json.loads(_QUESTIONS_JSON) + _HIS_QUESTIONS
+_QUESTIONS_JSON = json.dumps(_ALL_Q, ensure_ascii=False)
