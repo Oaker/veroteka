@@ -339,6 +339,6 @@ def _questions_from_js():
 _QUESTIONS_JSON = json.dumps(_questions_from_js(), ensure_ascii=False)
 
 # --- гибрид: +12 вопросов AutoCoder (his_*) ---
-_HIS_QUESTIONS = json.loads(open(r'X:\Projects\encyclopedia\build\tmp\his_questions_converted.json', encoding='utf-8').read())
+_HIS_QUESTIONS = json.loads(open(r'X:\Projects\encyclopedia\build\his_questions.json', encoding='utf-8').read())
 _ALL_Q = json.loads(_QUESTIONS_JSON) + _HIS_QUESTIONS
 _QUESTIONS_JSON = json.dumps(_ALL_Q, ensure_ascii=False)
