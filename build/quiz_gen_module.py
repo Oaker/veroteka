@@ -23,7 +23,7 @@ var QUESTIONS = [
    {t:'Откровение Бога в священном писании', e:{t:{'авраамические':2.0,'монотеизм':1.0},a:{dvaita:0.8}}},
    {t:'Вечный закон мироустройства (дхарма, дао)', e:{t:{'индуизм':1.2,'буддизм':1.0,'дхармические':1.0}}},
    {t:'Мудрость древних народов, живущая в обрядах', e:{t:{'древние':2.0,'Европа':0.8},f:{'Древние':0.6}}},
-   {t:'Личный опыт и практика важнее писаний', e:{t:{'эзотерика':2.0},a:{advaita:0.5}}}
+   {t:'Личный опыт и практика важнее писаний', e:{t:{'эзотерика':1.2,'недуальность':0.8},a:{advaita:0.5}}}
   ]},
  {id:'practice', text:'Какая практика отзывается больше?',
   opts:[
@@ -56,16 +56,16 @@ var QUESTIONS = [
  {id:'scripture', text:'Как читать священные тексты?',
   opts:[
    {t:'Буквально: это история реальных событий', e:{t:{'монотеизм':0.8},a:{dvaita:0.8}}},
-   {t:'Как метафоры, за которыми скрыт глубинный смысл', e:{t:{'эзотерика':1.0,'кашмирский шиваизм':0.8},a:{advaita:0.6}}},
+   {t:'Как метафоры, за которыми скрыт глубинный смысл', e:{t:{'эзотерика':1.0,'кашмирский шиваизм':0.8,'недуальный тантрический шиваизм':0.8},a:{advaita:0.6}}},
    {t:'Как указатели на путь, а не догмы', e:{t:{'дзен':1.0,'философия':0.8},a:{sunyata:0.8}}},
    {t:'Как культурный памятник эпохи', e:{t:{'древние':1.2,'история':1.0}}}
   ]},
  {id:'mode', text:'Как удобнее практиковать?',
   opts:[
    {t:'В общине, вместе с людьми', e:{t:{'христианство':1.0,'протестантизм':0.8,'региональные':0.8}}},
-   {t:'Наедине с собой', e:{t:{'эзотерика':1.4},a:{advaita:0.5}}},
+   {t:'Наедине с собой', e:{t:{'эзотерика':0.9,'недуальность':0.6},a:{advaita:0.5}}},
    {t:'В монастыре или ашраме, по уставу', e:{t:{'буддизм':1.2,'индуизм':0.8},e:{medieval:0.5}}},
-   {t:'Свободно, без институтов', e:{t:{'НРД':1.6,'пародия':0.5},a:{sunyata:0.4}}}
+   {t:'Свободно, без институтов', e:{t:{'НРД':1.6,'пародия':0.5,'Россия':0.8},a:{sunyata:0.4}}}
   ]},
  {id:'god', text:'Понятие «личный Бог» тебе…',
   opts:[
@@ -83,7 +83,7 @@ var QUESTIONS = [
   ]},
  {id:'humor', text:'Парадоксы и смех в духовной жизни — это…',
   opts:[
-   {t:'Часть пути: истина играет и улыбается', e:{t:{'кашмирский шиваизм':1.8,'дзен':1.2},a:{advaita:0.5}}},
+   {t:'Часть пути: истина играет и улыбается', e:{t:{'кашмирский шиваизм':1.8,'Каширский шиваизм':1.6,'недуальный тантрический шиваизм':1.4,'дзен':1.2},a:{advaita:0.5}}},
    {t:'Дело серьёзное, спасение требует строгости', e:{t:{'монотеизм':0.8,'право':0.8},a:{dvaita:0.6}}},
    {t:'Знак, что ум зашёл в тупик; нужен прямой взгляд', e:{t:{'дзен':1.4},a:{sunyata:0.7}}},
    {t:'Мне важнее красота обряда и храма', e:{t:{'региональные':1.0,'возрождённые':0.8}}}
@@ -113,7 +113,7 @@ var QUESTIONS = [
   opts:[
    {t:'Бхакти: любовь и преданность Богу', e:{t:{'бхакти':3.0,'вишнуизм':2.2}}},
    {t:'Тантра: энергия, ритуал, работа с телом', e:{t:{'тантра':3.0,'шактизм':2.2}}},
-   {t:'Джняна: знание и недвойственность', e:{t:{'философия':1.5,'кашмирский шиваизм':1.8},a:{advaita:0.8}}},
+   {t:'Джняна: знание и недвойственность', e:{t:{'философия':1.5,'кашмирский шиваизм':1.8,'недуальность':1.6,'Каширский шиваизм':1.0},a:{advaita:0.8}}},
    {t:'Шива как центр всего', e:{t:{'шиваизм':2.6,'кашмирский шиваизм':1.2}}}
   ]},
  {id:'abraham_flavor', text:'Если выбрать авраамическую семью, что ближе?',
@@ -139,7 +139,7 @@ function clonePts(p){return{axis:{dvaita:p.axis.dvaita,advaita:p.axis.advaita,su
 function qIndex(QS){var m={};for(var i=0;i<QS.length;i++)m[QS[i].id]=QS[i];return m;}
 var SCALE=2.2;function scaleEff(e){if(!e)return null;var o={a:{},f:{},t:{},e:{}};var k;for(k in e.a||{})o.a[k]=e.a[k]*SCALE;for(k in e.f||{})o.f[k]=e.f[k]*SCALE;for(k in e.t||{})o.t[k]=e.t[k]*SCALE;for(k in e.e||{})o.e[k]=e.e[k]*SCALE;return o;}
 function pointsFor(state,QS){var pts=zeroPts();var idx=qIndex(QS);for(var i=0;i<state.answers.length;i++){var a=state.answers[i];var q=idx[a.q];if(!q||!q.opts[a.o])continue;addEffect(pts,scaleEff(q.opts[a.o].e));}return pts;}
-function scoreItem(item,pts,jit){var s=0.6;var pa=pts.axis||{};if(item.axis){var own=pa[item.axis]||0;var other=Math.max(pa.dvaita||0,pa.advaita||0,pa.sunyata||0);s+=1.45*own-0.85*Math.max(0,other-own);}else{var avg=((pa.dvaita||0)+(pa.advaita||0)+(pa.sunyata||0))/3;s+=0.5*avg;}s+=1.05*(pts.family[item.family]||0);var tsum=0;var tags=item.tags||[];for(var i=0;i<tags.length;i++)tsum+=(pts.tag[tags[i]]||0);s+=0.55*Math.min(4,tsum);var eras=item.eras||[];for(var j=0;j<eras.length;j++){s+=0.5*(pts.era[eras[j]]||0)*(j===0?1:0.6);}return s+(jit||0);}
+function scoreItem(item,pts,jit){var s=0.6;var pa=pts.axis||{};if(item.axis){var own=pa[item.axis]||0;var other=Math.max(pa.dvaita||0,pa.advaita||0,pa.sunyata||0);s+=1.45*own-0.85*Math.max(0,other-own);}else{var avg=((pa.dvaita||0)+(pa.advaita||0)+(pa.sunyata||0))/3;s+=0.5*avg;}s+=1.05*(pts.family[item.family]||0);var tsum=0;var tags=item.tags||[];for(var i=0;i<tags.length;i++)tsum+=(pts.tag[tags[i]]||0);s+=1.6*Math.log(1+tsum);var eras=item.eras||[];for(var j=0;j<eras.length;j++){s+=0.5*(pts.era[eras[j]]||0)*(j===0?1:0.6);}return s+(jit||0);}
 function scores(state,data,QS){var pts=pointsFor(state,QS);var jit=jitters(state,data.items.length);var out=new Array(data.items.length);for(var i=0;i<data.items.length;i++)out[i]=scoreItem(data.items[i],pts,jit[i]);return out;}
 function sortedOrder(sc){var order=[];for(var i=0;i<sc.length;i++)order.push(i);order.sort(function(a,b){return sc[b]-sc[a];});return order;}
 function marginOf(sc){var order=sortedOrder(sc);var s1=sc[order[0]],s2=sc[order[1]];return(s1-s2)/(Math.abs(s1)+Math.abs(s2)+1e-9);}
