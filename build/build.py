@@ -805,6 +805,14 @@ def main():
              '<a href="ru/09_ref/about/author.html">Об авторе</a>'
              '</div>')
     p.append('</section>')
+    # карточка «Познание себя» (тест)
+    p.append('<a class="quiz-cta" href="quiz.html">'
+             '<span class="quiz-cta-l">'
+             '<span class="quiz-cta-t">Познание себя</span>'
+             '<span class="quiz-cta-d">Адаптивный тест из 10–14 вопросов: ответь — и Веротека подберёт традицию, которая тебе ближе, со ссылкой на статью о ней.</span>'
+             '</span>'
+             '<span class="quiz-cta-btn">Пройти →</span>'
+             '</a>')
 
     def node_link(s):
         """Ссылка на узел: свой хаб, иначе первая статья в поддереве."""
@@ -1041,6 +1049,14 @@ h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bott
 .acc-body li.lv3 a { padding:.34rem .6rem; font-size:.9rem; color:var(--muted); }
 .acc-body li.lv3 a:hover { color:var(--accent); background:var(--accent-soft); }
 .sub-node { list-style:none; }
+
+/* ---------- quiz CTA card ---------- */
+.quiz-cta { display:flex; align-items:center; justify-content:space-between; gap:14px; margin:1.1rem 0 .4rem; padding:16px 20px; background:linear-gradient(135deg,rgba(79,70,229,.06),rgba(139,92,246,.08)); border:1px solid rgba(79,70,229,.22); border-radius:16px; text-decoration:none; transition:box-shadow .15s, transform .1s; }
+.quiz-cta:hover { box-shadow:0 3px 14px rgba(79,70,229,.14); transform:translateY(-1px); }
+.quiz-cta-t { display:block; font-weight:700; font-size:1.06rem; color:var(--fg); }
+.quiz-cta-d { display:block; color:var(--muted); font-size:.9rem; margin-top:3px; max-width:520px; }
+.quiz-cta-btn { flex-shrink:0; background:linear-gradient(135deg,#4f46e5,#8b5cf6); color:#fff; border-radius:12px; padding:10px 18px; font-size:.95rem; font-weight:600; }
+@media (max-width:640px){ .quiz-cta{ flex-direction:column; align-items:flex-start; padding:14px 16px; } .quiz-cta-btn{ width:100%; text-align:center; } }
 
 /* ---------- landing footer ---------- */
 .landing-foot { display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; justify-content:center; margin:2.4rem 0 0; padding-top:1.3rem; border-top:1px solid var(--border); }

@@ -214,9 +214,20 @@ UI_JS = r"""
    h+='<div class="q-res-label" style="margin-top:18px">Также присмотрись:</div>';
    for(var i=0;i<r.runners.length;i++)h+=itemCard(DATA.items[r.runners[i]],false);
   }
+  h+='<button class="q-btn q-btn-ghost" id="q-share" type="button">Поделиться результатом</button>';
   h+='<button class="q-btn q-btn-ghost" id="q-restart" type="button">Пройти ещё раз</button>';
   elR.innerHTML=h;elR.style.display='';
   document.getElementById('q-restart').onclick=start;
+  document.getElementById('q-share').onclick=function(){
+    var t=w.title+' — моя традиция по тесту «Какая религия вам ближе»';
+    var u=w.link;
+    var msg=t+' '+u;
+    function ok(){var b=document.getElementById('q-share');b.textContent='Скопировано ✓';setTimeout(function(){b.textContent='Поделиться результатом';},2200);}
+    function fail(){location.href='mailto:?subject='+encodeURIComponent(t)+'&body='+encodeURIComponent(u);}
+    if(navigator.share){navigator.share({title:t,url:u}).then(ok).catch(function(){});}
+    else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(msg).then(ok).catch(fail);}
+    else fail();
+  };
  }
  document.getElementById('q-start').onclick=start;
  window.__quizStart=start;
