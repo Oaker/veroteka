@@ -561,6 +561,7 @@ PAGE_TMPL = """<!DOCTYPE html>
     <a href="{rel}az.html">А-Я</a>
     <a href="{rel}tags.html">Теги</a>
     <a href="{rel}axis.html">Ось</a>
+    <a href="{rel}quiz.html">Тест</a>
     <a href="{rel}ru/09_ref/about/about.html">О проекте</a>
   </nav>
   <input id="searchbox" type="search" placeholder="Поиск..." autocomplete="off">

@@ -4,3 +4,6 @@
 *.bak
 ~$*
 site/
+
+build/tmp/
+build/__pycache__/
