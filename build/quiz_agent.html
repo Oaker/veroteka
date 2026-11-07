@@ -1,0 +1,2882 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Какая религия вам ближе? — Веротека</title>
+<meta name="description" content="Адаптивный тест: 10–14 вопросов, которые сужают круг от мировоззренческих полюсов к конкретной традиции из Веротеки.">
+<style>
+:root{--bg:#fafaf9;--fg:#18181b;--accent:#4f46e5;--accent2:#8b5cf6;--card:#fff;--border:#e4e4e7;--muted:#71717a;--radius:14px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;min-height:100vh}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;box-shadow:0 1px 2px rgba(24,24,27,.04)}
+h1{font-size:1.5rem;margin:0 0 6px;line-height:1.25}
+.lead{color:var(--muted);margin:0 0 18px;font-size:.95rem}
+.progress{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin:0 0 18px}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;transition:width .3s ease}
+.qtext{font-size:1.12rem;font-weight:600;margin:0 0 14px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 15px;font:inherit;font-size:.98rem;color:var(--fg);cursor:pointer;min-height:44px;transition:border-color .15s,background .15s,transform .05s}
+.opt:hover{border-color:var(--accent);background:#f4f4ff}
+.opt:active{transform:scale(.995)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt-desc{display:block;color:var(--muted);font-size:.86rem;margin-top:4px;line-height:1.45}
+.btn-primary{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:12px;padding:13px 22px;font:inherit;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;text-align:center;min-height:44px}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:none;border:none;color:var(--muted);font:inherit;font-size:.92rem;cursor:pointer;padding:10px;min-height:44px}
+.btn-ghost:hover{color:var(--fg)}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:16px}
+.badge{display:inline-block;background:#f4f4f5;border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:3px 10px;font-size:.8rem;margin:0 6px 6px 0}
+.result-title{font-size:1.45rem;font-weight:700;margin:4px 0 10px}
+.result-desc{margin:0 0 16px}
+.runners{margin-top:16px;border-top:1px solid var(--border);padding-top:14px}
+.runners h3{font-size:.9rem;color:var(--muted);font-weight:600;margin:0 0 10px;text-transform:uppercase;letter-spacing:.04em}
+.runner{display:block;padding:10px 0;border-bottom:1px dashed var(--border);color:var(--fg);text-decoration:none}
+.runner:last-child{border-bottom:none}
+.runner b{color:var(--accent)}
+.runner:hover b{text-decoration:underline}
+a.plain{color:var(--accent);text-decoration:none}
+a.plain:hover{text-decoration:underline}
+footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.82rem}
+.stage{animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (max-width:480px){.card{padding:18px 14px}.result-title{font-size:1.3rem}h1{font-size:1.32rem}}
+</style>
+<style>
+.topbar{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.topbar .brand{font-weight:700;color:var(--fg);text-decoration:none;font-size:1.05rem}
+.topnav{display:flex;flex-wrap:wrap;gap:2px 14px;margin-left:auto}
+.topnav a{color:var(--muted);text-decoration:none;font-size:.9rem}
+.topnav a:hover{color:var(--accent)}
+@media(max-width:640px){.topnav{gap:2px 10px}.topnav a{font-size:.84rem}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">Веротека</a>
+  <nav class="topnav">
+    <a href="az.html">А-Я</a>
+    <a href="tags.html">Теги</a>
+    <a href="axis.html">Ось</a>
+    <a href="quiz.html">Познание себя</a>
+    <a href="ru/09_ref/about/about.html">О проекте</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div id="app"></div>
+  <footer>Тест — наводка, а не истина. Традиции взяты из <a class="plain" href="https://oaker.github.io/veroteka/" target="_blank" rel="noopener">Веротеки</a>.</footer>
+</div>
+<script id="quiz-data" type="application/json">{"project":"Веротека","site":"https://oaker.github.io/veroteka/","note":"Банк итогов для теста «Какая религия вам ближе». Поле link — абсолютная ссылка на статью; axis — доктринальная ось (dvaita/advaita/sunyata); family — семейство; description — объяснение «для профанов».","count":262,"items":[{"title":"Авраамические религии","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/abrahamic.html","family":"Авраамические","axis":"dvaita","year":"II тыс. до н.э. (Авраам) → VII в. н.э. (ислам)","tags":["авраамические","монотеизм","__i0"],"ntags":2,"description":"Четыре религии-родственника: иудаизм, христианство, ислам и бахаи. У них один прадед — Авраам — и один Бог. Спорят о том, кто его правильный наследник.","eras":["ancient","medieval"]},{"title":"Адвентизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/adventism/adventism.html","family":"Авраамические","axis":"dvaita","year":"1844 («великое разочарование»)","tags":["христианство","протестантизм","__i1"],"ntags":2,"description":"протестантское движение ожидания Второго пришествия (adventus); крупнейшая ветвь — Церковь адвентистов седьмого дня (суббота как день покоя).","eras":["xix"]},{"title":"Амиши","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/amish/amish.html","family":"Авраамические","axis":"dvaita","year":"1693","tags":["протестантизм","анабаптизм","__i2"],"ntags":2,"description":"**Амиши** (Амман, 1693, Швейцария) — консервативная ветвь меннонитов: жизнь «вне мира», простота, отказ от современных технологий. ## Ordung «Порядок» каждой общины решает: что доп","eras":["earlymodern","em2"]},{"title":"Анабаптизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/anabaptists.html","family":"Авраамические","axis":"dvaita","year":"1525 (Цюрих)","tags":["христианство","протестантизм","__i3"],"ntags":2,"description":"радикальная реформация: крещение только взрослых по вере, отказ от присяги и оружия, полная отделённость церкви от государства.","eras":["earlymodern","em1"]},{"title":"Англиканство","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anglicanism/anglicanism.html","family":"Авраамические","axis":"dvaita","year":"1534","tags":["христианство","протестантизм","__i4"],"ntags":2,"description":"церковь «среднего пути» (via media) между католичеством и протестантизмом; государственная религия Англии с 1534 года.","eras":["earlymodern","em1"]},{"title":"Армянская церковь","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/armenian/armenian.html","family":"Авраамические","axis":"dvaita","year":"301 (гос. религия)","tags":["христианство","древневосточные","__i5"],"ntags":2,"description":"национальная церковь Армении и первая государственная христианская церковь в мире (301 год, царь Трдат III).","eras":["ancient"]},{"title":"Ахмадие","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/ahmadiyya/ahmadiyya.html","family":"Авраамические","axis":"dvaita","year":"1889 (Мирза Гулам Ахмад)","tags":["ислам","НРД","спорный статус","__i6"],"ntags":3,"description":"исламское движение (1889, Индия; Мирза Гулам Ахмад), 10–20 млн; провозгласило своего основателя мессией-махди и новым пророком.","eras":["xix"]},{"title":"Баптизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/baptists/baptists.html","family":"Авраамические","axis":"dvaita","year":"1609 (Амстердам)","tags":["христианство","протестантизм","__i7"],"ntags":2,"description":"крупнейшее евангельское направление протестантизма: крещение только в сознательном возрасте и только по вере самого человека.","eras":["earlymodern","em2"]},{"title":"Бахаи","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/bahai/bahai.html","family":"Авраамические","axis":"dvaita","year":"1844 (Баб) / 1863 (Бахаулла)","tags":["авраамические","монотеизм","НРД-исторический","__i8"],"ntags":3,"description":"Молодая религия из Ирана (XIX век): все пророки — один источник, все люди — одна семья. Мирная, без священников, за науку и против предрассудков.","eras":["xix"]},{"title":"Бегуны (странники)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/beguny/beguny.html","family":"Авраамические","axis":"dvaita","year":"1770-е","tags":["старообрядчество","беспоповцы","радикальное согласие","__i9"],"ntags":3,"description":"**Бегуны** (странники) — радикальное беспоповское согласие (Ефимов, 1770-е): Антихрист уже лично воцарился (в лице государства), все документы — печать зверя. ## Радикальность - От","eras":["earlymodern","em3"]},{"title":"Белокриницкая иерархия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/belokrinitskaya/belokrinitskaya.html","family":"Авраамические","axis":"dvaita","year":"1846","tags":["старообрядчество","поповцы","__i10"],"ntags":2,"description":"восстановленное старообрядческое епископство (1846): митрополит Амвросий перешёл из Константинопольского патриархата и возглавил старообрядцев.","eras":["xix"]},{"title":"Беспоповцы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/bespopovtsy.html","family":"Авраамические","axis":"dvaita","year":"1690-е","tags":["старообрядчество","согласия","__i11"],"ntags":2,"description":"старообрядческие согласия, решившие, что после раскола «истинное священство иссякло»: мир вернулся во времена Антихристa, таинства (кроме крещения и исповеди) невозможны.","eras":["earlymodern","em2"]},{"title":"Восточнокатолические церкви","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/catholicism/eastern_catholic/eastern_catholic.html","family":"Авраамические","axis":"dvaita","year":"1596 (Брестская уния)","tags":["христианство","католицизм","__i12"],"ntags":2,"description":"«церкви своего права»: восточная литургия и обряд, но в единстве с Римом (униатство).","eras":["earlymodern","em1"]},{"title":"Гулат (крайние шииты)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/ghulat/ghulat.html","family":"Авраамические","axis":"dvaita","year":"VII–VIII вв.","tags":["ислам","шиизм","спорный статус","__i13"],"ntags":3,"description":"**Гулат** ⚠️ — «крайние» течения в раннем шиизме, приписывавшие имамам божественные качества и отступившие от ортодоксии. Служат историческим предком ряда движений (алавиты, ахл-и ","eras":[]},{"title":"Движение святости","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/holiness/holiness.html","family":"Авраамические","axis":"dvaita","year":"1830-е","tags":["протестантизм","США","__i14"],"ntags":2,"description":"**Движение святости** (Holiness movement, США, 1830-е →) — протестантское возрождение: «второе благословение» — полное освящение после обращения. ## Суть 1. Обращение (прощение гре","eras":["xix"]},{"title":"Двунадесятники","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/twelver/twelver.html","family":"Авраамические","axis":"dvaita","year":"IX в. (сокрытие 12-го имама, 874)","tags":["ислам","шиизм","__i15"],"ntags":2,"description":"крупнейшая ветвь шиизма (Иран, Ирак, Азербайджан, Ливан, Бахрейн; ~85% шиитов): 12 имамов от Али до сокрытого Махди.","eras":["medieval","ancient"]},{"title":"Древневосточные церкви","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/oriental_orthodox.html","family":"Авраамические","axis":"dvaita","year":"451 (Халкидон, раскол)","tags":["христианство","__i16"],"ntags":1,"description":"семья христиан, не принявших халкидонский догмат 451 года (пять вселенских соборов вместо семи).","eras":["ancient"]},{"title":"Друзы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/druze/druze.html","family":"Авраамические","axis":"dvaita","year":"~1017 (Египет, аль-Хаким)","tags":["ислам","НРД","спорный статус","__i17"],"ntags":3,"description":"закрытая этноконфессиональная традиция (Ливан, Сирия, Израиль; ~1 млн) — исламская по происхождению, но с собственным учением: мистическое учение о Боге, тайне души и джихаде как личной борьбе.","eras":["medieval"]},{"title":"Единоверие","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/edinoverie/edinoverie.html","family":"Авраамические","axis":"dvaita","year":"1800","tags":["старообрядчество","православие","__i18"],"ntags":2,"description":"**Единоверие** (1800, указ Павла I) — форма примирения: старообрядцы, входящие в РПЦ с сохранением старого обряда и старых книг. ## Суть Обряд — полностью дониконовский; юрисдикция","eras":["xix"]},{"title":"Епископальная церковь США","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/episcopalians_us/episcopalians_us.html","family":"Авраамические","axis":"dvaita","year":"1789","tags":["протестантизм","США","англиканство","__i19"],"ntags":3,"description":"**Епископальная церковь** (1789) — американское англиканство: литургия и епископат по-английски, но после революции — без монарха. ## Особенности - Первая церковь в мире, где молит","eras":["earlymodern","em3"]},{"title":"Зайдизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/zaydism/zaydism.html","family":"Авраамические","axis":"dvaita","year":"VIII в. (Зайд, 740)","tags":["ислам","шиизм","__i20"],"ntags":2,"description":"шиитская ветвь (Йемен), самая близкая к суннизму: имам должен быть из потомков Али, но не обязательно непогрешим.","eras":["medieval"]},{"title":"Ибадизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/ibadism/ibadism.html","family":"Авраамические","axis":"dvaita","year":"VII–VIII вв. (Ибн Ибад)","tags":["ислам","__i21"],"ntags":1,"description":"третья ветвь ислама (после суннизма и шиизма; ~2–3 млн), Оман и Северная Африка; старше обоих главных направлений.","eras":[]},{"title":"Ислам","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/islam.html","family":"Авраамические","axis":"dvaita","year":"610 (первое откровение) / 622 (хиджра)","tags":["авраамические","монотеизм","__i22"],"ntags":2,"description":"Вторая по размеру религия. Просто: один Бог (Аллах), пять молитв в день, помогай бедным, постись в Рамадан, раз в жизни съезди в Мекку. Иисус тут — уважаемый пророк.","eras":["medieval"]},{"title":"Исмаилизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/ismailism/ismailism.html","family":"Авраамические","axis":"advaita","year":"VIII в. (раскол по Исмаилу, ~765)","tags":["ислам","шиизм","__i23"],"ntags":2,"description":"ветвь шиизма (около 15 млн), признающая имамом Исмаила (VII век) и продолжающуюся живую линию имамов Ага-Хана.","eras":["medieval"]},{"title":"Иудаизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/judaism.html","family":"Авраамические","axis":"dvaita","year":"~1800 до н.э. (Авраам) / ~1250 до н.э. (Исход) / 586 до н.э. (Вавилон)","tags":["авраамические","монотеизм","__i24"],"ntags":2,"description":"Религия еврейского народа, самая старая в этой семье. Суть: договор с Богом и 613 правил — что есть, что надевать, как отдыхать. Не «поверь», а «живи правильно».","eras":["ancient","xix","medieval"]},{"title":"Кадирия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/qadiri/qadiri.html","family":"Авраамические","axis":"dvaita","year":"XII в. (аль-Джилани, †1166)","tags":["ислам","суфизм","тарикаты","__i25"],"ntags":3,"description":"старейший из живых суфийских тарикатов (XII в.","eras":["medieval"]},{"title":"Караизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/karaism/karaism.html","family":"Авраамические","axis":"dvaita","year":"VIII в. (Анан бен Давид, ~770)","tags":["иудаизм","__i26"],"ntags":1,"description":"не-раввинистическая ветвь иудаизма (VIII в.","eras":["medieval"]},{"title":"Католицизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/catholicism/catholicism.html","family":"Авраамические","axis":"dvaita","year":"1054 (окончательное отделение от Византии)","tags":["авраамические","христианство","__i27"],"ntags":2,"description":"Католики — самая большая часть христиан, у них Папа Римский как главный. Всё чётко: иерархия, правила, семь таинств.","eras":["medieval"]},{"title":"Квакеры","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/quakers/quakers.html","family":"Авраамические","axis":"dvaita","year":"1652 (Фокс)","tags":["христианство","протестантизм","__i28"],"ntags":2,"description":"**Квакеры** («Общество Друзей», 1652, Джордж Фокс) — протестантская семья без священников, символов и таинств: только молчание и внутренний свет. ## Суть В каждому есть «внутренний","eras":["earlymodern","em2"]},{"title":"Консервативный иудаизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/conservative/conservative.html","family":"Авраамические","axis":"dvaita","year":"1886 (JTS)","tags":["иудаизм","__i29"],"ntags":1,"description":"течение (XIX в.","eras":["xix"]},{"title":"Коптская церковь","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/coptic/coptic.html","family":"Авраамические","axis":"dvaita","year":"~42 (Марк, Александрия)","tags":["христианство","древневосточные","__i30"],"ntags":2,"description":"крупнейшая христианская община Ближнего Востока (около 10 млн, Египет): апостольская традиция от евангелиста Марка.","eras":["ancient"]},{"title":"Лютеранство","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/lutheranism/lutheranism.html","family":"Авраамические","axis":"dvaita","year":"1517–1530","tags":["христианство","протестантизм","__i31"],"ntags":2,"description":"старейшая протестантская конфессия: учение Мартина Лютера (1517), отвергнувшего продажу индульгенций.","eras":["earlymodern","em1"]},{"title":"Мазхабы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/madhabs.html","family":"Авраамические","axis":"dvaita","year":"VIII–IX вв.","tags":["ислам","суннизм","право","__i32"],"ntags":3,"description":"четыре правовые школы суннитского ислама, различающиеся методом права, а не верой: ханифиты, маликиты, шафииты, ханбалиты.","eras":[]},{"title":"Маликиты","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/maliki/maliki.html","family":"Авраамические","axis":"dvaita","year":"VIII в. (Малик, «Муватта»)","tags":["ислам","суннизм","право","__i33"],"ntags":3,"description":"школа (Малик ибн Анас, VIII в.","eras":["medieval"]},{"title":"Мевлевия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/mevlevi/mevlevi.html","family":"Авраамические","axis":"advaita","year":"XIII в. (после Руми, †1273)","tags":["ислам","суфизм","тарикаты","__i34"],"ntags":3,"description":"тарикат «крутящихся дервишей» (XIII в.","eras":["medieval"]},{"title":"Меннониты","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/anabaptists/mennonites/mennonites.html","family":"Авраамические","axis":"dvaita","year":"1536","tags":["протестантизм","анабаптизм","__i35"],"ntags":2,"description":"крупнейшая анабаптистская традиция (Менно Симонс, 1536, Нидерланды): пацифизм, простота, общинная взаимопомощь.","eras":["earlymodern","em1"]},{"title":"Методизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/methodism/methodism.html","family":"Авраамические","axis":"dvaita","year":"1738 (Уэсли)","tags":["христианство","протестантизм","__i36"],"ntags":2,"description":"движение Джона Уэсли (XVIII в.","eras":["earlymodern","em3"]},{"title":"Модерн-ортодоксия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/modern_orthodox/modern_orthodox.html","family":"Авраамические","axis":"dvaita","year":"XIX в. (Германия, Хирш)","tags":["иудаизм","__i37"],"ntags":1,"description":"течение (XIX–XX вв.","eras":["xix"]},{"title":"Моравские братья","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/moravians/moravians.html","family":"Авраамические","axis":"dvaita","year":"1722","tags":["протестантизм","история","__i38"],"ntags":2,"description":"**Моравские братья** (Чешские братья → обновлённая община Herrnhut, 1722, Цинцендорф) — старейшая протестантская миссионерская традиция. ## Суть Лютеранское «движение сердца»: кров","eras":["earlymodern","em3"]},{"title":"Мормонизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/mormonism/mormonism.html","family":"Авраамические","axis":"dvaita","year":"1830","tags":["христианство","НРД","спорный статус","__i39"],"ntags":3,"description":"**Мормонизм** (Церковь Иисуса Христа Святых последних дней) — восстановительское движение 1830 года, основанное Джозефом Смитом в США (~17 млн последователей). ## Суть Книга Мормон","eras":["xix"]},{"title":"Накшбандия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/naqshbandi/naqshbandi.html","family":"Авраамические","axis":"dvaita","year":"XIV в. (Бахаддин Накшбанд, †1389)","tags":["ислам","суфизм","тарикаты","__i40"],"ntags":3,"description":"суфийский тарикат (XIV в.","eras":["medieval"]},{"title":"Ортодоксальный иудаизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/orthodox.html","family":"Авраамические","axis":"dvaita","year":"XIX в. (термин) / XVIII в. (хасидизм)","tags":["иудаизм","__i41"],"ntags":1,"description":"течение, строго соблюдающее Галаху (еврейский закон) как данную Богом норму на все времена.","eras":["xix","earlymodern","em3"]},{"title":"Пара-христианские движения","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/para_christianity.html","family":"Авраамические","axis":"dvaita","year":"XIX в.","tags":["христианство","НРД","спорный статус","__i42"],"ntags":3,"description":"**Пара-христианские движения** ⚠️ — общности, выросшие из христианства и использующие его язык, но отвергающие ключевые догматы (Троицу или финальность Христа). Статус — предмет сп","eras":["xix"]},{"title":"Поморцы (Поморское согласие)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/pomortsy/pomortsy.html","family":"Авраамические","axis":"dvaita","year":"1694","tags":["старообрядчество","беспоповцы","__i43"],"ntags":2,"description":"крупнейшее беспоповское согласие (1694, Выговская пустынь, Поморье): старый обряд + общинная жизнь без священников.","eras":["earlymodern","em2"]},{"title":"Поповцы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/popovtsy/popovtsy.html","family":"Авраамические","axis":"dvaita","year":"1666","tags":["старообрядчество","согласия","__i44"],"ntags":2,"description":"старообрядческие согласия, сохранившие священство: после раскола принимали беглых священников из РПЦ, а с 1846 года восстановили полную иерархию.","eras":["earlymodern","em2"]},{"title":"Православие","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/eastern_orthodox.html","family":"Авраамические","axis":"dvaita","year":"1054 (схизма с Римом)","tags":["авраамические","христианство","__i45"],"ntags":2,"description":"Православие — христианство с иконами и без единого босса: у каждого народа своя церковь, все равны. Знакомо по куполам и Пасхе.","eras":["medieval"]},{"title":"Пресвитериане (США)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/presbyterians_us/presbyterians_us.html","family":"Авраамические","axis":"dvaita","year":"1706","tags":["протестантизм","США","реформатство","__i46"],"ntags":3,"description":"американская ветвь реформатства (1706, Филадельфия): пресвитерианское устройство + Вестминстерское исповедание.","eras":["earlymodern","em3"]},{"title":"Протестантизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/protestantism.html","family":"Авраамические","axis":"dvaita","year":"1517 (Лютер, 95 тезисов)","tags":["авраамические","христианство","__i47"],"ntags":2,"description":"Протестанты 500 лет назад сказали: «Библия — главный, попы не обязательны». Теперь их сотни видов: от строгих лютеран до поющих пятидесятников.","eras":["earlymodern","em1","ancient"]},{"title":"Пятидесятничество","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/pentecostalism/pentecostalism.html","family":"Авраамические","axis":"dvaita","year":"1906 (Азуса-стрит)","tags":["христианство","протестантизм","__i48"],"ntags":2,"description":"самое быстрорастущее христианское движение в истории: опыт крещения Святым Духом с говорением на языках (глоссолалия).","eras":["xx"]},{"title":"Реконструктивизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/reconstructionism/reconstructionism.html","family":"Авраамические","axis":"dvaita","year":"1934 (Каплан)","tags":["иудаизм","__i49"],"ntags":1,"description":"течение (XX в.","eras":["xx"]},{"title":"Реформатство","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/reformed/reformed.html","family":"Авраамические","axis":"dvaita","year":"~1536 (Кальвин, Женева)","tags":["христианство","протестантизм","__i50"],"ntags":2,"description":"**Реформатство** (кальвинизм) — протестантская семья учения Жана Кальвина: абсолютный суверенитет Бога и предопределение. ## Суть Бог ещё до рождения избрал спасённых — не по заслу","eras":["earlymodern","em1"]},{"title":"Реформистский иудаизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/reform/reform.html","family":"Авраамические","axis":"dvaita","year":"~1810 (Германия)","tags":["иудаизм","__i51"],"ntags":1,"description":"течение (XIX в.","eras":["xix"]},{"title":"Салафизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/salafism/salafism.html","family":"Авраамические","axis":"dvaita","year":"XVIII в. (Ваххаб) / XX в. (реформы)","tags":["ислам","суннизм","реформа","__i52"],"ntags":3,"description":"современное реформаторское учение ислама: возвращение к практике «салафов» (первых трёх поколений) и буквальное понимание Корана.","eras":["earlymodern","em3","xx"]},{"title":"Самаритяне","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/samaritans/samaritans.html","family":"Авраамические","axis":"dvaita","year":"VIII–VII вв. до н.э. (раскол с иудеями)","tags":["иудаизм","родственные общины","__i53"],"ntags":2,"description":"малая община (около 800 человек; Израиль, Наблус/Холон), чтущая только Тору (Пятикнижие) и гору Гаризим как святое место.","eras":["ancient"]},{"title":"Свидетели Иеговы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/para_christianity/jehovahs_witnesses/jehovahs_witnesses.html","family":"Авраамические","axis":"dvaita","year":"~1870 (Рассел)","tags":["христианство","НРД","спорный статус","__i54"],"ntags":3,"description":"религиозное движение (1870-е, Чарльз Рассел), ~8,7 млн возвещателей.","eras":["xix"]},{"title":"Связанные движения ислама","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/related_movements/related_movements.html","family":"Авраамические","axis":"dvaita","year":"XI–XIX вв.","tags":["ислам","спорный статус","__i55"],"ntags":2,"description":"**Связанные движения** ⚠️ — общины, выросшие из исламской среды, статус которых спорен: ахмадие и друзы (отдельные статьи). Здесь — рамка спора. ## Почему «связанные», а не «ветви»","eras":[]},{"title":"Сирийские церкви","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/syriac/syriac.html","family":"Авраамические","axis":"dvaita","year":"I–III вв.","tags":["христианство","древневосточные","__i56"],"ntags":2,"description":"семья древних традиций арамейского языка — языка Иисуса.","eras":[]},{"title":"Спасовцы (нетовщики)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/spasovtsy/spasovtsy.html","family":"Авраамические","axis":"dvaita","year":"XVII–XVIII вв.","tags":["старообрядчество","беспоповцы","__i57"],"ntags":2,"description":"**Спасовцы** (нетовщики) — согласие беспоповцев, дошедшее до предела апофатики: «спасаться нечем и некем» — таинств нет, обрядов почти нет. ## Суть Все обряды — «человеческое», а н","eras":[]},{"title":"Старообрядчество","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/old_believers.html","family":"Авраамические","axis":"dvaita","year":"1666 (после собора)","tags":["христианство","православие","__i58"],"ntags":2,"description":"православная традиция, отвергшая реформы патриарха Никона (1650-е) и оставшаяся при старом обряде: двоеперстие, дониконовские книги, старый календарь.","eras":["earlymodern","em2"]},{"title":"Суннизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/sunni.html","family":"Авраамические","axis":"dvaita","year":"IX в. (оформление)","tags":["авраамические","ислам","__i59"],"ntags":2,"description":"Сунниты — 9 из 10 мусульман. Священников нет: есть учёные, разбирающие правила. Четыре школы права спорят мягко, как четыре юриста в одной конторе.","eras":["medieval"]},{"title":"Суфизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/sufism.html","family":"Авраамические","axis":"dvaita","year":"VIII–X вв. (оформление тарикатов XIII–XIV)","tags":["авраамические","ислам","мистицизм","__i60"],"ntags":3,"description":"Суфии — мусульманские мистики: не про Бога читать, а с Богом встретиться. Метод — повторение имени Бога, иногда с танцем. Стихи Руми читает весь мир.","eras":[]},{"title":"Унитарианство","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/unitarianism/unitarianism.html","family":"Авраамические","axis":null,"year":"","tags":["протестантизм","США","__i61"],"ntags":2,"description":"христианское течение, отвергающее Троицу: Бог — един; Иисус — учитель и спаситель, но не Бог.","eras":[]},{"title":"Федосеевцы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/fedoseevtsy/fedoseevtsy.html","family":"Авраамические","axis":"dvaita","year":"1710","tags":["старообрядчество","беспоповцы","__i62"],"ntags":2,"description":"второе по размеру беспоповское согласие (Феодосий Васильев, 1710): старый обряд + строгая аскеза и позднее — безбрачие.","eras":["earlymodern","em3"]},{"title":"Филипповцы","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/eastern_orthodox/old_believers/bespopovtsy/filippovtsy/filippovtsy.html","family":"Авраамические","axis":"dvaita","year":"1737","tags":["старообрядчество","беспоповцы","радикальное согласие","__i63"],"ntags":3,"description":"радикальное беспоповское согласие (Филипп, 1737): мир окончательно во зле, спасение — через «огненное крещение» (самосожжение) в моменты гонений.","eras":["earlymodern","em3"]},{"title":"Ханафиты","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/hanafi/hanafi.html","family":"Авраамические","axis":"dvaita","year":"VIII в. (Абу Ханифа, †767)","tags":["ислам","суннизм","право","__i64"],"ntags":3,"description":"крупнейшая правовая школа суннизма (Абу Ханифа, VIII в.","eras":["medieval"]},{"title":"Ханбалиты","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/hanbali/hanbali.html","family":"Авраамические","axis":"dvaita","year":"IX в. (Ибн Ханбаль, †855)","tags":["ислам","суннизм","право","__i65"],"ntags":3,"description":"школа (Ахмад ибн Ханбаль, IX в.","eras":["medieval"]},{"title":"Харедим","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/haredi/haredi.html","family":"Авраамические","axis":"dvaita","year":"XVIII–XIX вв.","tags":["иудаизм","__i66"],"ntags":1,"description":"**Харедим** («трепещущие перед Богом») — ультраортодоксальная часть иудаизма: общины, живущие по строгой Галахе в самоизоляции от светской культуры. ## Суть Чёрная одежда (у ашкена","eras":[]},{"title":"Хасидизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/judaism/orthodox/hasidism/hasidism.html","family":"Авраамические","axis":"dvaita","year":"~1740","tags":["иудаизм","мистицизм","__i67"],"ntags":2,"description":"мистическое движение в иудаизме (XVIII в.","eras":["earlymodern","em3"]},{"title":"Христианская наука","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/christian_science/christian_science.html","family":"Авраамические","axis":"dvaita","year":"1879","tags":["протестантизм","США","спорный статус","__i68"],"ntags":3,"description":"**Христианская наука** (Церковь Христа, Ученого; Мэри Бейкер-Эдди, 1879) — американское движение: болезнь — иллюзия ума, исцеление — через осознание реальности Бога. ## Суть «Наука","eras":["xix"]},{"title":"Христианство","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/christianity.html","family":"Авраамические","axis":"dvaita","year":"~30 (Пятидесятница)","tags":["мировые религии","авраамические","монотеизм","__i69"],"ntags":3,"description":"Самая большая религия мира. Суть: Бог стал человеком (Иисус), умер за всех и воскрес. Веруй, люби людей — остальное приложится.","eras":["ancient"]},{"title":"Церкви Христа (кампбеллиты)","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/protestantism/campbellites/campbellites.html","family":"Авраамические","axis":"dvaita","year":"1830-е","tags":["протестантизм","США","__i70"],"ntags":2,"description":"**Церкви Христа / Ученики Христа** (Движение восстановления, Томас и Александр Кэмпбеллы, 1830-е) — попытка «восстановить» первохристианскую церковь: только Библия, без деноминаций","eras":["xix"]},{"title":"Чиштия","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sufism/chishti/chishti.html","family":"Авраамические","axis":"dvaita","year":"XII–XIII вв. (Муинуддин Чишти в Индии)","tags":["ислам","суфизм","тарикаты","__i71"],"ntags":3,"description":"суфийский тарикат (Индия; Муинуддин Чишти, XII–XIII вв.","eras":[]},{"title":"Шафииты","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/sunni/madhabs/shafii/shafii.html","family":"Авраамические","axis":"dvaita","year":"IX в. (аш-Шафии, †820)","tags":["ислам","суннизм","право","__i72"],"ntags":3,"description":"школа (Мухаммад аш-Шафии, VIII–IX вв.","eras":["medieval"]},{"title":"Шиизм","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/islam/shia/shia.html","family":"Авраамические","axis":"dvaita","year":"656 (убийство Усмана, партия Али)","tags":["авраамические","ислам","__i73"],"ntags":2,"description":"Шииты — вторая часть мусульман. Спор не про Бога, а про наследство: кто должен был возглавить общину после пророка. Отсюда особое почтение к имамам.","eras":["medieval"]},{"title":"Эфиопская церковь","link":"https://oaker.github.io/veroteka/ru/02_world/abrahamic/christianity/oriental_orthodox/ethiopian/ethiopian.html","family":"Авраамические","axis":"dvaita","year":"IV в. (~330)","tags":["христианство","древневосточные","__i74"],"ntags":2,"description":"**Эфиопская православная церковь** (Тевахедо) — христианство с IV века, одна из древнейших и наименее известных миру традиций. ## Суть Собственный канон Библии (81 книга, включая К","eras":["ancient"]},{"title":"Андские религии","link":"https://oaker.github.io/veroteka/ru/03_ancient/american/andes/andes.html","family":"Древние","axis":"sunyata","year":"1500 до н.э. (Чавин) / XV в. (инки)","tags":["древние","Америки","__i75"],"ntags":2,"description":"инки и предшественники: Инти (солнце), Пачамама (мать-земля), империя как теократия.","eras":["ancient","medieval","earlymodern","em1"]},{"title":"Балтийская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/baltic/baltic.html","family":"Древние","axis":"sunyata","year":"до XI в. (первые хроники)","tags":["древние","Европа","__i76"],"ntags":2,"description":"древняя традиция пруссов, литовцев, латышей: последняя языческая Европа (Литва крестилась только в 1387).","eras":["medieval"]},{"title":"Греко-римский мир","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/graeco_roman.html","family":"Древние","axis":"dvaita","year":"VIII в. до н.э. – V в. н.э.","tags":["древние","__i77"],"ntags":1,"description":"религии Средиземноморья: греческий пантеон, римский культ, эллинистический синкретизм.","eras":["ancient","medieval"]},{"title":"Греческая религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/greek/greek.html","family":"Древние","axis":"sunyata","year":"VIII в. до н.э. (Гомер, Гесиод)","tags":["древние","греко-римский мир","__i78"],"ntags":2,"description":"Греческие боги — как большая семья с полномочиями: ревнуют, мстят, влюбляются. Греки не боялись их — договаривались и иногда подшучивали.","eras":["ancient","medieval"]},{"title":"Древнеегипетская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/near_east/egyptian/egyptian.html","family":"Древние","axis":"dvaita","year":"XXXI в. до н.э. (объединение, I династия)","tags":["древние","Египет","__i79"],"ntags":2,"description":"Египтяне 3000 лет готовились к смерти серьёзнее, чем к жизни: бальзамировали, строили пирамиды и записали первое в мире «суд после смерти» — сердце взвешивают против пера правды.","eras":["ancient","xxi"]},{"title":"Древние религии (ушедшие)","link":"https://oaker.github.io/veroteka/ru/03_ancient/03_ancient.html","family":"Древние","axis":"sunyata","year":"XXXI в. до н.э. – V в. н.э.","tags":["древние","исторические","__i80"],"ntags":2,"description":"Религии, которых больше нет: Египет, Греция, Рим. Знаем их из раскопок и чужих записей — как соседа, который уехал и не оставил адреса.","eras":["ancient","xxi"]},{"title":"Древние религии Америк","link":"https://oaker.github.io/veroteka/ru/03_ancient/american/american.html","family":"Древние","axis":"sunyata","year":"1500 до н.э. – XVI в. н.э.","tags":["древние","Америки","__i81"],"ntags":2,"description":"доколумбовы традиции: Мезоамерика, Анды, Северная Америка.","eras":["ancient","earlymodern","em1"]},{"title":"Древний Ближний Восток","link":"https://oaker.github.io/veroteka/ru/03_ancient/near_east/near_east.html","family":"Древние","axis":"dvaita","year":"XXXI в. до н.э. – I в. н.э.","tags":["древние","Ближний Восток","__i82"],"ntags":2,"description":"колыбель письменных религий: Месопотамия, Египет, Ханаан.","eras":["ancient","xxi"]},{"title":"Древняя Европа","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/european.html","family":"Древние","axis":"sunyata","year":"до I тыс. до н.э. – XIV в. н.э.","tags":["древние","Европа","__i83"],"ntags":2,"description":"религии до христианизации: славянская, скандинавская, кельтская, балтийская.","eras":["ancient","medieval"]},{"title":"Кельтская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/celtic/celtic.html","family":"Древние","axis":"sunyata","year":"V в. до н.э. (латен) / I в. н.э. (римские описания)","tags":["древние","Европа","__i84"],"ntags":2,"description":"верования древних кельтов: друиды, племенные боги, священные источники и леса.","eras":["ancient"]},{"title":"Мезоамериканские религии","link":"https://oaker.github.io/veroteka/ru/03_ancient/american/mesoamerica/mesoamerica.html","family":"Древние","axis":"sunyata","year":"1200 до н.э. (ольмеки)","tags":["древние","Америки","__i85"],"ntags":2,"description":"ацтеки, майя, ольмеки: календарь, пирамиды, жертвоприношения и одна из самых сложных космологий древнего мира.","eras":["ancient","medieval"]},{"title":"Месопотамская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/near_east/mesopotamian/mesopotamian.html","family":"Древние","axis":"sunyata","year":"XXXI в. до н.э. (письменность, Урук)","tags":["древние","Месопотамия","__i86"],"ntags":2,"description":"Первые письменные мифы: потоп, герой, ищущий бессмертие, боги с человеческими характерами. Всё, что потом Библия расскажет заново, здесь уже записано за 1000 лет до.","eras":["ancient","xxi"]},{"title":"Митраизм","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/mithraism/mithraism.html","family":"Древние","axis":"dvaita","year":"I–IV вв.","tags":["древние","греко-римский мир","__i87"],"ntags":2,"description":"тайный культ Митры, бога света и договора, популярный в римской армии (I–IV вв.","eras":[]},{"title":"Орфизм","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/orpheus/orpheus.html","family":"Древние","axis":"advaita","year":"VI в. до н.э.","tags":["древние","греко-римский мир","__i88"],"ntags":2,"description":"мистическое течение греческой религии (VI в.","eras":["ancient","medieval"]},{"title":"Пифагорейство","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/pythagoreanism/pythagoreanism.html","family":"Древние","axis":"advaita","year":"VI–V вв. до н.э.","tags":["древние","греко-римская философия","__i89"],"ntags":2,"description":"философско-религиозное братство (Пифагор, VI в.","eras":["ancient"]},{"title":"Религия Индской цивилизации","link":"https://oaker.github.io/veroteka/ru/03_ancient/near_east/indus_valley/indus_valley.html","family":"Древние","axis":"sunyata","year":"XXXIII–XVIII вв. до н.э.","tags":["древние","Индия","__i90"],"ntags":2,"description":"**Религия Индской цивилизации** (Хараппа, Мохенджо-Даро) — реконструкция по археологии: печати, «жрец-царь», священные бассейны. ## Что известно - **Прото-Шива**: печать с фигурой ","eras":["ancient"]},{"title":"Римская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/roman/roman.html","family":"Древние","axis":"dvaita","year":"753 до н.э. (основание Рима)","tags":["древние","греко-римский мир","__i91"],"ntags":2,"description":"Римляне относились к богам как к партнёрам по контракту: делай ритуал точно — боги обеспечат мир. Не «верую», а «исполняю». Скучно? Зато империя на 500 лет.","eras":["ancient","medieval"]},{"title":"Североамериканские традиции","link":"https://oaker.github.io/veroteka/ru/03_ancient/american/north_america/north_america.html","family":"Древние","axis":"sunyata","year":"до контакта (XV–XVI вв.)","tags":["древние","Америки","__i92"],"ntags":2,"description":"религии коренных народов: Великий Дух, шаманы, священные места, обряды.","eras":[]},{"title":"Скандинавская древняя религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/norse/norse.html","family":"Древние","axis":"sunyata","year":"VIII–XI вв. (эпоха викингов) / XIII в. (Эдды)","tags":["древние","Европа","скандинавия","__i93"],"ntags":3,"description":"Викинги верили, что даже боги умрут — и от этого не легче, а честнее: судьба неизбежна, слава вечна. Умирай красиво — единственное, что в твоих руках.","eras":["medieval"]},{"title":"Славянская древняя традиция","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/slavic_tradition/slavic_tradition.html","family":"Древние","axis":"sunyata","year":"до IX в. (первые упоминания)","tags":["древние","Европа","__i94"],"ntags":2,"description":"Древние славяне оставили почти ноль записей: писали на дереве, дерево сгнило. Знаем по чужим дневникам и раскопкам: громовержец Перун, скотий бог Велес, предки и поле.","eras":["medieval"]},{"title":"Ханаанская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/near_east/canaanite/canaanite.html","family":"Древние","axis":"sunyata","year":"III–II тыс. до н.э. (Угарит)","tags":["древние","Ближний Восток","__i95"],"ntags":2,"description":"религии Угарита, Финикии, Ханаана (II–I тыс.","eras":["ancient"]},{"title":"Эллинизм","link":"https://oaker.github.io/veroteka/ru/03_ancient/graeco_roman/hellenistic/hellenistic.html","family":"Древние","axis":"sunyata","year":"323 до н.э. (смерть Александра)","tags":["древние","греко-римский мир","__i96"],"ntags":2,"description":"религиозный мир после Александра (IV–I вв.","eras":["ancient"]},{"title":"Этрусская религия","link":"https://oaker.github.io/veroteka/ru/03_ancient/european/etskaya/etskaya.html","family":"Древние","axis":"dvaita","year":"IX–II вв. до н.э.","tags":["древние","Европа","__i97"],"ntags":2,"description":"религия этрусков (IX–II вв.","eras":["ancient"]},{"title":"Агхора","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/aghora/aghora.html","family":"Дхармические","axis":"advaita","year":"XVIII в. (Кинарам) / корни древнее","tags":["индуизм","шиваизм","практика","__i98"],"ntags":3,"description":"**Агхора** («безобразная») — радикальная шиваитская аскеза: преодоление отвращения как прямой путь к недвойственности. ## Суть Практики: жизнь на кладбищах, кремациях (сжигание тел","eras":["earlymodern","em3"]},{"title":"Адвайта-джаглинг (недуальное жонглирование)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/advaita_juggling/advaita_juggling.html","family":"Дхармические","axis":"advaita","year":"XXI в.","tags":["индуизм","шиваизм","Каширский шиваизм","практика","недуальность","__i99"],"ntags":5,"description":"Жонглируешь шарами и учишься не мешать полёту. Пока в голове тихо — шары летят. Задумался «а хорошо ли я жонглирую» — упали. Упало — смеёшься и бросаешь снова. Вся философия — у тебя в руках, буквально.","eras":["xxi"]},{"title":"Буддизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/buddhism.html","family":"Дхармические","axis":"sunyata","year":"V–VI вв. до н.э. (пробуждение Будды)","tags":["дхармические","буддизм","__i100"],"ntags":2,"description":"Будда объяснил: жизнь мучает, потому что мы цепляемся. Меньше цепляйся — меньше боли. Бога-творца тут нет совсем — и это не мешает быть религией.","eras":["ancient"]},{"title":"Ваджраяна","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/vajrayana.html","family":"Дхармические","axis":"sunyata","year":"VII–VIII вв. (Индия, тантры)","tags":["буддизм","тибетский буддизм","тантра","__i101"],"ntags":3,"description":"Тибетский буддизм: быстрый путь с предохранителем. Эмоции — топливо для роста. Отсюда мандалы, мантры и Далай-лама.","eras":[]},{"title":"Вайшешика","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/vaisheshika/vaisheshika.html","family":"Дхармические","axis":"sunyata","year":"II–I вв. до н.э. (Канада)","tags":["индуизм","философия","__i102"],"ntags":2,"description":"школа атомизма (Канада): мир состоит из неделимых атомов (ану).","eras":["ancient"]},{"title":"Валлабха (шуддха-адвайта)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/vallabha/vallabha.html","family":"Дхармические","axis":"advaita","year":"XVI в. (Валлабха, 1479–1531)","tags":["индуизм","вишнуизм","__i103"],"ntags":2,"description":"**Валлабха** (XVI в., Брадж) — «чистая адвайта»: мир — игра (лила) Кришны, и всё уже есть Брахман. ## Суть Кришна — высшая реальность; мир не «иллюзия», а проявление радости; отриц","eras":["earlymodern","em1"]},{"title":"Веданта","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/vedanta/vedanta.html","family":"Дхармические","axis":"advaita","year":"VIII–IX вв. (Шанкара) / корни в Упанишадах","tags":["индуизм","философия","__i104"],"ntags":2,"description":"**Веданта** («конец Вед») — самая влиятельная философская школа Индии: учение Упанишад о Брахмане и Атмане. ## Основные формулы - **Адвайта** (Шанкара, VIII–IX вв.): Брахман = Атма","eras":[]},{"title":"Випассана","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/vipassana/vipassana.html","family":"Дхармические","axis":"sunyata","year":"XX в. (Махаси, Гоенка)","tags":["буддизм","практика","__i105"],"ntags":2,"description":"**Випассана** («ясное видение») — медитативная практика наблюдения реальности как она есть: дыхание, ощущения, непостоянство. ## Суть Техника из тхеравады, популяризированная в XX ","eras":["xx"]},{"title":"Вира-шайва (лингаяты)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/vira_shaiva_lingayat/vira_shaiva_lingayat.html","family":"Дхармические","axis":"dvaita","year":"XII в. (Басава, ~1160)","tags":["индуизм","шиваизм","спорный статус","__i106"],"ntags":3,"description":"**Вира-шайва (лингаяты)** ⚠️ — шиваитское движение XII века (Басава, Карнатака; ~15 млн): равенство каст, отказ от храмов, личная линга как святыня на теле. ## Суть Каждый лингаят ","eras":["medieval"]},{"title":"Вишнуизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/vaishnavism.html","family":"Дхармические","axis":"dvaita","year":"VI–IX вв. (альвары) / XI в. (Рамануджа)","tags":["индуизм","вишнуизм","__i107"],"ntags":2,"description":"крупнейшее направление индуизма: Вишну как Верховный Бог, приходящий в мир аватарами (Кришна, Рама, Нарасимха…).","eras":["medieval"]},{"title":"Гаудия-вайшнавизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/gaudiya/gaudiya.html","family":"Дхармические","axis":"advaita","year":"XVI в. (Чайтанья, 1486–1534)","tags":["индуизм","вишнуизм","бхакти","__i108"],"ntags":3,"description":"бенгальская традиция Чайтаньи Махапрабху (1486–1534): экстатическая преданность Кришне с пением киртана.","eras":["earlymodern","em1"]},{"title":"Гелуг","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/gelug/gelug.html","family":"Дхармические","axis":"sunyata","year":"1409 (Цзонхава, Гандэн)","tags":["буддизм","тибетский буддизм","__i109"],"ntags":2,"description":"**Гелуг** («добродетельная») — школа тибетского буддизма (XIV–XV вв., Цзонхава): строгая дисциплина, монашеская учёность, Далай-лама. ## Суть Реформаторская школа: подчёркнутое соб","eras":["medieval"]},{"title":"Даршаны","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/darshanas.html","family":"Дхармические","axis":null,"year":"II в. до н.э. – VIII в. н.э.","tags":["индуизм","философия","__i110"],"ntags":2,"description":"шесть классических философских школ индуизма (шад-даршана): санкхья, йога, ньяя, вайшешика, миманса, веданта.","eras":["ancient","medieval"]},{"title":"Джайнизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/jainism.html","family":"Дхармические","axis":"sunyata","year":"VI–V вв. до н.э. (Махавира) / традиция старше","tags":["дхармические","джайнизм","__i111"],"ntags":2,"description":"Самая мирная религия: нельзя вредить ничему живому — даже комару. Монахи заметают путь перед собой, чтобы не наступить на жука.","eras":["ancient"]},{"title":"Дзен Риндзай","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/zen_rinzai/zen_rinzai.html","family":"Дхармические","axis":"sunyata","year":"XIII в. (Эйсай, 1191 Япония) / IX в. (Линьцзи)","tags":["буддизм","дзен","__i112"],"ntags":2,"description":"японская ветвь дзен от китайской линии Линьцзи: коаны, внезапное пробуждение, динамичный стиль.","eras":["medieval"]},{"title":"Дзен Сото","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/zen_soto/zen_soto.html","family":"Дхармические","axis":"sunyata","year":"1227 (Догэн) / IX в. (Цаодун)","tags":["буддизм","дзен","__i113"],"ntags":2,"description":"японская ветвь дзен (от Догэна, XIII в.","eras":["medieval"]},{"title":"Дзёдо-синсю","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/pure_land/jodo_shinshu/jodo_shinshu.html","family":"Дхармические","axis":"dvaita","year":"1224 (Синран)","tags":["буддизм","махаяна","чистые земли","__i114"],"ntags":3,"description":"**Дзёдо-синсю** («истинная школа Чистой земли») — японская школа Синрана (XIII в.): спасение только верой в Амиду, никаких собственных усилий. ## Суть Синран довёл логику до конца:","eras":["medieval"]},{"title":"Дигамбара","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/digambara/digambara.html","family":"Дхармические","axis":"sunyata","year":"I в. н.э. (раскол)","tags":["джайнизм","__i115"],"ntags":1,"description":"**Дигамбара** («одетые небом») — школа джайнизма: монахи практикуют полную наготу как знак отказа от собственности. ## Суть Мир — «неодетый», монах подражает ему: одежда = собствен","eras":["ancient"]},{"title":"Дхармические религии","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/dharmic.html","family":"Дхармические","axis":null,"year":"II тыс. до н.э. (ведизм) → V–VI вв. до н.э. (буддизм/джайнизм)","tags":["дхармические","__i116"],"ntags":1,"description":"Индийские религии-родственники: индуизм, буддизм, сикхизм, джайнизм. Общая идея: жизнь повторяется, поступки возвращаются (карма), цель — вырваться из круга.","eras":["ancient"]},{"title":"Индуизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/hinduism.html","family":"Дхармические","axis":null,"year":"II тыс. до н.э. (ведизм) → ~200 до н.э.–500 н.э. (пуранический индуизм)","tags":["дхармические","индуизм","__i117"],"ntags":2,"description":"Самая старая живая религия мира. Богов как будто много, но за ними один. Главное правило — карма: что посеешь, то и пожнёшь. Цель — понять, что ты не только тело.","eras":["ancient"]},{"title":"Исторические школы буддизма","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/historic_schools/historic_schools.html","family":"Дхармические","axis":"sunyata","year":"III в. до н.э. – I в. н.э. (18 школ)","tags":["буддизм","история","__i118"],"ntags":2,"description":"направления, ушедшие или растворившиеся в других: от ранних «18 школ» до исчезнувших традиций Азии.","eras":["ancient"]},{"title":"Йога (даршан)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/yoga/yoga.html","family":"Дхармические","axis":"sunyata","year":"II в. до н.э. – IV в. н.э. (Патанджали)","tags":["индуизм","философия","__i119"],"ntags":2,"description":"школа Патанджали («Йога-сутры», II в.","eras":["ancient"]},{"title":"Кагью","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/kagyu/kagyu.html","family":"Дхармические","axis":"sunyata","year":"XI в. (Тилопа → Марпа, 1040)","tags":["буддизм","тибетский буддизм","__i120"],"ntags":2,"description":"**Кагью** («линия устной передачи») — школа тибетского буддизма (XI в., Марпа, Миларепа, Гампопа): практика через йогу и махамудру. ## Суть Линия «великих йогинов»: Миларепа — поэт","eras":["medieval"]},{"title":"Капалики и каламукхи","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/kapalika_kalamukha/kapalika_kalamukha.html","family":"Дхармические","axis":"dvaita","year":"VII–XIV вв.","tags":["индуизм","шиваизм","историческая линия","__i121"],"ntags":3,"description":"исторические шиваитские аскетические линии (VII–XIV вв.","eras":[]},{"title":"Каула","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/kaula/kaula.html","family":"Дхармические","axis":"advaita","year":"VIII–XI вв.","tags":["индуизм","шактизм","тантра","__i122"],"ntags":3,"description":"«семейная» линия шактизма: путь через все аспекты жизни, включая запретное, как путь к Богине.","eras":[]},{"title":"Каширский шиваизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/kashirsky_shaivism/kashirsky_shaivism.html","family":"Дхармические","axis":"advaita","year":"XXI в. (Россия, Кашира)","tags":["индуизм","шиваизм","недуальный тантрический шиваизм","НРД","Россия","Кашира","__i123"],"ntags":6,"description":"Это русское учение о том, что всё на свете — одно целое. Появилось в городе Кашире. Голова учения — Сергей Чернов, он же Doctor Che. Главное: увидеть, что ты и весь мир — одно, и не изображать из себя важную персону. Проверяется просто: уронишь — посмейся.","eras":["xxi"]},{"title":"Крама","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/krama/krama.html","family":"Дхармические","axis":"advaita","year":"IX–XI вв.","tags":["индуизм","шиваизм","кашмирский шиваизм","__i124"],"ntags":3,"description":"**Крама** («постепенность») — школа кашмирского шиваизма с акцентом на последовательную практику: от внешних обрядов к внутреннему узнаванию. ## Суть Крама систематизирует путь как","eras":[]},{"title":"Кула","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/kula/kula.html","family":"Дхармические","axis":"advaita","year":"VIII–IX вв.","tags":["индуизм","шиваизм","кашмирский шиваизм","__i125"],"ntags":3,"description":"**Кула** («семья») — одна из главных линий кашмирского тантризма: путь через семью, тело и родовую традицию, где «нечистое» мира становится вратами к Шиве. ## Суть Кула утверждает ","eras":[]},{"title":"Лесная традиция","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/forest_tradition/forest_tradition.html","family":"Дхармические","axis":"sunyata","year":"XX в. (Аджан Ман, Ча)","tags":["буддизм","тхеравада","__i126"],"ntags":2,"description":"аскетическая линия тхеравады: практика в джунглях, минимализм, «маленькая лампа в лесу».","eras":["xx"]},{"title":"Мадхва (двайта-веданта)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/madhva/madhva.html","family":"Дхармические","axis":"dvaita","year":"XIII в. (Мадхва, 1238–1317)","tags":["индуизм","вишнуизм","философия","__i127"],"ntags":3,"description":"**Мадхва** (XIII в., Карнатака) — дуалистическая веданта: Бог и душа различаются всегда и безусловно. ## Суть Пять вечных различий: Бог/душа, Бог/материя, душа/душа, душа/материя, ","eras":["medieval"]},{"title":"Махамудра","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/mahamudra/mahamudra.html","family":"Дхармические","axis":"sunyata","year":"XI в. (Тилопа → Гампопа)","tags":["мистицизм","буддизм","тибетский буддизм","__i128"],"ntags":3,"description":"**Махамудра** («великая печать») — вершина пути школы кагью: прямое узнавание природы ума как пустоты-и-ясности; «печать» — потому что это узнавание ставится на любое переживание. ","eras":["medieval"]},{"title":"Махаяна","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/mahayana.html","family":"Дхармические","axis":"sunyata","year":"I в. до н.э. – I в. н.э. (сутры праджняпарамиты)","tags":["буддизм","__i129"],"ntags":1,"description":"Большой буддизм: спасайся не один, а веди за собой всех. Есть будды-спасители, которым можно молиться. Так буддизм стал понятен миллионам.","eras":["ancient"]},{"title":"Миманса","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/mimamsa/mimamsa.html","family":"Дхармические","axis":"sunyata","year":"II в. до н.э. (Джаймини)","tags":["индуизм","философия","ритуал","__i130"],"ntags":3,"description":"**Миманса** (Пурва-миманса) — школа «науки ритуала»: главное — точное исполнение ведийских обрядов, а не метафизика. ## Суть Дхарма — «что должно делать», познаётся не из мистическ","eras":["ancient"]},{"title":"Муртипуджака","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/murtipujaka/murtipujaka.html","family":"Дхармические","axis":"sunyata","year":"Средневековье","tags":["джайнизм","__i131"],"ntags":1,"description":"основная ветвь шветамбара: почитание образов (мурти) тиртханкаров в храмах.","eras":[]},{"title":"Намдхари (кука)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/namdhari/namdhari.html","family":"Дхармические","axis":"dvaita","year":"XIX в. (Баллак Сингх)","tags":["сикхизм","__i132"],"ntags":1,"description":"**Намдхари** («носящие имя») — сикхская реформаторская община (XIX в., Баллак Сингх): строгая дисциплина, белый цвет, вегетарианство. ## Суть Прозвище «кука» («крикуны») — за громк","eras":["xix"]},{"title":"Натхи (горакханатхи)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nath_tradition/nath_tradition.html","family":"Дхармические","axis":"advaita","year":"IX–XI вв. (Горакхнатх)","tags":["индуизм","шиваизм","йога","__i133"],"ntags":3,"description":"аскетическая йогическая линия (с IX–XI вв.","eras":[]},{"title":"Недуальный тантрический шиваизм (кашмирский кластер)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/nondual_kashmir.html","family":"Дхармические","axis":"advaita","year":"IX в. (Васугупта, спанда) → XII в.","tags":["индуизм","шиваизм","кашмирский шиваизм","тантра","__i134"],"ntags":4,"description":"Древняя индийская школа: весь мир — один сон сознания, и ты в нём не зритель, а сам сон. Никакой магии — очень внимательный взгляд на того, кто смотрит.","eras":["medieval"]},{"title":"Ниранкари","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/nirankari/nirankari.html","family":"Дхармические","axis":"dvaita","year":"XIX в. (Даял Сингх)","tags":["сикхизм","реформа","__i135"],"ntags":2,"description":"**Ниранкари** («бесформенный Бог») — сикхская реформа (XIX в., Даял Сингх): отказ от идолопоклонства и обрядности. ## Суть Упрощение: нет сложных ритуалов, образов, посредников; то","eras":["xix"]},{"title":"Ниханг","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/nihang/nihang.html","family":"Дхармические","axis":"dvaita","year":"XVII в. (Гобинд Сингх)","tags":["сикхизм","__i136"],"ntags":1,"description":"воинский орден сикхов: тюрбан с железным кольцом, сабля, боевые искусства, охрана святынь.","eras":["earlymodern","em2"]},{"title":"Ничирэн","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/nichiren/nichiren.html","family":"Дхармические","axis":"sunyata","year":"1253 (Ничирэн, провозглашение)","tags":["буддизм","махаяна","Япония","__i137"],"ntags":3,"description":"японская школа (XIII в.","eras":["medieval"]},{"title":"Ньингма","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/nyingma/nyingma.html","family":"Дхармические","axis":"sunyata","year":"VIII в. (Падмасамбхава)","tags":["буддизм","тибетский буддизм","__i138"],"ntags":2,"description":"**Ньингма** («старая») — старейшая школа тибетского буддизма (VIII в., Падмасамбхава): ранние тантры, дзогчен. ## Суть Девять колесниц; главное учение — **дзогчен** («великая полно","eras":["medieval"]},{"title":"Ньяя","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/nyaya/nyaya.html","family":"Дхармические","axis":"dvaita","year":"II в. н.э. (Гаутама, Ньяя-сутры)","tags":["индуизм","философия","логика","__i139"],"ntags":3,"description":"индийская школа логики и эпистемологии: как отличить истинное знание от иллюзии.","eras":["ancient"]},{"title":"Пашупата","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/pashupata/pashupata.html","family":"Дхармические","axis":"dvaita","year":"II в. н.э. (Лакулиша)","tags":["индуизм","шиваизм","историческая линия","__i140"],"ntags":3,"description":"древнейшая историческая школа шиваизма (II в.","eras":["ancient"]},{"title":"Пратьябхиджня","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/pratyabhijna/pratyabhijna.html","family":"Дхармические","axis":"advaita","year":"X в. (Утпаладева) / XI в. (Абхинавагупта)","tags":["индуизм","шиваизм","кашмирский шиваизм","__i141"],"ntags":3,"description":"**Пратьябхиджня** («узнавание себя») — философия Абхинавагупты (X–XI вв.): высшая цель не достижение, а узнавание того, что уже есть. ## Суть Сознание самоотражается; мир — не иллю","eras":["medieval"]},{"title":"Сакья","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/sakya/sakya.html","family":"Дхармические","axis":"sunyata","year":"1073 (мон. Сакья)","tags":["буддизм","тибетский буддизм","__i142"],"ntags":2,"description":"**Сакья** («бледная земля») — школа тибетского буддизма (XI в., Кхон Кончог Гьялпо): учёность и политика. ## Суть Линия — наследственная (не тулку): сыновья Нгак-ванга. В XIII веке","eras":["medieval"]},{"title":"Санкхья","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/darshanas/samkhya/samkhya.html","family":"Дхармические","axis":"sunyata","year":"~I в. до н.э. (Санкхья-карика)","tags":["индуизм","философия","__i143"],"ntags":2,"description":"древнейшая дуалистическая школа индийской философии: два извечных начала — пуруша (дух) и пракрити (природа).","eras":["ancient"]},{"title":"Семья чань/дзен","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/chan_zen.html","family":"Дхармические","axis":"sunyata","year":"VI в. (Бодхидхарма) / VII–IX вв. (оформление чань)","tags":["буддизм","махаяна","дзен","__i144"],"ntags":3,"description":"семья буддийских школ, идущих от Бодхидхармы (VI в.","eras":["medieval"]},{"title":"Сикхизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/sikhism.html","family":"Дхармические","axis":"dvaita","year":"1469 (рождение Нанака) / 1699 (Хальса)","tags":["дхармические","сикхизм","__i145"],"ntags":2,"description":"Религия из Индии (XV век): один Бог, все люди равны, трудись и делись едой. Мужчины носят тюрбан и нож — знак готовности защищать слабых. В храме кормят бесплатно всех подряд.","eras":["earlymodern","em1","em2"]},{"title":"Сингон","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/shingon/shingon.html","family":"Дхармические","axis":"sunyata","year":"806 (Кукай, Япония)","tags":["буддизм","ваджраяна","Япония","__i146"],"ntags":3,"description":"**Сингон** («истинное слово») — японская ваджраяна (IX в., Кукай): тайные мантры, мандалы и «становление буддой в этом теле». ## Суть Кукай (Кобо Дайси) принёс тантру из Китая; уче","eras":["medieval"]},{"title":"Смартизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/smartism/smartism.html","family":"Дхармические","axis":"advaita","year":"VIII–IX вв. (Шанкара)","tags":["индуизм","смартизм","__i147"],"ntags":2,"description":"«либеральное крыло» индуизма, оформленное Шанкарой (VIII–IX вв.","eras":[]},{"title":"Сон (корейский дзен)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/korean_seon/korean_seon.html","family":"Дхармические","axis":"sunyata","year":"VII в. (Помнанг) / IX в. (Тохён)","tags":["буддизм","дзен","__i148"],"ntags":2,"description":"корейская буддийская традиция созерцания (선), одна из сильнейших школ дзен в мире.","eras":["medieval"]},{"title":"Спанда","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/spanda/spanda.html","family":"Дхармические","axis":"advaita","year":"IX в. (Васугупта)","tags":["индуизм","шиваизм","кашмирский шиваизм","__i149"],"ntags":3,"description":"**Спанда** («вибрация», «пульсация») — учение о том, что реальность есть вибрация сознания: мир не «произведён», а пульсирует. ## Суть Шива проявляется через спанду: творение — не ","eras":["medieval"]},{"title":"Стханакваси","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/sthanakvasi/sthanakvasi.html","family":"Дхармические","axis":"sunyata","year":"XV в. (Лонка)","tags":["джайнизм","__i150"],"ntags":1,"description":"реформаторская ветвь шветамбара (XV в.","eras":["medieval"]},{"title":"Тамильские сиддхары","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/siddhars_tamil/siddhars_tamil.html","family":"Дхармические","axis":"advaita","year":"VII–XVIII вв. (18 сиддхаров)","tags":["индуизм","шиваизм","история","__i151"],"ntags":3,"description":"поэты-аскеты и алхимики юга Индии (с VII–VIII вв.","eras":["ancient"]},{"title":"Терапантхи (дигамбара)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/digambara/terapanthi/terapanthi.html","family":"Дхармические","axis":"sunyata","year":"XVIII в. (Бхиканджи)","tags":["джайнизм","__i152"],"ntags":1,"description":"реформаторская ветвь дигамбара (XVIII в.","eras":["earlymodern","em3"]},{"title":"Терапантхи (шветамбара)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/terapanthi/terapanthi.html","family":"Дхармические","axis":"sunyata","year":"1760 (Бхикхану)","tags":["джайнизм","__i153"],"ntags":1,"description":"**Терапантхи** (шветамбара) — реформаторская ветвь (XIX–XX вв.): строгая аскеза и социальная активность. ## Суть Требование чистоты учения и практики: отказ от почитания образов (к","eras":["earlymodern","em3"]},{"title":"Тибетский буддизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/vajrayana/tibetan/tibetan.html","family":"Дхармические","axis":"sunyata","year":"VII в. (Сонгцэн Гампо) / VIII в. (Падмасамбхава)","tags":["буддизм","ваджраяна","__i154"],"ntags":2,"description":"ваджраяна в тибетской форме: четыре школы, ламы, реинкарнации, богатейшая ритуальная культура.","eras":["medieval"]},{"title":"Трика","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/nondual_kashmir/trika/trika.html","family":"Дхармические","axis":"advaita","year":"IX–XI вв.","tags":["индуизм","шиваизм","кашмирский шиваизм","__i155"],"ntags":3,"description":"Учение про тройку: Бог, его сила и ты. Секрет: тройка — на самом деле один. Ты уже есть то, что искал. Как искать очки, когда они на носу.","eras":[]},{"title":"Тхеравада","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/theravada/theravada.html","family":"Дхармические","axis":"sunyata","year":"III в. до н.э. (Ашока, Шри-Ланка)","tags":["буддизм","__i156"],"ntags":1,"description":"Старейший буддизм: каждый сам себе спасатель. Медитируй, наблюдай дыхание, не цепляйся. Без богов и чудес — только работа над собой.","eras":["ancient"]},{"title":"Тхиен (вьетнамский дзен)","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/vietnamese_thien/vietnamese_thien.html","family":"Дхармические","axis":"sunyata","year":"VI в. (Винирук","tags":["буддизм","дзен","__i157"],"ntags":2,"description":"вьетнамская традиция созерцания (thiền), синтез дзен сPure Land и местными культами.","eras":["medieval"]},{"title":"Тяньтай","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/tiantai/tiantai.html","family":"Дхармические","axis":"sunyata","year":"575 (Чжии, г. Тяньтай)","tags":["буддизм","махаяна","__i158"],"ntags":2,"description":"китайская школа (VI в.","eras":["medieval"]},{"title":"Удаси","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/sikhism/udasi/udasi.html","family":"Дхармические","axis":"dvaita","year":"XVI в. (Шри Чанд)","tags":["сикхизм","аскеза","__i159"],"ntags":2,"description":"**Удаси** («отрешённые») — аскетический орден сикхов (XVI в., Шри Чанд — сын гуру Нанака): странствующие проповедники. ## Суть Отказ от мирской жизни: странствия, простота, обучени","eras":["earlymodern","em1"]},{"title":"Хуаянь","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/huayan/huayan.html","family":"Дхармические","axis":"sunyata","year":"VII в. (Душунь, Фацзан)","tags":["буддизм","махаяна","__i160"],"ntags":2,"description":"китайская школа «Аватамсака-сутры»: взаимопроникновение всех явлений, сеть Индры.","eras":["medieval"]},{"title":"Чань","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/chan_zen/chan/chan.html","family":"Дхармические","axis":"sunyata","year":"VI–VIII вв.","tags":["буддизм","махаяна","дзен","__i161"],"ntags":3,"description":"китайский буддизм «созерцания» (禅, chán): синтез буддизма с даосской культурой, ставший самой китайской из буддийских традиций.","eras":[]},{"title":"Чистые земли","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/buddhism/mahayana/pure_land/pure_land.html","family":"Дхармические","axis":"dvaita","year":"II–III вв. (Индия) / IV в. (Китай, Хуэйюань)","tags":["буддизм","махаяна","__i162"],"ntags":2,"description":"направление махаяны (Китай, Япония, Вьетнам; крупнейшее по числу верующих в Азии): спасение через веру в Будду Амиду и перерождение в его Чистой земле.","eras":["ancient"]},{"title":"Шайва-сиддханта","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/shaiva_siddhanta/shaiva_siddhanta.html","family":"Дхармические","axis":"dvaita","year":"VI–IX вв. (наянары) / VIII в. (агамы)","tags":["индуизм","шиваизм","__i163"],"ntags":2,"description":"дуалистическая (с элементами недуализма) шиваитская система юга Индии: Шива, души и узы — три извечные реальности.","eras":["medieval"]},{"title":"Шактизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/shaktism.html","family":"Дхармические","axis":"advaita","year":"VI–VIII вв. (тантрический слой)","tags":["индуизм","шактизм","__i164"],"ntags":2,"description":"направление индуизма, где высшая реальность — Богиня (Деви, Шакти): Дурга, Кали, Лалита-Трипурасундари.","eras":[]},{"title":"Шветамбара","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/jainism/shvetambara/shvetambara.html","family":"Дхармические","axis":"sunyata","year":"I в. н.э. (раскол) / 454 (Валабхи)","tags":["джайнизм","__i165"],"ntags":1,"description":"**Шветамбара** («одетые в белое») — школа джайнизма: монахи носят белые одежды; женщины могут освободиться. ## Суть Признают канон (агамы), включая тексты о женщинах-архатах; равно","eras":["ancient"]},{"title":"Шиваизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaivism/shaivism.html","family":"Дхармические","axis":"advaita","year":"II в. н.э. (пашупата) / VIII–XII вв. (кашмирский расцвет)","tags":["индуизм","шиваизм","__i166"],"ntags":2,"description":"Часть индуизма, где главным богом считают Шиву. Шива — не дядя с трезубцем, а само сознание, которое смотрит твоими глазами. Тысячу лет назад в Кашмире эта идея стала целой наукой.","eras":["ancient"]},{"title":"Шри-вайшнавизм","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/vaishnavism/sri_vaishnavism/sri_vaishnavism.html","family":"Дхармические","axis":"dvaita","year":"XI в. (Рамануджа)","tags":["индуизм","вишнуизм","__i167"],"ntags":2,"description":"южноиндийская вишнуитская традиция (Рамануджа, XI в.","eras":["medieval"]},{"title":"Шри-видья","link":"https://oaker.github.io/veroteka/ru/02_world/dharmic/hinduism/shaktism/sri_vidya/sri_vidya.html","family":"Дхармические","axis":"advaita","year":"X–XIV вв. (Лалита-сахасранама)","tags":["индуизм","шактизм","тантра","__i168"],"ntags":3,"description":"крупнейшая тантрическая линия шактизма: Богиня Лалита-Трипурасундари и Шри-чакра.","eras":[]},{"title":"Езидизм","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/yazidism/yazidism.html","family":"Иранские","axis":"dvaita","year":"XII в. (Шейх Ади)","tags":["иранские","спорный статус","__i169"],"ntags":2,"description":"**Езидизм** ⚠️ — религия курдов-езидов (Северный Ирак, Закавказье, Европа; ~800 тыс.–1 млн): монотеизм с ангелом-павлином Тауси-Мелеком и кастовой структурой (шейхи, пиры, миряне).","eras":["medieval"]},{"title":"Зороастризм","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/zoroastrianism.html","family":"Иранские","axis":"dvaita","year":"XII–VI вв. до н.э. (Заратуштра)","tags":["иранские","зороастризм","__i170"],"ntags":2,"description":"Древняя персидская религия: мир — битва света и тьмы, и ты выбираешь сторону каждой мыслью, словом и делом. Огонь в храме — символ истины, его не гасят веками.","eras":["ancient"]},{"title":"Зороастрийцы-парсы (Индия)","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/parsi/parsi.html","family":"Иранские","axis":"dvaita","year":"VIII–X вв. (бегство в Индию)","tags":["зороастризм","Индия","__i171"],"ntags":2,"description":"зороастрийская община Индии (около 60 тыс.","eras":[]},{"title":"Зурванизм (исторический)","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/zurvanism_historic/zurvanism_historic.html","family":"Иранские","axis":"dvaita","year":"IV в. до н.э. – III в. н.э.","tags":["зороастризм","история","__i172"],"ntags":2,"description":"историческое течение зороастризма: высший бог — Зурван (Время), породивший близнецов Ахурамазду и Ангра-Майнью.","eras":["ancient"]},{"title":"Иранские зороастрийцы","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/zoroastrianism/iranian/iranian.html","family":"Иранские","axis":"dvaita","year":"VII в. (под исламом)","tags":["зороастризм","Иран","__i173"],"ntags":2,"description":"община в Иране (Йезд, Керман; ок.","eras":["medieval"]},{"title":"Иранские религии","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/iranian.html","family":"Иранские","axis":"dvaita","year":"XII–VI вв. до н.э. (Заратуштра)","tags":["иранские","__i174"],"ntags":1,"description":"Религии Ирана и соседей: зороастризм, езиды, мандеи. Отсюда весь мир взял рай, ад и конец света — это видно даже в Библии.","eras":["ancient"]},{"title":"Мандеизм","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/mandaeism/mandaeism.html","family":"Иранские","axis":"dvaita","year":"I–II вв. н.э.","tags":["иранские","гностицизм","__i175"],"ntags":2,"description":"древнейшая живая гностическая религия (Ирак/Иран, ~60–100 тыс.","eras":[]},{"title":"Ярсан (Ахл-и Хакк)","link":"https://oaker.github.io/veroteka/ru/02_world/iranian/yarsanism/yarsanism.html","family":"Иранские","axis":"dvaita","year":"XIV–XV вв. (Султан Сохак)","tags":["иранские","спорный статус","__i176"],"ntags":2,"description":"**Ярсан** (Ахл-и Хакк, «люди истины») ⚠️ — курдское и иранское мистическое течение (2–3 млн): своя кастовая структура (pirs, dalils), храмов нет, богослужение — собрания и музыку с","eras":[]},{"title":"LGAT (крупногрупповые тренинги)","link":"https://oaker.github.io/veroteka/ru/05_nrd/lgat/lgat.html","family":"Новые движения","axis":null,"year":"1970-е (EST) / 2000-е","tags":["НРД","психотехнологии","__i177"],"ntags":2,"description":"**LGAT** (Large Group Awareness Training) — индустрия «тренингов личностного роста» с интенсивной групповой динамикой (Ландмарк, EST и аналоги). ## Механика Зал, 2–5 дней, конфронт","eras":["xx"]},{"title":"Анастасийцы","link":"https://oaker.github.io/veroteka/ru/05_nrd/russian/anastasians/anastasians.html","family":"Новые движения","axis":null,"year":"1990-е (книги Мегре)","tags":["НРД","Россия","__i178"],"ntags":2,"description":"российское движение «Звенящие кедры России» (1990-е, книги Владимира Мегре): почитание «Анастасии» — сибирской женщины с духовным учением.","eras":["xx"]},{"title":"Белое братство","link":"https://oaker.github.io/veroteka/ru/05_nrd/russian/white_brotherhood/white_brotherhood.html","family":"Новые движения","axis":null,"year":"1990–1996","tags":["НРД","Россия","спорный статус","__i179"],"ntags":3,"description":"**Белое братство** ⚠️ — российское движение (1990–1996, Юрий Кривоногов и Мария Цвигун, «Мария Дэви Христос»): ожидание конца света и «воскресения». ## Суть Киевская ветвь: массовы","eras":["xx"]},{"title":"Виссарионовцы","link":"https://oaker.github.io/veroteka/ru/05_nrd/russian/vissarionites/vissarionites.html","family":"Новые движения","axis":null,"year":"1991","tags":["НРД","Россия","__i180"],"ntags":2,"description":"российское религиозное движение (1991, Сергей Тороп, «Виссарион», «Христос»): «Церковь Последнего Завета».","eras":["xx"]},{"title":"Восточноазиатские новые движения","link":"https://oaker.github.io/veroteka/ru/05_nrd/east_asian_new/east_asian_new.html","family":"Новые движения","axis":null,"year":"XIX–XX вв.","tags":["НРД","Азия","__i181"],"ntags":2,"description":"религии XX века из Китая, Кореи, Японии, соединившие буддизм, даосизм и национальную идею.","eras":[]},{"title":"Врата Небес","link":"https://oaker.github.io/veroteka/ru/05_nrd/ufo/heavens_gate/heavens_gate.html","family":"Новые движения","axis":null,"year":"1970-е / 1997 (трагедия)","tags":["НРД","уфология","трагедия","__i182"],"ntags":3,"description":"**Врата Небес** ⚠️ — американская уфологическая группа (1970-е, Бонни Неттлз, Маршалл Эпплуайт), трагически известная массовым самоубийством 1997 года (39 человек). ## Суть Учение:","eras":["xx"]},{"title":"Джедаизм","link":"https://oaker.github.io/veroteka/ru/05_nrd/parody/jediism/jediism.html","family":"Новые движения","axis":null,"year":"2001 (перепись, шутка)","tags":["НРД","пародия","интернет","__i183"],"ntags":3,"description":"движение, объявляющее путь джедаев из «Звёздных войн» духовной практикой.","eras":["xxi"]},{"title":"Дудизм","link":"https://oaker.github.io/veroteka/ru/05_nrd/parody/dudeism/dudeism.html","family":"Новые движения","axis":null,"year":"2005 (Бенджамин)","tags":["НРД","пародия","даосизм","__i184"],"ntags":3,"description":"**Дудизм** (Церковь последнего дня Дуде) — религия середины 2000-х (Оливер Бенджамин), построенная на фильме братьев Коэн «Большой Лебовски» (1998) и «Дао дэ цзин». ## Суть Герой —","eras":["xxi"]},{"title":"Кардецизм (спиритизм)","link":"https://oaker.github.io/veroteka/ru/05_nrd/spiritism_kardecism/spiritism_kardecism.html","family":"Новые движения","axis":null,"year":"1857 (Кардек, «Книга духов»)","tags":["НРД","спиритизм","__i185"],"ntags":2,"description":"спиритическое учение Аллана Кардека (Франция, 1857): духи, реинкарнация, эволюция души.","eras":["xix"]},{"title":"Кастенедианство (последователи Кастанеды)","link":"https://oaker.github.io/veroteka/ru/05_nrd/castanedianism/castanedianism.html","family":"Новые движения","axis":"advaita","year":"1968 (первая книга) / 1995 (Cleargreen)","tags":["НРД","Кастанеда","шаманизм спорный","недуальность","__i186"],"ntags":4,"description":"image: img/castanedianism.jpg **Кастенедианство** (разговорное «кактуасианство») — сообщества последователей Карлоса Кастанеды (1925–1998), американского антрополога и писателя, ав","eras":["xx"]},{"title":"Копимизм","link":"https://oaker.github.io/veroteka/ru/05_nrd/parody/kopimism/kopimism.html","family":"Новые движения","axis":null,"year":"2010","tags":["НРД","пародия","интернет","__i187"],"ntags":3,"description":"**Копимизм** (Missionary Church of Kopimism) — религия копирования информации (Швеция, 2010; Исак Герсон); в конце 2011 года зарегистрирована государством как религиозная община. #","eras":["xxi"]},{"title":"Ландмарк (LGAT)","link":"https://oaker.github.io/veroteka/ru/05_nrd/lgat/landmark/landmark.html","family":"Новые движения","axis":null,"year":"1991 (после EST)","tags":["НРД","психотехнологии","__i188"],"ntags":2,"description":"**Ландмарк Форум** (и шире — LGAT, Large Group Awareness Training) — крупногрупповые тренинги личностного роста с интенсивной эмоциональной динамикой. ## Суть 2–3 дня в зале на 100","eras":["xx"]},{"title":"НЛО-культизм","link":"https://oaker.github.io/veroteka/ru/05_nrd/ufo/ufo.html","family":"Новые движения","axis":null,"year":"XX век (после 1947, Розуэлл)","tags":["НРД","уфология","__i189"],"ntags":2,"description":"религиозные движения вокруг идеи инопланетного вмешательства: от раэлитов до Врат Небес.","eras":["xx"]},{"title":"Неошаманизм","link":"https://oaker.github.io/veroteka/ru/05_nrd/neo_shamanism/neo_shamanism.html","family":"Новые движения","axis":"sunyata","year":"1970–1980-е (Кастанеда, Харнер)","tags":["НРД","шаманизм","практика","__i190"],"ntags":3,"description":"современные практики, стилизованные под традиционный шаманизм: семинары, бубны, «путешествия силы», «городской шаманизм» (с 1970-х, США/Европа).","eras":["xx"]},{"title":"Новые религиозные движения","link":"https://oaker.github.io/veroteka/ru/05_nrd/05_nrd.html","family":"Новые движения","axis":null,"year":"XIX–XXI вв.","tags":["НРД","__i191"],"ntags":1,"description":"Новые религии и группы. Здесь честно разбирают, как в них заманивают и как выйти. Полезно всем, у кого есть близкие и кто встречал обещания лёгкого счастья.","eras":[]},{"title":"Пародийные религии","link":"https://oaker.github.io/veroteka/ru/05_nrd/parody/parody.html","family":"Новые движения","axis":null,"year":"XX–XXI вв.","tags":["НРД","пародия","сатира","__i192"],"ntags":3,"description":"движения, использующие форму религии (учение, ритуал, организация, документы) осознанно-шутливо: как протест, сатиру или игру.","eras":[]},{"title":"Раэлиты","link":"https://oaker.github.io/veroteka/ru/05_nrd/ufo/raelism/raelism.html","family":"Новые движения","axis":null,"year":"1974","tags":["НРД","уфология","__i193"],"ntags":2,"description":"**Раэлизм** ⚠️ — уфологическое движение (1974, Клод Ворилон, «Раэль»; ~100 тыс.): жизнь на Земле создана инопланетянами (элохим). ## Суть Элохим — учёные-творцы; пророки всех религ","eras":["xx"]},{"title":"Российские НРД","link":"https://oaker.github.io/veroteka/ru/05_nrd/russian/russian.html","family":"Новые движения","axis":null,"year":"1980–2000-е","tags":["НРД","Россия","__i194"],"ntags":2,"description":"новые религиозные движения России и постсоветского пространства (1980-е–2000-е).","eras":["xx"]},{"title":"Саентология","link":"https://oaker.github.io/veroteka/ru/05_nrd/scientology/scientology.html","family":"Новые движения","axis":null,"year":"1950 («Дианетика») / 1954 (церковь)","tags":["НРД","психотехнологии","спорный статус","__i195"],"ntags":3,"description":"**Саентология** ⚠️ — религиозное движение (1954, Лафайет Рон Хаббард; «Дианетика», 1950): человек — «тетан», бессмертный дух, забывший свою природу. ## Суть Аудит (одитинг) — «одит","eras":["xx"]},{"title":"Фалуньгун","link":"https://oaker.github.io/veroteka/ru/05_nrd/east_asian_new/falun_gong/falun_gong.html","family":"Новые движения","axis":null,"year":"1992","tags":["НРД","Китай","спорный статус","__i196"],"ntags":3,"description":"**Фалуньгун** («практика колеса закона») ⚠️ — китайская духовная практика (1992, Ли Хунчжи): упражнения, медитация, учение о «фалуни» (законе). ## Суть Смесь цигун, буддийских и да","eras":["xx"]},{"title":"Церковь Всевышнего Слова (SubGenius)","link":"https://oaker.github.io/veroteka/ru/05_nrd/parody/subgenius/subgenius.html","family":"Новые движения","axis":null,"year":"1979 (Стэнг, Драммонд)","tags":["НРД","пародия","__i197"],"ntags":2,"description":"**Церковь Всевышнего Слова** (Church of the SubGenius) — пародийная религия (1979, США; Иван Стэнг и Фило Драммонд), сатира на телепроповедников, сетевой маркетинг и культы. ## Сут","eras":["xx"]},{"title":"Аборигенные традиции Австралии","link":"https://oaker.github.io/veroteka/ru/04_national/oceania/australian/australian.html","family":"Региональные","axis":"sunyata","year":"65 000 лет непрерывно","tags":["региональные","Океания","__i198"],"ntags":2,"description":"древнейшая непрерывная культура планеты (65 тыс.","eras":["ancient"]},{"title":"Африка (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/africa/africa.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Африка","__i199"],"ntags":2,"description":"традиционные религии, христианство и ислам в постоянном смешении.","eras":[]},{"title":"Вепсы: религия и духовная традиция","link":"https://oaker.github.io/veroteka/ru/04_national/baltic_finnic/veps/veps.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","финно-угры","вепсы","Россия","__i200"],"ntags":4,"description":"Вепсы — маленький северный народ, у которого природа — хозяин, а человек — гость: в лес здороваются, воду благодарят, слово имеет вес. Учитель линии Каширы (Doctor Che) — из вепсов и считает это наследие корнем своего пути.","eras":[]},{"title":"Викка","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/wicca/wicca.html","family":"Региональные","axis":"sunyata","year":"1951–1954 (Гарднер)","tags":["региональные","возрождённые","__i201"],"ntags":2,"description":"современная неоязыческая религия (1950-е, Джеральд Гарднер): почитание Богини и Бога, магия, сезонные ритуалы.","eras":["xx"]},{"title":"Водун","link":"https://oaker.github.io/veroteka/ru/04_national/africa/vodun/vodun.html","family":"Региональные","axis":"sunyata","year":"до контакта","tags":["региональные","Африка","__i202"],"ntags":2,"description":"религия Фона и Эве (Бенин, Того, Нигерия): верховный бог Маву-Лиза, божества-водун, культ предков.","eras":[]},{"title":"Возрождённые традиции (XIX–XXI вв.)","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/modern_traditions.html","family":"Региональные","axis":"sunyata","year":"XIX–XXI вв.","tags":["региональные","возрождённые","__i203"],"ntags":2,"description":"современные движения, восстанавливающие древние традиции Европы на основе науки, фольклора и личной практики: викка, хитренство, ромува, диевтури, родноверие.","eras":[]},{"title":"Вьетнам","link":"https://oaker.github.io/veroteka/ru/04_national/vietnam/vietnam.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Вьетнам","__i204"],"ntags":2,"description":"синтез: народная религия, буддизм махаяны (тхиен), конфуцианство, даосизм + локальные традиции.","eras":[]},{"title":"Государственный синто","link":"https://oaker.github.io/veroteka/ru/04_national/japan/shinto/state_shinto/state_shinto.html","family":"Региональные","axis":"sunyata","year":"1868–1945","tags":["региональные","Япония","история","__i205"],"ntags":3,"description":"**Государственный синто** (кокка синто, 1868–1945) — государственная идеология Японии: император как божественный потомок Аматэрасу, синто как государственный культ. ## Суть Создан","eras":["xix","xx"]},{"title":"ДАО-мау (культ Матерей)","link":"https://oaker.github.io/veroteka/ru/04_national/vietnam/dao_mau/dao_mau.html","family":"Региональные","axis":"sunyata","year":"XVI в. (оформление) / корни древнее","tags":["региональные","Вьетнам","__i206"],"ntags":2,"description":"**ДАО-мау** («путь Матерей») — вьетнамский культ богинь-матерей: трансовые ритуалы, песни, костюмы. ## Суть Четыре дворца (небо, земля, вода, горы/леса) — четыре группы богинь. Рит","eras":["earlymodern","em1"]},{"title":"Даосизм","link":"https://oaker.github.io/veroteka/ru/04_national/china/daoism/daoism.html","family":"Региональные","axis":"sunyata","year":"IV–III вв. до н.э. (Дао дэ цзин)","tags":["региональные","даосизм","__i207"],"ntags":2,"description":"Дао — «как всё устроено», словами не передать. Совет школы: не суетись. Вода мягче камня, но камень протачивает. Не дави на жизнь — и она пойдёт.","eras":["ancient"]},{"title":"Диаспорные традиции","link":"https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/diaspora.html","family":"Региональные","axis":"sunyata","year":"XVI–XIX вв. (работорговля)","tags":["региональные","Африка","диаспора","__i208"],"ntags":3,"description":"африканские религии, пережившие рабство и воссозданные в Америке: сантерия, кандомбле, вуду.","eras":[]},{"title":"Диевтури","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/dievturi/dievturi.html","family":"Региональные","axis":"sunyata","year":"1925 (Брастиньш)","tags":["региональные","возрождённые","__i209"],"ntags":2,"description":"**Диевтури** («богоносцы») — латвийское неоязыческое движение (1920-е; Эрнест Брастиньш): балтийская религия в национальном ключе. ## Суть Диевс (небо) как высший; пантеон балтийск","eras":["xx"]},{"title":"Йоруба / Ифа","link":"https://oaker.github.io/veroteka/ru/04_national/africa/yoruba_ifa/yoruba_ifa.html","family":"Региональные","axis":"sunyata","year":"до контакта (до XV в.)","tags":["региональные","Африка","__i210"],"ntags":2,"description":"Религия народа йоруба (Западная Африка): верховный Бог и много божеств-помощников на все случаи. Гадание Ифа — древняя «справочная» на 256 стихов. Через рабство эти боги доехали до Кубы и Бразилии.","eras":["medieval"]},{"title":"Кандомбле","link":"https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/candomble/candomble.html","family":"Региональные","axis":"sunyata","year":"XVIII–XIX вв. (Бразилия)","tags":["региональные","Африка","диаспора","__i211"],"ntags":3,"description":"бразильская религия йоруба: ориша, барабаны атабаке, terreiro (общинная площадка).","eras":[]},{"title":"Китай (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/china/china.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Китай","__i212"],"ntags":2,"description":"три учения и народная религия: даосизм, конфуцианство, буддизм плюс культ предков.","eras":[]},{"title":"Китайская народная религия","link":"https://oaker.github.io/veroteka/ru/04_national/china/chinese_folk/chinese_folk.html","family":"Региональные","axis":"sunyata","year":"доисторический слой","tags":["региональные","Китай","__i213"],"ntags":2,"description":"то, во что реально верит большинство китайцев: боги-чиновники, предки, духи мест, фэншуй, судьба.","eras":[]},{"title":"Конфуцианство","link":"https://oaker.github.io/veroteka/ru/04_national/china/confucianism/confucianism.html","family":"Региональные","axis":"dvaita","year":"V в. до н.э. (Конфуций)","tags":["региональные","Китай","этика","__i214"],"ntags":3,"description":"Не про богов, а про то, как жить среди людей: уважай старших, держи слово, учись. Две тысячи лет Китай нанимал чиновников по экзаменам на эти книги.","eras":["ancient"]},{"title":"Корея (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/korea/korea.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Корея","__i215"],"ntags":2,"description":"шаманизм, буддизм, христианство и конфуцианская этика в одном обществе.","eras":[]},{"title":"Муизм (корейский шаманизм)","link":"https://oaker.github.io/veroteka/ru/04_national/korea/muism/muism.html","family":"Региональные","axis":"sunyata","year":"до н.э. (древний слой)","tags":["региональные","Корея","__i216"],"ntags":2,"description":"корейский шаманизм: 믿음, вера в духов (му) и посредников-шаманок (муданг).","eras":["ancient"]},{"title":"Океания (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/oceania/oceania.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Океания","__i217"],"ntags":2,"description":"аборигенные традиции, полинезийские верования и христианство.","eras":[]},{"title":"Полинезийские религии","link":"https://oaker.github.io/veroteka/ru/04_national/oceania/polynesian/polynesian.html","family":"Региональные","axis":"sunyata","year":"до контакта (XVIII в.)","tags":["региональные","Океания","__i218"],"ntags":2,"description":"традиции Гавайев, Таити, Новой Зеландии (маори), Самоа: мана, тапу, боги моря и земли.","eras":["earlymodern","em3"]},{"title":"Прибалтийско-финские традиции","link":"https://oaker.github.io/veroteka/ru/04_national/baltic_finnic/baltic_finnic.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","финно-угры","Россия","__i219"],"ntags":3,"description":"Народы русского севера (вепсы, карелы, ижора) верят: у леса, воды и дома есть хозяева. Крестились рано, но старую вежливость к миру не забыли: вошёл в лес — поздоровайся. Религия как хорошие манеры перед живым миром.","eras":[]},{"title":"Региональные традиции","link":"https://oaker.github.io/veroteka/ru/04_national/04_national.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","__i220"],"ntags":1,"description":"Веры, живущие у народов «с рождения»: японский синто, китайские боги, африканские традиции. Тут не «верю в», а «живу в»: праздник, предки, место.","eras":[]},{"title":"Родноверие","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/slavic_rodnovery/slavic_rodnovery.html","family":"Региональные","axis":"sunyata","year":"1980-е","tags":["региональные","возрождённые","спорное","__i221"],"ntags":3,"description":"российское неоязыческое движение (1980-е →): восстановление славянской религии, культ Рода и природы.","eras":["xx"]},{"title":"Ромува","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/romuva/romuva.html","family":"Региональные","axis":"sunyata","year":"1911 / 1991 (возрождение)","tags":["региональные","возрождённые","__i222"],"ntags":2,"description":"литовское неоязыческое движение (XX в.","eras":["xx"]},{"title":"Рюкюские верования","link":"https://oaker.github.io/veroteka/ru/04_national/japan/ryukyuan/ryukyuan.html","family":"Региональные","axis":"sunyata","year":"до XII в.","tags":["региональные","Япония","__i223"],"ntags":2,"description":"**Рюкюские верования** (Окинава) — религия островов Рюкю: почитание предков, священные места (уттаки), жрицы-нуру. ## Суть Островная традиция с сильным матрицентризмом: жрицы (нуру","eras":["medieval"]},{"title":"Сантерия","link":"https://oaker.github.io/veroteka/ru/04_national/africa/diaspora/santeria/santeria.html","family":"Региональные","axis":"sunyata","year":"XVI–XVIII вв. (Куба)","tags":["региональные","Африка","диаспора","__i224"],"ntags":3,"description":"**Сантерия** («Regla de Ocha») — кубинская религия африканского происхождения: ориша йоруба под католическими именами. ## Суть Ориша (Шанго, Ошун, Йемайя, Огун) — божества; сантеро","eras":[]},{"title":"Сектантский синто","link":"https://oaker.github.io/veroteka/ru/04_national/japan/shinto/sect_shinto/sect_shinto.html","family":"Региональные","axis":"sunyata","year":"XIII–XIX вв.","tags":["региональные","Япония","синтоизм","__i225"],"ntags":3,"description":"**Сектантский синто** («кёха синто») — движения XIX века внутри синто: 13 групп, основанных харизматическими лидерами (Тэнри, Конко, Куродзуми). ## Суть Признаны государством как о","eras":[]},{"title":"Сибирский шаманизм","link":"https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/siberian_shamanism/siberian_shamanism.html","family":"Региональные","axis":"sunyata","year":"до контакта (тысячелетия)","tags":["региональные","Сибирь","__i226"],"ntags":2,"description":"древняя практика народов Сибири: шаман как техник экстаза, посредник между мирами.","eras":[]},{"title":"Синтоизм","link":"https://oaker.github.io/veroteka/ru/04_national/japan/shinto/shinto.html","family":"Региональные","axis":"sunyata","year":"до VI в. (до буддизма)","tags":["региональные","синтоизм","__i227"],"ntags":2,"description":"Японская вера: в горах, реках и людях живут духи (ками). Догм нет — чистота, праздники и уважение к месту, где живёшь. Ворота-тории — дверной проём между обычным и священным.","eras":["medieval"]},{"title":"Степь и Сибирь (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/steppe_siberia.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Степь","__i228"],"ntags":2,"description":"тенгрианство, шаманизм и буддизм в тюрко-монгольском мире.","eras":[]},{"title":"Тенгрианство","link":"https://oaker.github.io/veroteka/ru/04_national/steppe_siberia/tengrism/tengrism.html","family":"Региональные","axis":"sunyata","year":"VI–XIII вв. (тюркские каганаты)","tags":["региональные","Степь","тюркские","__i229"],"ntags":3,"description":"религия тюркских и монгольских народов Степи: Тенгри (Небо-отец) и Умай (Мать-земля).","eras":[]},{"title":"Хитренство (германское возрождение)","link":"https://oaker.github.io/veroteka/ru/04_national/modern_traditions/heathenry/heathenry.html","family":"Региональные","axis":"sunyata","year":"1972 (Асатру, Исландия)","tags":["региональные","возрождённые","__i230"],"ntags":2,"description":"**Хитренство** (Heathenry) — современное возрождение скандинавской и германской религии: боги асов и ванов, руны, общины. ## Суть Реконструкция по Эддам и сагам + личная практика: ","eras":["xx"]},{"title":"Храмовый синто","link":"https://oaker.github.io/veroteka/ru/04_national/japan/shinto/shrine_shinto/shrine_shinto.html","family":"Региональные","axis":"sunyata","year":"VII в. (организация)","tags":["региональные","Япония","синтоизм","__i231"],"ntags":3,"description":"основная институциональная форма синто: сеть святилищ (дзиндзя), божественная земля и календарь праздников.","eras":["medieval"]},{"title":"Цюаньчжэнь","link":"https://oaker.github.io/veroteka/ru/04_national/china/daoism/quanzhen/quanzhen.html","family":"Региональные","axis":"sunyata","year":"1167 (Ван Чунъян)","tags":["даосизм","Китай","__i232"],"ntags":2,"description":"**Цюаньчжэнь** («полная истина») — монашеская школа даосизма (XII в., Ван Чунъян): аскеза, целомудрие, внутренняя алхимия. ## Суть Полный отказ от мирского: монахи живут в монастыр","eras":["medieval"]},{"title":"Чжэнъи","link":"https://oaker.github.io/veroteka/ru/04_national/china/daoism/zhengyi/zhengyi.html","family":"Региональные","axis":"sunyata","year":"II в. (Чжан Даолин)","tags":["даосизм","Китай","__i233"],"ntags":2,"description":"**Чжэнъи** («правильное единство») — мирская школа даосизма: священники живут в миру, женятся, служат общинам. ## Суть Наследственная линия (Чжан Тяньши — «Небесный наставник»), ри","eras":["ancient"]},{"title":"Чхондогё","link":"https://oaker.github.io/veroteka/ru/04_national/korea/cheondogyo/cheondogyo.html","family":"Региональные","axis":"sunyata","year":"1860 (Чхве Джеу)","tags":["региональные","Корея","НРД","__i234"],"ntags":3,"description":"**Чхондогё** («Учение Небесного Пути») — корейская религия XIX века (1860, Чхве Джеу): синтез конфуцианства, буддизма и даосизма с корейской идентичностью. ## Суть «Человек — небес","eras":["xix"]},{"title":"Япония (религиозная карта)","link":"https://oaker.github.io/veroteka/ru/04_national/japan/japan.html","family":"Региональные","axis":"sunyata","year":"","tags":["региональные","Япония","__i235"],"ntags":2,"description":"синтоизм и буддизм в разделении труда: синто на жизнь, буддизм на смерть.","eras":[]},{"title":"Алхимия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/alchemy/alchemy.html","family":"Эзотерика","axis":null,"year":"III в. (Египет) / VIII в. (арабская) / XII в. (Европа)","tags":["эзотерика","__i236"],"ntags":1,"description":"искусство трансмутации: превращение свинца в золото как внешний слой внутреннего делания — превращения души.","eras":["ancient","medieval"]},{"title":"Антропософия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/anthroposophy/anthroposophy.html","family":"Эзотерика","axis":null,"year":"1912 (Штейнер)","tags":["эзотерика","НРД","__i237"],"ntags":2,"description":"«мудрость о человеке» Рудольфа Штейнера (1912): духовная наука о развитии человека и космоса.","eras":["xx"]},{"title":"Астрология","link":"https://oaker.github.io/veroteka/ru/06_esoteric/astrology/astrology.html","family":"Эзотерика","axis":null,"year":"II тыс. до н.э. (Вавилон)","tags":["эзотерика","__i238"],"ntags":1,"description":"учение о связи небесных тел и земной жизни; древнейшая «прикладная» система интерпретации.","eras":["ancient"]},{"title":"Герметизм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/hermeticism/hermeticism.html","family":"Эзотерика","axis":null,"year":"II–III вв. (Corpus Hermeticum)","tags":["эзотерика","__i239"],"ntags":1,"description":"эзотерическая традиция, приписываемая Гермесу Трисмегисту («трижды величайшему»): синтез греческой философии и египетской мистики (II–III вв.","eras":[]},{"title":"Герметическая каббала","link":"https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/hermetic_kabbalah/hermetic_kabbalah.html","family":"Эзотерика","axis":null,"year":"XV в. (Пико) / 1888 (Золотая Заря)","tags":["эзотерика","оккультизм","__i240"],"ntags":2,"description":"христианско-оккультная адаптация каббалы (Ренессанс; Золотая Заря): сфирот + таро + астрология.","eras":["medieval","xix"]},{"title":"Гностицизм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/gnosticism/gnosticism.html","family":"Эзотерика","axis":null,"year":"I–III вв.","tags":["эзотерика","__i241"],"ntags":1,"description":"движение поздней античности: спасение через тайное знание (гнозис), а не веру и обряд.","eras":[]},{"title":"Гримуарная традиция","link":"https://oaker.github.io/veroteka/ru/06_esoteric/magic/grimoire/grimoire.html","family":"Эзотерика","axis":null,"year":"XII–XVII вв.","tags":["эзотерика","магия","__i242"],"ntags":2,"description":"«учебник магии»: книги заклинаний, печатей, имён духов; от «Ключа Соломона» до «Малого Альберта».","eras":[]},{"title":"Дискордианизм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/discordianism/discordianism.html","family":"Эзотерика","axis":null,"year":"","tags":["эзотерика","пародия","хаос-магия","__i243"],"ntags":3,"description":"религия/философия хаоса и богини Эриды (1957–1959, Малаклипс Младший; «Principia Discordia»), заявленная как пародия и ставшая родоначальником хаос-магии.","eras":[]},{"title":"Золотая Заря","link":"https://oaker.github.io/veroteka/ru/06_esoteric/golden_dawn/golden_dawn.html","family":"Эзотерика","axis":null,"year":"1888","tags":["эзотерика","__i244"],"ntags":1,"description":"**Герметический орден Золотой Зари** (1888, Лондон) — самый влиятельный оккультный орден нового времени: синтез каббалы, герметизма, астрологии и ритуала. ## Суть Система посвящени","eras":["xix"]},{"title":"Иудейская каббала","link":"https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/jewish_kabbalah/jewish_kabbalah.html","family":"Эзотерика","axis":"advaita","year":"XIII в. («Зоар») / XVI в. (Лурия)","tags":["эзотерика","иудаизм","__i245"],"ntags":2,"description":"эзотерическое ядро иудаизма: «Зоар», лурианская школа, сфирот.","eras":["medieval","earlymodern","em1"]},{"title":"Каббала","link":"https://oaker.github.io/veroteka/ru/06_esoteric/kabbalah/kabbalah.html","family":"Эзотерика","axis":"advaita","year":"XII–XIII вв. («Бахир», «Зоар»)","tags":["эзотерика","иудаизм","мистицизм","__i246"],"ntags":3,"description":"**Каббала** («получение») — эзотерическая традиция иудаизма: учение о структуре божественного, мире и душе через десять сфирот. ## Две линии - **Иудейская каббала**: «Зоар» (XIII в","eras":[]},{"title":"Магия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/magic/magic.html","family":"Эзотерика","axis":null,"year":"доисторический слой","tags":["эзотерика","__i247"],"ntags":1,"description":"практики воздействия на реальность через символы, ритуалы и волю; в религиоведении — культурный феномен, а не «шарлатанство».","eras":[]},{"title":"Мартинизм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/martinism/martinism.html","family":"Эзотерика","axis":null,"year":"1740-е","tags":["эзотерика","ордена","__i248"],"ntags":2,"description":"эзотерическая традиция (Мартинес де Паскуалли, 1740-е; Луи Клод де Сен-Мартен): христианский мистицизм + инициация «избранных священников».","eras":["earlymodern","em3"]},{"title":"Масонство","link":"https://oaker.github.io/veroteka/ru/06_esoteric/masonry/masonry.html","family":"Эзотерика","axis":"dvaita","year":"","tags":["эзотерика","ордена","история","__i249"],"ntags":3,"description":"**Масонство** (франкмасонство) — братское-инициатическое движение, оформившееся в Лондоне в 1717 году (Великая ложа); в мире — несколько миллионов членов. ## Устройство Ложа — базо","eras":[]},{"title":"Масонство в России","link":"https://oaker.github.io/veroteka/ru/06_esoteric/masonry/masonry_russia/masonry_russia.html","family":"Эзотерика","axis":"dvaita","year":"","tags":["эзотерика","масонство","Россия","__i250"],"ntags":3,"description":"image: img/masonry_russia.jpg **Масонство в России** — история братства от XVIII века до наших дней: расцветы, запреты и реставрация. ## XVIII век: расцвет просвещения Первые ложи ","eras":[]},{"title":"Народная магия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/magic/folk_magic/folk_magic.html","family":"Эзотерика","axis":null,"year":"доисторический слой","tags":["эзотерика","магия","__i251"],"ntags":2,"description":"бытовые практики защиты и влияния: заговоры, обереги, приметы, «бабки-шептухи».","eras":[]},{"title":"Новая мысль","link":"https://oaker.github.io/veroteka/ru/06_esoteric/new_thought/new_thought.html","family":"Эзотерика","axis":null,"year":"1830-е (Эмерсон) / 1880-е","tags":["эзотерика","__i252"],"ntags":1,"description":"**Новая мысль** (New Thought, XIX в., США) — движение о силе мысли: «мышление создаёт реальность», исцеление сознанием, процветание. ## Суть Корни: трансцендентализм (Эмерсон), мез","eras":["xix"]},{"title":"Нью-эйдж","link":"https://oaker.github.io/veroteka/ru/06_esoteric/new_age/new_age.html","family":"Эзотерика","axis":null,"year":"1960–1970-е","tags":["эзотерика","НРД","__i253"],"ntags":2,"description":"«новая эра»: диффузное движение (1960-е →) о духовном самосовершенствовании вне догм: кристаллы, медитации, ченнелинг, астрология, рейки.","eras":["xx"]},{"title":"Розенкрейцерство","link":"https://oaker.github.io/veroteka/ru/06_esoteric/rosicrucianism/rosicrucianism.html","family":"Эзотерика","axis":null,"year":"1614 (манифесты)","tags":["эзотерика","__i254"],"ntags":1,"description":"эзотерическое братство, заявленное в манифестах XVII века (перекрещенная роза): герметизм, алхимия и духовное обновление Европы.","eras":["earlymodern","em2"]},{"title":"Сатанизм ЛаВея","link":"https://oaker.github.io/veroteka/ru/06_esoteric/la_vey_satanism/la_vey_satanism.html","family":"Эзотерика","axis":null,"year":"1966","tags":["эзотерика","НРД","спорный статус","__i255"],"ntags":3,"description":"**Сатанизм Антона ЛаВея** (Церковь Сатаны, 1966, Сан-Франциско) — атеистическая «религия» с сатаной как символом, а не существом. ## Суть - «Сатана» — символ эгоизма, свободы и пло","eras":["xx"]},{"title":"Спиритуализм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/spiritualism/spiritualism.html","family":"Эзотерика","axis":null,"year":"1848 (Фоксы, Гайдсвилл)","tags":["эзотерика","__i256"],"ntags":1,"description":"вера в общение с духами умерших через медиумов; массовое движение XIX века (около 1850-х, США).","eras":["xix"]},{"title":"Таро","link":"https://oaker.github.io/veroteka/ru/06_esoteric/tarot/tarot.html","family":"Эзотерика","axis":null,"year":"XV в. (карты) / 1781 (оккультное таро)","tags":["эзотерика","символизм","__i257"],"ntags":2,"description":"колода карт (XV в.","eras":["medieval","earlymodern","em3"]},{"title":"Телема","link":"https://oaker.github.io/veroteka/ru/06_esoteric/thelema/thelema.html","family":"Эзотерика","axis":null,"year":"1904","tags":["эзотерика","НРД","__i258"],"ntags":2,"description":"**Телема** («воля») — религиозно-философская система Алистера Кроули (1904, «Книга Закона»). ## Суть - «Делай что изволишь — таков весь Закон» (Do what thou wilt shall be the whole","eras":["xx"]},{"title":"Теософия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/theosophy/theosophy.html","family":"Эзотерика","axis":null,"year":"1875 (Блаватская)","tags":["эзотерика","НРД","__i259"],"ntags":2,"description":"эзотерическое движение Елены Блаватской (Теософское общество, 1875, Нью-Йорк): синтез восточных религий, западного оккультизма и «древней мудрости».","eras":["xix"]},{"title":"Хаос-магия","link":"https://oaker.github.io/veroteka/ru/06_esoteric/magic/chaos_magic/chaos_magic.html","family":"Эзотерика","axis":null,"year":"1970-е (Спейр, Кэрролл)","tags":["эзотерика","магия","__i260"],"ntags":2,"description":"современный оккультизм (1970–80-е, Остин Осман Спейр, Алистер Кроули — предтеча, «Liber Null» Пита Кэрролла): парадигма, а не догма.","eras":["xx"]},{"title":"Эзотерика и оккультизм","link":"https://oaker.github.io/veroteka/ru/06_esoteric/06_esoteric.html","family":"Эзотерика","axis":null,"year":"II–IV вв. (герметизм) → XIX–XX вв.","tags":["эзотерика","__i261"],"ntags":1,"description":"«Тайные знания»: алхимия, астрология, магия, каббала. Про них больше всего врут — поэтому тут отделяют историю от сказок, спокойно и с иронией.","eras":[]}]}</script>
+<script>(function(){ window.QuizEngine = (function(){
+  'use strict';
+
+  var AXES = ['dvaita', 'advaita', 'sunyata'];
+  var ERAS = ['ancient', 'medieval', 'earlymodern', 'em1', 'em2', 'em3', 'xix', 'xx', 'xxi'];
+  var FIRST_Q = 'axis_split';
+  var FINAL_Q = '__final__';
+
+  function mulberry32(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function romanToInt(s) {
+    var map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+    var r = 0;
+    s = s.toUpperCase();
+    for (var i = 0; i < s.length; i++) {
+      var c = map[s.charAt(i)];
+      var n = map[s.charAt(i + 1)];
+      if (!c) continue;
+      r += (n && n > c) ? -c : c;
+    }
+    return r;
+  }
+
+  // Грубая эра + подключковое дробление Нового времени (em1: XVI в., em2: XVII в., em3: XVIII в.).
+  function parseEras(year) {
+    var out = [];
+    function push(e) { if (e && out.indexOf(e) === -1) out.push(e); }
+    if (!year) return out;
+    var s = String(year);
+    if (/до\s*н\.?\s*э/i.test(s)) push('ancient');
+    var m;
+    var romanRe = /\b([IVXLC]+)\s*(в\.|век|тыс|тыс\.)/gi;
+    while ((m = romanRe.exec(s))) {
+      var isThousand = /тыс/i.test(m[2]);
+      var c = romanToInt(m[1]);
+      if (isThousand) { push('ancient'); continue; }
+      if (c <= 5) push('ancient');
+      else if (c <= 15) push('medieval');
+      else if (c === 16) { push('earlymodern'); push('em1'); }
+      else if (c === 17) { push('earlymodern'); push('em2'); }
+      else if (c === 18) { push('earlymodern'); push('em3'); }
+      else if (c === 19) push('xix');
+      else if (c === 20) push('xx');
+      else if (c >= 21) push('xxi');
+    }
+    var yrRe = /\b(\d{1,4})\b/g;
+    while ((m = yrRe.exec(s))) {
+      var y = parseInt(m[1], 10);
+      if (y >= 1000 && y <= 2099) {
+        if (y <= 1450) push('medieval');
+        else if (y <= 1599) { push('earlymodern'); push('em1'); }
+        else if (y <= 1699) { push('earlymodern'); push('em2'); }
+        else if (y <= 1799) { push('earlymodern'); push('em3'); }
+        else if (y <= 1900) push('xix');
+        else if (y <= 2000) push('xx');
+        else push('xxi');
+      } else {
+        if (y <= 500) push('ancient');
+        else if (y <= 1450) push('medieval');
+        else if (y <= 1900) push('xix');
+        else if (y <= 2000) push('xx');
+        else push('xxi');
+      }
+    }
+    return out;
+  }
+
+  function createGame(seed) {
+    return { seed: (seed >>> 0) || 1, answers: [] };
+  }
+
+  function jitters(state, n) {
+    var r = mulberry32(state.seed ^ 0x9E3779B9);
+    var out = new Array(n);
+    for (var i = 0; i < n; i++) out[i] = r() * 0.3;
+    return out;
+  }
+
+  function zeroPts() {
+    return {
+      axis: { dvaita: 0, advaita: 0, sunyata: 0 },
+      family: {
+        'Авраамические': 0, 'Дхармические': 0, 'Региональные': 0, 'Эзотерика': 0,
+        'Древние': 0, 'Новые движения': 0, 'Иранские': 0
+      },
+      tag: {},
+      era: { ancient: 0, medieval: 0, earlymodern: 0, em1: 0, em2: 0, em3: 0, xix: 0, xx: 0, xxi: 0 }
+    };
+  }
+
+  function addEffect(pts, e) {
+    if (!e) return;
+    var k;
+    if (e.a) for (k in e.a) { pts.axis[k] = (pts.axis[k] || 0) + e.a[k]; }
+    if (e.f) for (k in e.f) { pts.family[k] = (pts.family[k] || 0) + e.f[k]; }
+    if (e.t) for (k in e.t) { pts.tag[k] = (pts.tag[k] || 0) + e.t[k]; }
+    if (e.e) for (k in e.e) { pts.era[k] = (pts.era[k] || 0) + e.e[k]; }
+  }
+
+  function clonePts(p) {
+    var out = {
+      axis: { dvaita: p.axis.dvaita, advaita: p.axis.advaita, sunyata: p.axis.sunyata },
+      family: {}, tag: {}, era: {}
+    };
+    var k;
+    for (k in p.family) out.family[k] = p.family[k];
+    for (k in p.tag) out.tag[k] = p.tag[k];
+    for (k in p.era) out.era[k] = p.era[k];
+    return out;
+  }
+
+  function qIndex(QUESTIONS) {
+    var m = {};
+    for (var i = 0; i < QUESTIONS.length; i++) m[QUESTIONS[i].id] = QUESTIONS[i];
+    return m;
+  }
+
+  function pointsFor(state, QUESTIONS) {
+    var pts = zeroPts();
+    var idx = qIndex(QUESTIONS);
+    for (var i = 0; i < state.answers.length; i++) {
+      var a = state.answers[i];
+      if (a.e) { addEffect(pts, a.e); continue; } // динамический финальный вопрос: эффект сохранён в ответе
+      var q = idx[a.q];
+      if (!q || !q.opts[a.o]) continue;
+      addEffect(pts, q.opts[a.o].e);
+    }
+    return pts;
+  }
+
+  // Теги нормируем на √(размер набора); тонкие наборы (зонтичные статьи) получают компенсацию:
+  // иначе «Ислам» (2 тега) всегда проигрывает «Ханафитам» (3 тега) с теми же ответами.
+  function thicknessBonus(tags) {
+    var real = 0;
+    for (var i = 0; i < tags.length; i++) if (tags[i].charAt(0) !== '_') real++;
+    return 0.35 * (4 - Math.min(4, Math.max(1, real)));
+  }
+
+  // Немного личного шармa: выбранные пользователем традиции получают лёгкое постоянное преимущество.
+  var CHARM = { 'Каширский шиваизм': 1.3, 'Адвайта-джаглинг (недуальное жонглирование)': 1.3 };
+
+  function scoreItem(item, pts, jit) {
+    var s = 0.6 + (CHARM[item.title] || 0);
+    if (item.axis) {
+      s += 1.15 * (pts.axis[item.axis] || 0);
+    } else {
+      var avg = ((pts.axis.dvaita || 0) + (pts.axis.advaita || 0) + (pts.axis.sunyata || 0)) / 3;
+      s += 0.55 * avg;
+    }
+    s += 0.95 * (pts.family[item.family] || 0);
+    var tags = item.tags || [];
+    var ntags = item.ntags || tags.length;
+    if (tags.length) {
+      var tsum = 0;
+      for (var i = 0; i < tags.length; i++) {
+        var tv = pts.tag[tags[i]] || 0;
+        if (tv > 0) tsum += tv;
+      }
+      s += (0.9 / Math.sqrt(Math.min(4, Math.max(1, ntags)))) * Math.min(6, tsum);
+    }
+    s += thicknessBonus(tags);
+    var eras = item.eras || parseEras(item.year);
+    for (var j = 0; j < eras.length; j++) {
+      s += 1.0 * (pts.era[eras[j]] || 0) * (j === 0 ? 1 : 0.6);
+    }
+    return s + (jit || 0);
+  }
+
+  // Скор итема с дополнительным эффектом e без материализации клона pts.
+  function scoreItemWithEffect(item, pts, e, jit) {
+    var s = 0.6 + (CHARM[item.title] || 0);
+    var ea = e && e.a, ef = e && e.f, et = e && e.t, ee = e && e.e;
+    var a1, a2, a3;
+    a1 = (pts.axis.dvaita || 0) + (ea && ea.dvaita || 0);
+    a2 = (pts.axis.advaita || 0) + (ea && ea.advaita || 0);
+    a3 = (pts.axis.sunyata || 0) + (ea && ea.sunyata || 0);
+    if (item.axis) {
+      s += 1.15 * (item.axis === 'dvaita' ? a1 : item.axis === 'advaita' ? a2 : a3);
+    } else {
+      s += 0.55 * ((a1 + a2 + a3) / 3);
+    }
+    s += 0.95 * ((pts.family[item.family] || 0) + (ef && ef[item.family] || 0));
+    var tags = item.tags || [];
+    if (tags.length) {
+      var tsum = 0;
+      for (var i = 0; i < tags.length; i++) {
+        var tv = (pts.tag[tags[i]] || 0) + (et && et[tags[i]] || 0);
+        if (tv > 0) tsum += tv;
+      }
+      s += (0.9 / Math.sqrt(Math.min(4, Math.max(1, tags.length)))) * Math.min(6, tsum);
+    }
+    s += thicknessBonus(tags);
+    var eras = item.eras || parseEras(item.year);
+    for (var j = 0; j < eras.length; j++) {
+      var ev = (pts.era[eras[j]] || 0) + (ee && ee[eras[j]] || 0);
+      s += 1.0 * ev * (j === 0 ? 1 : 0.6);
+    }
+    return s + (jit || 0);
+  }
+
+  function scoresWith(state, data, QUESTIONS, pts, jit) {
+    var out = new Array(data.items.length);
+    for (var i = 0; i < data.items.length; i++) {
+      out[i] = scoreItem(data.items[i], pts, jit[i]);
+    }
+    return out;
+  }
+
+  function scores(state, data, QUESTIONS) {
+    var pts = pointsFor(state, QUESTIONS);
+    var jit = jitters(state, data.items.length);
+    return scoresWith(state, data, QUESTIONS, pts, jit);
+  }
+
+  function sortedOrder(sc) {
+    var order = [];
+    for (var i = 0; i < sc.length; i++) order.push(i);
+    order.sort(function (a, b) { return sc[b] - sc[a]; });
+    return order;
+  }
+
+  // Относительный отрыв лидера: (s1-s2)/max(|s1|,|s2|).
+  function marginOf(sc) {
+    var order = sortedOrder(sc);
+    var s1 = sc[order[0]], s2 = sc[order[1]];
+    return (s1 - s2) / (Math.max(Math.abs(s1), Math.abs(s2)) + 1e-9);
+  }
+
+  function discriminate(q, leaderIdx, data, pts, jit) {
+    var gains = [];
+    var argmaxByLeader = {};
+    var openedFamilies = {};
+    for (var li = 0; li < leaderIdx.length; li++) {
+      var i = leaderIdx[li];
+      var item = data.items[i];
+      var best = -1e9, bestOpt = -1;
+      for (var o = 0; o < q.opts.length; o++) {
+        var s = scoreItemWithEffect(item, pts, q.opts[o].e, jit[i]);
+        if (s > best) { best = s; bestOpt = o; }
+      }
+      gains.push(best);
+      argmaxByLeader[bestOpt] = (argmaxByLeader[bestOpt] || 0) + 1;
+      // Семейство "открывается", если у лидера почти не было family-очков, а этот вопрос их даёт.
+      if (!(pts.family[item.family] > 0.8) && q.opts[bestOpt].e && q.opts[bestOpt].e.f && q.opts[bestOpt].e.f[item.family] > 0) {
+        openedFamilies[item.family] = true;
+      }
+    }
+    var mean = 0;
+    for (var g = 0; g < gains.length; g++) mean += gains[g];
+    mean /= gains.length;
+    var vr = 0;
+    for (var g2 = 0; g2 < gains.length; g2++) vr += (gains[g2] - mean) * (gains[g2] - mean);
+    var stdev = Math.sqrt(vr / gains.length);
+    var distinct = 0;
+    for (var k in argmaxByLeader) distinct++;
+    var opened = 0;
+    for (var k2 in openedFamilies) opened++;
+    return stdev + 0.2 * distinct + 1.2 * opened;
+  }
+
+  // Семейства или теги, которые вопрос может "открыть" (≥1.5 очков цели без текущих очков).
+  function openerFams(q, pts) {
+    var fams = 0;
+    for (var o = 0; o < q.opts.length; o++) {
+      var f = q.opts[o].e && q.opts[o].e.f;
+      if (f) for (var k in f) if (f[k] >= 1.5 && !(pts.family[k] > 0.8)) fams += 1;
+      var t = q.opts[o].e && q.opts[o].e.t;
+      if (t) for (var k2 in t) if (t[k2] >= 1.5 && !(pts.tag[k2] > 0.8)) fams += 1;
+    }
+    return fams;
+  }
+
+  // Один расчёт на шаг: решение «финиш?» + выбор следующего вопроса.
+  // Фокус сужается с ходами: сначала топ-36, к 6-му шагу — топ-10.
+  function step(state, data, QUESTIONS) {
+    var n = state.answers.length;
+    var la = n ? state.answers[n - 1] : null;
+    // Последний ответ — финальный выбор: конец.
+    if (la && la.q === FINAL_Q && typeof la.finalPick === 'number') return { done: true, reason: 'final', qid: null, margin: 0 };
+    // Последний ответ — «показать другие»: снова финальный вопрос (следующая страница).
+    if (la && la.q === FINAL_Q && la.o === 'more') return { done: false, qid: FINAL_Q, margin: 0 };
+    if (la && la.q === FINAL_Q) return { done: true, reason: 'final', qid: null, margin: 0 };
+    var pts = pointsFor(state, QUESTIONS);
+    var jit = jitters(state, data.items.length);
+    var sc = scoresWith(state, data, QUESTIONS, pts, jit);
+    var margin = marginOf(sc);
+    var stopStatic = (n >= 10 && margin > 0.55) || (n >= 12 && margin > 0.3) || n >= 13;
+    if (stopStatic) {
+      // Вместо немедленного финиша — уточняющий вопрос из топа (сужение выбора).
+      return { done: false, qid: FINAL_Q, margin: margin };
+    }
+    if (n >= QUESTIONS.length) return { done: true, reason: 'no-questions', qid: null, margin: margin };
+    if (n === 0) return { done: false, qid: FIRST_Q, margin: margin };
+    var used = {};
+    for (var i = 0; i < state.answers.length; i++) used[state.answers[i].q] = true;
+    var order = sortedOrder(sc);
+    var K = Math.max(10, 42 - 6 * n);
+    var leaders = order.slice(0, Math.min(K, order.length));
+    var best = null, bestDisc = 0;
+    var useOpener = (n === 2 || n === 5 || n === 8 || n === 10);
+    for (var pass = 0; pass < 2 && !best; pass++) {
+      for (var q = 0; q < QUESTIONS.length; q++) {
+        var question = QUESTIONS[q];
+        if (used[question.id]) continue;
+        var op = openerFams(question, pts);
+        if (pass === 0 && useOpener && op === 0) continue; // на слотах — только открыватели
+        var d = discriminate(question, leaders, data, pts, jit);
+        d += 0.5 * op;
+        if (d > bestDisc) { bestDisc = d; best = question.id; }
+      }
+      if (!useOpener) break;
+    }
+    if (!best || bestDisc <= 0.05) return { done: true, reason: 'no-questions', qid: null, margin: margin };
+    return { done: false, qid: best, margin: margin };
+  }
+
+  function nextQuestion(state, data, QUESTIONS) {
+    var st = step(state, data, QUESTIONS);
+    return st.done ? null : st.qid;
+  }
+
+  function finished(state, data, QUESTIONS) {
+    var n = state.answers.length;
+    if (n === 0) return { done: false, reason: 'start' };
+    var st = step(state, data, QUESTIONS);
+    return { done: st.done, reason: st.reason };
+  }
+
+  // Финальный уточняющий вопрос: топ-4 кандидата (без ранее показанных), явный выбор пользователя.
+  function finalEffect(item) {
+    var uniq = null;
+    for (var i = 0; i < (item.tags || []).length; i++) {
+      if (item.tags[i].indexOf('__i') === 0) { uniq = item.tags[i]; break; }
+    }
+    var e = { t: {} };
+    if (uniq) e.t[uniq] = 2.2;
+    return e;
+  }
+
+  function finalQuestion(state, data, QUESTIONS) {
+    var shown = {};
+    for (var a = 0; a < state.answers.length; a++) {
+      if (state.answers[a].q === FINAL_Q && state.answers[a].shown) {
+        for (var s = 0; s < state.answers[a].shown.length; s++) shown[state.answers[a].shown[s]] = true;
+      }
+    }
+    var sc = scores(state, data, QUESTIONS);
+    var order = sortedOrder(sc);
+    var opts = [];
+    var shownNow = [];
+    for (var i = 0; i < order.length && opts.length < 4; i++) {
+      var it = data.items[order[i]];
+      if (shown[it.title]) continue;
+      opts.push({
+        t: it.title,
+        desc: it.description,
+        idx: order[i],
+        e: finalEffect(it)
+      });
+      shownNow.push(it.title);
+    }
+    var canPage = false;
+    var pagesUsed = 0;
+    for (var a2 = 0; a2 < state.answers.length; a2++) if (state.answers[a2].q === FINAL_Q && state.answers[a2].o === 'more') pagesUsed++;
+    if (pagesUsed < 8) {
+      for (var i2 = 0; i2 < order.length; i2++) { if (!shown[data.items[order[i2]].title]) { canPage = true; break; } }
+    }
+    return { id: FINAL_Q, q: 'Ваш круг сузился до нескольких близких традиций. Какая из них отзывается больше всего?', opts: opts, canPage: canPage, shown: shownNow };
+  }
+
+  function result(state, data, QUESTIONS) {
+    var sc = scores(state, data, QUESTIONS);
+    var order = sortedOrder(sc);
+    var winner = order[0];
+    // Явный выбор пользователя в финальном вопросе главнее скоринга.
+    var la = state.answers.length ? state.answers[state.answers.length - 1] : null;
+    if (la && la.q === FINAL_Q && typeof la.finalPick === 'number' && la.finalPick >= 0 && la.finalPick < data.items.length) {
+      winner = la.finalPick;
+    }
+    var runners = [];
+    var seenTitles = {};
+    seenTitles[data.items[winner].title] = true;
+    for (var i = 0; i < order.length && runners.length < 3; i++) {
+      var it = data.items[order[i]];
+      if (it.title === data.items[winner].title || seenTitles[it.title]) continue;
+      seenTitles[it.title] = true;
+      runners.push(order[i]);
+    }
+    return { winner: winner, runners: runners, scores: sc, order: order };
+  }
+
+  return {
+    AXES: AXES,
+    ERAS: ERAS,
+    FIRST_Q: FIRST_Q,
+    mulberry32: mulberry32,
+    parseEras: parseEras,
+    createGame: createGame,
+    jitters: jitters,
+    zeroPts: zeroPts,
+    addEffect: addEffect,
+    clonePts: clonePts,
+    pointsFor: pointsFor,
+    scoreItem: scoreItem,
+    scoreItemWithEffect: scoreItemWithEffect,
+    scores: scores,
+    sortedOrder: sortedOrder,
+    marginOf: marginOf,
+    step: step,
+    nextQuestion: nextQuestion,
+    finished: finished,
+    FINAL_Q: FINAL_Q,
+    finalQuestion: finalQuestion,
+    finalEffect: finalEffect,
+    result: result
+  };
+})();})();</script>
+<script>window.QUIZ_QUESTIONS = [
+ {
+  "id": "axis_split",
+  "q": "Представьте: за всем, что мы видим, стоит что-то ещё. Какое описание отзывается ближе всего?",
+  "short": "Устройство всего",
+  "opts": [
+   {
+    "t": "Бог (или высшее начало) и моя душа — разные «вещи», между ними всегда остаётся дистанция",
+    "e": {
+     "a": {
+      "dvaita": 2.6
+     }
+    }
+   },
+   {
+    "t": "Всё — одно. За разностью вещей скрывается единое целое, и душа — его часть",
+    "e": {
+     "a": {
+      "advaita": 2.6
+     }
+    }
+   },
+   {
+    "t": "Строго рассуждать о «высшем» нельзя: реальность — поток непостоянных, «пустых» в своей сути явлений",
+    "e": {
+     "a": {
+      "sunyata": 2.6
+     }
+    }
+   },
+   {
+    "t": "Метафизика не зацепила — мне ближе вопрос, как жить и что практиковать",
+    "e": {
+     "f": {
+      "Авраамические": 0.3,
+      "Дхармические": 0.3,
+      "Региональные": 0.3,
+      "Эзотерика": 0.3,
+      "Древние": 0.3,
+      "Новые движения": 0.3,
+      "Иранские": 0.3
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "god_one",
+  "q": "Сколько богов вам ближе по духу?",
+  "short": "Сколько богов",
+  "opts": [
+   {
+    "t": "Один Бог — Творец всего",
+    "e": {
+     "f": {
+      "Авраамические": 1.5,
+      "Иранские": 0.4
+     },
+     "t": {
+      "монотеизм": 1.6
+     }
+    }
+   },
+   {
+    "t": "Много сил, богов и духов — мир ими наполнен",
+    "e": {
+     "f": {
+      "Региональные": 1.4,
+      "Древние": 1.4
+     }
+    }
+   },
+   {
+    "t": "Богов нет — есть природа и её законы",
+    "e": {
+     "f": {
+      "Древние": 0.5
+     },
+     "t": {
+      "философия": 1.8
+     }
+    }
+   },
+   {
+    "t": "Один — но в нём растворено всё остальное",
+    "e": {
+     "f": {
+      "Дхармические": 0.8,
+      "Эзотерика": 0.6
+     },
+     "a": {
+      "advaita": 0.8
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "god_personal",
+  "q": "Каким вам видится высшее начало?",
+  "short": "Высшее начало",
+  "opts": [
+   {
+    "t": "Личным: с ним можно говорить, его любить, оно отвечает",
+    "e": {
+     "f": {
+      "Авраамические": 1.2
+     },
+     "t": {
+      "монотеизм": 1.4,
+      "авраамические": 0.4
+     }
+    }
+   },
+   {
+    "t": "Безличным: мировой закон, порядок, энергия",
+    "e": {
+     "f": {
+      "Дхармические": 1
+     },
+     "a": {
+      "advaita": 0.6
+     }
+    }
+   },
+   {
+    "t": "Ни тем ни другим — вопрос без ответа",
+    "e": {
+     "f": {
+      "Древние": 0.3
+     },
+     "t": {
+      "философия": 1.2
+     }
+    }
+   },
+   {
+    "t": "Целым сонмом: у каждого бога — своя роль и свои истории",
+    "e": {
+     "f": {
+      "Региональные": 1.2,
+      "Древние": 1.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "scripture",
+  "q": "Как относиться к священным текстам?",
+  "short": "Священные тексты",
+  "opts": [
+   {
+    "t": "Писание — фундамент: читать, изучать, точно следовать",
+    "e": {
+     "f": {
+      "Авраамические": 1.2
+     },
+     "t": {
+      "авраамические": 1,
+      "монотеизм": 0.5,
+      "протестантизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Многовековая традиция и обряд важнее книжной буквы",
+    "e": {
+     "f": {
+      "Региональные": 0.8,
+      "Древние": 0.8
+     }
+    }
+   },
+   {
+    "t": "Живой наставник толкует учение — так оно и передаётся",
+    "e": {
+     "f": {
+      "Дхармические": 0.8,
+      "Новые движения": 0.8
+     },
+     "t": {
+      "индуизм": 0.7,
+      "НРД": 0.5
+     }
+    }
+   },
+   {
+    "t": "Тексты — лестница: по ней поднимаются, а потом отбрасывают",
+    "e": {
+     "f": {
+      "Дхармические": 0.8
+     },
+     "a": {
+      "sunyata": 0.5
+     },
+     "t": {
+      "буддизм": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "mystic_vs_dogma",
+  "q": "Что важнее: тихий опыт переживания или верность догматам?",
+  "short": "Опыт или догмат",
+  "opts": [
+   {
+    "t": "Тихий опыт и созерцание важнее любых споров о догматах",
+    "e": {
+     "f": {
+      "Эзотерика": 0.7,
+      "Дхармические": 0.5
+     },
+     "t": {
+      "мистицизм": 1.8
+     }
+    }
+   },
+   {
+    "t": "Верность догматам и правилу — опора веры",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "монотеизм": 0.7,
+      "авраамические": 0.5,
+      "право": 0.5
+     }
+    }
+   },
+   {
+    "t": "Пусть спорят учёные: мне важен практический смысл",
+    "e": {
+     "f": {
+      "Древние": 0.3
+     },
+     "t": {
+      "философия": 0.8
+     }
+    }
+   },
+   {
+    "t": "Догматы — карта, опыт — территория; нужно и то и другое",
+    "e": {
+     "f": {
+      "Новые движения": 0.7
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "authority",
+  "q": "Кто для вас главный авторитет в духовных вопросах?",
+  "short": "Авторитет",
+  "opts": [
+   {
+    "t": "Церковь (община) и её предание",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "авраамические": 0.9,
+      "христианство": 0.4,
+      "право": 0.5
+     }
+    }
+   },
+   {
+    "t": "Наставник важен, но последнее слово всегда за мной",
+    "e": {
+     "f": {
+      "Дхармические": 0.6
+     },
+     "t": {
+      "философия": 0.6
+     }
+    }
+   },
+   {
+    "t": "Гуру, учитель — центр всего пути, без него никак",
+    "e": {
+     "f": {
+      "Дхармические": 0.8
+     },
+     "t": {
+      "индуизм": 1
+     }
+    }
+   },
+   {
+    "t": "Никаких посредников — я сам себе священник",
+    "e": {
+     "f": {
+      "Авраамические": 0.4
+     },
+     "t": {
+      "протестантизм": 1.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "ritual",
+  "q": "Что вам ближе в повседневной практике?",
+  "short": "Ритм практики",
+  "opts": [
+   {
+    "t": "Регулярный ритуал, который держит ритм жизни",
+    "e": {
+     "f": {
+      "Авраамические": 0.9,
+      "Региональные": 0.7
+     }
+    }
+   },
+   {
+    "t": "Ритуал красив, но пуст без внутреннего смысла",
+    "e": {
+     "f": {
+      "Дхармические": 0.6
+     },
+     "t": {
+      "философия": 0.5
+     }
+    }
+   },
+   {
+    "t": "Главное — не ритуал, а перемена в самом себе",
+    "e": {
+     "f": {
+      "Дхармические": 0.5
+     },
+     "a": {
+      "sunyata": 0.5
+     },
+     "t": {
+      "буддизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Домашний очаг, семья и праздники года — моя церковь",
+    "e": {
+     "f": {
+      "Региональные": 1,
+      "Древние": 0.9
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "practice_core",
+  "q": "Что для вас ближе всего как основа пути?",
+  "short": "Основа пути",
+  "opts": [
+   {
+    "t": "Молитва",
+    "e": {
+     "f": {
+      "Авраамические": 1.6,
+      "Иранские": 0.6
+     }
+    }
+   },
+   {
+    "t": "Медитация",
+    "e": {
+     "f": {
+      "Дхармические": 1.5
+     },
+     "a": {
+      "sunyata": 0.4
+     },
+     "t": {
+      "буддизм": 0.9,
+      "индуизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Обряд и праздник",
+    "e": {
+     "f": {
+      "Региональные": 1.4,
+      "Древние": 1.1
+     }
+    }
+   },
+   {
+    "t": "Знание и размышление",
+    "e": {
+     "f": {
+      "Древние": 0.5
+     },
+     "t": {
+      "философия": 1.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "meditation",
+  "q": "Про тишину внутри: что вам ближе?",
+  "short": "Тишина внутри",
+  "opts": [
+   {
+    "t": "Да, я ищу тишину внутри — сидя, дыша, наблюдая",
+    "e": {
+     "f": {
+      "Дхармические": 0.9
+     },
+     "a": {
+      "sunyata": 0.7
+     },
+     "t": {
+      "дзен": 0.7,
+      "недуальный тантрический шиваизм": 0.8,
+      "недуальность": 0.6
+     }
+    }
+   },
+   {
+    "t": "Мне ближе сосредоточенное чтение и молитва по правилу",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     }
+    }
+   },
+   {
+    "t": "Телесная практика: дыхание, позы, работа с телом",
+    "e": {
+     "f": {
+      "Дхармические": 0.7
+     },
+     "t": {
+      "индуизм": 0.9,
+      "кашмирский шиваизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Спокойнее приходит через движение: ходьба, труд, дорога",
+    "e": {
+     "a": {
+      "sunyata": 0.5
+     },
+     "t": {
+      "дзен": 0.8
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "service",
+  "q": "Помощь другим людям — это…",
+  "short": "Помощь людям",
+  "opts": [
+   {
+    "t": "Главное богослужение; вера без дел мертва",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     }
+    }
+   },
+   {
+    "t": "Поле обучения: помогая другим, расту и сам",
+    "e": {
+     "f": {
+      "Дхармические": 0.8
+     },
+     "a": {
+      "dvaita": 0.4
+     }
+    }
+   },
+   {
+    "t": "Естественное сострадание — без мысли о спасении",
+    "e": {
+     "f": {
+      "Дхармические": 0.4
+     },
+     "a": {
+      "sunyata": 0.6
+     },
+     "t": {
+      "буддизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "Сначала свой круг: семья, община, свой народ",
+    "e": {
+     "f": {
+      "Региональные": 1.1
+     },
+     "t": {
+      "иудаизм": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "ascetic",
+  "q": "Про строгость и ограничения: как вам ближе?",
+  "short": "Строгость",
+  "opts": [
+   {
+    "t": "Подчинить тело — значит освободить дух",
+    "e": {
+     "f": {
+      "Дхармические": 0.9
+     },
+     "t": {
+      "джайнизм": 1.4
+     }
+    }
+   },
+   {
+    "t": "Пост и воздержание — в меру, по уставу",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     }
+    }
+   },
+   {
+    "t": "Аскеза — крайность; важен срединный путь",
+    "e": {
+     "f": {
+      "Дхармические": 0.5
+     },
+     "a": {
+      "sunyata": 0.4
+     },
+     "t": {
+      "буддизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "Мир не враг: радоваться ему — нормально",
+    "e": {
+     "f": {
+      "Региональные": 0.8
+     },
+     "t": {
+      "НРД": 0.4
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "nature_ancestors",
+  "q": "Природа и предки — что это для вас?",
+  "short": "Природа и предки",
+  "opts": [
+   {
+    "t": "Священное: природа — храм, предки — покровители",
+    "e": {
+     "f": {
+      "Региональные": 1.3,
+      "Древние": 1.1
+     },
+     "t": {
+      "региональные": 1,
+      "древние": 0.8
+     }
+    }
+   },
+   {
+    "t": "Природа — храм, но без культа предков",
+    "e": {
+     "f": {
+      "Новые движения": 0.8
+     },
+     "t": {
+      "НРД": 0.9,
+      "Россия": 0.9
+     }
+    }
+   },
+   {
+    "t": "Почитание рода и предков — самое главное",
+    "e": {
+     "f": {
+      "Региональные": 1,
+      "Древние": 0.7
+     },
+     "t": {
+      "региональные": 0.9,
+      "древние": 0.5
+     }
+    }
+   },
+   {
+    "t": "Природа прекрасна, но не свята; почитать подобает только Бога",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "монотеизм": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "magic",
+  "q": "Тайные силы и магия — как вы к этому относитесь?",
+  "short": "Магия",
+  "opts": [
+   {
+    "t": "Мир полон скрытых сил — им можно учиться управлять",
+    "e": {
+     "f": {
+      "Эзотерика": 1.9
+     }
+    }
+   },
+   {
+    "t": "Интересна символика и тайное знание, но не «колдовство»",
+    "e": {
+     "f": {
+      "Эзотерика": 0.9
+     },
+     "t": {
+      "эзотерика": 0.9,
+      "философия": 0.4
+     }
+    }
+   },
+   {
+    "t": "Магия — суеверие, которого надо избегать",
+    "e": {
+     "f": {
+      "Авраамические": 1.1
+     },
+     "t": {
+      "монотеизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Магии нет — есть ещё не познанная природа",
+    "e": {
+     "f": {
+      "Древние": 0.3
+     },
+     "t": {
+      "философия": 0.8
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "science",
+  "q": "Наука и вера — как их совместить?",
+  "short": "Наука и вера",
+  "opts": [
+   {
+    "t": "Это разные языки об одном и том же",
+    "e": {
+     "f": {
+      "Новые движения": 0.6
+     },
+     "t": {
+      "философия": 0.6,
+      "недуальность": 1.4
+     }
+    }
+   },
+   {
+    "t": "Писание первично; наука должна с ним считаться",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "авраамические": 0.7,
+      "монотеизм": 0.4,
+      "протестантизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Наука — главный свет; религию беру как культуру и историю",
+    "e": {
+     "f": {
+      "Древние": 0.3
+     },
+     "t": {
+      "философия": 1.2
+     }
+    }
+   },
+   {
+    "t": "Оба — части одного пути самопознания: эволюция души",
+    "e": {
+     "f": {
+      "Эзотерика": 1
+     },
+     "t": {
+      "эзотерика": 0.7
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "others",
+  "q": "Другие религии — это…",
+  "short": "Другие религии",
+  "opts": [
+   {
+    "t": "Заблуждение; мой путь — единственный истинный",
+    "e": {
+     "f": {
+      "Авраамические": 1.2
+     },
+     "t": {
+      "монотеизм": 0.7
+     }
+    }
+   },
+   {
+    "t": "Разные дороги к одной вершине",
+    "e": {
+     "f": {
+      "Новые движения": 0.8,
+      "Эзотерика": 0.8
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   },
+   {
+    "t": "Истина за пределами слов — спорить о путях незачем",
+    "e": {
+     "a": {
+      "sunyata": 0.6
+     },
+     "t": {
+      "буддизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "У каждого народа — свой путь; чужой не трогаем",
+    "e": {
+     "f": {
+      "Региональные": 1.2
+     },
+     "t": {
+      "иудаизм": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "goal",
+  "q": "К чему в итоге стремится человек? Что вам ближе?",
+  "short": "Цель пути",
+  "opts": [
+   {
+    "t": "Спасение души после смерти",
+    "e": {
+     "f": {
+      "Авраамические": 1.1
+     },
+     "t": {
+      "авраамические": 0.7,
+      "монотеизм": 0.7
+     }
+    }
+   },
+   {
+    "t": "Слияние с Абсолютом, растворение в нём",
+    "e": {
+     "f": {
+      "Дхармические": 1
+     },
+     "a": {
+      "advaita": 1.2
+     }
+    }
+   },
+   {
+    "t": "Просветление: увидеть вещи такими, какие они есть",
+    "e": {
+     "f": {
+      "Дхармические": 1
+     },
+     "a": {
+      "sunyata": 1.2
+     },
+     "t": {
+      "буддизм": 0.8
+     }
+    }
+   },
+   {
+    "t": "Гармония здесь и сейчас — с людьми, родом, природой",
+    "e": {
+     "f": {
+      "Региональные": 1.3,
+      "Древние": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "rebirth",
+  "q": "Жизнь после смерти — как вам ближе думать о ней?",
+  "short": "После смерти",
+  "opts": [
+   {
+    "t": "Перерождение: души возвращаются снова и снова",
+    "e": {
+     "f": {
+      "Дхармические": 1.6
+     }
+    }
+   },
+   {
+    "t": "Одна жизнь — и вечность, в зависимости от суда",
+    "e": {
+     "f": {
+      "Авраамические": 1.2,
+      "Иранские": 0.5
+     },
+     "t": {
+      "авраамические": 0.6,
+      "монотеизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Мы продолжаемся в детях, предках и в народе",
+    "e": {
+     "f": {
+      "Региональные": 1.1,
+      "Древние": 0.9
+     }
+    }
+   },
+   {
+    "t": "Вопрос открытый; важна жизнь здесь и сейчас",
+    "e": {
+     "f": {
+      "Древние": 0.3
+     },
+     "t": {
+      "философия": 0.7
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "missionary",
+  "q": "Нужно ли делиться своей верой с другими?",
+  "short": "Делиться верой",
+  "opts": [
+   {
+    "t": "Да, благую весть нужно нести людям",
+    "e": {
+     "f": {
+      "Авраамические": 1.3
+     },
+     "t": {
+      "монотеизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Каждый приходит к своему в своё время",
+    "e": {
+     "f": {
+      "Дхармические": 0.8
+     },
+     "a": {
+      "sunyata": 0.4
+     }
+    }
+   },
+   {
+    "t": "Своих держим, чужих не зовём: вера народа — не для прозелитов",
+    "e": {
+     "f": {
+      "Региональные": 0.6
+     },
+     "t": {
+      "иудаизм": 1.1
+     }
+    }
+   },
+   {
+    "t": "Вера — личное дело, не для витрины",
+    "e": {
+     "f": {
+      "Эзотерика": 0.6
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "new_vs_old",
+  "q": "Старая традиция или новый поиск?",
+  "short": "Старое или новое",
+  "opts": [
+   {
+    "t": "Многовековая традиция — мудрость тысячелетий",
+    "e": {
+     "f": {
+      "Авраамические": 0.8,
+      "Дхармические": 0.7,
+      "Региональные": 0.6
+     }
+    }
+   },
+   {
+    "t": "Древние корни, современная форма",
+    "e": {
+     "f": {
+      "Новые движения": 1.2
+     },
+     "t": {
+      "НРД": 1.2
+     },
+     "e": {
+      "xx": 1,
+      "xxi": 1
+     }
+    }
+   },
+   {
+    "t": "Догматы стареют — нужен новый язык духа",
+    "e": {
+     "f": {
+      "Новые движения": 1
+     },
+     "t": {
+      "философия": 0.6,
+      "спорный статус": 1.2,
+      "НРД": 0.8
+     },
+     "e": {
+      "xx": 0.8
+     }
+    }
+   },
+   {
+    "t": "Восстановить то, что было утрачено",
+    "e": {
+     "f": {
+      "Древние": 1
+     },
+     "t": {
+      "возрождённые": 1.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "origin_era",
+  "q": "Какая эпоха вас интуитивно привлекает?",
+  "short": "Эпоха",
+  "opts": [
+   {
+    "t": "Древность: истоки у истоков",
+    "e": {
+     "f": {
+      "Древние": 0.7
+     },
+     "t": {
+      "древние": 1
+     },
+     "e": {
+      "ancient": 2
+     }
+    }
+   },
+   {
+    "t": "Средневековье: классика великих традиций",
+    "e": {
+     "e": {
+      "medieval": 2
+     }
+    }
+   },
+   {
+    "t": "Новое время: реформы, расколы, печатное слово",
+    "e": {
+     "e": {
+      "earlymodern": 1.6,
+      "em1": 0.6,
+      "em2": 0.6,
+      "em3": 0.6
+     }
+    }
+   },
+   {
+    "t": "XIX век: пробуждения, ордены, новые откровения",
+    "e": {
+     "e": {
+      "xix": 2.4
+     },
+     "t": {
+      "оккультизм": 1.5,
+      "масонство": 2.2,
+      "спиритизм": 2.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "material",
+  "q": "Что такое окружающий материальный мир?",
+  "short": "Материальный мир",
+  "opts": [
+   {
+    "t": "Благо: мир создан добрым и для добра",
+    "e": {
+     "f": {
+      "Авраамические": 0.8
+     },
+     "t": {
+      "монотеизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Иллюзия или завеса — под ней иное",
+    "e": {
+     "f": {
+      "Дхармические": 0.6
+     },
+     "a": {
+      "advaita": 1.3
+     }
+    }
+   },
+   {
+    "t": "Поток мгновений, которому не за что зацепиться",
+    "e": {
+     "a": {
+      "sunyata": 1.2
+     },
+     "t": {
+      "буддизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Живое существо, часть которого — мы",
+    "e": {
+     "f": {
+      "Региональные": 1,
+      "Древние": 1
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "aesthetics",
+  "q": "Красота в духовной жизни — какая ваша?",
+  "short": "Красота",
+  "opts": [
+   {
+    "t": "Пение, музыка, торжество службы",
+    "e": {
+     "f": {
+      "Авраамические": 0.9,
+      "Региональные": 0.7
+     }
+    }
+   },
+   {
+    "t": "Тишина и строгая простота",
+    "e": {
+     "f": {
+      "Авраамические": 0.7
+     },
+     "t": {
+      "протестантизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "Иконы, образы, символы",
+    "e": {
+     "f": {
+      "Авраамические": 0.7
+     },
+     "t": {
+      "христианство": 1,
+      "авраамические": 0.4
+     }
+    }
+   },
+   {
+    "t": "Красота природы важнее рукотворного",
+    "e": {
+     "f": {
+      "Региональные": 0.8,
+      "Древние": 0.7
+     },
+     "t": {
+      "региональные": 0.8,
+      "древние": 0.5,
+      "НРД": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "community",
+  "q": "Где вам ближе искать духовную жизнь?",
+  "short": "Община",
+  "opts": [
+   {
+    "t": "В крепкой общине с общим укладом",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "старообрядчество": 1.2,
+      "Россия": 0.5
+     }
+    }
+   },
+   {
+    "t": "В одиночку: вера — личное пространство",
+    "e": {
+     "f": {
+      "Эзотерика": 0.7
+     },
+     "t": {
+      "эзотерика": 0.7
+     }
+    }
+   },
+   {
+    "t": "В семье и роде",
+    "e": {
+     "f": {
+      "Региональные": 0.9
+     },
+     "t": {
+      "региональные": 0.8,
+      "иудаизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "В монастыре или практическом центре",
+    "e": {
+     "f": {
+      "Дхармические": 1
+     },
+     "t": {
+      "тибетский буддизм": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "skepticism",
+  "q": "Доказательства и вера — что вам ближе?",
+  "short": "Вера и разум",
+  "opts": [
+   {
+    "t": "Хочу доказательств и логики",
+    "e": {
+     "f": {
+      "Древние": 0.4
+     },
+     "t": {
+      "философия": 1.5
+     }
+    }
+   },
+   {
+    "t": "Вера не требует доказательств",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     }
+    }
+   },
+   {
+    "t": "Проверяю опытом: верю тому, что прожил сам",
+    "e": {
+     "f": {
+      "Эзотерика": 1
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   },
+   {
+    "t": "Достаточно практики без всякой теории",
+    "e": {
+     "a": {
+      "sunyata": 0.5
+     },
+     "t": {
+      "дзен": 1.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "geo",
+  "q": "Есть ли у вас тяга к какой-то земле, культуре, части мира?",
+  "short": "Земля и культура",
+  "opts": [
+   {
+    "t": "Ближний Восток: колыбель авраамических традиций",
+    "e": {
+     "f": {
+      "Авраамические": 0.9,
+      "Иранские": 0.4
+     },
+     "t": {
+      "Ближний Восток": 2.2,
+      "Египет": 2.4,
+      "Месопотамия": 2.4
+     }
+    }
+   },
+   {
+    "t": "Индия: родина дхармических путей",
+    "e": {
+     "f": {
+      "Дхармические": 1.1
+     },
+     "t": {
+      "Индия": 2.4,
+      "индуизм": 0.7
+     }
+    }
+   },
+   {
+    "t": "Восточная Азия: Китай, Япония, Корея, Вьетнам",
+    "e": {
+     "f": {
+      "Дхармические": 0.6,
+      "Региональные": 0.7
+     },
+     "t": {
+      "Китай": 2.2,
+      "Япония": 2.2,
+      "Корея": 2.2,
+      "Вьетнам": 2.2,
+      "дзен": 0.5
+     }
+    }
+   },
+   {
+    "t": "Европа и Сибирь: старые корни моего края",
+    "e": {
+     "f": {
+      "Региональные": 0.9,
+      "Древние": 0.8
+     },
+     "t": {
+      "Европа": 1.8,
+      "Россия": 1.8,
+      "Сибирь": 2.6,
+      "финно-угры": 2.6,
+      "скандинавия": 2.6,
+      "вепсы": 2.6,
+      "тюркские": 2,
+      "Степь": 2,
+      "греко-римский мир": 2,
+      "греко-римская философия": 2.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "reformation",
+  "q": "Если бы вы жили в Европе XVI–XVIII веков, что бы вам было ближе?",
+  "short": "Новое время",
+  "opts": [
+   {
+    "t": "Реформация: вернуться к первоисточнику и очистить веру",
+    "e": {
+     "e": {
+      "em1": 2.2,
+      "earlymodern": 1.2
+     },
+     "t": {
+      "протестантизм": 1.2
+     }
+    }
+   },
+   {
+    "t": "Остаться в старой Церкви — преемственность важнее",
+    "e": {
+     "e": {
+      "em2": 1.4,
+      "em3": 1.4,
+      "earlymodern": 1.2
+     },
+     "t": {
+      "католицизм": 1.6,
+      "православие": 1.2,
+      "христианство": 0.6
+     }
+    }
+   },
+   {
+    "t": "Старый обряд: держаться древнего благочестия даже в расколе",
+    "e": {
+     "e": {
+      "em2": 2.2,
+      "earlymodern": 1.2
+     },
+     "t": {
+      "старообрядчество": 2.4,
+      "Россия": 0.8
+     }
+    }
+   },
+   {
+    "t": "Век Просвещения: разум, наука, вольность",
+    "e": {
+     "e": {
+      "em3": 2.2,
+      "earlymodern": 1.2
+     },
+     "t": {
+      "философия": 1.4,
+      "греко-римская философия": 0.8
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "house_of_worship",
+  "q": "Представьте дом молитвы. Какой вам роднее?",
+  "short": "Дом молитвы",
+  "opts": [
+   {
+    "t": "Мечеть: строгая единственность Бога, Коран, арабское благоговение",
+    "e": {
+     "f": {
+      "Авраамические": 1.1
+     },
+     "t": {
+      "ислам": 1.9,
+      "монотеизм": 0.9,
+      "суннизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Синагога: Тора, Талмуд, вера рода и завет",
+    "e": {
+     "f": {
+      "Авраамические": 1.1
+     },
+     "t": {
+      "иудаизм": 1.9,
+      "монотеизм": 0.9,
+      "авраамические": 0.5
+     }
+    }
+   },
+   {
+    "t": "Храм с иконами и литургией — красота древнего благочестия",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "христианство": 1.3,
+      "авраамические": 0.5,
+      "православие": 0.8,
+      "католицизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "Простый общинный зал: проповедь, пение, Библия без посредников",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "протестантизм": 1.7,
+      "христианство": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "religious_law",
+  "q": "Религиозный закон и правила жизни — что ближе?",
+  "short": "Закон",
+  "opts": [
+   {
+    "t": "Жизнь по подробному закону: шариат, фикх, школы права",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "ислам": 1.5,
+      "право": 1,
+      "суннизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "613 заповедей: галаха как образ жизни",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "иудаизм": 1.6,
+      "монотеизм": 0.6,
+      "право": 1
+     }
+    }
+   },
+   {
+    "t": "Канонические правила Церкви и соборы",
+    "e": {
+     "f": {
+      "Авраамические": 0.9
+     },
+     "t": {
+      "христианство": 1.1,
+      "авраамические": 0.5,
+      "право": 1,
+      "католицизм": 0.7,
+      "православие": 0.6
+     }
+    }
+   },
+   {
+    "t": "Закон писал для людей, а не людей для закона: совесть выше устава",
+    "e": {
+     "t": {
+      "протестантизм": 0.8,
+      "философия": 0.8
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "monastic",
+  "q": "Монашество, устав, особый уклад — как вам?",
+  "short": "Монашество",
+  "opts": [
+   {
+    "t": "Монастырь: молитва и труд по древнему уставу",
+    "e": {
+     "f": {
+      "Авраамические": 0.8
+     },
+     "t": {
+      "авраамические": 0.4,
+      "православие": 0.8,
+      "католицизм": 0.7,
+      "христианство": 0.7
+     }
+    }
+   },
+   {
+    "t": "Служение в миру: проповедь, семья, дело",
+    "e": {
+     "f": {
+      "Авраамические": 0.6
+     },
+     "t": {
+      "протестантизм": 1.2
+     }
+    }
+   },
+   {
+    "t": "Отшельник и странник: уйти, чтобы не наследовать мир",
+    "e": {
+     "f": {
+      "Дхармические": 0.9
+     },
+     "t": {
+      "джайнизм": 0.8,
+      "аскеза": 2.4,
+      "индуизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Без монахов: путь лежит через обычную жизнь",
+    "e": {
+     "f": {
+      "Региональные": 0.6,
+      "Новые движения": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "sufi_path",
+  "q": "Мистический путь внутри религии — как вам такая идея?",
+  "short": "Мистический путь",
+  "opts": [
+   {
+    "t": "Суфийский путь: любовь, зикр, поиск лицезрения Бога",
+    "e": {
+     "f": {
+      "Авраамические": 0.8
+     },
+     "t": {
+      "ислам": 1.1,
+      "суфизм": 2.2,
+      "тарикаты": 1.8,
+      "мистицизм": 0.9
+     }
+    }
+   },
+   {
+    "t": "Бхакти: любовь к божеству, пение имён",
+    "e": {
+     "f": {
+      "Дхармические": 0.8
+     },
+     "t": {
+      "индуизм": 1.2,
+      "бхакти": 2.4,
+      "вишнуизм": 0.7
+     }
+    }
+   },
+   {
+    "t": "Каббала: тайный смысл Торы и устройство миров",
+    "e": {
+     "f": {
+      "Авраамические": 0.6
+     },
+     "t": {
+      "иудаизм": 1.4,
+      "мистицизм": 1.6
+     }
+    }
+   },
+   {
+    "t": "Мистика — не мой путь: мне ближе ясность и порядок",
+    "e": {
+     "t": {
+      "право": 1.4
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "cosmos",
+  "q": "Как звучит для вас самая большая история — от начала и до конца?",
+  "short": "Большая история",
+  "opts": [
+   {
+    "t": "Борьба света и тьмы: мир — арена этой битвы, а мы — её участники",
+    "e": {
+     "f": {
+      "Иранские": 2.4,
+      "Авраамические": 0.4
+     },
+     "t": {
+      "зороастризм": 2,
+      "иранские": 1.5,
+      "монотеизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Творение, грехопадение, искупление — история спасения",
+    "e": {
+     "f": {
+      "Авраамические": 1.2
+     },
+     "t": {
+      "авраамические": 0.8,
+      "монотеизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Вечное возвращение: циклы творения без начала и конца",
+    "e": {
+     "f": {
+      "Дхармические": 1.1
+     },
+     "t": {
+      "индуизм": 0.8
+     }
+    }
+   },
+   {
+    "t": "Космос без замысла: звёзды, эволюция, материя",
+    "e": {
+     "t": {
+      "философия": 1.1
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "sacraments",
+  "q": "Таинства и священники — нужны ли посредники между человеком и Богом?",
+  "short": "Посредники",
+  "opts": [
+   {
+    "t": "Да: благодать подаётся через Церковь и таинства",
+    "e": {
+     "f": {
+      "Авраамические": 0.8
+     },
+     "t": {
+      "христианство": 1.5,
+      "католицизм": 0.9,
+      "православие": 0.9,
+      "авраамические": 0.4
+     }
+    }
+   },
+   {
+    "t": "Нет: вера и Писание — всё, священство всех верующих",
+    "e": {
+     "f": {
+      "Авраамические": 0.6
+     },
+     "t": {
+      "протестантизм": 1.8,
+      "христианство": 0.4
+     }
+    }
+   },
+   {
+    "t": "У нас нет таинств в таком смысле: закон и служение",
+    "e": {
+     "f": {
+      "Авраамические": 0.5
+     },
+     "t": {
+      "ислам": 0.9,
+      "иудаизм": 0.9
+     }
+    }
+   },
+   {
+    "t": "Посредники — в самом человеке: ритуалы души, не храма",
+    "e": {
+     "t": {
+      "мистицизм": 1.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "sincerity",
+  "q": "Ирония и игра в духовных делах — как вы к этому?",
+  "short": "Ирония",
+  "opts": [
+   {
+    "t": "Полноценный путь: даже шутка может быть каноничной верой",
+    "e": {
+     "f": {
+      "Новые движения": 0.8
+     },
+     "t": {
+      "пародия": 2.4,
+      "интернет": 1.6
+     }
+    }
+   },
+   {
+    "t": "Глубина не терпит шуток: здесь нужна серьёзность",
+    "e": {
+     "f": {
+      "Авраамические": 0.7
+     },
+     "t": {
+      "монотеизм": 0.4
+     }
+    }
+   },
+   {
+    "t": "Шутка — дверь к серьёзному, но дальше — работа",
+    "e": {
+     "f": {
+      "Новые движения": 0.6
+     },
+     "t": {
+      "НРД": 1,
+      "психотехнологии": 1.5
+     }
+    }
+   },
+   {
+    "t": "Важна искренность переживания, а не форма",
+    "e": {
+     "t": {
+      "мистицизм": 0.8,
+      "эзотерика": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "space",
+  "q": "Космос и звёзды — что это для вас?",
+  "short": "Космос",
+  "opts": [
+   {
+    "t": "Дом души: мы приходим из звёзд и к ним вернёмся",
+    "e": {
+     "f": {
+      "Эзотерика": 0.8
+     },
+     "t": {
+      "уфология": 2.4,
+      "эзотерика": 0.6
+     }
+    }
+   },
+   {
+    "t": "Творение Бога, величие Творца",
+    "e": {
+     "f": {
+      "Авраамические": 0.8
+     },
+     "t": {
+      "монотеизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Просто физика: красиво, но без тайны",
+    "e": {
+     "t": {
+      "философия": 1
+     }
+    }
+   },
+   {
+    "t": "Символ: карта неба — язык судьбы и посвящения",
+    "e": {
+     "f": {
+      "Эзотерика": 0.9
+     },
+     "t": {
+      "символизм": 2,
+      "эзотерика": 0.5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "chanting",
+  "q": "Повторение священных имён и мантр — это…",
+  "short": "Имена и мантры",
+  "opts": [
+   {
+    "t": "Сердце практики: пение имён божества",
+    "e": {
+     "f": {
+      "Дхармические": 0.7
+     },
+     "t": {
+      "индуизм": 0.9,
+      "бхакти": 1.8
+     }
+    }
+   },
+   {
+    "t": "Памятование будды: нэмбуцу, нянфо",
+    "e": {
+     "f": {
+      "Дхармические": 0.7
+     },
+     "t": {
+      "буддизм": 0.9,
+      "чистые земли": 2.4,
+      "махаяна": 0.8
+     }
+    }
+   },
+   {
+    "t": "Мантры: звук как инструмент преобразования",
+    "e": {
+     "f": {
+      "Дхармические": 0.6
+     },
+     "t": {
+      "тантра": 1.6,
+      "тибетский буддизм": 1.2,
+      "индуизм": 0.5
+     }
+    }
+   },
+   {
+    "t": "Не мой путь: слова важнее, чем повторение",
+    "e": {
+     "t": {
+      "право": 0.8,
+      "философия": 0.6
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "prophets",
+  "q": "Пророк, огонь и древнее писание — как вам такой образ духовности?",
+  "short": "Пророки и огонь",
+  "opts": [
+   {
+    "t": "Огненные храмы и Авеста: древнейшее откровение Ирана",
+    "e": {
+     "f": {
+      "Иранские": 2.6
+     },
+     "t": {
+      "зороастризм": 1.8,
+      "иранские": 1.2
+     }
+    }
+   },
+   {
+    "t": "Пророки Израиля и завет: вера рода и писание",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "иудаизм": 1.4,
+      "монотеизм": 0.6,
+      "авраамические": 0.4
+     }
+    }
+   },
+   {
+    "t": "Пророк Мухаммад и Коран: печать пророчества",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "ислам": 1.4,
+      "монотеизм": 0.6
+     }
+    }
+   },
+   {
+    "t": "Пророки не нужны: достаточно мудрецов и философов",
+    "e": {
+     "t": {
+      "философия": 1.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "geo2",
+  "q": "Другой край света: где бы вам искали традиционную веру?",
+  "short": "Другой край света",
+  "opts": [
+   {
+    "t": "Африка: сила ритма, духов предков и общины",
+    "e": {
+     "f": {
+      "Региональные": 1.1
+     },
+     "t": {
+      "Африка": 2.4,
+      "региональные": 0.7
+     }
+    }
+   },
+   {
+    "t": "Америки: от индейских дорог силы до диаспорных культов",
+    "e": {
+     "f": {
+      "Региональные": 1
+     },
+     "t": {
+      "Америки": 2.6,
+      "региональные": 0.6
+     }
+    }
+   },
+   {
+    "t": "Океания: табу, мана и море",
+    "e": {
+     "f": {
+      "Региональные": 1.1
+     },
+     "t": {
+      "Океания": 2.6,
+      "региональные": 0.7
+     }
+    }
+   },
+   {
+    "t": "Север и степь: шаманы, олени, вечная мерзлота",
+    "e": {
+     "f": {
+      "Региональные": 0.9,
+      "Древние": 0.5
+     },
+     "t": {
+      "Сибирь": 2.2,
+      "Степь": 2.2,
+      "тюркские": 1.8,
+      "финно-угры": 1.8,
+      "шаманизм": 2.2
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "modern_practice",
+  "q": "Что из современного вам ближе всего?",
+  "short": "Современные практики",
+  "opts": [
+   {
+    "t": "Тренинги и практики роста: прокачать себя как систему",
+    "e": {
+     "f": {
+      "Новые движения": 0.9
+     },
+     "t": {
+      "психотехнологии": 2.2,
+      "НРД": 0.8
+     }
+    }
+   },
+   {
+    "t": "НЛО, контакты, звёздные учителя",
+    "e": {
+     "f": {
+      "Новые движения": 0.9
+     },
+     "t": {
+      "уфология": 2.2,
+      "НРД": 0.8
+     }
+    }
+   },
+   {
+    "t": "Неошаманизм: бубен, аяуаска, дороги силы",
+    "e": {
+     "f": {
+      "Новые движения": 0.9
+     },
+     "t": {
+      "Кастанеда": 2.4,
+      "НРД": 0.6
+     }
+    }
+   },
+   {
+    "t": "Ничего из этого: только традиции с историей",
+    "e": {
+     "f": {
+      "Авраамические": 0.6,
+      "Дхармические": 0.5,
+      "Древние": 0.5
+     },
+     "t": {
+      "философия": 0.4
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "digital",
+  "q": "Может ли интернет быть священным пространством?",
+  "short": "Цифровое",
+  "opts": [
+   {
+    "t": "Да: копирование, мем и сеть — новая форма благодати",
+    "e": {
+     "f": {
+      "Новые движения": 0.9
+     },
+     "t": {
+      "интернет": 2.6,
+      "пародия": 1,
+      "НРД": 0.6
+     }
+    }
+   },
+   {
+    "t": "Скорее онлайн-инструмент для старой веры",
+    "e": {
+     "f": {
+      "Авраамические": 0.5
+     }
+    }
+   },
+   {
+    "t": "Нет: sacred требует присутствия, не экрана",
+    "e": {
+     "f": {
+      "Древние": 0.4
+     },
+     "t": {
+      "ритуал": 1.2
+     }
+    }
+   },
+   {
+    "t": "Границы стираются: аватары, кибер-мистицизм, цифра как реальность",
+    "e": {
+     "f": {
+      "Новые движения": 0.7
+     },
+     "t": {
+      "психотехнологии": 1.4,
+      "интернет": 1
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "russia_nrd",
+  "q": "Новые духовные движения на российской почве — как относитесь?",
+  "short": "Новые на русской почве",
+  "opts": [
+   {
+    "t": "Симпатично: своя земля, свои пророки, живая практика",
+    "e": {
+     "f": {
+      "Новые движения": 0.9
+     },
+     "t": {
+      "Россия": 2.2,
+      "НРД": 0.8,
+      "Кашира": 1.8,
+      "Каширский шиваизм": 1.6
+     }
+    }
+   },
+   {
+    "t": "Настороженно: предпочитаю проверенное веками",
+    "e": {
+     "f": {
+      "Авраамические": 0.7
+     },
+     "t": {
+      "старообрядчество": 0.6
+     }
+    }
+   },
+   {
+    "t": "Интересен исторический контекст: как они возникали и выживали",
+    "e": {
+     "f": {
+      "Новые движения": 0.7
+     },
+     "t": {
+      "НРД": 1.2,
+      "история": 1.4
+     }
+    }
+   },
+   {
+    "t": "Мировые традиции ближе российских новоделов",
+    "e": {
+     "f": {
+      "Дхармические": 0.5,
+      "Авраамические": 0.4
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "occult_xix",
+  "q": "Тайные ордены, спиритические сеансы, древние посвящения XIX века — что это для вас?",
+  "short": "Ордены и сеансы",
+  "opts": [
+   {
+    "t": "Романтика тайного знания: посвящения, степени, архивы",
+    "e": {
+     "f": {
+      "Эзотерика": 1.2
+     },
+     "t": {
+      "масонство": 2.4,
+      "ордена": 2.6,
+      "оккультизм": 1.4
+     }
+    }
+   },
+   {
+    "t": "Общение с духами умерших — да, это реально",
+    "e": {
+     "f": {
+      "Эзотерика": 1.2
+     },
+     "t": {
+      "спиритизм": 2.6
+     }
+    }
+   },
+   {
+    "t": "Красивая история эпохи, не более",
+    "e": {
+     "t": {
+      "история": 1
+     }
+    }
+   },
+   {
+    "t": "Опасное шарлатанство — держаться подальше",
+    "e": {
+     "f": {
+      "Авраамические": 0.7
+     },
+     "t": {
+      "монотеизм": 0.4
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "guru",
+  "q": "Нужен ли живой учитель?",
+  "short": "Учитель",
+  "opts": [
+   {
+    "t": "Да: учитель — живой носитель цепи передачи",
+    "e": {
+     "f": {
+      "Дхармические": 1.1
+     },
+     "t": {
+      "индуизм": 0.8
+     }
+    }
+   },
+   {
+    "t": "Достаточно книг и добрых наставников",
+    "e": {
+     "f": {
+      "Авраамические": 0.4
+     },
+     "t": {
+      "протестантизм": 0.7
+     }
+    }
+   },
+   {
+    "t": "Только внутренний голос — настоящий учитель",
+    "e": {
+     "f": {
+      "Эзотерика": 1.2
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   },
+   {
+    "t": "Учителя — сама традиция и соборный разум общины",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     }
+    }
+   }
+  ]
+ },
+ {
+  "id": "calendar",
+  "q": "Время и праздники: что ближе?",
+  "short": "Круг года",
+  "opts": [
+   {
+    "t": "Живой круг года: солнцестояния, полевые праздники",
+    "e": {
+     "f": {
+      "Региональные": 1.1,
+      "Древние": 0.9
+     },
+     "t": {
+      "региональные": 1.2,
+      "древние": 0.7,
+      "возрождённые": 0.6
+     }
+    }
+   },
+   {
+    "t": "Церковный календарь: посты и праздники",
+    "e": {
+     "f": {
+      "Авраамические": 1
+     },
+     "t": {
+      "авраамические": 0.6,
+      "христианство": 0.7
+     }
+    }
+   },
+   {
+    "t": "Луна и солнце как духовные часы",
+    "e": {
+     "f": {
+      "Эзотерика": 1
+     },
+     "t": {
+      "эзотерика": 0.6
+     }
+    }
+   },
+   {
+    "t": "Каждый день одинаков: важна не дата, а внимание",
+    "e": {
+     "a": {
+      "sunyata": 0.6
+     },
+     "t": {
+      "дзен": 0.6
+     }
+    }
+   }
+  ]
+ }
+];</script>
+<script>
+(function(){
+'use strict';
+var data = JSON.parse(document.getElementById('quiz-data').textContent);
+var Q = window.QUIZ_QUESTIONS;
+var E = window.QuizEngine;
+var app = document.getElementById('app');
+var state = null;
+var qid = null;
+var lastFinal = null;
+var esc = function(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;};
+
+function start(){ state = E.createGame((Math.random()*4294967295)>>>0); qid = null; render(); }
+
+function answer(o){
+  if (lastFinal){
+    if (o === 'more'){
+      state.answers.push({ q: E.FINAL_Q, o: 'more', shown: lastFinal.shown });
+      qid = null; lastFinal = null;
+      render();
+      return;
+    }
+    var opt = lastFinal.opts[o];
+    state.answers.push({ q: E.FINAL_Q, o: opt.idx, e: opt.e, finalPick: opt.idx, shown: lastFinal.shown });
+    renderResult();
+    return;
+  }
+  state.answers.push({q:qid,o:o});
+  qid = null;
+  render();
+}
+
+function back(){ if(state.answers.length){ state.answers.pop(); } qid=null; lastFinal=null; render(); }
+
+function render(){
+  var st = E.step(state,data,Q);
+  if (st.done || !st.qid){ renderResult(); return; }
+  qid = st.qid;
+  var question;
+  if (qid === E.FINAL_Q){
+    question = E.finalQuestion(state,data,Q);
+    // Динамический вопрос: сохраняем индексы кандидатов и эффекты для фазы answer.
+    lastFinal = question;
+  } else {
+    question = Q.filter(function(x){return x.id===qid;})[0];
+    lastFinal = null;
+  }
+  var total = st.reason==='start' ? 12 : Math.max(12, state.answers.length+2);
+  var pct = Math.min(100, Math.round(state.answers.length/total*100));
+  var html = '<div class="stage"><div class="progress"><div style="width:'+pct+'%"></div></div>';
+  html += '<p class="qtext">'+esc(question.q)+'</p><div class="opts">';
+  question.opts.forEach(function(o,i){
+    var label = esc(o.t);
+    if (qid === E.FINAL_Q && o.desc) label += '<br><span class="opt-desc">'+esc(o.desc)+'</span>';
+    html += '<button type="button" class="opt" data-o="'+i+'">'+label+'</button>';
+  });
+  if (qid === E.FINAL_Q && lastFinal && lastFinal.canPage) {
+    html += '<button type="button" class="opt" data-o="more" style="color:var(--muted)">Ни одна не отзывается — показать другие</button>';
+  }
+  html += '</div><div class="row">';
+  html += state.answers.length ? '<button type="button" class="btn-ghost" id="backBtn">← Назад</button>' : '<span></span>';
+  html += '</div></div>';
+  app.innerHTML = html;
+  Array.prototype.forEach.call(app.querySelectorAll('.opt'), function(b){
+    b.addEventListener('click', function(){ answer(parseInt(b.getAttribute('data-o'),10)); });
+  });
+  var bb = document.getElementById('backBtn');
+  if (bb) bb.addEventListener('click', back);
+}
+
+function renderResult(){
+  var r = E.result(state,data,Q);
+  var w = data.items[r.winner];
+  var badges = esc(w.family);
+  if (w.year) badges += ' <span class="badge">'+esc(w.year)+'</span>';
+  (w.tags || []).filter(t => t.charAt(0) !== '_').slice(0, 6).forEach(function(t){ badges += ' <span class="badge">'+esc(t)+'</span>'; });
+  var html = '<div class="stage card">';
+  html += '<p class="lead" style="margin-bottom:4px">Вам ближе всего:</p>';
+  html += '<div class="result-title">'+esc(w.title)+'</div>';
+  html += '<div>'+badges+'</div>';
+  html += '<p class="result-desc">'+esc(w.description)+'</p>';
+  html += '<a class="btn-primary" href="'+esc(w.link)+'" target="_blank" rel="noopener">Читать статью →</a>';
+  if (r.runners.length){
+    html += '<div class="runners"><h3>Тоже может откликнуться</h3>';
+    r.runners.forEach(function(i){
+      var it = data.items[i];
+      html += '<a class="runner" href="'+esc(it.link)+'" target="_blank" rel="noopener"><b>'+esc(it.title)+'</b> — '+esc(it.family)+(it.year?', '+esc(it.year):'')+'</a>';
+    });
+    html += '</div>';
+  }
+  html += '<div class="row"><button type="button" class="btn-primary" id="againBtn">Пройти ещё раз</button></div>';
+  html += '</div>';
+  app.innerHTML = html;
+  document.getElementById('againBtn').addEventListener('click', start);
+}
+
+start();
+})();
+</script>
+</body>
+</html>

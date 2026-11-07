@@ -953,16 +953,13 @@ def main():
         json.dumps(index_entries, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-    # quiz «Какая религия вам ближе»
-    try:
-        sys.path.insert(0, str(BUILD))
-        import importlib.util as _ilu
-        _qspec = _ilu.spec_from_file_location("quizgen", BUILD / "quiz_gen_module.py")
-        _qmod = _ilu.module_from_spec(_qspec)
-        _qspec.loader.exec_module(_qmod)
-        _qmod.build_quiz(SITE)
-    except Exception as _qe:
-        print("quiz skip:", _qe)
+    # quiz «Познание себя» — чистая версия агента (quiz_agent.html), публикую как есть
+    _qa = BUILD / "quiz_agent.html"
+    if _qa.exists():
+        shutil.copyfile(_qa, SITE / "quiz.html")
+        print("quiz.html: agent version copied")
+    else:
+        print("quiz skip: build/quiz_agent.html missing")
     print("OK: articles=%d (ru=%d), site files=%d" % (
         len(articles), len(ru), sum(1 for _ in SITE.rglob("*") if _.is_file())))
 
