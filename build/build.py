@@ -382,6 +382,128 @@ LABELS = {
     "religion_and_society": "Религия и общество",
     "revived_traditions": "Возрождённые традиции",
     "10_pantheons": "Боги, герои и пророки",
+    "xunzi": "Сюнь-цзы",
+
+    "william_james": "Уильям Джеймс",
+
+    "tsongkhapa": "Цонкапа",
+
+    "theodore_of_mopsuestia": "Феодор Мопсуестийский",
+
+    "steiner": "Рудольф Штайнер",
+
+    "sergiy_radonezhsky": "Сергий Радонежский",
+
+    "serafim_sarovsky": "Серафим Саровский",
+
+    "padmasambhava": "Падмасамбхава",
+
+    "ouspensky": "Пётр Успенский",
+
+    "origen": "Ориген",
+
+    "nestorius": "Несторий",
+
+    "naropa": "Наропа",
+
+    "mencius": "Мэн-цзы",
+
+    "meister_eckhart": "Мейстер Экхарт",
+
+    "marpa": "Марпа",
+
+    "mani": "Мани",
+
+    "maimonides": "Маймонид",
+
+    "luther": "Мартин Лютер",
+
+    "jung": "Карл Густав Юнг",
+
+    "hafiz": "Хафиз",
+
+    "gurdjieff": "Георгий Гурджиев",
+
+    "george_fox": "Джордж Фокс",
+
+    "gampopa": "Гампопа",
+
+    "ephrem_syrian": "Ефрем Сирин",
+
+    "eliade": "Мирча Элиаде",
+
+    "crowley": "Алистер Кроули",
+
+    "chaitanya": "Чайтанья",
+
+    "castaneda": "Карлос Кастанеда",
+
+    "calvin": "Жан Кальвин",
+
+    "blavatsky": "Елена Блаватская",
+
+    "baal_shem_tov": "Бааль Шем Тов",
+
+    "augustine": "Августин Аврелий",
+
+    "atisha": "Атиша",
+
+    "aquinas": "Фома Аквинский",
+
+    "al_ghazali": "Аль-Газали",
+
+    "akiva": "Рабби Акива",
+
+    "abraham_isaac_kook": "Авраам Исаак Кук",
+
+    "zhuangzi": "Чжуан-цзы",
+
+    "zarathushtra": "Заратуштра",
+
+    "teresa": "Тереза Авильская",
+
+    "shankara": "Шанкара",
+
+    "sergey_chernov": "Сергей Чернов (Doctor Che)",
+
+    "rumi": "Руми",
+
+    "ramanuja": "Рамануджа",
+
+    "nasreddin": "Насреддин (Ходжа Насреддин)",
+
+    "nanak": "Нанак",
+
+    "nagarjuna": "Нагарджуна",
+
+    "milarepa": "Миларепа",
+
+    "mahavira": "Махавира",
+
+    "laozi": "Лао-цзы",
+
+    "koan": "Коан",
+
+    "jesus": "Иисус Христос (исторический)",
+
+    "dalai_lama": "Далай-лама",
+
+    "confucius": "Конфуций",
+
+    "buddha": "Будда (Сиддхартха Гаутама)",
+
+    "bonhoeffer": "Дитрих Бонхёффер",
+
+    "abhinavagupta": "Абхинавагупта",
+
+    "muhammad": "Мухаммад",
+    "freyja": "Фрейя",
+    "west_african": "Западная Африка",
+    "slavic": "Славяне",
+    "mesoamerican": "Мезоамерика",
+    "indian": "Индия",
+    "east_asian": "Восточная Азия",
+    "crossrefs": "Боги, которые совпадают",
     "heroes": "Герои",
     "heracles": "Геракл",
     "gilgamesh": "Гильгамеш",
