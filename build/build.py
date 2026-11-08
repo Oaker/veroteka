@@ -1302,7 +1302,8 @@ def main():
                 p.append('<li class="lv3"><a href="ru/%s.html">%s<span class="cnt">статья</span></a></li>' % (a["rel_url"], html.escape(a["title"])))
             for k in kids:
                 render_sub(k, depth + 1)
-            if link:
+            # «Весь раздел →» не нужен, если hub-статья уже показана выше (не задваивать вход)
+            if link and link.split('/')[-1].replace('.html', '') not in [a["rel_url"].split('/')[-1] for a in direct]:
                 p.append('<li class="lv3"><a href="%s"><b>Весь раздел →</b></a></li>' % link)
             p.append('</ul></details></li>')
 
