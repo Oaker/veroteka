@@ -378,6 +378,9 @@ LABELS = {
     "terapanthi": "Терапантхи",
     "tilopa": "Тилопа",
     "vivekananda": "Вивекананда",
+    "advaita_vedanta": "Адвайта-веданта",
+    "religion_and_society": "Религия и общество",
+    "revived_traditions": "Возрождённые традиции",
 }
 
 # ------------------------------------------------------------- autolinking --
@@ -576,6 +579,10 @@ PAGE_TMPL = """<!DOCTYPE html>
 <meta property="og:title" content="{title} — Веротека">
 <meta property="og:description" content="Энциклопедия религий, конфессий, сект и эзотерических учений">
 <meta property="og:type" content="article">
+<meta property="og:image" content="https://oaker.github.io/veroteka/assets/img/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="{rel}assets/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="Веротека — новые статьи" href="https://oaker.github.io/veroteka/feed.xml">
 <link rel="stylesheet" href="{rel}assets/style.css">
 </head>
 <body>
@@ -790,6 +797,9 @@ def main():
     img_src = ROOT / "assets" / "img"
     if img_src.exists():
         shutil.copytree(img_src, SITE / "assets" / "img", dirs_exist_ok=True)
+    fav_src = ROOT / "assets" / "favicon.svg"
+    if fav_src.exists():
+        shutil.copyfile(fav_src, SITE / "assets" / "favicon.svg")
     (SITE / "assets" / "app.js").write_text(DEFAULT_JS, encoding="utf-8")
 
     index_entries, az, tags = [], {}, {}
@@ -971,6 +981,61 @@ def main():
                  '<a href="index.html">На главную</a>'
                  '</div>')
     (SITE / "axis.html").write_text(render_page("Ось взгляда", axis_head + '<div class="axis-grid">' + "\n".join(ax_html) + '</div>', maincls="wide"), encoding="utf-8")
+
+    # ---------- видимость: sitemap / robots / 404 / feed ----------
+    SITE_URL = "https://oaker.github.io/veroteka/"
+    # sitemap.xml
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sm.append('<url><loc>%s</loc><priority>1.0</priority></url>' % SITE_URL)
+    for p in ("quiz.html", "az.html", "tags.html", "axis.html"):
+        sm.append('<url><loc>%s%s</loc><priority>0.8</priority></url>' % (SITE_URL, p))
+    for a in articles:
+        if a["lang"] == "ru":
+            sm.append('<url><loc>%sru/%s.html</loc></url>' % (SITE_URL, a["rel_url"]))
+    sm.append('</urlset>')
+    (SITE / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
+
+    # robots.txt
+    (SITE / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n" % SITE_URL, encoding="utf-8")
+
+    # 404.html — навигация домой
+    notfound_links = "".join(
+        '<a class="nf-link" href="%s">%s</a>' % (h, t) for h, t in [
+            ("index.html", "Главная"), ("quiz.html", "Познание себя"),
+            ("az.html", "Алфавитный указатель"), ("tags.html", "Теги"), ("axis.html", "Ось взгляда"),
+        ])
+    nf = render_page("Страница не найдена",
+        '<div class="nf-wrap"><h1>404 — страница не найдена</h1>'
+        '<p>Такой статьи нет или она переехала. Начните с навигации:</p>'
+        '<div class="nf-links">%s</div></div>'
+        '<style>.nf-wrap{max-width:560px;margin:8vh auto 0;text-align:center;padding:0 16px}'
+        '.nf-wrap h1{font-size:1.6rem;margin:0 0 12px}.nf-wrap p{color:var(--muted)}'
+        '.nf-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}'
+        '.nf-link{border:1px solid var(--border);border-radius:12px;padding:10px 16px;text-decoration:none;color:var(--fg);background:var(--card)}'
+        '.nf-link:hover{border-color:var(--accent);color:var(--accent)}</style>' % notfound_links)
+    (SITE / "404.html").write_text(nf, encoding="utf-8")
+
+    # feed.xml — RSS по 30 последним (по полю year строкой — сортируем обратным алфавитом года)
+    def _yr(a):
+        y = a.get("meta", {}).get("year", "")
+        m = re.search(r"(\d{3,4})", str(y))
+        return int(m.group(1)) if m else 0
+    latest = sorted([a for a in articles if a["lang"] == "ru"], key=_yr, reverse=True)[:30]
+    feed = ['<?xml version="1.0" encoding="UTF-8"?>',
+            '<rss version="2.0"><channel>',
+            '<title>Веротека — новые статьи</title>',
+            '<link>%s</link>' % SITE_URL,
+            '<description>Энциклопедия религий, конфессий, сект и эзотерических учений</description>',
+            '<language>ru</language>']
+    for a in latest:
+        excerpt = re.sub(r"<[^>]+>", "", a.get("excerpt", ""))[:300]
+        feed.append('<item><title>%s</title><link>%sru/%s.html</link><description>%s</description></item>' % (
+            html.escape(a["title"]), SITE_URL, a["rel_url"], html.escape(excerpt)))
+    feed.append('</channel></rss>')
+    (SITE / "feed.xml").write_text("\n".join(feed), encoding="utf-8")
+    print("visibility: sitemap/robots/404/feed OK")
 
     # поисковый индекс
     (SITE / "search-index.json").write_text(
