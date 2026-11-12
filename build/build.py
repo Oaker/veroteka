@@ -1287,7 +1287,7 @@ def main():
             link = node_link(s)
             kids = sorted(children.get(s, []))
             direct = sorted(node_articles.get(s, []), key=lambda t: t["title"])
-            if depth > 3 or (not kids and not direct):
+            if depth > 5 or (not kids and not direct):
                 if link:
                     p.append('<li class="lv%d"><a href="%s">%s<span class="cnt">%d</span></a></li>' % (depth, link, html.escape(sub_label), sn))
                 return
@@ -1310,7 +1310,9 @@ def main():
         for s in sorted(children.get(sec, [])):
             render_sub(s, 2)
         hub = sec + "/" + sec
-        if ("ru", hub) in existing:
+        # «Весь раздел →» на верхнем уровне: рисуем только если hub-статья ещё не показана
+        hub_shown = bool(node_articles.get(sec))
+        if ("ru", hub) in existing and not hub_shown:
             p.append('<li><a href="ru/%s.html"><b>Весь раздел →</b><span class="cnt"></span></a></li>' % hub)
         p.append('</ul></div></details>')
 
