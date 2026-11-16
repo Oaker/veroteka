@@ -1007,7 +1007,7 @@ PAGE_TMPL = """<!DOCTYPE html>
     <a href="{rel}tags.html">Теги</a>
     <a href="{rel}axis.html">Ось</a>
     <a href="{rel}quiz.html">Познание себя</a>
-    <a href="{rel}ru/09_ref/about/about.html">О проекте</a>
+    <a href="{rel}ru/09_ref/about/about.html">О проекте</a> <a href="{rel}changelog.html">Версии</a>
   </nav>
   <input id="searchbox" type="search" placeholder="Поиск..." autocomplete="off">
   <button id="themeToggle" title="Тёмная/светлая тема">&#127769;</button>
@@ -1458,6 +1458,54 @@ def main():
     feed.append('</channel></rss>')
     (SITE / "feed.xml").write_text("\n".join(feed), encoding="utf-8")
     print("visibility: sitemap/robots/404/feed OK")
+
+    # ---------- changelog.html ----------
+    CL = ROOT / "CHANGELOG.md"
+    if CL.exists():
+        cl_text = CL.read_text(encoding="utf-8")
+        # конвертация: заголовки ## -> h2, ### -> h3, ** -> b, - -> li
+        cl_html_lines = []
+        in_ul = False
+        for line in cl_text.split("\n"):
+            if line.startswith("# "):
+                cl_html_lines.append("<h1>" + html.escape(line[2:]) + "</h1>")
+                in_ul = False
+            elif line.startswith("## "):
+                if in_ul:
+                    cl_html_lines.append("</ul>")
+                    in_ul = False
+                cl_html_lines.append("<h2>" + html.escape(line[3:]) + "</h2>")
+            elif line.startswith("### "):
+                if in_ul:
+                    cl_html_lines.append("</ul>")
+                    in_ul = False
+                cl_html_lines.append("<h3>" + html.escape(line[4:]) + "</h3>")
+            elif line.startswith("- "):
+                if not in_ul:
+                    cl_html_lines.append("<ul>")
+                    in_ul = True
+                # ** -> b
+                content = html.escape(line[2:])
+                content = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", content)
+                cl_html_lines.append("<li>" + content + "</li>")
+            elif line.strip() == "---":
+                if in_ul:
+                    cl_html_lines.append("</ul>")
+                    in_ul = False
+                cl_html_lines.append("<hr>")
+            elif line.strip():
+                if in_ul:
+                    cl_html_lines.append("</ul>")
+                    in_ul = False
+                cl_html_lines.append("<p>" + html.escape(line) + "</p>")
+        if in_ul:
+            cl_html_lines.append("</ul>")
+        cl_html = "\n".join(cl_html_lines)
+        (SITE / "changelog.html").write_text(
+            render_page("История версий", '<div class="cl-wrap">' + cl_html + "</div>"
+                        '<style>.cl-wrap{max-width:760px;margin:0 auto;}.cl-wrap h1{font-size:1.8rem;margin:1rem 0}.cl-wrap h2{font-size:1.35rem;margin:2rem 0 .6rem;color:var(--accent)}.cl-wrap h3{font-size:1.1rem;margin:1.2rem 0 .4rem}.cl-wrap ul{margin:.4rem 0 1rem 1.2rem}.cl-wrap li{margin:.25rem 0}.cl-wrap hr{border:none;border-top:1px solid var(--border);margin:1.5rem 0}.cl-wrap p{color:var(--muted)}</style>',
+                        lang="ru", rel=""), encoding="utf-8")
+        print("changelog.html: OK")
 
     # поисковый индекс
     (SITE / "search-index.json").write_text(
