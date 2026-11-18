@@ -1016,6 +1016,41 @@ PAGE_TMPL = """<!DOCTYPE html>
 <main class="{maincls}">
 {content}
 </main>
+<script src="https://giscus.app/client.js"
+  data-repo="Oaker/veroteka"
+  data-repo-id="R_kgDOVV57ig"
+  data-category="General"
+  data-category-id="DIC_kwDOVV57is4DLU6m"
+  data-mapping="pathname"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="ru"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<script>
+  (function() {{
+    var cont = document.getElementById('giscus-container');
+    if (!cont) return;
+    var script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    ['data-repo|Oaker/veroteka', 'data-repo-id|R_kgDOVV57ig', 'data-category|General',
+     'data-category-id|DIC_kwDOVV57is4DLU6m', 'data-mapping|pathname', 'data-strict|1',
+     'data-reactions-enabled|1', 'data-emit-metadata|0', 'data-input-position|top',
+     'data-theme|preferred_color_scheme', 'data-lang|ru', 'data-loading|lazy'
+    ].forEach(function(item) {{
+      var parts = item.split('|');
+      script.setAttribute(parts[0], parts[1]);
+    }});
+    cont.appendChild(script);
+  }})();
+</script>
 <footer>
 <p>(c) 2026 Sergey Che - Веротека - Контент CC BY 4.0</p>
 </footer>
@@ -1098,6 +1133,9 @@ def article_html(a):
             '<div class="editor-box"><div class="who">От редакции</div>%s</div>'
             % md_to_html(editor)
         )
+    # giscus-комментарии (обсуждения GitHub)
+    parts.append('<div class="comments-box"><div class="who">Обсуждение</div>'
+                 '<div id="giscus-container" data-path="/' + a["rel_url"] + '"></div></div>')
     return "\n".join(parts)
 
 def main():
