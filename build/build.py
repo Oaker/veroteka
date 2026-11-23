@@ -727,7 +727,7 @@ def build_linkmap(articles):
         "Дагда": "10_pantheons/celtic/dagda/dagda",
         "Хун-Хуна-Пу": "10_pantheons/maya/hunahpu/hunahpu",
         "Ах-Пуч": "10_pantheons/maya/ah_puch/ah_puch",
-        "Иш-Чель": "10_pantheons/maya/itzamna_wife/ixchel",
+        "Иш-Чель": "10_pantheons/maya/ixchel/ixchel",
         "Кукулькан": "10_pantheons/maya/kukulkan/kukulkan",
         "Ицамна": "10_pantheons/maya/itzamna/itzamna",
         "Бальдр": "10_pantheons/norse/baldr/baldr",
