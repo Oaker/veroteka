@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""graph-data.json: узлы (религии + пантеоны + боги) и рёбра (связи). ROOT-относительный."""
 import os, io, re, json, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 
 nodes = []
+title_map = {}
 for dirpath, dirs, files in os.walk(str(ROOT / "content" / "ru")):
     for fn in files:
         if not fn.endswith(".md"):
@@ -23,10 +23,30 @@ for dirpath, dirs, files in os.walk(str(ROOT / "content" / "ru")):
         title = t.group(1).strip() if t else fn[:-3]
         axis = a.group(1) if a else ""
         year = y.group(1).strip() if y else ""
-        nodes.append({
-            "id": rel, "title": title, "section": rel.split("/")[0],
-            "axis": axis, "year": year, "url": rel + ".html"
-        })
+        nodes.append({"id": rel, "title": title, "section": rel.split("/")[0],
+                      "axis": axis, "year": year, "url": rel + ".html"})
+        title_map[title.lower()] = rel
+
+links = set()
+for dirpath, dirs, files in os.walk(str(ROOT / "content" / "ru")):
+    for fn in files:
+        if not fn.endswith(".md"):
+            continue
+        p = os.path.join(dirpath, fn)
+        rel = os.path.relpath(p, str(ROOT / "content" / "ru")).replace(os.sep, "/")[:-3]
+        c = io.open(p, encoding="utf-8").read()
+        m = re.search(r"## [^\n]*также[\s\S]*?\n([\s\S]*?)(?:\n## |\Z)", c)
+        if not m:
+            continue
+        for line in m.group(1).splitlines():
+            for part in line.split("\u00b7"):
+                t = part.strip(" \u00b7-\u2014")
+                if not t or len(t) < 2:
+                    continue
+                target = title_map.get(t.lower())
+                if target and target != rel:
+                    k = tuple(sorted([rel, target]))
+                    links.add((k[0], k[1]))
 
 GENEALOGY = [
     ("02_world/abrahamic/judaism/judaism", "02_world/abrahamic/christianity/christianity", "выделилась"),
@@ -50,53 +70,15 @@ GENEALOGY = [
     ("03_ancient/graeco_roman/greek/greek", "03_ancient/graeco_roman/orpheus/orpheus", "ветка"),
     ("03_ancient/graeco_roman/greek/greek", "03_ancient/graeco_roman/pythagoreanism/pythagoreanism", "влияние"),
 ]
-PANTHEON_LINKS = [
-    ("03_ancient/graeco_roman/greek/greek", "10_pantheons/greek/greek"),
-    ("03_ancient/graeco_roman/roman/roman", "10_pantheons/roman/roman"),
-    ("03_ancient/near_east/egyptian/egyptian", "10_pantheons/egyptian/egyptian"),
-    ("03_ancient/near_east/mesopotamian/mesopotamian", "10_pantheons/mesopotamian/mesopotamian"),
-    ("03_ancient/european/norse/norse", "10_pantheons/norse/norse"),
-    ("03_ancient/european/slavic_tradition/slavic_tradition", "10_pantheons/slavic/slavic"),
-    ("02_world/dharmic/hinduism/hinduism", "10_pantheons/indian/indian"),
-    ("02_world/iranian/zoroastrianism/zoroastrianism", "10_pantheons/iranian/iranian"),
-    ("04_national/china/daoism/daoism", "10_pantheons/east_asian/east_asian"),
-    ("04_national/japan/japan", "10_pantheons/east_asian/east_asian"),
-    ("03_ancient/european/celtic/celtic", "10_pantheons/celtic/celtic"),
-    ("03_ancient/american/mesoamerica/mesoamerica", "10_pantheons/maya/maya"),
-    ("03_ancient/american/mesoamerica/mesoamerica", "10_pantheons/mesoamerican/mesoamerican"),
-    ("04_national/africa/africa", "10_pantheons/west_african/west_african"),
-]
-GOD_LINKS = [
-    ("10_pantheons/greek/zeus/zeus", "10_pantheons/greek"),
-    ("10_pantheons/greek/athena/athena", "10_pantheons/greek"),
-    ("10_pantheons/greek/apollo/apollo", "10_pantheons/greek"),
-    ("10_pantheons/norse/odin/odin", "10_pantheons/norse"),
-    ("10_pantheons/norse/thor/thor", "10_pantheons/norse"),
-    ("10_pantheons/norse/loki/loki", "10_pantheons/norse"),
-    ("10_pantheons/egyptian/ra/ra", "10_pantheons/egyptian"),
-    ("10_pantheons/egyptian/osiris/osiris", "10_pantheons/egyptian"),
-    ("10_pantheons/egyptian/isis/isis", "10_pantheons/egyptian"),
-    ("10_pantheons/indian/shiva/shiva", "10_pantheons/indian"),
-    ("10_pantheons/indian/vishnu/vishnu", "10_pantheons/indian"),
-    ("10_pantheons/indian/indra/indra", "10_pantheons/indian"),
-    ("10_pantheons/slavic/perun/perun", "10_pantheons/slavic"),
-    ("10_pantheons/celtic/dagda/dagda", "10_pantheons/celtic"),
-    ("10_pantheons/maya/itzamna/itzamna", "10_pantheons/maya"),
-]
-
-links = []
+all_links = []
+for src, dst in links:
+    all_links.append({"source": src, "target": dst, "kind": "связь"})
 for src, dst, kind in GENEALOGY:
-    links.append({"source": src, "target": dst, "kind": kind})
-for src, dst in PANTHEON_LINKS:
-    links.append({"source": src, "target": dst, "kind": "пантеон"})
-for dst, src in GOD_LINKS:
-    links.append({"source": src, "target": dst, "kind": "бог принадлежит"})
+    if src in title_map and dst in title_map:
+        all_links.append({"source": src, "target": dst, "kind": kind})
 
-node_ids = set(n["id"] for n in nodes)
-valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
-
-data = {"nodes": nodes, "links": valid_links}
+data = {"nodes": nodes, "links": all_links}
 SITE.mkdir(exist_ok=True)
 out = SITE / "graph-data.json"
 io.open(str(out), "w", encoding="utf-8", newline="\n").write(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
-print("graph-data.json:", len(nodes), "nodes,", len(valid_links), "links")
+print("graph-data.json:", len(nodes), "nodes,", len(all_links), "links")
