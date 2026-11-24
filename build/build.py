@@ -11,6 +11,7 @@ import json
 import re
 import shutil
 import sys
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1028,7 +1029,9 @@ PAGE_TMPL = """<!DOCTYPE html>
     <a href="{rel}tags.html">Теги</a>
     <a href="{rel}axis.html">Ось</a>
     <a href="{rel}quiz.html">Познание себя</a>
-    <a href="{rel}ru/09_ref/about/about.html">О проекте</a> <a href="{rel}changelog.html">Версии</a>
+    <a href="{rel}ru/09_ref/about/about.html">О проекте</a>
+    <a href="{rel}changelog.html">Версии</a>
+    <a href="{rel}graph.html">Граф</a>
   </nav>
   <input id="searchbox" type="search" placeholder="Поиск..." autocomplete="off">
   <button id="themeToggle" title="Тёмная/светлая тема">&#127769;</button>
@@ -1255,6 +1258,20 @@ def main():
     fav_src = ROOT / "assets" / "favicon.svg"
     if fav_src.exists():
         shutil.copyfile(fav_src, SITE / "assets" / "favicon.svg")
+    graph_js = ROOT / "assets" / "graph.js"
+    if graph_js.exists():
+        shutil.copyfile(graph_js, SITE / "assets" / "graph.js")
+    graph_css = ROOT / "assets" / "graph.css"
+    if graph_css.exists():
+        shutil.copyfile(graph_css, SITE / "assets" / "graph.css")
+    # ---------- graph-data.json ----------
+    try:
+        _gd = BUILD / "graph_data_gen.py"
+        if _gd.exists():
+            subprocess.run([sys.executable, str(_gd)], capture_output=True, text=True, timeout=90)
+    except Exception as _gde:
+        print("graph-data err:", _gde)
+
     (SITE / "assets" / "app.js").write_text(DEFAULT_JS, encoding="utf-8")
 
     index_entries, az, tags = [], {}, {}
@@ -1548,6 +1565,18 @@ def main():
                         lang="ru", rel=""), encoding="utf-8")
         print("changelog.html: OK")
 
+    # ---------- graph.html: интерактивный граф ----------
+    try:
+        GRAPH_DATA = json.loads((SITE / "graph-data.json").read_text(encoding="utf-8"))
+    except Exception as _ge:
+        GRAPH_DATA = {"nodes": [], "links": []}
+        print("graph data:", _ge)
+
+    (SITE / "graph.html").write_text(
+        render_page("Граф связей", GRAPH_HTML, lang="ru", rel="", maincls="wide"),
+        encoding="utf-8")
+    print("graph.html: nodes=%d links=%d" % (len(GRAPH_DATA["nodes"]), len(GRAPH_DATA["links"])))
+
     # поисковый индекс
     (SITE / "search-index.json").write_text(
         json.dumps(index_entries, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -1562,6 +1591,34 @@ def main():
         print("quiz skip: build/quiz_agent.html missing")
     print("OK: articles=%d (ru=%d), site files=%d" % (
         len(articles), len(ru), sum(1 for _ in SITE.rglob("*") if _.is_file())))
+
+GRAPH_HTML = r"""
+<link rel="stylesheet" href="assets/graph.css">
+<div class="g-wrap">
+  <div class="g-head">
+    <h1>Граф связей</h1>
+    <p>Вся Веротека как один граф: религии, пантеоны, боги. Тяните узлы мышью, кликните — откроется карточка со связями и ссылкой на статью. Толщина линии — сила связи, цвет — тип связи.</p>
+  </div>
+  <div class="g-controls">
+    <input id="g-search" type="search" placeholder="Найти узел…" autocomplete="off">
+    <label class="g-chk"><input type="checkbox" id="g-axis-dvaita" checked> двайта</label>
+    <label class="g-chk"><input type="checkbox" id="g-axis-advaita" checked> адвайта</label>
+    <label class="g-chk"><input type="checkbox" id="g-axis-sunyata" checked> пустотные</label>
+    <label class="g-chk"><input type="checkbox" id="g-links-only"> только связанные</label>
+    <button id="g-reset" type="button">Сбросить вид</button>
+  </div>
+  <div class="g-legend">
+    <span><i style="background:#4f46e5"></i> выделилась из</span>
+    <span><i style="background:#f59e0b"></i> влияние</span>
+    <span><i style="background:#ef4444"></i> раскол</span>
+    <span><i style="background:#10b981"></i> ветка</span>
+    <span><i style="background:#8b5cf6"></i> пантеон / бог</span>
+  </div>
+  <canvas id="g-canvas"></canvas>
+  <aside id="g-card" class="g-card" hidden></aside>
+</div>
+<script src="assets/graph.js"></script>
+"""
 
 DEFAULT_CSS = """
 :root { --bg:#fafafa; --fg:#222; --muted:#666; --accent:#0a66c2; --card:#fff; --border:#ddd; }
