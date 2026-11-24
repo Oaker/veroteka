@@ -1319,6 +1319,14 @@ def main():
              '</span>'
              '<span class="quiz-cta-btn">Пройти →</span>'
              '</a>')
+    # карточка «Граф связей»
+    p.append('<a class="graph-cta" href="graph.html">'
+             '<span class="graph-cta-l">'
+             '<span class="graph-cta-t">Граф связей</span>'
+             '<span class="graph-cta-d">Вся Веротека как сеть: 633 узла, 1471 связь — религии, боги, пантеоны. Тяните, ищите, изучайте, кто из кого выделился.</span>'
+             '</span>'
+             '<span class="graph-cta-btn">Открыть граф →</span>'
+             '</a>')
 
     def node_link(s):
         """Ссылка на узел: свой хаб, иначе первая статья в поддереве."""
@@ -1605,7 +1613,18 @@ GRAPH_HTML = r"""
     <label class="g-chk"><input type="checkbox" id="g-axis-advaita" checked> адвайта</label>
     <label class="g-chk"><input type="checkbox" id="g-axis-sunyata" checked> пустотные</label>
     <label class="g-chk"><input type="checkbox" id="g-links-only"> только связанные</label>
+    <label class="g-chk"><input type="checkbox" id="g-cluster"> свернуть пантеоны</label>
     <button id="g-reset" type="button">Сбросить вид</button>
+  </div>
+  <div class="g-controls g-kinds">
+    <span class="g-kinds-label">Связи:</span>
+    <label class="g-chk"><input type="checkbox" id="g-kind-выделилась" checked> выделилась</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-влияние" checked> влияние</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-раскол" checked> раскол</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-ветка" checked> ветка</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-пантеон" checked> пантеон</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-бог_принадлежит" checked> бог принадлежит</label>
+    <label class="g-chk"><input type="checkbox" id="g-kind-связь" checked> связь (См. также)</label>
   </div>
   <div class="g-legend">
     <span><i style="background:#4f46e5"></i> выделилась из</span>
@@ -1705,6 +1724,13 @@ h2.sech { margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bott
 .sub-node { list-style:none; }
 
 /* ---------- quiz CTA card ---------- */
+.graph-cta { display:flex; align-items:center; justify-content:space-between; gap:14px; margin:1.1rem 0 .4rem; padding:16px 20px; background:linear-gradient(135deg,rgba(192,38,211,.06),rgba(79,70,229,.08)); border:1px solid rgba(192,38,211,.25); border-radius:16px; text-decoration:none; transition:box-shadow .15s, transform .1s; }
+.graph-cta:hover { box-shadow:0 3px 14px rgba(192,38,211,.16); transform:translateY(-1px); }
+.graph-cta-t { display:block; font-weight:700; font-size:1.06rem; color:var(--fg); }
+.graph-cta-d { display:block; color:var(--muted); font-size:.9rem; margin-top:3px; max-width:520px; }
+.graph-cta-btn { flex-shrink:0; background:linear-gradient(135deg,#c026d3,#4f46e5); color:#fff; border-radius:12px; padding:10px 18px; font-size:.95rem; font-weight:600; }
+@media (max-width:640px){ .graph-cta{ flex-direction:column; align-items:flex-start; padding:14px 16px; } .graph-cta-btn{ width:100%; text-align:center; } }
+
 .quiz-cta { display:flex; align-items:center; justify-content:space-between; gap:14px; margin:1.1rem 0 .4rem; padding:16px 20px; background:linear-gradient(135deg,rgba(79,70,229,.06),rgba(139,92,246,.08)); border:1px solid rgba(79,70,229,.22); border-radius:16px; text-decoration:none; transition:box-shadow .15s, transform .1s; }
 .quiz-cta:hover { box-shadow:0 3px 14px rgba(79,70,229,.14); transform:translateY(-1px); }
 .quiz-cta-t { display:block; font-weight:700; font-size:1.06rem; color:var(--fg); }
