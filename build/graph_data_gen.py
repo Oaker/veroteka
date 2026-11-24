@@ -73,8 +73,9 @@ GENEALOGY = [
 all_links = []
 for src, dst in links:
     all_links.append({"source": src, "target": dst, "kind": "связь"})
+node_ids = set(n['id'] for n in nodes)
 for src, dst, kind in GENEALOGY:
-    if src in title_map and dst in title_map:
+    if src in node_ids and dst in node_ids:
         all_links.append({"source": src, "target": dst, "kind": kind})
 
 data = {"nodes": nodes, "links": all_links}
